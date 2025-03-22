@@ -1,0 +1,140 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} % Do ustawień marginesów
+\usepackage{multicol} % Dla podziału na kolumny
+\usepackage{ragged2e} % Dla justowania tekstu
+\usepackage{graphicx} % Required for inserting images
+\usepackage{float}
+\usepackage{caption}
+\usepackage{amsmath} % Math formulas
+\usepackage{amssymb} % Symbols
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=orange]{hyperref} % Hyperlinks
+\usepackage{polski} % Polish language
+\usepackage[utf8]{inputenc} % Text encoding
+\usepackage{enumitem} % Pakiet do elastycznego sterowania listami
+\usepackage{indentfirst}
+\usepackage{array}
+\usepackage{booktabs}
+\documentclass{article}
+\usepackage{longtable}
+
+\begin{document}
+
+
+% Górna część strony
+\noindent
+\begin{minipage}{0.5\textwidth}
+    \raggedright
+    \textbf{Piotr Durniat} \\
+    I rok, Fizyka \\
+    Wtorek, 8:00-10:15 \\
+    \vspace{0.5cm}
+    \vspace{0.5cm}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \raggedleft
+    % Data wykonania pomiarów: \\
+    19.03.2025  \\
+    \vspace{0.5cm} % Dodatkowa linia przerwy
+    Prowadząca: \\
+    dr Iwona Mróz
+\end{minipage}
+
+% Tytuł ćwiczenia
+\begin{center}
+    \LARGE \textbf{Ćwiczenie nr 12 - Tabele pomiarowe} \\[0.5cm]
+\end{center}
+
+\noindent
+
+\begin{table}[h]
+    \renewcommand{\arraystretch}{1.3}
+    \setlength{\tabcolsep}{20pt}
+    \begin{longtable}{|c|c|}
+        \hline
+        Rodzaj kulki & $m$ [kg] \\
+        \hline
+        Mała & \\
+        Średnia & \\
+        Duża & \\
+        \hline
+    \end{longtable}
+    \caption{Pomiary masy kulki}
+\end{table}
+
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1.3}
+    \setlength{\tabcolsep}{25pt}
+    \begin{longtable}{|c|c|c|c|c|c|}
+        \hline
+        \textbf{Wysokość [m]} & 0.25 & 0.5 & 1.0 & 1.5 & 2.0 \\
+        \hline
+        \hline
+        \textbf{Nr pomiaru } & \multicolumn{5}{c|}{\textbf{Średnica krateru [m] (mała kulka)}} \\
+        \hline
+        1. & & & & & \\
+        \hline
+        2. & & & & & \\
+        \hline
+        3. & & & & & \\
+        \hline
+        4. & & & & & \\
+        \hline
+        5. & & & & & \\
+        \hline
+    \end{longtable}
+\end{table}
+
+\begin{table}[h]
+    \renewcommand{\arraystretch}{1.3}
+    \setlength{\tabcolsep}{25pt}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Wysokość [m]} & 0,5 & 1,0 & 1,5 & 2,0 \\
+        \hline
+        \hline
+        \textbf{Nr pomiaru} & \multicolumn{4}{c|}{\textbf{Średnica krateru [m] (średnia kulka)}} \\
+        \hline
+        1. & & & & \\
+        \hline
+        2. & & & & \\
+        \hline
+        3. & & & & \\
+        \hline
+        4. & & & & \\
+        \hline
+        5. & & & & \\
+        \hline
+    \end{tabular}
+    \label{tab:srednia_kulka}
+\end{table}
+
+
+\begin{table}[h]
+    \renewcommand{\arraystretch}{1.3}
+    \setlength{\tabcolsep}{25pt}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Wysokość [m]} & 1,5 & 2,0 \\
+        \hline
+        \hline
+        \textbf{Nr pomiaru} & \multicolumn{2}{c|}{\textbf{Średnica krateru [m] (duża kulka) }} \\
+        \hline
+        1. & & \\
+        \hline
+        2. & & \\
+        \hline
+        3. & & \\
+        \hline
+        4. & & \\
+        \hline
+        5. & & \\
+        \hline
+    \end{tabular}
+    \label{tab:duza_kulka}
+\end{table}
+
+
+
+
+\end{document}

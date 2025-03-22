@@ -1,0 +1,34 @@
+\section{Wstęp teoretyczny}
+
+Celem eksperymentu jest laboratoryjne odwzorowanie procesów powstawania kraterów na powierzchniach ciał niebieskich oraz weryfikacja zależności między energią kinetyczną uderzającego obiektu a wielkością powstałego krateru.
+
+W eksperymencie wykorzystujemy kilka podstawowych zjawisk fizycznych. Spadek swobodny to ruch ciała pod wpływem wyłącznie siły grawitacji, opisany równaniami:
+\begin{align*}
+    h &= \frac{1}{2}gt^2 \\
+    v &= gt
+\end{align*}
+gdzie $h$ -- wysokość, $v$ -- prędkość, $g$ -- przyspieszenie ziemskie, $t$ -- czas.
+
+Zgodnie z zasadą zachowania energii, energia całkowita układu izolowanego pozostaje stała:
+\begin{align*}
+    E_p + E_k = \text{const}
+\end{align*}
+Dla kulki spadającej z wysokości $h$ zachodzi przemiana energii potencjalnej w kinetyczną:
+\begin{align*}
+    E_p = mgh \rightarrow E_k = \frac{1}{2}mv^2
+\end{align*}
+
+Uderzenie spadającej kulki w piasek jest zderzeniem niesprężystym, podczas którego część energii kinetycznej zostaje przekształcona w energię deformacji ośrodka. Rozpatrujemy dwie hipotezy dotyczące zależności między energią kinetyczną uderzającego obiektu a średnicą powstałego krateru:
+\begin{align*}
+    \text{Model I:} \quad E_k &\propto D^3 \quad \text{(energia przeznaczona głównie na deformację objętości)} \\
+    \text{Model II:} \quad E_k &\propto D^4 \quad \text{(część energii zamieniana na potencjalną materiału wyrzuconego)}
+\end{align*}
+
+Aby zlinearyzować zależność potęgową, stosujemy logarytmowanie stronami:
+\begin{align*}
+    E_k &\propto D^n \\
+    \log(E_k) &= \log(A) + n\log(D)
+\end{align*}
+Wykreślając zależność $\log(D)$ od $\log(E_k)$ w układzie współrzędnych, otrzymujemy linię prostą o współczynniku kierunkowym $1/n$, co pozwala określić, który z modeli ($n=3$ czy $n=4$) lepiej opisuje eksperyment.
+
+W skali astronomicznej, uderzenia meteorytów w powierzchnie planet i księżyców są zderzeniami niesprężystymi o ogromnych energiach. Krater w Arizonie (średnica 1200 m) powstał w wyniku uderzenia meteorytu o masie $M_m \approx 3 \times 10^8$ kg z prędkością $v_m \approx 12000$ m/s. Przeprowadzany eksperyment stanowi model tego zjawiska w skali laboratoryjnej, umożliwiający ekstrapolację wyników do zjawisk astronomicznych.
