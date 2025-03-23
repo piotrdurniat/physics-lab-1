@@ -248,14 +248,14 @@ Uzyskano następujące wartości średnie:
 
 W celu kalibracji skali mikroskopu zmierzono szerokość wskazówki, która wyniosła \textbf{10 podziałek}. Znając obliczoną średnią wartość grubości wskazówki $\bar{d_w}$, określono szerokość jednej podziałki mikroskopu $d_m$ według zależności:
 
-\begin{equation}
+\begin{equation*}
     d_m = \frac{\bar{d_w}}{N}
-\end{equation}
+\end{equation*}
 Podstawiając wartości do wzoru, otrzymano wartość:
 
-\begin{equation}
+\begin{equation*}
     d_m = \frac{0.62}{10} = 0.062 \text{ mm}
-\end{equation}
+\end{equation*}
 
 \subsection{Wydłużenie drutu w zależności od obciążenia}
 
@@ -320,11 +320,14 @@ Na podstawie wzoru na moduł Younga (\ref{eq:modul_younga}), otrzymano zależno�
 \end{equation}
 Przyrównując tę zależność do prostej regresji (\ref{eq:prosta_regresji}) otrzymano wzór na moduł Younga:
 
-\begin{equation}
-    am = \frac{4g\bar{l}}{\pi\bar{d}^2 E}m
-    \Rightarrow
-    E = \frac{4g\bar{l}}{\pi\bar{d}^2 a}
-\end{equation}
+$$
+am = \frac{4g\bar{l}}{\pi\bar{d}^2 E}m
+$$
+
+$$
+E = \frac{4g\bar{l}}{\pi\bar{d}^2 a}
+$$
+
 Podstawiając wartości liczbowe, otrzymano jego wartość wynoszącą $E = 175\,\text{GPa}$
 
 \section{Ocena niepewności pomiaru}
@@ -352,23 +355,21 @@ u_A(x) = \sqrt{\frac{1}{N-1} \sum_{i=1}^{N} (x_i - \bar{x})^2}
 u_B(x) = \frac{\Delta_d x}{\sqrt{3}}
 \end{equation}
 
+Końcowe wyniki po podstawieniu wartości:
 
-Końcowe wyniki niepewności zapisano w tabeli \ref{tab:niepewnosci_1}.
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{c|c}
-        Parametr & Warto\'s\'c  \\
-        \hline
-        $u(l)$ & ... \\
-        $u(d_w)$ & ... \\
-        $u(d)$ & ... \\
-    \end{tabular}
-    \caption{Niepewności pomiarowe pomiarów pośrednich}
-    \label{tab:niepewnosci_1}
-\end{table}
+\begin{itemize}
+\item $u(l)$ = 0.0060\,\text{m}
+\item $u(d_w)$ = 0.0045 \text{mm}
+\item $u(d)$ = 0.00058\,\text{mm}
+\end{itemize}
 
 \subsection{Niepewność pomiarowa współczynników prostej regresji liniowej}
+
+Niepewności pomiarowe dla wyznaczonej prostej regresji liniowej $y = ax + b$ obliczono na podstawie odchylenia standardowego reszt $s_y$ oraz rozkładu punktów pomiarowych wzdłuż osi $x$, korzystając z następujących wzorów:
+
+\[
+s_y = \sqrt{\frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{n-2}}
+\]
 
 \[
 u_a = s_y \sqrt{\frac{n}{n \sum x_i^2 - \left( \sum x_i \right)^2}}
@@ -378,25 +379,70 @@ u_a = s_y \sqrt{\frac{n}{n \sum x_i^2 - \left( \sum x_i \right)^2}}
 u_b = s_y \sqrt{\frac{\sum x_i^2}{n \sum x_i^2 - \left( \sum x_i \right)^2}}
 \]
 
+gdzie $x_i$ to wartości zmiennej niezależnej, $y_i$ to wartości zmierzone, $\hat{y}_i$ to wartości przewidywane przez model regresji, a $n$ to liczba punktów pomiarowych. Dzielnik $n-2$ wynika z faktu, że model regresji liniowej ma dwa parametry ($a$ i $b$).
+
+
+Obliczone wartości niepewności dla współczynników prostej regresji wynoszą:
+
+\begin{itemize}
+    \item $u_a = 0.0071\,\frac{\text{mm}}{\text{kg}}$
+    \item $u_b = 0.031\,\text{mm}$
+\end{itemize}
+
 \subsection{Niepewność pomiarowa modułu Younga}
 
-Niepewność standardowa obliczonej wartości modułu Younga została obliczona korzystając z prawa przenoszenia niepewności (wzór \ref{eq:niepewnosc_zlozona}).
+Niepewność standardowa obliczonej wartości modułu Younga została określona na podstawie prawa przenoszenia niepewności \eqref{eq:niepewnosc_zlozona}:
 
 \begin{equation}
 \label{eq:niepewnosc_zlozona}
-    u_c(y) = \sqrt{\sum_{k=1}^{K} \left( \frac{\partial f}{\partial x_k} \right)^2 u^2(x_k)}.
+    u_c(E) = \sqrt{\sum_{k=1}^{K} \left( \frac{\partial E}{\partial x_k} \right)^2 u^2(x_k)}.
 \end{equation}
 
-TODO
-...
-:(((
+gdzie moduł Younga \( E \) wyraża się wzorem:
+
+\begin{equation*}
+E = \frac{4g\bar{l}}{\pi\bar{d}^2 a}.
+\end{equation*}
+
+Obliczone pochodne cząstkowe wynoszą:
+
+\begin{align*}
+    \frac{\partial E}{\partial \bar{l}} &= \frac{4g}{\pi \bar{d}^2 a}, \\
+    \frac{\partial E}{\partial \bar{d}} &= -\frac{8g\bar{l}}{\pi \bar{d}^3 a}, \\
+    \frac{\partial E}{\partial a} &= -\frac{4g\bar{l}}{\pi \bar{d}^2 a^2}.
+\end{align*}
+
+Po podstawieniu powyższych pochodnych do równania \eqref{eq:niepewnosc_zlozona} otrzymujemy:
+
+\begin{equation*}
+u_c(E) = \sqrt{\left( \frac{4g}{\pi \bar{d}^2 a} \right)^2 u^2(l) 
++ \left( \frac{8g\bar{l}}{\pi \bar{d}^3 a} \right)^2 u^2(d) 
++ \left( \frac{4g\bar{l}}{\pi \bar{d}^2 a^2} \right)^2 u^2(a)}.
+\end{equation*}
+
+Po uproszczeniu:
+
+\begin{equation*}
+u_c(E) = \frac{4g}{\pi \bar{d}^2 a} 
+\sqrt{ u^2(l) + \left( \frac{2\bar{l}}{\bar{d}} \right)^2 u^2(d) + \left( \frac{\bar{l}}{a} \right)^2 u^2(a) }.
+\end{equation*}
+
+Ostatecznie, podstawiając wartości: 
+
+\begin{align*}
+u_c(E) &= \frac{4 \cdot 9.81}{\pi \cdot (8.1 \cdot 10^{-4})^2 \cdot (1.03 \cdot 10^{-4})} \cdot 
+\\
+&\quad \sqrt{ (6.0 \cdot 10^{-3})^2 + \left( \frac{2.00 \cdot 0.95}{8.1 \cdot 10^{-4}} \right)^2 (5.8 \cdot 10^{-7})^2 + \left( \frac{0.95}{1.03 \cdot 10^{-4}} \right)^2 (7.1 \cdot 10^{-6})^2 } 
+\\
+&= 12 \cdot 10^9\,\text{Pa}
+\end{align*}
 
 \section{Wnioski}
 % Własne przemyślenia
 
-Obliczona wartość modułu Younga \( 175\,\text{GPa} \) jest zbliżona do wartości dla stali nierdzewnej 304 (PN/0H18N9), wynoszącej \( 180\,\text{GPa} \) (dane z \cite{calculla}).  
+Przeprowadzone pomiary wykazują liniową zależność między przyłożoną siłą a wydłużeniem drutu, co potwierdza stosowalność prawa Hooke'a w badanym zakresie obciążeń. Obliczona wartość modułu Younga \( 175(12)\,\text{GPa} \) jest zbliżona do wartości literaturowej dla stali nierdzewnej 304 (PN/0H18N9), wynoszącej \( 180\,\text{GPa} \) (dane z \cite{calculla}).
 
-Łącząc kolejne punkty pomiarowe linią, można zauważyć, że po zmniejszeniu obciążenia wydłużenie drutu nie wraca do dokładnie tych samych wartości. Materiał nie zachowuje się idealnie sprężyście. Większa część wydłużenia następuje natychmiast po przyłożeniu naprężenia, jednak pewna niewielka część odkształcenia pojawia się stopniowo, z opóźnieniem, występuje zjawisko opóźnienia elastycznego \cite{Drynski1976}. Na wykresie \ref{fig:histereza} widoczny jest fragment pętli histerezy sprężystej. 
+Jednakże analiza pełnego cyklu obciążenia i odciążenia ujawnia, że po zmniejszeniu obciążenia wydłużenie drutu nie powraca dokładnie do wartości początkowych. Świadczy to o tym, że materiał nie zachowuje się idealnie sprężyście. Choć większa część odkształcenia następuje natychmiast po przyłożeniu naprężenia, pewna niewielka część pojawia się stopniowo, z opóźnieniem - jest to zjawisko znane jako opóźnienie elastyczne \cite{Drynski1976}. Na wykresie \ref{fig:histereza}, gdzie następujące po sobie pomiary zostały połączone prostymi, widoczny jest fragment pętli histerezy sprężystej.
 
 \begin{figure}[H]
     \centering
@@ -407,18 +453,15 @@ Obliczona wartość modułu Younga \( 175\,\text{GPa} \) jest zbliżona do warto
 
 \section{Wykresy}
 
-TODO: Do dodania do wykresu krzyże niepewności, i dać na całą stronę a4.
-
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\linewidth]{prosta_regresji.png}
-    \caption{Caption}
+    \includegraphics[width=1.2\linewidth,angle=90]{prosta_regresji.png}
+    \caption{Pomiary z nałożoną prostą regresji}
     \label{fig:prosta_regresji}
 \end{figure}
 
 
-
+\newpage
 \bibliographystyle{plain}
 \bibliography{bibliography}
 
