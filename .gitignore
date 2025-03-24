@@ -2,7 +2,6 @@ venv/
 *.aux
 *.log
 *.out
-*.tex
 *.toc
 *.bbl
 *.blg
