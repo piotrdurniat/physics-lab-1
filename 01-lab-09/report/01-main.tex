@@ -102,7 +102,8 @@ Moduł Younga ma wymiar ciśnienia i jest wyrażany w paskalach $[\text{Pa}]$.
 % • sposób wyznaczania modułu Younga metodą jednostronnego rozciągania i inne metody wyznaczania modułu Younga
 Do wyznaczenia wartości modułu Younga można skorzystać z metody jednostronnego rozciągania, wykorzystując zależność podaną w równaniu~(\ref{eq:modul_younga}).
 
-Podstawy teoretyczne niniejszego eksperymentu zostały opracowane w oparciu o monografię \textit{Ćwiczenia laboratoryjne z fizyki} \cite{Drynski1976}, ze szczególnym uwzględnieniem rozdziału 21 zatytułowanego \textit{Wyznaczanie modułu Younga metodą jednostronnego rozciągania}.
+Podstawy teoretyczne niniejszego eksperymentu zostały opracowane w oparciu o monografię \textit{Ćwiczenia laboratoryjne z fizyki} \cite{Drynski1976}, rozdział 21 zatytułowany \textit{Wyznaczanie modułu Younga metodą jednostronnego rozciągania}.
+
 % • śruba mikrometryczna – dokładność pomiaru.
 
 
@@ -172,7 +173,7 @@ Wszystkie obliczenia zostały wykonane wykorzystując język Python z biblioteka
         4 & 0.81 \\ \hline
         5 & 0.81 \\ \hline
     \end{tabular}
-    \caption{Pomiary średnicy drutu po uwzględnieniu błędu wskazania zerowego.}
+    \caption{Pomiary średnicy drutu po uwzględnieniu błędu pomiarowego.}
     \label{tab:srednica_drutu}
 \end{table}
 
@@ -188,7 +189,7 @@ Wszystkie obliczenia zostały wykonane wykorzystując język Python z biblioteka
         4 & 0.62 \\ \hline
         5 & 0.62 \\ \hline
     \end{tabular}
-    \caption{Pomiary grubości wskazówki po uwzględnieniu błędu wskazania zerowego.}
+    \caption{Pomiary grubości wskazówki po uwzględnieniu błędu pomiarowego.}
     \label{tab:srednica_wskazowki}
 \end{table}
 
@@ -363,6 +364,8 @@ Końcowe wyniki po podstawieniu wartości:
 \item $u(d)$ = 0.00058\,\text{mm}
 \end{itemize}
 
+
+
 \subsection{Niepewność pomiarowa współczynników prostej regresji liniowej}
 
 Niepewności pomiarowe dla wyznaczonej prostej regresji liniowej $y = ax + b$ obliczono na podstawie odchylenia standardowego reszt $s_y$ oraz rozkładu punktów pomiarowych wzdłuż osi $x$, korzystając z następujących wzorów:
@@ -442,12 +445,12 @@ u_c(E) &= \frac{4 \cdot 9.81}{\pi \cdot (8.1 \cdot 10^{-4})^2 \cdot (1.03 \cdot 
 
 Przeprowadzone pomiary wykazują liniową zależność między przyłożoną siłą a wydłużeniem drutu, co potwierdza stosowalność prawa Hooke'a w badanym zakresie obciążeń. Obliczona wartość modułu Younga \( 175(12)\,\text{GPa} \) jest zbliżona do wartości literaturowej dla stali nierdzewnej 304 (PN/0H18N9), wynoszącej \( 180\,\text{GPa} \) (dane z \cite{calculla}).
 
-Jednakże analiza pełnego cyklu obciążenia i odciążenia ujawnia, że po zmniejszeniu obciążenia wydłużenie drutu nie powraca dokładnie do wartości początkowych. Świadczy to o tym, że materiał nie zachowuje się idealnie sprężyście. Choć większa część odkształcenia następuje natychmiast po przyłożeniu naprężenia, pewna niewielka część pojawia się stopniowo, z opóźnieniem - jest to zjawisko znane jako opóźnienie elastyczne \cite{Drynski1976}. Na wykresie \ref{fig:histereza}, gdzie następujące po sobie pomiary zostały połączone prostymi, widoczny jest fragment pętli histerezy sprężystej.
+Jednakże analiza pełnego cyklu obciążenia i odciążenia ujawnia, że po zmniejszeniu obciążenia wydłużenie drutu nie powraca dokładnie do wartości początkowych. Świadczy to o tym, że materiał nie zachowuje się idealnie sprężyście. Choć większa część odkształcenia następuje natychmiast po przyłożeniu naprężenia, pewna niewielka część pojawia się stopniowo, z opóźnieniem - jest to zjawisko znane jako opóźnienie elastyczne (\cite{Drynski1976} - rozdział 21). Na wykresie \ref{fig:histereza}, gdzie następujące po sobie pomiary zostały połączone prostymi, widoczny jest fragment pętli histerezy sprężystej.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{histereza.png}
-    \caption{Wydłużenie drutu po połączeniu następujących po sobie pomiarów prostymi.}
+    \caption{Wydłużenie drutu po połączeniu następujących po sobie pomiarów prostymi (Źródło: opracowanie własne).}
     \label{fig:histereza}
 \end{figure}
 
@@ -456,7 +459,7 @@ Jednakże analiza pełnego cyklu obciążenia i odciążenia ujawnia, że po zmn
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.2\linewidth,angle=90]{prosta_regresji.png}
-    \caption{Pomiary z nałożoną prostą regresji}
+    \caption{Pomiary z nałożoną prostą regresji (Źródło: opracowanie własne)}
     \label{fig:prosta_regresji}
 \end{figure}
 
