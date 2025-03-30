@@ -100,7 +100,7 @@ Pomiary wykonano w następujących etapach:
 
   \item W celu weryfikacji wyznaczono empirycznie okres drgań wahadła dla ustawienia krążka w położeniu $x_0$, zawieszając wahadło na dowolnym ostrzu.
 
-  \item Dodatkowo przeprowadzono pomiar czasu 20 wahnięć wahadła matematycznego o długości $L$ (równej odległości między ostrzami O$_1$ i O$_2$) i wyznaczono jego okres drgań $T_M$.
+  \item Dodatkowo przeprowadzono pomiar czasu 20 wahnięć wahadła matematycznego o długości $L$ (równej odległości między ostrzami $O_1$ i $O_2$ = 0.4 m) i wyznaczono jego okres drgań $T_M$.
 
   \item Dla położeń pośrednich krążka K$_2$ (29-37 cm) wykonano dokładniejsze pomiary w odstępach co 1 cm, aby precyzyjniej określić punkt przecięcia krzywych.
 
@@ -115,11 +115,9 @@ Uzyskane dane posłużyły do wyznaczenia przyspieszenia ziemskiego na dwa sposo
 \begin{table}[H]
   \centering
   \begin{tabular}{|c|c|c|}
-    \toprule
-    % \hline
+    \hline
     \textbf{$x$ [cm]} & \textbf{$t$ [s] dla $O_1$} & \textbf{$t$ [s] dla $O_2$} \\
-    \midrule
-    % \hline
+    \hline
     4  & 25,172 & 25,098 \\
     \hline
     8  & 24,551 & 24,037 \\
@@ -153,8 +151,7 @@ Uzyskane dane posłużyły do wyznaczenia przyspieszenia ziemskiego na dwa sposo
     37 & 25,402 & 26,724 \\
     \hline
     38 & 25,531 & 26,724 \\
-    % \hline
-    \bottomrule
+    \hline
   \end{tabular}
   \caption{Czas 20 wahnięć dla różnych ustawień krążka dla obu osi wahadła rewersyjnego.}
   \label{tab:czas}
@@ -163,11 +160,9 @@ Uzyskane dane posłużyły do wyznaczenia przyspieszenia ziemskiego na dwa sposo
 \begin{table}[H]
   \centering
   \begin{tabular}{|c|c|c|}
-    \toprule
-    % \hline
+    \hline
     $x$ [cm] & $T$ [s] (dla osi $O_1$) & $T$ [s] (dla osi $O_2$) \\
-    % \hline
-    \midrule
+    \hline
     4  & 1,2586  & 1,2549  \\
     \hline
     8  & 1,22755 & 1,20185 \\
@@ -211,9 +206,9 @@ Uzyskane dane posłużyły do wyznaczenia przyspieszenia ziemskiego na dwa sposo
 \begin{table}[H]
   \centering
   \begin{tabular}{|c|c|}
-    \toprule
+    \hline
     Nr & $t(x=20\,\text{cm})$ [s] \\
-    \midrule
+    \hline
     1.  & 21,132 \\
     \hline
     2.  & 21,140  \\
@@ -374,25 +369,36 @@ Długość wahadła matematycznego oraz odległość między dwiema osiami wahad
 
 \subsection{Niepewność pomiaru przyspieszenia ziemskiego}
 
-Do obliczenia niepewności przyspieszenia ziemskiego wykorzystano wzór \ref{eq:niepewnosc_przyspieszenie}:
+Niepewność przyspieszenia ziemskiego obliczono jako niepewność maksymalną $\Delta g$ na podstawie wzoru z instrukcji do ćwiczenia \cite{lab14manual}:
 
 \begin{equation}
-  \label{eq:niepewnosc_przyspieszenie}
-  u(g) = \frac{u(L)}{L} + \frac{2 u(T)}{T}
+  \label{eq:niepewnosc_przyspieszenie_max}
+  |\frac{\Delta g}{g}| = |\frac{u(L)}{L}| + |2 \frac{u(T)}{T}|
+  \Rightarrow \Delta g = |g| \cdot (|\frac{u(L)}{L}| + 2 \cdot |\frac{u(T)}{T}|)
 \end{equation}
 
-Podstawiając wartości dla obu wahadeł do powyższego wzoru, otrzymano różne wartości, które przedstawiono w tabeli \ref{tab:niepewnosci}.
 
+Podstawiając wartości dla wahadła rewersyjnego do powyższego wzoru, otrzymano:
+
+$$
+  \Delta g_{rew} = 9.629 \cdot \left(\frac{0.00058}{0.4} + 2 \cdot \frac{0.0001368}{1.28}\right) = 0.016\,\frac{m}{s^2}
+$$
+
+Podstawiając wartości dla wahadła matematycznego do powyższego wzoru, otrzymano:
+
+$$
+  \Delta g_{mat} = 9.48 \cdot \left(\frac{0.00058}{0.4} + 2 \cdot \frac{0.0001368}{1.29}\right) = 0.016\,\frac{m}{s^2}
+$$
 
 \begin{table}[H]
   \centering
   \begin{tabular}{|c|c|}
     \hline
-    Typ wahadła & $u(g) \left[\frac{m}{s^2}\right]$ \\
+    Typ wahadła & $\Delta g \left[\frac{m}{s^2}\right]$ \\
     \hline
-    Rewersyjne & 0.0014 \\
+    Rewersyjne & 0.016 \\
     \hline
-    Matematyczne & 0.0012 \\
+    Matematyczne & 0.016 \\
     \hline
   \end{tabular}
   \caption{Wartości niepewności przyspieszenia ziemskiego dla obu typów wahadeł.}
@@ -405,7 +411,7 @@ Podstawiając wartości dla obu wahadeł do powyższego wzoru, otrzymano różne
 Na podstawie przeprowadzonych pomiarów i analizy danych sformułowano następujące wnioski:
 
 \begin{enumerate}
-  \item Wyznaczona wartość przyspieszenia ziemskiego wynosi $g_{rew} = 9.629$, $u_c(g) = 0,0014$ $\frac{m}{s^2}$ (metodą wahadła rewersyjnego) oraz $g_{mat} = 9.48$, $u_c(g)  = 0,0012$ $\frac{m}{s^2}$ (metodą wahadła matematycznego). Są to wartości zbliżone do wartości tablicowej $g = 9.81 \frac{m}{s^2}$.
+  \item Wyznaczona wartość przyspieszenia ziemskiego wynosi $g_{rew} = 9.629$, $\Delta g_{rew} = 0,016$ $\frac{m}{s^2}$ (metodą wahadła rewersyjnego) oraz $g_{mat} = 9.48$, $\Delta g_{mat} = 0,016$ $\frac{m}{s^2}$ (metodą wahadła matematycznego). Są to wartości zbliżone do wartości tablicowej $g = 9.81 \frac{m}{s^2}$.
 
   \item Wykres zależności $T=f(x)$ dla obu osi obrotu wahadła rewersyjnego potwierdza teoretyczne przewidywania. Punkt przecięcia krzywych przy $x_0 = 37,5$ cm odpowiada położeniu, w którym okresy drgań są równe dla obu osi.
 
