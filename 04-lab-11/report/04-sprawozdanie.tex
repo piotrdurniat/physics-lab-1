@@ -57,35 +57,111 @@
 % --------- WSTĘP TEORETYCZNY ---------
 \section{Wstęp teoretyczny}
 
-Wahadło torsyjne wychylone o kąt $\theta$ od położenia równowagi wykonuje drgania skrętne pod wpływem momentu siły sprężystości $M$:
+\subsection*{Pierwsza zasada dynamiki ruchu obrotowego}
+
+Pierwsza zasada dynamiki ruchu obrotowego stwierdza, że jeżeli na ciało nie działa wypadkowy moment siły, to ciało pozostaje w spoczynku lub porusza się ruchem obrotowym jednostajnym. Matematycznie można to zapisać jako:
+
+\begin{equation*}
+    \sum_{i=1}^{n} M_i = 0
+    \Rightarrow
+    \frac{d\vec{L}}{dt} = 0
+\end{equation*}
+
+gdzie $M_i$ oznacza $i$-ty moment siły działający na ciało, a $\vec{L}$ to moment pędu ciała. Moment pędu wyraża się wzorem:
+
+\begin{equation*}
+    \vec{L} = I\vec{\omega}
+\end{equation*}
+
+gdzie $I$ oznacza moment bezwładności ciała, a $\vec{\omega}$ jego prędkość kątową.
+
+\subsection*{Tensor momentu bezwładności}
+
+Moment bezwładności ciała zależy od wyboru osi obrotu. Do pełnego opisu własności bezwładnościowych ciała służy tensor momentu bezwładności, który ma postać macierzy:
+
+\begin{equation*}
+    I = \begin{pmatrix}
+        I_{xx} & I_{xy} & I_{xz} \\
+        I_{yx} & I_{yy} & I_{yz} \\
+        I_{zx} & I_{zy} & I_{zz}
+    \end{pmatrix}
+\end{equation*}
+
+Elementy tego tensora definiuje się następująco:
+
+\begin{equation*}
+    I_{ij} = \sum_{k=1}^{n} m_k (r_{k}^2\delta_{ij} - r_{ki}r_{kj})
+\end{equation*}
+
+gdzie $m_k$ oznacza masę $k$-tego elementu ciała, $r_{ki}$ to współrzędna $k$-tego elementu na osi $i$, a $\delta_{ij}$ to delta Kroneckera.
+
+\subsection*{Elipsoida bezwładności}
+
+Elipsoida bezwładności to powierzchnia, której odległość $r$ od środka masy w dowolnym kierunku jest powiązana z momentem bezwładności $I$ względem tej osi zależnością:
+
+\begin{equation*}
+    I = \frac{1}{r^2}
+\end{equation*}
+
+Długości półosi elipsoidy są równe odwrotnościom pierwiastków kwadratowych z głównych momentów bezwładności:
+
+\begin{equation*}
+    a = \frac{1}{\sqrt{I_{xx}}}, \quad
+    b = \frac{1}{\sqrt{I_{yy}}}, \quad
+    c = \frac{1}{\sqrt{I_{zz}}}
+\end{equation*}
+
+Znajomość elipsoidy bezwładności umożliwia wyznaczenie momentu bezwładności dla dowolnej osi obrotu.
+
+\subsection*{Wahadło torsyjne}
+
+Wahadło torsyjne to układ składający się z pręta zawieszonego na nici, który może wykonywać drgania skrętne. Po wychyleniu o kąt $\theta$ od położenia równowagi, na pręt działa moment siły sprężystości $M$:
 
 \begin{equation}
     M = -k\theta
 \end{equation}
 
+gdzie $k$ jest współczynnikiem sprężystości skrętnej. Okres drgań wahadła torsyjnego wyraża się wzorem:
 
-Okres drgań wahadła torsyjnego:
 \begin{equation} \label{eq:okres_drgan_w_zaleznosci_od_momentu_bezwladnosci}
     T = 2\pi \sqrt{\frac{I}{k}}
 \end{equation}
 
 gdzie:
 \begin{itemize}
-    \item $I$ - moment bezwładności bryły
-    \item $k$ - moment kierujący wahadła
+    \item $I$ -- moment bezwładności bryły
+    \item $k$ -- moment kierujący wahadła
 \end{itemize}
 
-Stąd:
+Z powyższego wzoru można wyznaczyć moment bezwładności:
+
 \begin{equation} \label{eq:moment_bezwladnosci_w_zaleznosci_od_okresu}
     I = k \left(\frac{T}{2\pi}\right)^2
 \end{equation}
 
-Dryński - Rozdział 19
+Wstęp teoretyczny opracowano na podstawie monografii \cite{Drynski1976} (rozdział 19) oraz instrukcji do ćwiczenia \cite{lab11manual}.
 % --------- OPIS DOŚWIADCZENIA ---------
 \section{Opis doświadczenia}
 
+Celem doświadczenia było wyznaczenie elipsoidy bezwładności bryły sztywnej metodą wahadła torsyjnego. Pomiary wykonano w następujących etapach:
 
+\begin{enumerate}
+    \item \textbf{Pomiar okresu drgań samej ramki} \\
+          Zmierzono czas trwania 10 drgań pustej ramki wahadła torsyjnego ($T_0$). Ramkę wychylano o ustalony kąt za pomocą elektromagnesu, a po jego wyłączeniu mierzono czas drgań układem elektronicznym.
 
+    \item \textbf{Pomiar okresu drgań z bryłą wzorcową} \\
+          Wykonano pomiar czasu 10 drgań ramki z zamocowanym walcem wzorcowym o masie 1330 g ($T_w$). Zmierzono również wymiary walca niezbędne do obliczenia jego momentu bezwładności.
+
+    \item \textbf{Pomiary dla badanej bryły} \\
+          Dla badanej bryły wykonano serię pomiarów czasu 10 drgań ($T_1$):
+          \begin{itemize}
+              \item względem trzech osi głównych przechodzących przez środek masy
+              \item względem jednej dowolnie wybranej osi przechodzącej przez środek masy
+              \item względem osi wskazanej przez prowadzącego, nieprzechodzącej przez środek masy
+          \end{itemize}
+\end{enumerate}
+
+Układ pomiarowy składał się z wahadła torsyjnego z elektromagnetycznym mechanizmem wyzwalania drgań oraz elektronicznego układu pomiaru czasu.
 
 \section{Opracowanie wyników pomiarów}
 
@@ -311,8 +387,15 @@ Stąd podstawiając do wzoru \eqref{eq:moment_bezwladnosci_elipsoida} otrzymujem
 \end{align*}
 
 
-A obliczona z wzoru \eqref{eq:moment_bezwladnosci_badanej_bryly} wartość z tabeli \ref{tab:momenty_bezwladnosci} wynosi $I_s = 0.0003923\,\text{kgm}^2$.
+\subsubsection{Oś nieprzechodząca przez środek masy (t)}
 
+[[TODO: Obliczenia]]
+
+
+\subsection{Porównanie momentów bezwładności obliczonych dwoma sposobami}
+
+% 5. Porównać momenty bezwładności (dla tej samej osi) obliczone wg. punktu 2 i punktu 4.
+Moment bezwładności obliczony z wzoru \eqref{eq:moment_bezwladnosci_badanej_bryly} wartość z tabeli \ref{tab:momenty_bezwladnosci} wynosi $I_s = 0.0003923\,\text{kgm}^2$.
 Porównując metodę elipsoidy \eqref{eq:moment_bezwladnosci_elipsoida} z metodą na podstawie okresu   drgań wzoru \eqref{eq:moment_bezwladnosci_badanej_bryly} otrzymujemy:
 
 \begin{equation*}
@@ -322,9 +405,7 @@ Porównując metodę elipsoidy \eqref{eq:moment_bezwladnosci_elipsoida} z metod�
 Wartość obliczona z elipsoidy bezwładności jest mniejsza o 0.55\% od wartości obliczonej z wzoru \eqref{eq:moment_bezwladnosci_badanej_bryly}.
 
 
-\subsection{Porównanie momentów bezwładności obliczonych dwoma sposobami}
-
-% 5. Porównać momenty bezwładności (dla tej samej osi) obliczone wg. punktu 2 i punktu 4.
+[[TODO: Porównanie dla osi (t)]]
 
 
 % ---------- NIEPEWNOŚCI ----------
