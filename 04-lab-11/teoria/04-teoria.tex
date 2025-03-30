@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+
+\title{Wstęp teoretyczny do ćwiczenia nr 11: \\
+Badanie ruchu obrotowego bryły sztywnej}
+\author{Piotr Durniat}
+\date{Marzec 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Podstawy teoretyczne}
+
+\subsection{I zasada dynamiki ruchu obrotowego}
+I zasada dynamiki ruchu obrotowego stwierdza, że ciało sztywne, na które nie działa moment siły, pozostaje w spoczynku lub porusza się ruchem obrotowym jednostajnym. Matematycznie można to zapisać jako:
+\begin{equation}
+    \sum \vec{M} = 0 \Rightarrow \frac{d\vec{L}}{dt} = 0
+\end{equation}
+
+Moment pędu wyraża się wzorem:
+\begin{equation}
+    \vec{L} = I \vec{\omega}
+\end{equation}
+
+\subsection{Tensor momentu bezwładności}
+Tensor momentu bezwładności opisuje rozkład masy ciała względem osi obrotu. Jest to wielkość tensorowa drugiego rzędu, reprezentowana przez macierz 3×3:
+\begin{equation}
+    I = \begin{bmatrix} I_{xx} & I_{xy} & I_{xz} \\
+                I_{yx} & I_{yy} & I_{yz} \\
+                I_{zx} & I_{zy} & I_{zz}\end{bmatrix}
+\end{equation}
+
+\subsection{Elipsoida bezwładności}
+Elipsoida bezwładności ciała sztywnego to powierzchnia, której odległość $r$ od środka masy w dowolnym kierunku jest związana z momentem bezwładności $I$ w tym kierunku zależnością:
+\begin{equation}
+    I = \frac{1}{r^2}
+\end{equation}
+Dla dowolnej osi obrotu zachodzi twierdzenie Steinera:
+\begin{equation}
+    I_1 = I_0 + M d^2
+\end{equation}
+
+\subsection{Wahadło fizyczne}
+Dla małych wychyleń wahadła fizycznego równanie ruchu przyjmuje postać:
+\begin{equation}
+    \frac{d^2 \theta}{dt^2} + \frac{M g d}{I} \theta = 0
+\end{equation}
+
+Okres drgań wahadła fizycznego:
+\begin{equation}
+    T = 2\pi \sqrt{\frac{I}{M g d}}
+\end{equation}
+
+\subsection{Wahadło torsyjne}
+Wahadło torsyjne wykonuje drgania skrętne pod wpływem momentu siły sprężystości:
+\begin{equation}
+    M = -k\theta
+\end{equation}
+
+Okres drgań wahadła torsyjnego:
+\begin{equation}
+    T = 2\pi \sqrt{\frac{I}{k}}
+\end{equation}
+
+\end{document}

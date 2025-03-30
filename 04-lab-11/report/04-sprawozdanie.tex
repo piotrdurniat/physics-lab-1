@@ -1,0 +1,297 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} % Do ustawień marginesów
+\usepackage{multicol} % Dla podziału na kolumny
+\usepackage{ragged2e} % Dla justowania tekstu
+\usepackage{graphicx} % Required for inserting images
+\usepackage{float}
+\usepackage{caption}
+\usepackage{amsmath} % Math formulas
+\usepackage{amssymb} % Symbols
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=orange]{hyperref} % Hyperlinks
+\usepackage{polski} % Polish language
+\usepackage[utf8]{inputenc} % Text encoding
+\usepackage{enumitem} % Pakiet do elastycznego sterowania listami
+\usepackage{indentfirst}
+\usepackage{array}
+
+\begin{document}
+
+% Górna część strony
+\noindent
+\begin{minipage}{0.5\textwidth}
+    \raggedright
+    \textbf{Piotr Durniat} \\
+    I rok, Fizyka \\
+    Wtorek, 8:00-10:15 \\
+    \vspace{0.5cm}
+    \vspace{0.5cm}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \raggedleft
+    Data wykonania pomiarów: \\
+    18.03.2025 \\
+    \vspace{0.5cm}
+    Prowadząca: \\
+    dr Iwona Mróz
+\end{minipage}
+
+% ------------------------------------------------------------
+
+% Tytuł ćwiczenia
+\vspace{2cm}
+\begin{center}
+    \LARGE \textbf{Ćwiczenie nr 11} \\[0.5cm]
+    \Large \textbf{Wyznaczanie elipsoidy bezwładności bryły sztywnej}
+\end{center}
+
+\vspace{1cm}
+\noindent
+
+\tableofcontents
+\newpage
+
+
+% ------------------------------------------------------------
+
+% --------- WSTĘP TEORETYCZNY ---------
+\section{Wstęp teoretyczny}
+
+Wahadło torsyjne wychylone o kąt $\theta$ od położenia równowagi wykonuje drgania skrętne pod wpływem momentu siły sprężystości $M$:
+
+\begin{equation}
+    M = -k\theta
+\end{equation}
+
+
+Okres drgań wahadła torsyjnego:
+\begin{equation} \label{eq:okres_drgan_w_zaleznosci_od_momentu_bezwladnosci}
+    T = 2\pi \sqrt{\frac{I}{k}}
+\end{equation}
+
+gdzie:
+\begin{itemize}
+    \item $I$ - moment bezwładności bryły
+    \item $k$ - moment kierujący wahadła
+\end{itemize}
+
+Stąd:
+\begin{equation} \label{eq:moment_bezwladnosci_w_zaleznosci_od_okresu}
+    I = k \left(\frac{T}{2\pi}\right)^2
+\end{equation}
+
+Dryński - Rozdział 19
+% --------- OPIS DOŚWIADCZENIA ---------
+\section{Opis doświadczenia}
+
+
+
+
+\section{Opracowanie wyników pomiarów}
+
+% ---------- TABELE ----------
+\subsection{Tabele pomiarowe}
+
+\begin{itemize}
+    \item Błąd wskazania zerowego suwmiarki wyniósł 0.15 mm.
+    \item Niepewność wzorcowania suwmiarki $\Delta_d D = 0.05$ mm.
+    \item Kąt $\alpha = 30^\circ$.
+\end{itemize}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Rodzaj układu} & \textbf{Czas 10 drgań [s]} & \textbf{Okres T [s]} \\
+        \hline
+        Sama ramka & 18.135 & 1.8135 \\
+        \hline
+        Ramka + walec wzorcowy & 25.192 & 2.5192 \\
+        \hline
+    \end{tabular}
+    \caption{Pomiar czasu drgań ramki i ramki z walcem wzorcowym}
+    \label{tab:pomiar_czasu_drgan_ramki_z_walcem}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Oś obrotu} & \textbf{Czas 10 drgań [s]} & \textbf{Okres T [s]} \\
+        \hline
+        Główna oś 1 (x) & 23.001 & 2.3001 \\
+        \hline
+        Główna oś 2 (y) & 23.008 & 2.3008 \\
+        \hline
+        Główna oś 3 (z) & 22.937 & 2.2937 \\
+        \hline
+        Dowolna oś przez środek masy (s) & 23.006 & 2.3006 \\
+        \hline
+        Dowolna oś nieprzechodząca przez środek masy (t) & 22.573 & 2.2573 \\
+        \hline
+    \end{tabular}
+    \caption{Pomiar czasu drgań ramki z badaną bryłą dla różnych osi}
+    \label{tab:pomiar_czasu_drgan_badanej_bryly}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Wielkość} & \textbf{Wartość [mm]} & \textbf{Po korekcie [mm]} \\
+        \hline
+        Średnica podstawy $d$ [mm] & 60.15 & 60.00 \\
+        \hline
+        Wysokość walca $h$ [mm] & 60.15 & 60.00\\
+        \hline
+        Masa walca $m$ [g] & 1330 & 1330 \\
+        \hline
+    \end{tabular}
+    \caption{Rozmiary bryły wzorcowej, wraz z korektą wskazania zerowego}
+    \label{tab:rozmiar_bryly_wzorcowej}
+\end{table}
+
+% ---------- OBLICZENIA ----------
+\subsection{Moment bezwładności bryły wzorcowej}
+
+Badaną bryłą jest walec o wymiarach w tabeli \ref{tab:rozmiar_bryly_wzorcowej}, moment bezwładności walca dla osi przechodzącej przez środki podstaw określa wzór:
+
+\begin{equation} \label{eq:moment_bezwladnosci_walca}
+    I_w = \frac{1}{2}mr^2 = \frac{1}{2}m\left(\frac{d}{2}\right)^2
+\end{equation}
+
+Podstawiając dane z tabeli \ref{tab:rozmiar_bryly_wzorcowej} otrzymujemy:
+
+\begin{equation} \label{eq:moment_bezwladnosci_walca_wartosc}
+    I_w = \frac{1}{2} \cdot 1,330 \cdot \left(\frac{0.06}{2}\right)^2 = 0.0060\,\text{kgm}^2
+\end{equation}
+
+
+\subsection{Moment bezwładności badanej bryły}
+
+Dla samej ramki okres drgań na podstawie wzoru \ref{eq:okres_drgan_w_zaleznosci_od_momentu_bezwladnosci} wynosi:
+
+\begin{equation} \label{eq:okres_drgan_ramki}
+    T_0 = 2\pi \sqrt{\frac{I_0}{k}}
+\end{equation}
+
+Stąd okres $T_w$ drgań ramki z bryłą wzorcową o momencie bezwładności $I_w$ wynosi:
+
+\begin{equation} \label{eq:okres_drgan_ramki_z_walcem}
+    T_w = 2\pi \sqrt{\frac{I_0 + I_w}{k}}
+\end{equation}
+
+Zatem z równań \eqref{eq:okres_drgan_ramki} i \eqref{eq:okres_drgan_ramki_z_walcem} moment kierujący wahadła wynosi:
+
+\begin{equation} \label{eq:moment_kierujacy_w_zaleznosci_od_okresu}
+    k = \frac{4\pi^2 I_w}{T_w^2 - T_0^2}
+\end{equation}
+
+Z wzorów \eqref{eq:moment_bezwladnosci_w_zaleznosci_od_okresu} i \eqref{eq:moment_kierujacy_w_zaleznosci_od_okresu} otrzymujemy moment bezwładności $I_x$ badanej bryły:
+
+\begin{equation} \label{eq:moment_bezwladnosci_badanej_bryly}
+    I_x = \frac{T_x^2 - T_0^2}{T_w^2 - T_0^2} \cdot I_w
+\end{equation}
+
+Po podstawieniu okresów drgań z tabel \ref{tab:pomiar_czasu_drgan_badanej_bryly} oraz \ref{tab:pomiar_czasu_drgan_ramki_z_walcem} i momentu bezwładności walca $I_w$ z wzoru \eqref{eq:moment_bezwladnosci_walca_wartosc} otrzymujemy:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Oś & Moment bezwładności [$\text{kg}\cdot\text{m}^2$] \\
+        \hline
+        $I_x$ & 0,000392 \\
+        $I_y$ & 0,000392 \\
+        $I_z$ & 0,000386 \\
+        $I_s$ & 0,000392 \\
+        $I_t$ & 0,000354 \\
+        \hline
+    \end{tabular}
+    \caption{Momenty bezwładności względem poszczególnych osi}
+    \label{tab:momenty_bezwladnosci}
+\end{table}
+
+Przykładowe obliczenia dla $I_x$:
+
+\begin{equation*}
+    I_x = \frac{(2,3001)^2 - (1,8135)^2}{(2,5192)^2 - (1,8135)^2} \cdot 0,005985 = 0,000392\,\text{kgm}^2
+\end{equation*}
+
+
+% 2. Obliczyć momenty bezwładności badanej bryły względem wszystkich osi obrotu, dla których mierzono T1.
+
+\subsection{Wyznaczanie elipsoidy bezwładności badanej bryły}
+
+
+Równanie elipsoidy ma postać:
+
+\begin{equation*}
+    \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1
+\end{equation*}
+
+a, b, c to półosie elipsoidy, które są zdefiniowane jako:
+
+\begin{equation*}
+    a = \frac{1}{\sqrt{I_x}}, \quad
+    b = \frac{1}{\sqrt{I_y}}, \quad
+    c = \frac{1}{\sqrt{I_z}}
+\end{equation*}
+
+Podstawiając momenty bezwładności z tabeli \ref{tab:momenty_bezwladnosci} otrzymujemy:
+
+\begin{equation*}
+    a=50,519636 \text{m} \quad
+    b=50,479042 \text{m} \quad
+    c=50,894785 \text{m}
+\end{equation*}
+
+\subsection{Wyznaczanie momentu bezwładności względem osi niebędących głównymi osiami bezwładności}
+
+% 4. Wyznaczyć długość odcinka Ri łączącego początek układu współrzędnych z punktem przebicia P elipsoidy bezwładności przez wskazaną przez prowadzącego oś, nie będącą osią główną. Na tej podstawie obliczyć moment bezwładności bryły względem tej osi.
+
+% My tu chyba mamy dla obydu osi to zrobić (nieprzechodząca przez środek masy i przechodząca przez środek masy)
+\subsubsection{Oś przechodząca przez środek masy (s)}
+
+Znając momenty bezwładności względem głównych osi możemy obliczyć momenty bezwładności względem osi niebędących głównymi osiami bezwładności, korzystając z wzoru:
+
+\begin{equation*}
+    I_i = \frac{1}{R_i^2}
+\end{equation*}
+
+gdzie $R_i$ to odległość między początkiem układu współrzędnych a punktem przebicia elipsoidy bezwładności przez wybraną oś.
+
+Wybrana oś przechodzi przez dwa przeciwległe wierzchołki bryły, stąd współrzędne jednego z punktów leżącego na osi $s$ wynoszą:
+
+\begin{equation*}
+    x = ..., \quad
+    y = ..., \quad
+    z = ...
+\end{equation*}
+
+
+
+
+\subsection{Porównanie momentów bezwładności obliczonych dwoma sposobami}
+
+% 5. Porównać momenty bezwładności (dla tej samej osi) obliczone wg. punktu 2 i punktu 4.
+
+
+% ---------- NIEPEWNOŚCI ----------
+\section{Ocena niepewności pomiaru}
+
+\subsection{Niepewność standardowa momentu bezwładności}
+
+% 6. Obliczyć niepewność standardową wyznaczenia momentu bezwładności według punktu 2
+
+% ---------- WNIOSKI ----------
+\section{Wnioski}
+
+% 7. Przeanalizować jakie czynniki mają największy wpływ na jej [niepewności wyznaczania momentu bezwładności] wartość. Sformułować wnioski.
+
+\section{Wykresy}
+
+\bibliographystyle{plain}
+\bibliography{bibliography}
+
+\end{document}
