@@ -167,7 +167,7 @@ Podstawiając dane z tabeli \ref{tab:rozmiar_bryly_wzorcowej} otrzymujemy:
 \end{equation}
 
 
-\subsection{Moment bezwładności badanej bryły}
+\subsection{Moment bezwładności badanej bryły} \label{sec:moment_bezwladnosci_badanej_bryly}
 
 Dla samej ramki okres drgań na podstawie wzoru \ref{eq:okres_drgan_w_zaleznosci_od_momentu_bezwladnosci} wynosi:
 
@@ -226,9 +226,9 @@ Przykładowe obliczenia dla $I_x$:
 
 Równanie elipsoidy ma postać:
 
-\begin{equation*}
+\begin{equation} \label{eq:elipsoida_bezwladnosci}
     \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1
-\end{equation*}
+\end{equation}
 
 a, b, c to półosie elipsoidy, które są zdefiniowane jako:
 
@@ -255,21 +255,71 @@ Podstawiając momenty bezwładności z tabeli \ref{tab:momenty_bezwladnosci} otr
 
 Znając momenty bezwładności względem głównych osi możemy obliczyć momenty bezwładności względem osi niebędących głównymi osiami bezwładności, korzystając z wzoru:
 
-\begin{equation*}
+\begin{equation} \label{eq:moment_bezwladnosci_elipsoida}
     I_i = \frac{1}{R_i^2}
-\end{equation*}
+\end{equation}
 
-gdzie $R_i$ to odległość między początkiem układu współrzędnych a punktem przebicia elipsoidy bezwładności przez wybraną oś.
+gdzie $R_i$ to odległość między początkiem układu współrzędnych a punktem przebicia elipsoidy bezwładności przez wybraną oś:
 
-Wybrana oś przechodzi przez dwa przeciwległe wierzchołki bryły, stąd współrzędne jednego z punktów leżącego na osi $s$ wynoszą:
+\begin{equation} \label{eq:odleglosc_od_srodka_masy_do_punktu_przebicia_osi}
+    R_i = \sqrt{x^2 + y^2 + z^2}
+\end{equation}
+
+Wybrana oś przechodzi przez dwa przeciwległe wierzchołki sześcianu o boku $a$, stąd współrzędne jednego z punktów leżącego na osi $s$ wynoszą:
 
 \begin{equation*}
-    x = ..., \quad
-    y = ..., \quad
-    z = ...
+    x = \frac{a}{2}, \quad
+    y = \frac{a}{2}, \quad
+    z = \frac{a}{2}
 \end{equation*}
 
+Równanie prostej przechodzącej przez środek sześcianu (0, 0, 0) i punkt (a/2, a/2, a/2) ma postać:
 
+\begin{align} \label{eq:prosta_przechodzaca_przez_srodek_szesciany}
+    \frac{x}{a/2} = \frac{y}{a/2} = \frac{z}{a/2}
+    \Rightarrow
+    x = y = z
+\end{align}
+
+Tworzymy układ równań \eqref{eq:elipsoida_bezwladnosci} i \eqref{eq:prosta_przechodzaca_przez_srodek_szesciany} i rozwiązujemy go względem $x$, $y$, $z$:
+
+\begin{align*} \label{eq:rozwiazanie_ukladu_rownan}
+     & \begin{cases}
+           \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2}  = 1 \\
+           x = y = z
+       \end{cases} \\[1em]
+\end{align*}
+
+\begin{align*}
+     & \frac{x^2}{a^2} + \frac{x^2}{b^2} + \frac{x^2}{c^2} = 1              \\
+     & x^2 \left( \frac{1}{a^2} + \frac{1}{b^2} + \frac{1}{c^2} \right) = 1 \\
+     & x^2 = \frac{1}{\frac{1}{a^2} + \frac{1}{b^2} + \frac{1}{c^2}}        \\
+     & x = \sqrt{\frac{1}{\frac{1}{a^2} + \frac{1}{b^2} + \frac{1}{c^2}}}
+\end{align*}
+
+Podstawiając wartości $a$, $b$, $c$ otrzymujemy:
+
+\begin{equation*}
+    x = y = z = \sqrt{\frac{1}{\frac{1}{50,519636^2} + \frac{1}{50,479042^2} + \frac{1}{50,894785^2}}} = 29.2313\,\text{m}
+\end{equation*}
+
+Stąd podstawiając do wzoru \eqref{eq:moment_bezwladnosci_elipsoida} otrzymujemy:
+
+\begin{align*}
+    I_{s, elip} & = \frac{1}{R_i^2} = \frac{1}{(\sqrt{x^2 + y^2 + z^2})^2}  = \frac{1}{3x^2} \\
+                & = \frac{1}{ 3 \cdot 29.231314^2} = 0.0003901\,\text{kgm}^2
+\end{align*}
+
+
+A obliczona z wzoru \eqref{eq:moment_bezwladnosci_badanej_bryly} wartość z tabeli \ref{tab:momenty_bezwladnosci} wynosi $I_s = 0.0003923\,\text{kgm}^2$.
+
+Porównując metodę elipsoidy \eqref{eq:moment_bezwladnosci_elipsoida} z metodą na podstawie okresu   drgań wzoru \eqref{eq:moment_bezwladnosci_badanej_bryly} otrzymujemy:
+
+\begin{equation*}
+    \frac{I_s - I_{s,elip}}{I_s} = \frac{0.0003923 - 0.0003901}{0.0003923} = 0.0055
+\end{equation*}
+
+Wartość obliczona z elipsoidy bezwładności jest mniejsza o 0.55\% od wartości obliczonej z wzoru \eqref{eq:moment_bezwladnosci_badanej_bryly}.
 
 
 \subsection{Porównanie momentów bezwładności obliczonych dwoma sposobami}
