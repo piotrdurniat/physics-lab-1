@@ -278,12 +278,12 @@ Następnie zastosowano wzór
 \end{equation} \par
 gdzie:
 \begin{itemize}
-  \item \( l_0 \) = 0,375 m
+  \item \( l_0 \) = 0,400 m
   \item \( T_0 \) = 1,28 s
 \end{itemize}\par
 Do wzoru zostały podstawione następujące wartości:\par
 \begin{equation}
-  g=4 \pi^2\frac{0,375}{1,28^2}=9,0267\,\frac{m}{s^2}
+  g=4 \pi^2\frac{0,400}{1,28^2}=9,629\,\frac{m}{s^2}
 \end{equation} \par
 
 
@@ -299,11 +299,11 @@ gdzie:
 \end{itemize}\par
 Następnie zastosowano wzór
 \begin{equation}
-  g=4\pi^2\frac{l_0}{T_3^2}=8,8873\,\frac{m}{s^2}
+  g=4\pi^2\frac{l_0}{T_3^2}=9,48\,\frac{m}{s^2}
 \end{equation} \par
 gdzie:
 \begin{itemize}
-  \item \( l_0 \) = 0,375 m
+  \item \( l_0 \) = 0,400 m
   \item \( T_3 \) = 1,29 s
 \end{itemize}\par
 
@@ -332,7 +332,20 @@ Do obliczenia niepewności pomiaru czasu wykonano 10 dodatkowych pomiarów czasu
 
 
 
-Podstawiając wartości otrzymano: $u_c(t) = 0.0027\,\text{s}$.
+Podstawiając wartości otrzymano:
+
+$$
+  u_A(t) = \sqrt{\frac{1}{9} [(21.132 - 21.135)^2 + (21.140 - 21.135)^2 + \ldots + (21.133 - 21.135)^2]} = 0.000267\,\text{s}
+$$
+
+$$
+  u_B(t) = \frac{0.001}{\sqrt{3}} = 0.000577\,\text{s}
+$$
+
+$$
+  u_c(t) = \sqrt{0.000267^2 + 0.000577^2} = 0.00273\,\text{s}
+$$
+
 
 \subsection{Niepewność pomiaru okresu}
 
@@ -352,10 +365,8 @@ Okres $T$ wyrażony jest wzorem:
 gdzie $N=20$ to liczba pełnych okresów. Przekształcając wzór, otrzymujemy:
 
 \[
-  u_c(T) = \sqrt{\left(\frac{\partial}{\partial t} T\right)^2 u^2(t)} = \sqrt{\left(\frac{\partial}{\partial t} \frac{t}{N}\right)^2 u^2(t)} = \sqrt{ \frac{1}{N^2} \cdot u^2(t)} = \frac{u_c(t)}{N}
+  u_c(T) = \sqrt{\left(\frac{\partial}{\partial t} T\right)^2 u^2(t)} = \sqrt{\left(\frac{\partial}{\partial t} \frac{t}{N}\right)^2 u^2(t)} = \sqrt{ \frac{1}{N^2} \cdot u^2(t)} = \frac{u_c(t)}{N} = \frac{0.00273}{20} = 0.0001368\,\text{s}
 \]
-
-Podstawiając wartości, otrzymujemy: $u_c(T) = 0.00027\,\text{s}$.
 
 \subsection{Niepewność pomiaru długości wahadła}
 
@@ -379,7 +390,7 @@ Podstawiając wartości dla obu wahadeł do powyższego wzoru, otrzymano różne
     \hline
     Typ wahadła & $u(g) \left[\frac{m}{s^2}\right]$ \\
     \hline
-    Rewersyjne & 0.0016 \\
+    Rewersyjne & 0.0014 \\
     \hline
     Matematyczne & 0.0012 \\
     \hline
@@ -394,9 +405,7 @@ Podstawiając wartości dla obu wahadeł do powyższego wzoru, otrzymano różne
 Na podstawie przeprowadzonych pomiarów i analizy danych sformułowano następujące wnioski:
 
 \begin{enumerate}
-  \item Wyznaczona wartość przyspieszenia ziemskiego wynosi $g_{rew} = 9.0267 \pm 0,0016$ $\frac{m}{s^2}$ (metodą wahadła rewersyjnego) oraz $g_{mat} = 8.8873 \pm 0,0012$ $\frac{m}{s^2}$ (metodą wahadła matematycznego).
-
-        % \item Metoda wahadła matematycznego charakteryzuje się mniejszą niepewnością pomiarową, co wskazuje na jej większą precyzję w warunkach laboratoryjnych.
+  \item Wyznaczona wartość przyspieszenia ziemskiego wynosi $g_{rew} = 9.629$, $u_c(g) = 0,0014$ $\frac{m}{s^2}$ (metodą wahadła rewersyjnego) oraz $g_{mat} = 9.48$, $u_c(g)  = 0,0012$ $\frac{m}{s^2}$ (metodą wahadła matematycznego). Są to wartości zbliżone do wartości tablicowej $g = 9.81 \frac{m}{s^2}$.
 
   \item Wykres zależności $T=f(x)$ dla obu osi obrotu wahadła rewersyjnego potwierdza teoretyczne przewidywania. Punkt przecięcia krzywych przy $x_0 = 37,5$ cm odpowiada położeniu, w którym okresy drgań są równe dla obu osi.
 
