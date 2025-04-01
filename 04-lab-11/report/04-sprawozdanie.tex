@@ -659,7 +659,56 @@ Wartość obliczona z elipsoidy bezwładności jest mniejsza o 0.55\% od wartoś
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
 
-\subsection{Niepewność standardowa momentu bezwładności}
+
+
+\subsection*{Niepewność pomiaru czasu}
+
+Obliczono niepewność standardową typu B  $u_B(x)$  obliczoną ze wzoru \ref{eq:u_B}. Niepewność wzorcowania $\Delta_d t$ dla stopera wynosi $0.001$ s.
+
+
+\begin{equation}
+    \label{eq:u_B}
+    u_B(x) = \frac{\Delta_d x}{\sqrt{3}}
+\end{equation}
+
+
+
+Podstawiając wartości, otrzymano:
+
+
+
+$$
+    u_B(t) = \frac{0.001}{\sqrt{3}} = 0.000577\,\text{s}
+$$
+
+
+\subsection*{Niepewność pomiaru okresu}
+
+Niepewność okresu obliczono na podstawie praw przenoszenia niepewności:
+
+\begin{equation}
+    \label{eq:niepewnosc_zlozona}
+    u_c(E) = \sqrt{\sum_{k=1}^{K} \left( \frac{\partial E}{\partial x_k} \right)^2 u^2(x_k)}.
+\end{equation}
+
+Okres $T$ wyrażony jest wzorem:
+
+\[
+    T = \frac{t}{N}
+\]
+
+gdzie $N=10$ to liczba pełnych okresów. Przekształcając wzór, otrzymujemy:
+
+\[
+    u(T) = \sqrt{\left(\frac{\partial}{\partial t} T\right)^2 u^2(t)} = \sqrt{\left(\frac{\partial}{\partial t} \frac{t}{N}\right)^2 u^2(t)} = \sqrt{ \frac{1}{N^2} \cdot u^2(t)} = \frac{u_b(t)}{N} = \frac{0.000577}{10} = 0.0000577\,\text{s}
+\]
+
+
+
+% \subsection*{Niepewność standardowa momentu bezwładności}
+
+% TODO: Niepewność standardowa momentu bezwładności
+
 
 % 6. Obliczyć niepewność standardową wyznaczenia momentu bezwładności według punktu 2
 
@@ -668,7 +717,23 @@ Wartość obliczona z elipsoidy bezwładności jest mniejsza o 0.55\% od wartoś
 
 % 7. Przeanalizować jakie czynniki mają największy wpływ na jej [niepewności wyznaczania momentu bezwładności] wartość. Sformułować wnioski.
 
-\section{Wykresy}
+Na podstawie przeprowadzonych pomiarów i analizy wyników można sformułować następujące wnioski:
+
+\begin{enumerate}
+    \item Porównanie metody wahadła torsyjnego i metody elipsoidy bezwładności dla osi $s$ (przechodzącej przez środek masy) wykazało różnicę zaledwie 0,55\%. Ta zgodność potwierdza poprawność przyjętych założeń teoretycznych oraz dokładność wykonanych pomiarów dla osi przechodzącej przez środek masy.
+
+    \item W przypadku osi $t$ (nieprzechodzącej przez środek masy) zaobserwowano znaczącą rozbieżność (około 47-48\%) między momentem bezwładności zmierzonym metodą wahadła torsyjnego a wartością obliczoną teoretycznie z wykorzystaniem twierdzenia Steinera.
+
+    \item Zgodnie z twierdzeniem Steinera, moment bezwładności względem osi nieprzechodzącej przez środek masy powinien być większy od momentu bezwładności względem osi równoległej przechodzącej przez środek masy o składnik $md^2$. Nasze obliczenia za pomocą elipsoidy bezwładności potwierdzają tę zależność, jednak wartość uzyskana metodą wykorzystującą okres drgań jest mniejsza, co wskazuje na prawdopodobne błędy pomiarowe. Możliwe przyczyny tej rozbieżności to niedokładności w pomiarze okresu drgań dla osi $t$.
+
+    \item Badana bryła (sześcian) charakteryzuje się niemal identycznymi momentami bezwładności względem trzech głównych osi przechodzących przez środek masy ($I_x \approx I_y \approx I_z \approx 0,000392$ kgm$^2$).
+
+    \item Elipsoida bezwładności wyznaczona dla badanej bryły ma kształt zbliżony do kuli, co jest konsekwencją bardzo małych różnic między momentami bezwładności względem głównych osi.
+
+\end{enumerate}
+
+Doświadczenie pozwoliło na praktyczną weryfikację teoretycznych zależności opisujących właściwości bezwładnościowe brył sztywnych oraz na wyznaczenie elipsoidy bezwładności badanego obiektu, co stanowi pełną charakterystykę jego właściwości obrotowych.
+% \section{Wykresy}
 
 \bibliographystyle{plain}
 \bibliography{bibliography}
