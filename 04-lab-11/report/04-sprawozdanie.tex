@@ -363,7 +363,7 @@ Tworzymy układ równań \eqref{eq:elipsoida_bezwladnosci} i \eqref{eq:prosta_pr
      & \begin{cases}
            \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2}  = 1 \\
            x = y = z
-       \end{cases} \\[1em]
+       \end{cases}
 \end{align*}
 
 \begin{align*}
@@ -386,10 +386,253 @@ Stąd podstawiając do wzoru \eqref{eq:moment_bezwladnosci_elipsoida} otrzymujem
                 & = \frac{1}{ 3 \cdot 29.231314^2} = 0.0003901\,\text{kgm}^2
 \end{align*}
 
-
 \subsubsection{Oś nieprzechodząca przez środek masy (t)}
 
-[[TODO: Obliczenia]]
+
+Wektor kierunkowy osi $t$ to:
+
+oś t przechodzi przez punkty:
+
+$$
+    P = (\frac{-a}{2}, \frac{a}{2}, \frac{a}{2})
+$$
+$$
+    Q = (0, -\frac{a}{2}, -\frac{a}{2})
+$$
+
+wektor kierunkowy osi $t$ to:
+
+$$
+    \vec{t} = Q - P = (0, -\frac{a}{2}, -\frac{a}{2}) - (\frac{-a}{2}, \frac{a}{2}, \frac{a}{2}) = (\frac{a}{2}, -a, -a)
+$$
+
+
+Wyznaczamy oś $t'$ równoległą do osi $t$ przechodzącą przez środek sześcianu (0, 0, 0):
+
+$$
+    t' = (0, 0, 0) + \vec{t} = (\frac{a}{2}, -a, -a)
+$$
+
+
+
+Równanie prostej $t'$ przechodzącej przez środek sześcianu (0, 0, 0) o zwrocie wskazanym przez wektor kierunkowy $\vec{t}$ to:
+
+$$
+    \begin{cases}
+        x = s(\frac{a}{2}) \\
+        y = s(-a)          \\
+        z = s(-a)
+    \end{cases}
+$$
+
+w postaci kanonicznej:
+
+\begin{align*}
+     & \frac{x}{\frac{a}{2}} = \frac{y}{-a} = \frac{z}{-a}    \\
+     & \Rightarrow                                            \\
+     & \frac{2x}{a} = \frac{y}{-a} = \frac{z}{-a} / \cdot (a) \\
+     & 2x = -y = -z
+\end{align*}
+
+Punkt przebicia elipsoidy bezwładności z osią $t'$ obliczamy, rozwiązując układ równań \eqref{eq:elipsoida_bezwladnosci} i \eqref{eq:prosta_przechodzaca_przez_srodek_szesciany}:
+
+
+
+$$
+    \begin{cases}
+        \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1 \\
+        2x = -y = -z
+    \end{cases}
+$$
+
+
+Rozwiązanie układu równań:
+
+
+\[
+    \begin{cases}
+        x = \pm\frac{1}{\sqrt{\frac{1}{a^2} + \frac{4}{b^2} + \frac{4}{c^2}}}  \\
+        y = \mp2\frac{1}{\sqrt{\frac{1}{a^2} + \frac{4}{b^2} + \frac{4}{c^2}}} \\
+        z = \mp2\frac{1}{\sqrt{\frac{1}{a^2} + \frac{4}{b^2} + \frac{4}{c^2}}}
+    \end{cases}
+\]
+
+Wybierając jeden z dwóch punktów:
+
+
+\[
+    \begin{cases}
+        x = +\frac{1}{\sqrt{\frac{1}{a^2} + \frac{4}{b^2} + \frac{4}{c^2}}}  \\
+        y = -2\frac{1}{\sqrt{\frac{1}{a^2} + \frac{4}{b^2} + \frac{4}{c^2}}} \\
+        z = -2\frac{1}{\sqrt{\frac{1}{a^2} + \frac{4}{b^2} + \frac{4}{c^2}}}
+    \end{cases}
+\]
+
+Podstawiając wartości $a$, $b$, $c$ otrzymujemy:
+
+
+% \begin{verbatim}
+%     a = 50.51963556001976;
+%     b = 50.47904236866827;
+%     c = 50.89478538917224;
+
+%     x = 1 / Sqrt[1/a^2 + 4/b^2 + 4/c^2];
+%     y = -2 / Sqrt[1/a^2 + 4/b^2 + 4/c^2];
+%     z = -2 / Sqrt[1/a^2 + 4/b^2 + 4/c^2];
+% \end{verbatim}
+
+% \begin{verbatim}
+%     {x, y, z} = {16.889036632620389, -33.77807326524078, -33.77807326524078}
+% \end{verbatim}
+
+
+\begin{equation*}
+    \begin{cases}
+        x \approx 16.89\text{ m}  \\
+        y \approx -33.78\text{ m} \\
+        z \approx -33.78\text{ m}
+    \end{cases}
+\end{equation*}
+
+
+
+Moment bezwładności względem osi $t$ obliczamy z wzoru:
+\[
+    I_t = \frac{1}{x^2 + y^2 + z^2}
+\]
+gdzie:
+\begin{align*}
+    x & = 16.889036632620389 \\
+    y & = -33.77807326524078 \\
+    z & = -33.77807326524078
+\end{align*}
+
+Podstawiając wartości $x$, $y$ i $z$:
+\begin{align*}
+    I_t & = \frac{1}{(16.8890)^2 + (-33.7780)^2 + (-33.7780)^2} \\
+        & = \frac{1}{285.2397 + 1140.9588 + 1140.9588}          \\
+        & = \frac{1}{2567.1573}                                 \\
+        & \approx 0.0003895
+\end{align*}
+
+Zatem moment bezwładności względem osi $t'$ wynosi około $0.0003895\,\text{kgm}^2$.\par
+Aby obliczyć moment bezwładności względem osi $t$ należy zastosować twierdzenie Steinera\par
+\subsubsection*{Obliczenie odległości między osiami $t$ i $t'$}
+
+Oś $t$ przechodzi przez punkty $P = \left(\frac{-a}{2}, \frac{a}{2}, \frac{a}{2}\right)$ oraz $Q = \left(0, -\frac{a}{2}, -\frac{a}{2}\right)$.
+Oś $t'$ przechodzi przez początek układu współrzędnych $O = (0, 0, 0)$ i jest równoległa do osi $t$.
+
+Wektor kierunkowy osi $t$ oznaczamy jako $\vec{t}$ i obliczamy, odejmując współrzędne punktu $P$ od współrzędnych punktu $Q$:
+\[
+    \vec{t} = Q - P = \left(0 - \left(\frac{-a}{2}\right), -\frac{a}{2} - \frac{a}{2}, -\frac{a}{2} - \frac{a}{2}\right) = \left(\frac{a}{2}, -a, -a\right)
+\]
+
+
+Wybieramy punkt $P = \left(\frac{-a}{2}, \frac{a}{2}, \frac{a}{2}\right)$, który należy do osi $t$.
+
+
+Wybieramy punkt $O = (0, 0, 0)$ na osi $t'$. Wektor łączący $P$ z $O$ oznaczamy jako $\vec{v}$ i obliczamy, odejmując współrzędne punktu $P$ od współrzędnych punktu $O$:
+\[
+    \vec{v} = O - P = \left(0 - \left(\frac{-a}{2}\right), 0 - \frac{a}{2}, 0 - \frac{a}{2}\right) = \left(\frac{a}{2}, -\frac{a}{2}, -\frac{a}{2}\right)
+\]
+
+
+Iloczyn wektorowy $\vec{t} \times \vec{v}$ jest dany przez wyznacznik:
+\[
+    \vec{t} \times \vec{v} = \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ \frac{a}{2} & -a & -a \\ \frac{a}{2} & -\frac{a}{2} & -\frac{a}{2} \end{vmatrix} = \mathbf{i}((-a)(-\frac{a}{2}) - (-a)(-\frac{a}{2})) - \mathbf{j}((\frac{a}{2})(-\frac{a}{2}) - (-a)(\frac{a}{2})) + \mathbf{k}((\frac{a}{2})(-\frac{a}{2}) - (-a)(\frac{a}{2}))
+\]
+\[
+    = \mathbf{i}\left(\frac{a^2}{2} - \frac{a^2}{2}\right) - \mathbf{j}\left(-\frac{a^2}{4} + \frac{a^2}{2}\right) + \mathbf{k}\left(-\frac{a^2}{4} + \frac{a^2}{2}\right) = 0\mathbf{i} - \frac{a^2}{4}\mathbf{j} + \frac{a^2}{4}\mathbf{k} = \left(0, -\frac{a^2}{4}, \frac{a^2}{4}\right)
+\]
+
+Obliczmy masę sześcianu $m$
+\[
+    m = \frac{6I_x}{a^2}
+\]
+
+Podstawiamy wartości:
+
+\[
+    m = \frac{6 \cdot 0.000392}{(0.05)^2}
+\]
+
+
+Ostatecznie:
+
+\[
+    m \approx 0.941 \text{ kg}
+\]
+
+
+Długość wektora $\vec{t} \times \vec{v}$ jest dana wzorem:
+\[
+    |\vec{t} \times \vec{v}| = \sqrt{0^2 + \left(-\frac{a^2}{4}\right)^2 + \left(\frac{a^2}{4}\right)^2} = \sqrt{0 + \frac{a^4}{16} + \frac{a^4}{16}} = \sqrt{\frac{2a^4}{16}} = \sqrt{\frac{a^4}{8}} = \frac{a^2}{2\sqrt{2}} = \frac{a^2\sqrt{2}}{4}
+\]
+
+
+Długość wektora kierunkowego $\vec{t}$ jest dana wzorem:
+\[
+    |\vec{t}| = \sqrt{\left(\frac{a}{2}\right)^2 + (-a)^2 + (-a)^2} = \sqrt{\frac{a^2}{4} + a^2 + a^2} = \sqrt{\frac{a^2}{4} + \frac{4a^2}{4} + \frac{4a^2}{4}} = \sqrt{\frac{9a^2}{4}} = \frac{3|a|}{2}
+\]
+Ponieważ $a$ jest długością boku sześcianu, jest dodatnie, więc $|\vec{t}| = \frac{3a}{2}$.
+
+
+Odległość $d$ między prostymi jest równa ilorazowi długości iloczynu wektorowego i długości wektora kierunkowego:
+\[
+    d = \frac{|\vec{t} \times \vec{v}|}{|\vec{t}|} = \frac{\frac{a^2\sqrt{2}}{4}}{\frac{3a}{2}} = \frac{a^2\sqrt{2}}{4} \times \frac{2}{3a} = \frac{2a^2\sqrt{2}}{12a} = \frac{a\sqrt{2}}{6}
+\]
+
+Podstawiając $a = 0.05$, otrzymujemy:
+\[
+    d = \frac{0.05 \times \sqrt{2}}{6} \approx \frac{0.05 \times 1.4142}{6} \approx \frac{0.07071}{6} \approx 0.011785
+\]
+Zatem odległość między osiami $t$ i $t'$ wynosi około $0.011785$.\par
+
+
+Moment bezwładności względem osi $t$ ($I_t$) możemy obliczyć, korzystając z twierdzenia Steinera:
+\[
+    I_t = I_{t'} + m \cdot d^2
+\]
+gdzie:
+\begin{align*}
+    I_{t'} & = 0.00038953 \text{ kgm}^2 \quad \text{(moment bezwładności względem osi } t') \\
+    m      & = 0.9408 \text{ kg} \quad \text{(masa bryły)}                                  \\
+    d      & = 0.011785 \text{ m} \quad \text{(odległość między osiami } t \text{ i } t')
+\end{align*}
+
+Podstawiając te wartości do wzoru:
+\[
+    I_t = 0.00038953 \text{ kgm}^2 + 0.9408 \text{ kg} \cdot (0.011785 \text{ m})^2
+\]
+
+\[
+    I_t \approx 0.0005203012 \text{ kgm}^2
+\]
+
+Zatem moment bezwładności względem osi $t$ wynosi około $0.0005203$ [$kgm^2$].
+
+\subsubsection*{Moment bezwładności osi $T$ sposób 2}
+
+Ze specyfiki sześcianu dowiadujemy się, że moment bezwładności dowolnej osi przechodzącej przez jego środek masy wyraża się:
+\[
+    I = \frac{ma^2}{6}
+\]
+Wiedząc, że oś $t$ przechodzi przez środek, także może zostać wyrażona w ten sposób. Natomiast oś $t$ jest do niej równoległa, zatem możemy zastosować tw. Steinera:
+\[
+    I_t = I_0 + md^2
+\]
+gdzie $d$ to odległość osi $t'$.
+Podstawiamy:
+\[
+    I_t = \frac{0.9408 \cdot (0.05)^2}{6} + 0.9408 \cdot (0.011785113019775794)^2
+\]
+
+\[
+    I_t \approx 0.000392 + 0.00013078 \approx 0.0005228
+\]
+
+
+
 
 
 \subsection{Porównanie momentów bezwładności obliczonych dwoma sposobami}
@@ -404,8 +647,13 @@ Porównując metodę elipsoidy \eqref{eq:moment_bezwladnosci_elipsoida} z metod�
 
 Wartość obliczona z elipsoidy bezwładności jest mniejsza o 0.55\% od wartości obliczonej z wzoru \eqref{eq:moment_bezwladnosci_badanej_bryly}.
 
+%  ------------------------------------------------------------------------
+% [[TODO: Porównanie dla osi (t)]]
 
-[[TODO: Porównanie dla osi (t)]]
+
+
+
+
 
 
 % ---------- NIEPEWNOŚCI ----------
