@@ -1,0 +1,164 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} % Do ustawień marginesów
+\usepackage{multicol} % Dla podziału na kolumny
+\usepackage{ragged2e} % Dla justowania tekstu
+\usepackage{graphicx} % Required for inserting images
+\usepackage{float}
+\usepackage{caption}
+\usepackage{amsmath} % Math formulas
+\usepackage{amssymb} % Symbols
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=orange]{hyperref} % Hyperlinks
+\usepackage{polski} % Polish language
+\usepackage[utf8]{inputenc} % Text encoding
+\usepackage{enumitem} % Pakiet do elastycznego sterowania listami
+\usepackage{indentfirst}
+\usepackage{array}
+
+\begin{document}
+
+% Górna część strony
+\noindent
+\begin{minipage}{0.5\textwidth}
+    \raggedright
+    \textbf{Piotr Durniat} \\
+    I rok, Fizyka \\
+    Wtorek, 8:00-10:15 \\
+    \vspace{0.5cm}
+    \vspace{0.5cm}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \raggedleft
+    Data wykonania pomiarów: \\
+    18.03.2025 \\
+    \vspace{0.5cm} % Dodatkowa linia przerwy
+    Prowadząca: \\
+    dr Iwona Mróz
+\end{minipage}
+
+% Tytuł ćwiczenia
+\vspace{2cm} % Odstęp
+\begin{center}
+    \LARGE \textbf{Ćwiczenie nr XX} \\[0.5cm]
+    \Large \textbf{Tytuł ćwiczenia}
+\end{center}
+
+% Reszta treści
+\vspace{1cm} % Kolejny odstęp
+\noindent
+
+\tableofcontents
+\newpage
+
+% ---------- WSTĘP TEORETYCZNY ----------
+\section{Wstęp teoretyczny}
+
+% ---------- OPIS DOŚWIADCZENIA ----------
+\section{Opis doświadczenia}
+
+% ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
+\section{Opracowanie wyników pomiarów}
+
+% ---------- TABELE ----------
+\subsection{Tabele pomiarowe}
+
+
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Nr & $A$ [cm] & $t(20 \text{ drgań})$ [s] \\
+        \hline
+        1  & 1 & 31,50 \\
+        2  & 2 & 31,31 \\
+        3  & 3 & 31,41 \\
+        4  & 4 & 31,50 \\
+        5  & 5 & 31,31 \\
+        6  & 6 & 31,43 \\
+        7  & 7 & 31,44 \\
+        8  & 8 & 31,28 \\
+        9  & 9 & 31,34 \\
+        10 & 10 & 31,50 \\
+        \hline
+    \end{tabular}
+    \caption{Zależność okresu drgań od amplitudy}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Nr & $t(20 \text{ drgań})$ [s] \\
+        \hline
+        1 & 31,44 \\
+        2 & 31,16 \\
+        3 & 31,28 \\
+        4 & 31,34 \\
+        5 & 31,66 \\
+        \hline
+    \end{tabular}
+    \caption{Pomiar okresu dla $A = 5 \text{ cm}$}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Nr & $m$ [g] & $x$ [cm] \\
+        \hline
+        1  & 10  & 21,0 \\
+        2  & 20  & 28,2 \\
+        3  & 30  & 35,4 \\
+        4  & 40  & 42,6 \\
+        5  & 50  & 50,0 \\
+        6  & 60  & 57,1 \\
+        \hline
+        7  & 60  & 57,1 \\
+        8  & 50  & 50,0 \\
+        9  & 40  & 42,8 \\
+        10 & 30  & 35,5 \\
+        11 & 20  & 28,2 \\
+        12 & 10  & 21,0 \\
+        \hline
+    \end{tabular}
+    \caption{Zależność wychylenia od masy}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        $m$ [g] & $t(20 \text{ drgań})\,[\text{s}]$ & $t(10 \text{ drgań})\,[\text{s}]$ \\
+        \hline
+        10 & 25,41 & 12,81 \\
+        20 & 26,13 & 13,94 \\
+        30 & 29,53 & 14,81 \\
+        40 & 31,47 & 15,59 \\
+        50 & 33,06 & 16,60 \\
+        60 & 34,72 & 17,84 \\
+        $m_x$ & 33,22 & 14,91 \\
+        \hline
+    \end{tabular}
+    \caption{Zależność okresu drgań od masy}
+\end{table}
+
+
+
+% ---------- OBLICZENIA ----------
+\subsection{...}
+
+% ---------- NIEPEWNOŚCI ----------
+\section{Ocena niepewności pomiaru}
+
+% ---------- WNIOSKI ----------
+\section{Wnioski}
+
+% ---------- WYKRESY ----------
+\section{Wykresy}
+
+\bibliographystyle{plain}
+\bibliography{bibliography}
+
+\end{document}
