@@ -100,6 +100,7 @@
         \hline
     \end{tabular}
     \caption{Pomiar okresu dla $A = 5 \text{ cm}$}
+    \label{tab:okres_5cm}
 \end{table}
 
 \begin{table}[H]
@@ -254,7 +255,7 @@ otrzymano następujące wartości:
 
 \subsection{Niepewność czasu}
 
-Niepewność czasu obliczono ze wzoru:
+Niepewność typu B czasu obliczono ze wzoru:
 
 \begin{equation*}
     u_B(t) = \frac{\Delta_d(t)}{\sqrt{3}}
@@ -265,6 +266,34 @@ Gdzie $\Delta_d(t) = 0.2$ to błąd eksperymentatora, stąd:
 \begin{equation*}
     u_B(t) = \frac{0.2}{\sqrt{3}} \approx 0.12 \text{ s}
 \end{equation*}
+
+Niepewność typu A czasu wyznaczono na podstawie pięciu powtórzonych pomiarów dla amplitudy 5 cm (tabela \ref{tab:okres_5cm}), wykorzystując wzór \ref{eq:niepewnosc_A}.
+
+\begin{equation} \label{eq:niepewnosc_A}
+    u_A(t) = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (t_i - \bar{t})^2}
+\end{equation}
+
+Podstawiając wartości do wzoru \ref{eq:niepewnosc_A} otrzymano:
+
+\begin{equation*}
+    u_A(t) = 0.19 \text{ s}
+\end{equation*}
+
+Niepewność złożoną czasu obliczono ze wzoru:
+
+\begin{equation*}
+    u_c(t) = \sqrt{u_A(t)^2 + u_B(t)^2}
+\end{equation*}
+
+Podstawiając wartości do wzoru otrzymano:
+
+\begin{equation*}
+    u_c(t) = \sqrt{0.19^2 + 0.12^2} \approx 0.22 \text{ s}
+\end{equation*}
+
+
+
+
 
 \subsection{Niepewność okresu}
 
@@ -277,13 +306,13 @@ Okres obliczono ze wzoru:
 Gdzie $N$ to liczba drgań, stąd:
 
 \begin{equation*}
-    u_c(T) = \frac{u_B(t)}{N}
+    u_c(T) = \frac{u_c(t)}{N}
 \end{equation*}
 
 podstawiając wartość niepewności czasu otrzymano:
 
 \begin{equation*}
-    u_c(T) = \frac{0.12}{20} \approx 0.0058 \text{ s}
+    u_c(T) = \frac{0.22}{20} \approx 0.011 \text{ s}
 \end{equation*}
 
 
