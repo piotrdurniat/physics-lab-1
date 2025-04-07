@@ -53,8 +53,90 @@
 % ---------- WSTĘP TEORETYCZNY ----------
 \section{Wstęp teoretyczny}
 
+W doświadczeniu badamy ruch drgający masy zawieszonej na sprężynie. Podstawą teoretyczną jest prawo Hooke'a oraz równanie ruchu harmonicznego.
+
+\subsection*{Prawo Hooke'a}
+Prawo Hooke'a opisuje zależność siły sprężystości $F_s$ od wydłużenia sprężyny $\Delta x$:
+\begin{equation}
+    F_s = -k\Delta x
+\end{equation}
+gdzie $k$ jest współczynnikiem sprężystości sprężyny. Znak minus oznacza, że siła sprężystości działa przeciwnie do kierunku wychylenia.
+
+\subsection*{Równanie ruchu harmonicznego}
+Dla masy $m$ zawieszonej na sprężynie, zgodnie z II zasadą dynamiki Newtona:
+\begin{equation}
+    m\frac{d^2x}{dt^2} = -kx
+\end{equation}
+
+Rozwiązaniem tego równania jest funkcja:
+\begin{equation}
+    x(t) = A\sin(\omega t + \phi)
+\end{equation}
+gdzie:
+\begin{itemize}
+    \setlength{\itemsep}{0em}
+    \item $A$ -- amplituda drgań
+    \item $\omega = \sqrt{\frac{k}{m}}$ -- częstość kołowa drgań
+    \item $\phi$ -- faza początkowa
+\end{itemize}
+
+\subsection*{Okres drgań}
+Okres drgań $T$ masy zawieszonej na sprężynie wyraża się wzorem:
+\begin{equation}
+    \label{eq:okres}
+    T = 2\pi\sqrt{\frac{m}{k}}
+\end{equation}
+
+Wzór \eqref{eq:okres} uwzględnia jedynie masę zawieszoną na sprężynie, jednakże w drganiach bierze udział również masa sprężyny. Uwzględniając ją należy dodać do masy ciężarka  $\frac{1}{3}$ masy sprężyny $m_{spr}$. Otrzymujemy w ten sposób wzór:
+
+\begin{equation}
+    \label{eq:okres_spr}
+    T = 2\pi\sqrt{\frac{m + \frac{1}{3}m_{spr}}{k}}
+\end{equation}
+
+Z powyższego wzoru wynika zależność kwadratu okresu drgań od masy:
+\begin{equation}
+    \label{eq:okres_spr_2}
+    T^2 = \frac{4\pi^2}{k}m + \frac{4\pi^2m_{spr}}{3k}
+\end{equation}
+gdzie $m_{spr}$ jest masą sprężyny.
+
+\subsection*{Izochronizm drgań}
+Teoretycznie, dla małych amplitud, okres drgań nie zależy od amplitudy. Jest to tzw. izochronizm drgań, który sprawdzamy w pierwszej części doświadczenia.
+
+Niniejszy wstęp teoretyczny opracowano na podstawie podręcznika Ćwiczenia laboratoryjne z fizyki - rozdział 24 \cite{Drynski1976}.
+
 % ---------- OPIS DOŚWIADCZENIA ----------
 \section{Opis doświadczenia}
+
+Celem doświadczenia jest zbadanie drgań masy zawieszonej na sprężynie poprzez realizację trzech zadań:
+
+\subsection*{Badanie izochronizmu drgań}
+\begin{itemize}
+    \setlength{\itemsep}{0em}
+    \item Używając masy 50 g, wykonano pomiary czasu 20 pełnych drgań dla amplitud od 1 do 10 cm
+    \item Dla amplitudy 5 cm wykonano 5 powtórzeń pomiaru
+    \item Celem było sprawdzenie, czy okres drgań zależy od amplitudy
+\end{itemize}
+
+\subsection*{Wyznaczanie współczynnika sprężystości $k$}
+\begin{itemize}
+    \setlength{\itemsep}{0em}
+    \item Wykonano pomiary wydłużenia sprężyny dla mas od 10 do 60 g (co 10 g)
+    \item Pomiary wykonano dwukrotnie: przy zwiększaniu i zmniejszaniu obciążenia
+    \item Na podstawie wykresu zależności wydłużenia od siły sprawdzono zakres stosowalności prawa Hooke'a
+\end{itemize}
+
+\subsection*{Badanie zależności okresu drgań od masy}
+\begin{itemize}
+    \setlength{\itemsep}{0em}
+    \item Zmierzono czas 10 pełnych drgań dla mas od 10 do 50 g (co 10 g)
+    \item Wykonano dodatkowy pomiar dla masy nieznanej $m_x$
+    \item Na podstawie zależności $T^2$ od $m$ wyznaczono masę nieznaną oraz parametry układu
+\end{itemize}
+
+Podczas wszystkich pomiarów położenia wykorzystano lusterko umieszczone obok metrówki, aby zapewnić prawidłowy odczyt poprzez pokrycie się wskaźnika sprężyny z jego odbiciem.
+
 
 % ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
 \section{Opracowanie wyników pomiarów}
@@ -261,10 +343,10 @@ Niepewność typu B czasu obliczono ze wzoru:
     u_B(t) = \frac{\Delta_d(t)}{\sqrt{3}}
 \end{equation*}
 
-Gdzie $\Delta_d(t) = 0.2$ to błąd eksperymentatora, stąd:
+Gdzie $\Delta_d(t) = 0,2$ to błąd eksperymentatora, stąd:
 
 \begin{equation*}
-    u_B(t) = \frac{0.2}{\sqrt{3}} \approx 0.12 \text{ s}
+    u_B(t) = \frac{0,2}{\sqrt{3}} \approx 0,12 \text{ s}
 \end{equation*}
 
 Niepewność typu A czasu wyznaczono na podstawie pięciu powtórzonych pomiarów dla amplitudy 5 cm (tabela \ref{tab:okres_5cm}), wykorzystując wzór \ref{eq:niepewnosc_A}.
@@ -276,7 +358,7 @@ Niepewność typu A czasu wyznaczono na podstawie pięciu powtórzonych pomiaró
 Podstawiając wartości do wzoru \ref{eq:niepewnosc_A} otrzymano:
 
 \begin{equation*}
-    u_A(t) = 0.19 \text{ s}
+    u_A(t) = 0,19 \text{ s}
 \end{equation*}
 
 Niepewność złożoną czasu obliczono ze wzoru:
@@ -288,7 +370,7 @@ Niepewność złożoną czasu obliczono ze wzoru:
 Podstawiając wartości do wzoru otrzymano:
 
 \begin{equation*}
-    u_c(t) = \sqrt{0.19^2 + 0.12^2} \approx 0.22 \text{ s}
+    u_c(t) = \sqrt{0,19^2 + 0,12^2} \approx 0,22 \text{ s}
 \end{equation*}
 
 
@@ -312,13 +394,13 @@ Gdzie $N$ to liczba drgań, stąd:
 podstawiając wartość niepewności czasu otrzymano:
 
 \begin{equation*}
-    u_c(T) = \frac{0.22}{20} \approx 0.011 \text{ s}
+    u_c(T) = \frac{0,22}{20} \approx 0,011 \text{ s}
 \end{equation*}
 
 
 \subsection{Niepewność położenia}
 
-Niepewność maksymalna miarki wynosi $\Delta_d = 0.001$ m. Niepewność wydłużenia obliczono ze wzoru:
+Niepewność maksymalna miarki wynosi $\Delta_d = 0,001$ m. Niepewność wydłużenia obliczono ze wzoru:
 
 \begin{equation*}
     u_B(x) = \frac{\Delta_d x}{\sqrt{3}}
@@ -327,7 +409,7 @@ Niepewność maksymalna miarki wynosi $\Delta_d = 0.001$ m. Niepewność wydłu�
 Po podstawieniu wartości otrzymano:
 
 \begin{equation*}
-    u_B(x) = \frac{0.001}{3} = 0.00058 \text{ m}
+    u_B(x) = \frac{0,001}{3} = 0,00058 \text{ m}
 \end{equation*}
 
 \subsection{Niepewność wydłużenia}
@@ -343,7 +425,7 @@ Niepewność wydłużenia obliczono z prawa przenoszenia niepewności dla wzoru 
 Stąd niepewność pojedynczego pomiaru wydłużenia:
 
 \begin{equation*}
-    u_c(\Delta x) = \sqrt{2} \cdot 0.00058 \approx 0.00082 \text{ m}
+    u_c(\Delta x) = \sqrt{2} \cdot 0,00058 \approx 0,00082 \text{ m}
 \end{equation*}
 
 \subsection{Niepewność średniego wydłużenia}
@@ -366,7 +448,7 @@ niepewność złożoną możemy wyznaczyć korzystając z prawa propagacji niepe
 Podstawiając wartość niepewności pojedynczego pomiaru wydłużenia otrzymano:
 
 \begin{equation*}
-    u_c(\overline{\Delta x_i}) = \frac{0.00082}{\sqrt{2}} \approx 0.00058 \text{ m}
+    u_c(\overline{\Delta x_i}) = \frac{0,00082}{\sqrt{2}} \approx 0,00058 \text{ m}
 \end{equation*}
 
 
@@ -403,8 +485,8 @@ Obliczone wartości niepewności dla współczynników prostej regresji wynoszą
 
 \begin{itemize}
     \setlength{\itemsep}{0em}
-    \item $u(k) = 0.0012\,\frac{\text{m}}{\text{N}}$
-    \item $u(b) = 0.00046\,\text{m}$
+    \item $u(k) = 0,0012\,\frac{\text{m}}{\text{N}}$
+    \item $u(b) = 0,00046\,\text{m}$
 \end{itemize}
 
 
