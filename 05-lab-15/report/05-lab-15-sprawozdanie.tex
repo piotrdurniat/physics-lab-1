@@ -144,9 +144,6 @@ Podczas wszystkich pomiarów położenia wykorzystano lusterko umieszczone obok 
 % ---------- TABELE ----------
 \subsection{Tabele pomiarowe}
 
-
-
-
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|}
@@ -227,7 +224,78 @@ Podczas wszystkich pomiarów położenia wykorzystano lusterko umieszczone obok 
     \caption{Zależność okresu drgań od masy}
 \end{table}
 
+\subsection{1. Izochronizm drgań}
 
+Okres drgań $T$ wyznaczono na podstawie zmierzonego czasu $t$ dla $n$ drgań, ze wzoru:
+\[
+    T = \frac{t}{n}
+\]
+gdzie:
+\begin{itemize}
+    \item $t$ -- zmierzony czas dla $n$ drgań,
+    \item $n$ -- liczba drgań.
+\end{itemize}
+
+Na podstawie uzyskanych czasów obliczono okresy drgań sprężyny dla każdej amplitudy:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Nr & A [cm] & $t(20\,\text{drgań})$ [s] & $T$ [s] \\
+        \hline
+        1  & 1  & 31{,}50 & 1{,}575 \\
+        2  & 2  & 31{,}31 & 1{,}5655 \\
+        3  & 3  & 31{,}41 & 1{,}5705 \\
+        4  & 4  & 31{,}50 & 1{,}575 \\
+        5  & 5  & 31{,}31 & 1{,}5655 \\
+        6  & 6  & 31{,}43 & 1{,}5715 \\
+        7  & 7  & 31{,}44 & 1{,}572 \\
+        8  & 8  & 31{,}28 & 1{,}564 \\
+        9  & 9  & 31{,}34 & 1{,}567 \\
+        10 & 10 & 31{,}50 & 1{,}575 \\
+        \hline
+    \end{tabular}
+    \caption{Obliczone okresy drgań dla różnych amplitud}
+\end{table}
+
+Dla amplitudy $A = 5\,\text{cm}$ wykonano pięć pomiarów, na podstawie których obliczono wartości okresów:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Nr & $t(20\,\text{drgań})$ [s] & $T$ [s] \\
+        \hline
+        1 & 31{,}44 & 1{,}572 \\
+        2 & 31{,}16 & 1{,}558 \\
+        3 & 31{,}28 & 1{,}564 \\
+        4 & 31{,}34 & 1{,}567 \\
+        5 & 31{,}66 & 1{,}583 \\
+        \hline
+    \end{tabular}
+    \caption{Pomiary okresu dla amplitudy $A = 5\,\text{cm}$}
+\end{table}
+
+Na podstawie powyższych danych wyznaczono średni okres:
+\[
+    T_{\text{śr}} = \frac{1{,}572 + 1{,}558 + 1{,}564 + 1{,}567 + 1{,}583}{5} = 1{,}569\,\text{s}
+\]
+
+Maksymalne odchylenie od średniej definiuje się jako:
+\[
+    \Delta T_{\text{max}} = \max\left(T_{\text{max}} - T_{\text{śr}},\ T_{\text{śr}} - T_{\text{min}}\right)
+\]
+
+Podstawiając wartości otrzymano:
+\[
+    \Delta T_{\text{max}} = \max(1{,}583 - 1{,}569,\ 1{,}569 - 1{,}558) = 0{,}014\,\text{s}
+\]
+
+Wyniki pomiarów okresu dla wszystkich amplitud mieszczą się w przedziale niepewności:
+\[
+    (T_{\text{śr}} - \Delta T_{\text{max}},\ T_{\text{śr}} + \Delta T_{\text{max}}) = (1{,}555,\ 1{,}583) \text{ s}
+\]
 
 % ---------- OBLICZENIA ----------
 \subsection{2.  Zakres stosowalności prawa Hooke'a}
@@ -314,22 +382,28 @@ Wykres zależności wydłużenia sprężyny od ciężaru przedstawiono na rysunk
 W celu wyznaczenia współczynnika sprężystości sprężyny zastosowano regresję liniową dla zależności wydłużenia $\Delta x$ od siły $F$ wykorzystując język Python i bibliotekę NumPy. Na podstawie równania regresji:
 
 \begin{equation*}
-    \Delta x = kF + b
+    \Delta x = aF + b
 \end{equation*}
 
 gdzie:
 \begin{itemize}
     \setlength{\itemsep}{0em}
-    \item $k$ -- współczynnik sprężystości [m/N],
+    \item $a = \frac{1}{k}$ -- współczynnik kierunkowy prostej [m/N],
     \item $b$ -- wyraz wolny [m].
 \end{itemize}
 
 otrzymano następujące wartości:
 \begin{itemize}
     \setlength{\itemsep}{0em}
-    \item $k = 0,7373$ m/N,
+    \item $a = 0,7373$ m/N,
     \item $b = 0,00160$ m.
 \end{itemize}
+
+Stąd współczynnik sprężystości wynosi:
+
+\begin{equation*}
+    k = \frac{1}{a} = \frac{1}{0{,}7373} \approx 1{,}356 \frac{\text{N}}{\text{m}}
+\end{equation*}
 
 
 % ---------- NIEPEWNOŚCI ----------
@@ -358,7 +432,7 @@ Niepewność typu A czasu wyznaczono na podstawie pięciu powtórzonych pomiaró
 Podstawiając wartości do wzoru \ref{eq:niepewnosc_A} otrzymano:
 
 \begin{equation*}
-    u_A(t) = 0,19 \text{ s}
+    u_A(t) = 0{,}19 \text{ s}
 \end{equation*}
 
 Niepewność złożoną czasu obliczono ze wzoru:
@@ -370,7 +444,7 @@ Niepewność złożoną czasu obliczono ze wzoru:
 Podstawiając wartości do wzoru otrzymano:
 
 \begin{equation*}
-    u_c(t) = \sqrt{0,19^2 + 0,12^2} \approx 0,22 \text{ s}
+    u_c(t) = \sqrt{0{,}19^2 + 0{,}12^2} \approx 0{,}22 \text{ s}
 \end{equation*}
 
 
@@ -454,7 +528,7 @@ Podstawiając wartość niepewności pojedynczego pomiaru wydłużenia otrzymano
 
 \subsection{Współczynnik sprężystości}
 
-Niepewności współczynników regresji liniowej obliczono na podstawie następujących wzorów:
+Niepewności współczynników regresji liniowej dla zależności $x = a F + b$ obliczono na podstawie następujących wzorów:
 
 \[
     s_y = \sqrt{\frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{n-2}}
@@ -473,7 +547,7 @@ gdzie:
 \begin{itemize}
     \setlength{\itemsep}{0em}
     \item $s_y$ -- odchylenie standardowe reszt,
-    \item $u(k)$ -- niepewność standardowa współczynnika kierunkowego prostej regresji,
+    \item $u(a)$ -- niepewność standardowa współczynnika kierunkowego prostej regresji,
     \item $u(b)$ -- niepewność standardowa wyrazu wolnego prostej regresji,
     \item $n$ -- liczba punktów pomiarowych,
     \item $x_i$ -- wartości zmiennej niezależnej (siła $F$),
@@ -485,13 +559,76 @@ Obliczone wartości niepewności dla współczynników prostej regresji wynoszą
 
 \begin{itemize}
     \setlength{\itemsep}{0em}
-    \item $u(k) = 0,0012\,\frac{\text{m}}{\text{N}}$
+    \item $u(a) = 0,0012\,\frac{\text{m}}{\text{N}}$
     \item $u(b) = 0,00046\,\text{m}$
 \end{itemize}
+
+Współczynnik sprężystości wyraża się wzorem:
+
+\begin{equation*}
+    k = \frac{1}{a}
+\end{equation*}
+
+Stąd niepewność współczynnika sprężystości wynosi:
+
+\begin{equation*}
+    u(k) =  \frac{1}{a^2} \cdot u(a)
+\end{equation*}
+
+Podstawiając wartość niepewności współczynnika $a$ otrzymano:
+
+\begin{equation*}
+    u(k) =  \frac{1}{0,7373^2} \cdot 0,0012 \approx 0,0022 \frac{\text{m}}{\text{N}}
+\end{equation*}
+
+
+
+\subsection{Niepewności współczynników A i B zależności $T^2 = Am + B$}
+
+Niepewności współczynników $A$ i $B$ zależności $T^2 = Am + B$ obliczono na podstawie następujących wzorów:
+
+\[
+    s_y = \sqrt{\frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{n-2}}
+\]
+
+\[
+    u(A) = s_y \sqrt{\frac{n}{n \sum m_i^2 - \left( \sum m_i \right)^2}}
+\]
+
+\[
+    u(B) = s_y \sqrt{\frac{\sum m_i^2}{n \sum m_i^2 - \left( \sum m_i \right)^2}}
+\]
+
+gdzie:
+\begin{itemize}
+    \setlength{\itemsep}{0em}
+    \item $s_y$ -- odchylenie standardowe reszt,
+    \item $u(A)$ -- niepewność standardowa współczynnika kierunkowego prostej regresji,
+    \item $u(B)$ -- niepewność standardowa wyrazu wolnego prostej regresji,
+    \item $n$ -- liczba punktów pomiarowych,
+    \item $m_i$ -- wartości mas efektywnych,
+    \item $y_i$ -- wartości zmierzone ($T^2$),
+    \item $\hat{y}_i$ -- wartości przewidywane przez model regresji.
+\end{itemize}
+
+Obliczone wartości niepewności dla współczynników prostej regresji wynoszą:
+
+\begin{itemize}
+    \setlength{\itemsep}{0em}
+    \item $u(A) = 1{,}54\,\frac{\text{s}^2}{\text{kg}}$
+    \item $u(B) = 0{,}12\,\text{s}^2$
+\end{itemize}
+
+
 
 
 % ---------- WNIOSKI ----------
 \section{Wnioski}
+
+Wyniki eksperymentu wykazały, że w badanym zakresie amplitud (od 1 do 10 cm) okres drgań pozostaje stały w granicach błędu pomiarowego. Świadczy o tym fakt, że wszystkie wyznaczone wartości okresów znajdują się wewnątrz przedziału niepewności, który został określony na podstawie serii pięciu pomiarów wykonanych dla amplitudy 5 cm. Zaobserwowana niezależność okresu od amplitudy potwierdza występowanie zjawiska izochronizmu, które jest przewidywane przez teorię ruchu harmonicznego przy małych wychyleniach.
+
+Na podstawie wyników pomiarów wyznaczono współczynnik sprężystości sprężyny $k = 0{,}7373 \frac{\text{m}}{\text{N}}$, $u(k)= 0{,}0022 \frac{\text{m}}{\text{N}}$ oraz wyraz wolny $b = 0{,}00160 \text{m}$, $u(b)= 0{,}00046 \text{m}$, który jest bliski zeru. Wykonane pomiary potwierdziły prawo Hooke'a w zakresie od 10 g do 60 g.
+
 
 % ---------- WYKRESY ----------
 \section{Wykresy}
@@ -508,3 +645,5 @@ Obliczone wartości niepewności dla współczynników prostej regresji wynoszą
 \bibliography{bibliography}
 
 \end{document}
+
+
