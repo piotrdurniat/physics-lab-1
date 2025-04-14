@@ -406,6 +406,122 @@ Stąd współczynnik sprężystości wynosi:
 \end{equation*}
 
 
+
+\subsection{Analiza zależności kwadratu okresu od masy}
+
+Poszukujemy zależności liniowej w postaci:
+\[
+    T^2 = a \cdot m + b
+\]
+
+\subsubsection*{Zestawienie wyników pomiarów:}
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        Masa $m$ [kg] & Kwadrat okresu $T^2$ [s$^2$] \\
+        \hline
+        0.028 & 1.6142 \\
+        \hline
+        0.038 & 1.7069 \\
+        \hline
+        0.048 & 2.1800 \\
+        \hline
+        0.058 & 2.4759 \\
+        \hline
+        0.068 & 2.7324 \\
+        \hline
+        0.078 & 3.0137 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsubsection*{Wielkości pomocnicze do obliczeń:}
+
+\begin{align*}
+    \text{Liczba pomiarów }n             & = 6        \\
+    \text{Suma mas }\sum x_i             & = 0.318    \\
+    \text{Suma }T^2\text{ }\sum y_i      & = 13.7229  \\
+    \text{Suma kwadratów mas }\sum x_i^2 & = 0.018884 \\
+    \text{Suma iloczynów }\sum x_i y_i   & = 0.76735  \\
+\end{align*}
+
+\subsubsection*{Wyznacznik układu równań $D$:}
+\[
+    D = n \sum x_i^2 - (\sum x_i)^2 = 6 \cdot 0.018884 - (0.318)^2 = 0.01218
+\]
+
+\subsubsection*{Parametry prostej regresji:}
+
+Współczynnik kierunkowy \( a \):
+\[
+    a = \frac{n \sum x_i y_i - \sum x_i \sum y_i}{D} = \frac{4.6041 - 4.3659}{0.01218} \approx 29.63 \, \text{s}^2/\text{kg}
+\]
+
+Punkt przecięcia z osią $T^2$ \( b \):
+\[
+    b = \frac{\sum x_i^2 \cdot \sum y_i - \sum x_i \cdot \sum x_i y_i}{D} = \frac{0.018884 \cdot 13.7229 - 0.318 \cdot 0.76735}{0.01218} \approx 0.72 \ \text{s}^2
+\]
+
+Otrzymana zależność empiryczna:
+\[
+    T^2 = 29.63 \cdot m + 0,72
+\]
+Graficzna reprezentacja tej zależności znajduje się w sekcji z wykresami.
+
+\subsection*{Teoretyczne wartości współczynników prostej}
+Dysponując wartością współczynnika sprężystości: \[
+    k = 1{,}356 \, \frac{\text{N}}{\text{m}}
+\]
+Możemy wyznaczyć teoretyczne wartości współczynników $A$ i $B$ w równaniu:
+\[
+    T^2 = A \cdot m + B
+\]
+zgodnie ze wzorami:
+\[
+    A = \frac{4\pi^2}{k}, \qquad B = \frac{4\pi^2 m_{spr}}{3k}
+\]
+
+Dane do obliczeń:
+\begin{itemize}
+    \item \( k = 1{,}356 \, \frac{N}{m} \)
+    \item \( m_{spr} = 74 \, \text{g} = 0{,}074 \, \text{kg} \)
+    \item \( \pi^2 \approx 9{,}8696 \)
+\end{itemize}
+
+Po podstawieniu otrzymujemy:
+\[
+    A = \frac{4\pi^2}{k}=\frac{4\cdot9,87}{1,356}= 29,12
+\]
+\[
+    B = \frac{4\pi^2 m_{spr}}{3k}=\frac{4\cdot 9,87\cdot 0,074}{3\cdot1,356}=0,72
+\]
+
+\subsubsection*{Wyznaczenie masy nieznanej $m_x$}
+
+Wykorzystując otrzymaną zależność empiryczną:
+\[
+    T^2 = 29{,}63 \cdot m + 0{,}72
+\]
+oraz zmierzoną wartość \( T^2 = 2{,}76 \), uwzględniając masę szalki \( m_s = 0{,}018\ \text{kg} \), możemy zapisać:
+\[
+    2{,}76 = 29{,}63 \cdot (m_x + 0{,}018) + 0{,}72
+\]
+
+Przekształcając kolejno:
+\[
+    2{,}04 = 29{,}63 \cdot (m_x + 0{,}018)
+\]
+\[
+    m_x + 0{,}018 = \frac{2{,}04}{29{,}63} = 0{,}0689
+\]
+\[
+    m_x = 0{,}0689 - 0{,}018 = 0{,}0509\ \text{kg} = 50{,}9\ \text{g}
+\]
+
+
+
+
+
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
 
@@ -578,7 +694,7 @@ Stąd niepewność współczynnika sprężystości wynosi:
 Podstawiając wartość niepewności współczynnika $a$ otrzymano:
 
 \begin{equation*}
-    u(k) =  \frac{1}{0,7373^2} \cdot 0,0012 \approx 0,0022 \frac{\text{m}}{\text{N}}
+    u(k) =  \frac{1}{0{,}7373^2} \cdot 0,0012 \approx 0,0022 \frac{\text{m}}{\text{N}}
 \end{equation*}
 
 
@@ -619,6 +735,67 @@ Obliczone wartości niepewności dla współczynników prostej regresji wynoszą
     \item $u(B) = 0{,}12\,\text{s}^2$
 \end{itemize}
 
+\subsection{Niepewności współczynników A i B z wzorów}
+Na podstawie wzoru \ref{eq:okres_spr_2} współczynniki $A$ i $B$ wyrażają się następującymi zależnościami:
+
+\begin{equation*}
+    A = \frac{4\pi^2}{k}
+\end{equation*}
+
+\begin{equation*}
+    B = \frac{4\pi^2m_{spr}}{3k}
+\end{equation*}
+
+
+
+Korzystając ze wzoru na niepewność złożoną:
+\begin{equation*}
+    u_c(E) = \sqrt{\sum_{k=1}^{K} \left( \frac{\partial E}{\partial x_k} \right)^2 u^2(x_k)}
+\end{equation*}
+
+Dla współczynnika $A$ mamy tylko jedną zmienną (k), więc:
+\begin{equation*}
+    u_c(A) = \sqrt{\left(\frac{\partial A}{\partial k}\right)^2 u^2(k)}
+\end{equation*}
+
+Po podstawieniu pochodnej:
+\begin{equation*}
+    u_c(A) = \sqrt{\left(-\frac{4\pi^2}{k^2}\right)^2 u^2(k)}
+\end{equation*}
+
+Ostatecznie:
+\begin{equation*}
+    u_c(A) = \frac{4\pi^2}{k^2} u(k)
+\end{equation*}
+
+Podstawiając wartości:
+
+\begin{equation*}
+    u_c(A) = \frac{4\pi^2}{1.356^2} \cdot 0,0022 \approx 0,048 \frac{\text{s}^2}{\text{kg}}
+\end{equation*}
+
+Dla współczynnika $B$ mamy dwie zmienne (k i $m_{spr}$), lecz ze względu na brak informacji o niepewności masy sprężyny $u(m_{spr})$, ograniczymy się do obliczenia niepewności względem zmiennej k:
+
+\begin{equation*}
+    u_c(B) = \sqrt{\left(\frac{\partial B}{\partial k}\right)^2 u^2(k)}
+\end{equation*}
+
+Po podstawieniu pochodnej cząstkowej:
+\begin{equation*}
+    u_c(B) = \sqrt{\left(-\frac{4\pi^2m_{spr}}{3k^2}\right)^2 u^2(k)}
+\end{equation*}
+
+Ostatecznie:
+\begin{equation*}
+    u_c(B) = \frac{4\pi^2m_{spr}}{3k^2} u(k)
+\end{equation*}
+
+
+Podstawiając wartości:
+
+\begin{equation*}
+    u_c(B) = \frac{4 \cdot \pi^2 \cdot 0.074}{3 \cdot 1.356^2} \cdot 0.0022 \approx 0.0012 \text{s}^2
+\end{equation*}
 
 
 
@@ -630,6 +807,10 @@ Wyniki eksperymentu wykazały, że w badanym zakresie amplitud (od 1 do 10 cm) o
 Na podstawie wyników pomiarów wyznaczono współczynnik sprężystości sprężyny $k = 0{,}7373 \frac{\text{m}}{\text{N}}$, $u(k)= 0{,}0022 \frac{\text{m}}{\text{N}}$ oraz wyraz wolny $b = 0{,}00160 \text{m}$, $u(b)= 0{,}00046 \text{m}$, który jest bliski zeru. Wykonane pomiary potwierdziły prawo Hooke'a w zakresie od 10 g do 60 g.
 
 
+Otrzymane empirycznie współczynniki prostej regresji ($a = 29,63$ s²/kg, $b = 0,72$ s²) są bardzo zbliżone do wartości przewidzianych teoretycznie ($A = 29,12$ s²/kg, $B = 0,72$ s²). Wyraz wolny $b = 0,72$ s² odpowiada teoretycznej wartości wynikającej z uwzględnienia masy sprężyny, co potwierdza słuszność korekty $\frac{1}{3}m_{spr}$ w równaniu okresu drgań.
+
+Wykorzystując otrzymaną zależność empiryczną, udało się wyznaczyć nieznaną masę $m_x = 50,9$ g.
+
 % ---------- WYKRESY ----------
 \section{Wykresy}
 
@@ -639,6 +820,15 @@ Na podstawie wyników pomiarów wyznaczono współczynnik sprężystości sprę�
     \caption{Zależność wydłużenia sprężyny od ciężaru (źródło: opracowanie własne).}
     \label{fig:zaleznosci}
 \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.2\linewidth,angle=90]{wykres_masy_efektywnej.png}
+    \caption{Zależność wydłużenia sprężyny od ciężaru (źródło: opracowanie własne).}
+    \label{fig:zaleznosci2}
+\end{figure}
+
+
 
 
 \bibliographystyle{plain}

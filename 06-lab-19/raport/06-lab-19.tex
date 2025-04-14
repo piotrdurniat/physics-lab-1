@@ -81,16 +81,90 @@ Metoda wagi skręceń Cavendisha jest jedną z metod wyznaczania stałej grawita
 \subsection{Tabele pomiarowe}
 
 % ---------- OBLICZENIA ----------
-\subsection{...}
+\subsection{Wyznaczanie położeń środkowych}
+
+\begin{align*}
+    b_{01} & = \frac{\frac{b_1+b_3}{2}+b_2}{2} = \frac{b_1}{4} + \frac{b_2}{2} + \frac{b_3}{4} \rightarrow \text{pierwsze ustawienie}; \\
+    b_{02} & = \frac{\frac{b_1+b_3}{2}+b_2}{2} = \frac{b_1}{4} + \frac{b_2}{2} + \frac{b_3}{4} \rightarrow \text{drugie ustawienie}.
+\end{align*}
 
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
 
+\subsection{Niepewność $\Delta b$}
+
+$$
+\Delta(\Delta b) = ... 
+$$
+
+\subsection{Niepewność $T$}
+
+$$
+\Delta T = 30 s
+$$
+
+\subsection{Niepewność $G$}
+
+Wzór (18) z instrukcji ONP:
+
+\begin{equation}
+\label{eq:delta_y}
+\Delta y = \sum_{k=1}^{K} \left| \frac{\partial f}{\partial x_k} \Delta x_k \right|
+\end{equation}
+
+Wzór na stałą grawitacji:
+
+\begin{equation}
+\label{eq:g}
+G = \frac{\pi^2 r^2 d \Delta b}{MT^2L}
+\end{equation}
+
+Pochodne cząstkowe:
+
+\begin{equation}
+\frac{\partial G}{\partial \Delta b} = \frac{\pi^2 r^2 d}{MT^2L} = \frac{G}{\Delta b}
+\end{equation}
+
+\begin{equation}
+\frac{\partial G}{\partial \Delta T} = \frac{-2\pi^2 r^2 d}{MT^3L} = \frac{-2G}{T}
+\end{equation}
+
+Finalnie:
+\begin{equation}
+\Delta G = | \frac{-2G}{T} \Delta_T | + | \frac{G}{\Delta b} \Delta_{\Delta b} |
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 % ---------- WNIOSKI ----------
 \section{Wnioski}
 
+\newpage
+
 % ---------- WYKRESY ----------
 \section{Wykresy}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textheight,angle=90]{wykres.png}
+    \caption{Wykres zależności wychylenia od czasu}
+    \label{fig:wykres}
+\end{figure}
+
 
 \bibliographystyle{plain}
 \bibliography{bibliography}
