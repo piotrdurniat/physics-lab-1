@@ -53,14 +53,90 @@
 % ---------- WSTĘP TEORETYCZNY ----------
 \section{Wstęp teoretyczny}
 
+Zjawisko rozszerzalności cieplnej ciał stałych wynika z niesymetrycznego kształtu krzywej energii potencjalnej oddziaływań międzyatomowych. W ciałach stałych atomy nie są ściśle unieruchomione, lecz drgają wokół położeń równowagi. Oddziaływania międzyatomowe można opisać jako wypadkową sił przyciągania i odpychania:
+
+\begin{equation}
+    F = F_{\text{odpychania}} + F_{\text{przyciągania}} = \frac{A}{x^{13}} - \frac{B}{x^7}
+\end{equation}
+
+gdzie $A$ i $B$ są stałymi charakterystycznymi dla danego materiału.
+
+Energia potencjalna oddziaływań $U(x)$ w okolicy położenia równowagi $x_0$ może być przybliżona wielomianem:
+
+\begin{equation}
+    U(\xi) = \frac{1}{2}k\xi^2 - \frac{1}{3}s\xi^3
+\end{equation}
+
+gdzie $\xi = x - x_0$, a asymetria potencjału jest reprezentowana przez człon trzeciego stopnia.
+
+Ze względu na asymetrię potencjału, wraz ze wzrostem temperatury (a co za tym idzie - energii drgań atomów) średnie położenie atomów przesuwa się w stronę większych odległości międzyatomowych, co makroskopowo obserwujemy jako rozszerzalność cieplną.
+
+Liniową rozszerzalność cieplną opisuje wzór:
+
+\begin{equation}
+    \Delta L = L_0 \alpha (T - T_0)
+\end{equation}
+
+gdzie:
+\begin{itemize}
+    \item $\Delta L$ - zmiana długości ciała
+    \item $L_0$ - początkowa długość ciała w temperaturze $T_0$
+    \item $\alpha$ - współczynnik rozszerzalności liniowej [K$^{-1}$]
+    \item $T - T_0$ - zmiana temperatury
+\end{itemize}
+
+Współczynnik rozszerzalności liniowej $\alpha$ definiuje się jako względną zmianę długości przypadającą na jednostkową zmianę temperatury:
+
+\begin{equation}
+    \alpha = \frac{\Delta L}{L_0 \cdot (T - T_0)}
+\end{equation}
+
+Wartość współczynnika $\alpha$ jest charakterystyczna dla danego materiału i może służyć do jego identyfikacji. Typowe wartości $\alpha$ dla metali mieszczą się w zakresie od około $10 \cdot 10^{-6}$ do $25 \cdot 10^{-6}$ K$^{-1}$.
+
+Rozszerzalność objętościowa ciał stałych jest związana z rozszerzalnością liniową zależnością:
+
+\begin{equation}
+    \beta = 3\alpha
+\end{equation}
+
+gdzie $\beta$ jest współczynnikiem rozszerzalności objętościowej.
+
+W celu wyznaczenia współczynnika rozszerzalności liniowej metali wykorzystuje się dylatometr, który umożliwia precyzyjny pomiar przyrostu długości próbki pod wpływem zmiany temperatury.
+
+Wstęp teoretyczny opracowano na podstawie materiałów dodatkowych do ćwiczenia nr~25~\cite{lab-25-wstep}.
+
 % ---------- OPIS DOŚWIADCZENIA ----------
 \section{Opis doświadczenia}
 
+
+Celem doświadczenia było wyznaczenie współczynnika rozszerzalności cieplnej dla czterech różnych rurek metalowych.
+
+\begin{enumerate}
+    \item Przygotowano stanowisko pomiarowe z czajnikiem elektrycznym do wytworzenia pary wodnej.
+
+    \item Zmierzono długości początkowe czterech rurek metalowych (oznaczonych kolorami: złota, miedziana, szara i srebrna) w temperaturze pokojowej za pomocą taśmy mierniczej.
+
+    \item Odczytano temperaturę otoczenia.
+
+    \item Umieszczono kolejno każdą rurkę w uchwytach dylatometru i ustawiono wstępne położenie za pomocą śruby regulacyjnej.
+
+    \item Po wytworzeniu pary wodnej, podłączono wąż doprowadzający parę do badanej rurki.
+
+    \item Obserwowano i zapisano wydłużenie rurki wskazywane przez czujnik mikrometryczny.
+
+    \item Pomiary powtórzono dwukrotnie dla każdej rurki.
+
+    \item Odczytano ciśnienie atmosferyczne na barometrze rtęciowym i wyznaczono odpowiadającą mu temperaturę wrzenia wody.
+
+    \item Na podstawie uzyskanych danych obliczono współczynniki rozszerzalności cieplnej dla poszczególnych rurek.
+
+    \item Porównując otrzymane wartości z danymi tablicowymi, zidentyfikowano materiały, z których wykonane były badane rurki.
+\end{enumerate}
+
+
+
 % ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
 \section{Opracowanie wyników pomiarów}
-
-
-
 
 % ---------- TABELE ----------
 \subsection{Tabele pomiarowe}
@@ -159,6 +235,11 @@ Przykładowe obliczenia:
     \Delta L_1 = \frac{1,06 + 1,07}{2} \cdot 10^{-3} = 0,001065\,\text{m}
 \end{equation*}
 
+\subsection{Temperatura wrzenia wody}
+
+Zmierzone ciśnienie atmosferyczne wyniosło $p = 744.2 \text{mmHg} = 99218{,}52\,\text{Pa}$. Dla tego określenia korzystając ze strony \cite{temperatura_wrzenia} określono temperaturę wrzenia wody jako $T_w = 99{,}4^\circ\text{C}$.
+
+
 \subsection{Współczynnik rozszerzalności cieplnej}
 
 Współczynnik rozszerzalności cieplnej obliczono na podstawie wzoru:
@@ -173,7 +254,7 @@ gdzie:
     \item $\Delta L$ - średnie wydłużenie rurki
     \item $L_0 = 0.755\,\text{m}$ - długość początkowa rurki
     \item $T_1 = 24.0^\circ\text{C}$ - temperatura początkowa
-    \item $T_2 = 100^\circ\text{C}$ - temperatura końcowa
+    \item $T_2 = 99{,}4^\circ\text{C}$ - temperatura końcowa
 \end{itemize}
 
 Wyniki obliczeń zapisano w tabeli \ref{tab:wspolczynnik_rozszerzalnosci}.
@@ -184,13 +265,13 @@ Wyniki obliczeń zapisano w tabeli \ref{tab:wspolczynnik_rozszerzalnosci}.
         \hline
         Rurka & $\alpha$ [$\frac{1}{\text{K}}$] \\
         \hline
-        1 & 0,000018560 \\
+        1 & $18{,}708$ $\cdot 10^{-6}$ \\
         \hline
-        2 & 0,000016556 \\
+        2 & $16{,}688$ $\cdot 10^{-6}$ \\
         \hline
-        3 & 0,000016382 \\
+        3 & $16{,}512$ $\cdot 10^{-6}$ \\
         \hline
-        4 & 0,000011589 \\
+        4 & $11{,}682$ $\cdot 10^{-6}$ \\
         \hline
     \end{tabular}
     \caption{Współczynnik rozszerzalności cieplnej dla poszczególnych rurek.}
@@ -200,7 +281,7 @@ Wyniki obliczeń zapisano w tabeli \ref{tab:wspolczynnik_rozszerzalnosci}.
 Przykładowe obliczenia:
 
 \begin{equation}
-    \alpha_1 = \frac{0{,}001065}{0{,}755 \cdot (100 - 24)} = 0{,}000018560\,\frac{1}{\text{K}}
+    \alpha_1 = \frac{0{,}001065}{0{,}755 \cdot (99{,}4 - 24{,}0)} = 0{,}000018708\,\frac{1}{\text{K}}
 \end{equation}
 
 \subsection{Określenie materiału rurek}
@@ -215,13 +296,13 @@ Porównując wartości współczynnika rozszerzalności cieplnej z wartościami 
         \cline{2-3}
         & \textbf{Wartość tablicowa} & \textbf{Wartość zmierzona} \\
         \hline
-        Mosiądz & $19{,}0$ $\cdot 10^{-6}$ & $18{,}560$ $\cdot 10^{-6}$ \\
+        Mosiądz & $19{,}0$ $\cdot 10^{-6}$ & $18{,}708$ $\cdot 10^{-6}$ \\
         \hline
-        Miedź & $17{,}0$ $\cdot 10^{-6}$ & $16{,}556$ $\cdot 10^{-6}$ \\
+        Miedź & $17{,}0$ $\cdot 10^{-6}$ & $16{,}688$ $\cdot 10^{-6}$ \\
         \hline
-        Stal nierdzewna & $17{,}3$ $\cdot 10^{-6}$ & $16{,}382$ $\cdot 10^{-6}$ \\
+        Stal nierdzewna & $17{,}3$ $\cdot 10^{-6}$ & $16{,}512$ $\cdot 10^{-6}$ \\
         \hline
-        Żelazo & $11{,}8$ $\cdot 10^{-6}$ & $11{,}589$ $\cdot 10^{-6}$ \\
+        Żelazo & $11{,}8$ $\cdot 10^{-6}$ & $11{,}682$ $\cdot 10^{-6}$ \\
         \hline
     \end{tabular}
     \caption{Tablicowe wartości współczynnika rozszerzalności cieplnej dla różnych materiałów (źródło: \cite{wspolczynnik_rozszeralnosci}) oraz wartości zmierzone.}
@@ -338,9 +419,9 @@ Dla wszystkich rurek obliczono wartości i zapisano w tabeli \ref{tab:niepewnosc
         Rurka & $u(\alpha)$ [$\cdot 10^{-6}\,\frac{1}{\text{K}}$] \\
         \hline
         1 & 0,21 \\
-        2 & 0,21 \\
-        3 & 0,21 \\
-        4 & 0,21 \\
+        2 & 0,20 \\
+        3 & 0,20 \\
+        4 & 0,20 \\
         \hline
     \end{tabular}
     \caption{Niepewność standardowa współczynnika rozszerzalności cieplnej.}
@@ -350,19 +431,40 @@ Dla wszystkich rurek obliczono wartości i zapisano w tabeli \ref{tab:niepewnosc
 Przykładowe obliczenia dla rurki nr 1:
 
 \begin{align*}
-    u(\alpha_1) & = \sqrt{\left(\frac{1}{0{,}755 \cdot 76}\right)^2 \cdot (1{,}2 \cdot 10^{-5})^2 +}  \\
-                & \quad \left(-\frac{0{,}001065}{(0{,}755)^2 \cdot 76}\right)^2 \cdot (0{,}00578)^2 + \\
-                & \quad \left(-\frac{0{,}001065}{0{,}755 \cdot (76)^2}\right)^2 \cdot (0{,}0578)^2 =  \\
+    u(\alpha_1) & = \sqrt{\left(\frac{1}{0{,}755 \cdot 75{,}4}\right)^2 \cdot (1{,}2 \cdot 10^{-5})^2 +}  \\
+                & \quad \left(-\frac{0{,}001065}{(0{,}755)^2 \cdot 75{,}4}\right)^2 \cdot (0{,}00578)^2 + \\
+                & \quad \left(-\frac{0{,}001065}{0{,}755 \cdot (75{,}4)^2}\right)^2 \cdot (0{,}0578)^2 =  \\
                 & = 0{,}21 \cdot 10^{-6} \cdot \text{K}^{-1}
 \end{align*}
 
 % ---------- WNIOSKI ----------
 \section{Wnioski}
 
+W przeprowadzonym doświadczeniu wyznaczono współczynniki rozszerzalności cieplnej dla czterech różnych rurek metalowych za pomocą dylatometru. Na podstawie uzyskanych wyników można sformułować następujące wnioski:
 
+\begin{enumerate}
+
+    \item Na podstawie wyznaczonych współczynników rozszerzalności oraz wyglądu rurek zidentyfikowano następujące materiały:
+          \begin{itemize}
+              \item Rurka 1 (złota) - mosiądz ($\alpha = 18,708 \cdot 10^{-6}$ K$^{-1}$, $u_c(\alpha) = 0{,}21 \cdot 10^{-6}$ K$^{-1}$)
+              \item Rurka 2 (miedziana) - miedź ($\alpha = 16,688 \cdot 10^{-6}$ K$^{-1}$, $u_c(\alpha) = 0{,}20 \cdot 10^{-6}$ K$^{-1}$)
+              \item Rurka 3 (szara) - stal nierdzewna ($\alpha = 16,512 \cdot 10^{-6}$ K$^{-1}$, $u_c(\alpha) = 0{,}20 \cdot 10^{-6}$ K$^{-1}$)
+              \item Rurka 4 (srebrna) - żelazo ($\alpha = 11,682 \cdot 10^{-6}$ K$^{-1}$, $u_c(\alpha) = 0{,}20 \cdot 10^{-6}$ K$^{-1}$)
+          \end{itemize}
+
+    \item Zaobserwowano wyraźne różnice w rozszerzalności cieplnej różnych metali - mosiądz charakteryzuje się najwyższym współczynnikiem rozszerzalności, podczas gdy żelazo najniższym spośród badanych materiałów.
+
+    \item Niepewności pomiarowe były na poziomie $0{,}20 \cdot 10^{-6}$ K$^{-1}$.
+
+    \item Największy wpływ na niepewność wyznaczonego współczynnika rozszerzalności miały niepewności pomiaru długości początkowej rurki oraz niepewność pomiaru temperatury.
+
+    \item Dzięki zastosowaniu pary wodnej do podgrzewania rurek, zapewniono ogrzewanie rurek do stałej temperatury, co pozwoliło na uzyskanie powtarzalnych wyników - dla obu powtórzeń wyniki były zbliżone.
+\end{enumerate}
+
+Przeprowadzone doświadczenie potwierdza, że współczynnik rozszerzalności cieplnej jest charakterystyczną cechą materiału, która może służyć do jego identyfikacji.
 
 % ---------- WYKRESY ----------
-\section{Wykresy}
+% \section{Wykresy}
 
 \bibliographystyle{plain}
 \bibliography{bibliography}
