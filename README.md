@@ -30,3 +30,11 @@
 - [instrukcja](./05-lab-15/1%20pracownia%20fizyczna%2005%20-%20ćw%2015%20-%20instrukcja.pdf)
 - [sprawozdanie](./05-lab-15/report/05-lab-15-sprawozdanie.pdf)
 - [obliczenia](./05-lab-15/05-lab-15-obliczenia.ipynb)
+
+## 6. ćwiczenie 19 - Pomiar stałej grawitacji G (ważenie Ziemi)
+
+- [instrukcja](./06-lab-19/06-lab-19-instrukcja.md)
+- [sprawozdanie](./06-lab-19/raport/06-lab-19.pdf)
+- [obliczenia](./06-lab-19/06-lab-19-obliczenia.ipynb)
+
+## 7. ćwiczenie 25 - Wyznaczanie współczynnika rozszerzalności cieplnej metali za pomocą dylatometru

@@ -139,7 +139,7 @@ Z powyższego wzoru można wyznaczyć moment bezwładności:
     I = k \left(\frac{T}{2\pi}\right)^2
 \end{equation}
 
-Wstęp teoretyczny opracowano na podstawie monografii \cite{Drynski1976} (rozdział 19) oraz instrukcji do ćwiczenia \cite{lab11manual}.
+Wstęp teoretyczny opracowano na podstawie podręcznika \cite{Drynski1976} (rozdział 19) oraz instrukcji do ćwiczenia \cite{lab11manual}.
 % --------- OPIS DOŚWIADCZENIA ---------
 \section{Opis doświadczenia}
 
@@ -239,7 +239,7 @@ Badaną bryłą jest walec o wymiarach w tabeli \ref{tab:rozmiar_bryly_wzorcowej
 Podstawiając dane z tabeli \ref{tab:rozmiar_bryly_wzorcowej} otrzymujemy:
 
 \begin{equation} \label{eq:moment_bezwladnosci_walca_wartosc}
-    I_w = \frac{1}{2} \cdot 1,330 \cdot \left(\frac{0.06}{2}\right)^2 = 0.0060\,\text{kgm}^2
+    I_w = \frac{1}{2} \cdot 1,330 \cdot \left(\frac{0.06}{2}\right)^2 = 0.0005985\,\text{kgm}^2
 \end{equation}
 
 
@@ -269,7 +269,7 @@ Z wzorów \eqref{eq:moment_bezwladnosci_w_zaleznosci_od_okresu} i \eqref{eq:mome
     I_x = \frac{T_x^2 - T_0^2}{T_w^2 - T_0^2} \cdot I_w
 \end{equation}
 
-Po podstawieniu okresów drgań z tabel \ref{tab:pomiar_czasu_drgan_badanej_bryly} oraz \ref{tab:pomiar_czasu_drgan_ramki_z_walcem} i momentu bezwładności walca $I_w$ z wzoru \eqref{eq:moment_bezwladnosci_walca_wartosc} otrzymujemy:
+Po podstawieniu okresów drgań z tabel \ref{tab:pomiar_czasu_drgan_badanej_bryly} oraz \ref{tab:pomiar_czasu_drgan_ramki_z_walcem} i momentu bezwładności walca $I_w$ z wzoru \eqref{eq:moment_bezwladnosci_walca_wartosc} otrzymujemy (moment oznaczony jako $I_{[x]}$ oznacza moment osi oznaczonej jako $[x]$ w tabeli~\ref{tab:pomiar_czasu_drgan_badanej_bryly}):
 
 \begin{table}[H]
     \centering
@@ -291,7 +291,7 @@ Po podstawieniu okresów drgań z tabel \ref{tab:pomiar_czasu_drgan_badanej_bryl
 Przykładowe obliczenia dla $I_x$:
 
 \begin{equation*}
-    I_x = \frac{(2,3001)^2 - (1,8135)^2}{(2,5192)^2 - (1,8135)^2} \cdot 0,005985 = 0,000392\,\text{kgm}^2
+    I_x = \frac{(2,3001)^2 - (1,8135)^2}{(2,5192)^2 - (1,8135)^2} \cdot 0,0005985 = 0,000392\,\text{kgm}^2
 \end{equation*}
 
 
@@ -363,10 +363,7 @@ Tworzymy układ równań \eqref{eq:elipsoida_bezwladnosci} i \eqref{eq:prosta_pr
      & \begin{cases}
            \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2}  = 1 \\
            x = y = z
-       \end{cases}
-\end{align*}
-
-\begin{align*}
+       \end{cases} \\
      & \frac{x^2}{a^2} + \frac{x^2}{b^2} + \frac{x^2}{c^2} = 1              \\
      & x^2 \left( \frac{1}{a^2} + \frac{1}{b^2} + \frac{1}{c^2} \right) = 1 \\
      & x^2 = \frac{1}{\frac{1}{a^2} + \frac{1}{b^2} + \frac{1}{c^2}}        \\
@@ -388,22 +385,26 @@ Stąd podstawiając do wzoru \eqref{eq:moment_bezwladnosci_elipsoida} otrzymujem
 
 \subsubsection{Oś nieprzechodząca przez środek masy (t)}
 
+Wybrana oś przechodzi przez jeden wybrany wierzchołek sześcianu oraz środek krawędzi przeciwległej, stąd wyznaczone zostały dwa punkty przez które przechodzi oś $t$ (rys. \ref{fig:cube}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{cube.png}
+    \caption{Sześcian z zaznaczoną osią $t$ przechodzącą przez wierzchołek i środek przeciwległej krawędzi}
+    \label{fig:cube}
+\end{figure}
+
+
+
+\begin{align*}
+    \vec{P} & = (\frac{-a}{2}, \frac{a}{2}, \frac{a}{2}) \\
+    \vec{Q} & = (0, -\frac{a}{2}, -\frac{a}{2})
+\end{align*}
 
 Wektor kierunkowy osi $t$ to:
 
-oś t przechodzi przez punkty:
-
 $$
-    P = (\frac{-a}{2}, \frac{a}{2}, \frac{a}{2})
-$$
-$$
-    Q = (0, -\frac{a}{2}, -\frac{a}{2})
-$$
-
-wektor kierunkowy osi $t$ to:
-
-$$
-    \vec{t} = Q - P = (0, -\frac{a}{2}, -\frac{a}{2}) - (\frac{-a}{2}, \frac{a}{2}, \frac{a}{2}) = (\frac{a}{2}, -a, -a)
+    \vec{t} = \vec{Q} - \vec{P} = (0, -\frac{a}{2}, -\frac{a}{2}) - (\frac{-a}{2}, \frac{a}{2}, \frac{a}{2}) = (\frac{a}{2}, -a, -a)
 $$
 
 
@@ -631,10 +632,6 @@ Podstawiamy:
     I_t \approx 0.000392 + 0.00013078 \approx 0.0005228
 \]
 
-
-
-
-
 \subsection{Porównanie momentów bezwładności obliczonych dwoma sposobami}
 
 % 5. Porównać momenty bezwładności (dla tej samej osi) obliczone wg. punktu 2 i punktu 4.
@@ -648,13 +645,6 @@ Porównując metodę elipsoidy \eqref{eq:moment_bezwladnosci_elipsoida} z metod�
 Wartość obliczona z elipsoidy bezwładności jest mniejsza o 0.55\% od wartości obliczonej z wzoru \eqref{eq:moment_bezwladnosci_badanej_bryly}.
 
 %  ------------------------------------------------------------------------
-% [[TODO: Porównanie dla osi (t)]]
-
-
-
-
-
-
 
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
@@ -665,22 +655,16 @@ Wartość obliczona z elipsoidy bezwładności jest mniejsza o 0.55\% od wartoś
 
 Obliczono niepewność standardową typu B  $u_B(x)$  obliczoną ze wzoru \ref{eq:u_B}. Niepewność wzorcowania $\Delta_d t$ dla stopera wynosi $0.001$ s.
 
-
 \begin{equation}
     \label{eq:u_B}
     u_B(x) = \frac{\Delta_d x}{\sqrt{3}}
 \end{equation}
 
-
-
 Podstawiając wartości, otrzymano:
-
-
 
 $$
     u_B(t) = \frac{0.001}{\sqrt{3}} = 0.000577\,\text{s}
 $$
-
 
 \subsection*{Niepewność pomiaru okresu}
 
@@ -726,7 +710,7 @@ Na podstawie przeprowadzonych pomiarów i analizy wyników można sformułować 
 
     \item W przypadku osi $t$ (nieprzechodzącej przez środek masy) zaobserwowano znaczącą rozbieżność (około 47-48\%) między momentem bezwładności zmierzonym metodą wahadła torsyjnego a wartością obliczoną teoretycznie z wykorzystaniem twierdzenia Steinera.
 
-    \item Zgodnie z twierdzeniem Steinera, moment bezwładności względem osi nieprzechodzącej przez środek masy powinien być większy od momentu bezwładności względem osi równoległej przechodzącej przez środek masy o składnik $md^2$. Nasze obliczenia za pomocą elipsoidy bezwładności potwierdzają tę zależność, jednak wartość uzyskana metodą wykorzystującą okres drgań jest mniejsza, co wskazuje na prawdopodobne błędy pomiarowe. Możliwe przyczyny tej rozbieżności to niedokładności w pomiarze okresu drgań dla osi $t$.
+    \item Zgodnie z twierdzeniem Steinera, moment bezwładności względem osi nieprzechodzącej przez środek masy powinien być większy od momentu bezwładności względem osi równoległej przechodzącej przez środek masy o składnik $md^2$. Nasze obliczenia za pomocą elipsoidy bezwładności potwierdzają tę zależność, jednak wartość uzyskana metodą wykorzystującą okres drgań jest mniejsza, co wskazuje na to, że najprawdopodobniej popełniono błąd pomiaru okresu dla osi $t$.
 
     \item Badana bryła (sześcian) charakteryzuje się niemal identycznymi momentami bezwładności względem trzech głównych osi przechodzących przez środek masy ($I_x \approx I_y \approx I_z \approx 0,000392$ kgm$^2$).
 
