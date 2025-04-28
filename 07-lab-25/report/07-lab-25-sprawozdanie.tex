@@ -59,17 +59,307 @@
 % ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
 \section{Opracowanie wyników pomiarów}
 
+
+
+
 % ---------- TABELE ----------
 \subsection{Tabele pomiarowe}
 
-% ---------- OBLICZENIA ----------
-\subsection{...}
 
-% ---------- NIEPEWNOŚCI ----------
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Nr} & \textbf{Kolor} \\
+        \hline
+        1 & złota \\
+        \hline
+        2 & miedziana \\
+        \hline
+        3 & szara \\
+        \hline
+        4 & srebrna \\
+        \hline
+    \end{tabular}
+    \caption{Oznaczenie rurek}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        Nr & $L_1$ [cm] & $L_2$ [cm] & $L_3$ [cm] & $L_4$ [cm] \\
+        \hline
+        1 & 75,5 & 75,5 & 75,5 & 75,5 \\
+        2 & 75,5 & 75,5 & 75,5 & 75,5 \\
+        3 & 75,5 & 75,5 & 75,5 & 75,5 \\
+        4 & 75,5 & 75,5 & 75,5 & 75,5 \\
+        5 & 75,5 & 75,5 & 75,5 & 75,5 \\
+        6 & 75,5 & 75,5 & 75,5 & 75,5 \\
+        \hline
+    \end{tabular}
+    \caption{Początkowe długości rurki.}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|c|c||c|c||c|c||c|c|}
+        \hline
+        Nr & $L_{11}$ & $L_{12}$ & $L_{21}$ & $L_{22}$ & $L_{31}$ & $L_{32}$ & $L_{41}$ & $L_{42}$ \\
+        & [mm] & [mm] & [mm] & [mm] & [mm] & [mm] & [mm] & [mm] \\
+        \hline
+        1 & 8,87 & 9,93 & 8,96 & 9,91 & 9,13 & 10,07 & 8,88 & 9,56 \\
+        2 & 8,94 & 10,01 & 8,90 & 9,85 & 8,93 & 9,87 & 8,84 & 9,49 \\
+        \hline
+    \end{tabular}
+    \caption{Pomiary długości rurki $x$ przed ($L_{x1}$) i po ($L_{x2}$) ogrzaniu.}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Nr & $\Delta L_1$ [mm] & $\Delta L_2$ [mm] & $\Delta L_3$ [mm] & $\Delta L_4$ [mm] \\
+        \hline
+        1 & 1,06 & 0,95 & 0,94 & 0,68 \\
+        2 & 1,07 & 0,95 & 0,94 & 0,65 \\
+        \hline
+    \end{tabular}
+    \caption{Pomiary wydłużenia rurki ($\Delta L_x = L_{x2} - L_{x1}$).}
+    \label{tab:pomiary_wydluzenia}
+\end{table}
+
+
+
+% ---------- OBLICZENIA ----------
+\subsection{Średnia wartość początkowej długości rurki}
+
+Długości początkowe rurek nie wykazały rozrzutu wszystkie pomiary wyniosły $0.755\,\text{m}$.
+
+\subsection{Średnia wartość wydłużenia rurki}
+
+Na podstawie tabeli \ref{tab:pomiary_wydluzenia} obliczono średnie wydłużenie rurki dla każdej z czterech rurek i zapisano w tabeli \ref{tab:srednie_wydluzenie}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        $\Delta L_1$ [m] & $\Delta L_2$ [m] & $\Delta L_3$ [m] & $\Delta L_4$ [m] \\
+        \hline
+        0,001065 & 0,000950 & 0,000940 & 0,000665 \\
+        \hline
+    \end{tabular}
+    \caption{Średnie wydłużenie rurki.}
+    \label{tab:srednie_wydluzenie}
+\end{table}
+
+Przykładowe obliczenia:
+
+\begin{equation*}
+    \Delta L_1 = \frac{1,06 + 1,07}{2} \cdot 10^{-3} = 0,001065\,\text{m}
+\end{equation*}
+
+\subsection{Współczynnik rozszerzalności cieplnej}
+
+Współczynnik rozszerzalności cieplnej obliczono na podstawie wzoru:
+
+\begin{equation}
+    \label{eq:wspolczynnik_rozszerzalnosci}
+    \alpha = \frac{\Delta L}{L_0 \cdot (T_2 - T_1)}
+\end{equation}
+
+gdzie:
+\begin{itemize}
+    \item $\Delta L$ - średnie wydłużenie rurki
+    \item $L_0 = 0.755\,\text{m}$ - długość początkowa rurki
+    \item $T_1 = 24.0^\circ\text{C}$ - temperatura początkowa
+    \item $T_2 = 100^\circ\text{C}$ - temperatura końcowa
+\end{itemize}
+
+Wyniki obliczeń zapisano w tabeli \ref{tab:wspolczynnik_rozszerzalnosci}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Rurka & $\alpha$ [$\frac{1}{\text{K}}$] \\
+        \hline
+        1 & 0,000018560 \\
+        \hline
+        2 & 0,000016556 \\
+        \hline
+        3 & 0,000016382 \\
+        \hline
+        4 & 0,000011589 \\
+        \hline
+    \end{tabular}
+    \caption{Współczynnik rozszerzalności cieplnej dla poszczególnych rurek.}
+    \label{tab:wspolczynnik_rozszerzalnosci}
+\end{table}
+
+Przykładowe obliczenia:
+
+\begin{equation}
+    \alpha_1 = \frac{0{,}001065}{0{,}755 \cdot (100 - 24)} = 0{,}000018560\,\frac{1}{\text{K}}
+\end{equation}
+
+\subsection{Określenie materiału rurek}
+
+Porównując wartości współczynnika rozszerzalności cieplnej z wartościami tablicowymi określono materiał rurek (biorąc pod uwagę najbliższą wartość oraz zgodność z kolorami rurek), który został zapisany w tabeli \ref{tab:materiały}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Materiał} & \multicolumn{2}{c|}{\textbf{Współczynnik rozszerzalności cieplnej [$\frac{1}{\text{K}}$]}} \\
+        \cline{2-3}
+        & \textbf{Wartość tablicowa} & \textbf{Wartość zmierzona} \\
+        \hline
+        Mosiądz & $19{,}0$ $\cdot 10^{-6}$ & $18{,}560$ $\cdot 10^{-6}$ \\
+        \hline
+        Miedź & $17{,}0$ $\cdot 10^{-6}$ & $16{,}556$ $\cdot 10^{-6}$ \\
+        \hline
+        Stal nierdzewna & $17{,}3$ $\cdot 10^{-6}$ & $16{,}382$ $\cdot 10^{-6}$ \\
+        \hline
+        Żelazo & $11{,}8$ $\cdot 10^{-6}$ & $11{,}589$ $\cdot 10^{-6}$ \\
+        \hline
+    \end{tabular}
+    \caption{Tablicowe wartości współczynnika rozszerzalności cieplnej dla różnych materiałów (źródło: \cite{wspolczynnik_rozszeralnosci}) oraz wartości zmierzone.}
+    \label{tab:materiały}
+\end{table}
+
 \section{Ocena niepewności pomiaru}
+
+
+\subsection{Niepewności wzorcowania}
+
+Niepewności wzorcowania na podstawie użytych przyrządów zostały zapisane w tabeli \ref{tab:niepewnosci}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Wielkość} & \textbf{Niepewność wzorcowania} \\
+        \hline
+        Długość początkowa rurki ($\Delta_d L$) & $0.01\,\text{m}$ \\
+        \hline
+        Długość rurki (przed i po ogrzaniu) ($\Delta_d L_{xx}$) & $0.00001\,\text{m}$ \\
+        \hline
+        Temperatura ($\Delta_d T$) & $0.1^\circ\text{C}$ \\
+        \hline
+    \end{tabular}
+    \caption{Niepewności wzorcowania.}
+    \label{tab:niepewnosci}
+\end{table}
+
+\subsection{Niepewność standardowa początkowej długości rurki}
+
+Niepewność standardowa początkowej długości rurki obliczono na podstawie wzoru na niepewność typu B, ze względu na to, że nie wystąpił rozrzut wyników pomiarów.
+
+\begin{equation*}
+    u(L_0) = \frac{\Delta_d L_0}{\sqrt{3}} = \frac{0.01}{\sqrt{3}} = 0.00578\,\text{m}
+\end{equation*}
+
+\subsection{Niepewność standardowa długości rurki}
+
+Niepewność standardowa długości rurki obliczono na podstawie wzoru:
+
+\begin{equation*}
+    u(L_{xx}) = \frac{\Delta_d L_{xx}}{\sqrt{3}} = \frac{0.00001}{\sqrt{3}} = 5.8 \cdot 10^{-6}\,\text{m}
+\end{equation*}
+
+\subsection{Niepewność wydłużenia rurki}
+
+Wydłużenie rurki określa wzór:
+
+\begin{equation*}
+    \Delta L_{xx} = L_{x2} - L_{x1}
+\end{equation*}
+
+Stąd niepewność standardowa wydłużenia rurki wynosi z prawa przenoszenia niepewności:
+
+\begin{equation*}
+    u(\Delta L_{xx}) = 2 u(L_{xx}) = 2 \cdot 5{,}8 \cdot 10^{-6} = 1{,}2 \cdot 10^{-5}\,\text{m}
+\end{equation*}
+
+\subsection{Niepewność standardowa temperatury}
+
+Niepewność standardowa temperatury obliczono na podstawie wzoru:
+
+\begin{equation*}
+    u(T) = \frac{\Delta_d T}{\sqrt{3}} = \frac{0{,}1}{\sqrt{3}} = 0{,}058\,\text{K}
+\end{equation*}
+
+
+\subsection{Niepewność standardowa różnicy temperatur}
+
+Niepewność standardowa różnicy temperatur obliczono na podstawie wzoru:
+
+\begin{equation*}
+    u(T_2 - T_1) = 2 \cdot u(T) = 2 \cdot 0{,}058 = 0{,}12\,\text{K}
+\end{equation*}
+
+
+\subsection{Niepewność standardowa współczynnika rozszerzalności cieplnej}
+
+Współczynnik rozszerzalności cieplnej obliczono na podstawie wzoru \ref{eq:wspolczynnik_rozszerzalnosci_obliczenie}.
+
+\begin{equation*}
+    \label{eq:wspolczynnik_rozszerzalnosci_obliczenie}
+    \alpha = \frac{\Delta L}{L_0 \cdot \Delta T}
+\end{equation*}
+
+Stąd korzystając z prawa przenoszenia niepewności otrzymujemy:
+
+\begin{equation*}
+    u(\alpha) = \sqrt{\left( \frac{\partial \alpha}{\partial \Delta L} \right)^2 u^2(\Delta L) + \left( \frac{\partial \alpha}{\partial L_0} \right)^2 u^2(L_0) + \left( \frac{\partial \alpha}{\partial \Delta T} \right)^2 u^2(\Delta T)}
+\end{equation*}
+
+Obliczając pochodne cząstkowe otrzymujemy:
+
+\begin{align*}
+    \frac{\partial \alpha}{\partial \Delta L} & = \frac{1}{L_0 \cdot \Delta T}           \\
+    \frac{\partial \alpha}{\partial L_0}      & = -\frac{\Delta L}{L_0^2 \cdot \Delta T} \\
+    \frac{\partial \alpha}{\partial \Delta T} & = -\frac{\Delta L}{L_0 \cdot \Delta T^2}
+\end{align*}
+
+Ostatecznie otrzymujemy:
+
+\begin{equation*}
+    u(\alpha) = \sqrt{\left( \frac{1}{L_0 \cdot \Delta T} \right)^2 u^2(\Delta L) + \left( -\frac{\Delta L}{L_0^2 \cdot \Delta T} \right)^2 u^2(L_0) + \left( -\frac{\Delta L}{L_0 \cdot \Delta T^2} \right)^2 u^2(\Delta T)}
+\end{equation*}
+
+Dla wszystkich rurek obliczono wartości i zapisano w tabeli \ref{tab:niepewnosci_wspolczynnik_rozszerzalnosci}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Rurka & $u(\alpha)$ [$\cdot 10^{-6}\,\frac{1}{\text{K}}$] \\
+        \hline
+        1 & 0,21 \\
+        2 & 0,21 \\
+        3 & 0,21 \\
+        4 & 0,21 \\
+        \hline
+    \end{tabular}
+    \caption{Niepewność standardowa współczynnika rozszerzalności cieplnej.}
+    \label{tab:niepewnosci_wspolczynnik_rozszerzalnosci}
+\end{table}
+
+Przykładowe obliczenia dla rurki nr 1:
+
+\begin{align*}
+    u(\alpha_1) & = \sqrt{\left(\frac{1}{0{,}755 \cdot 76}\right)^2 \cdot (1{,}2 \cdot 10^{-5})^2 +}  \\
+                & \quad \left(-\frac{0{,}001065}{(0{,}755)^2 \cdot 76}\right)^2 \cdot (0{,}00578)^2 + \\
+                & \quad \left(-\frac{0{,}001065}{0{,}755 \cdot (76)^2}\right)^2 \cdot (0{,}0578)^2 =  \\
+                & = 0{,}21 \cdot 10^{-6} \cdot \text{K}^{-1}
+\end{align*}
 
 % ---------- WNIOSKI ----------
 \section{Wnioski}
+
+
 
 % ---------- WYKRESY ----------
 \section{Wykresy}
