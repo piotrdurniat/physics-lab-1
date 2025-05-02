@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[margin=2cm]{geometry} % Add smaller margins
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{polski}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+
+
+\title{Wstęp cw 26}
+\author{}
+\date{April 2025}
+
+\begin{document}
+
+\maketitle
+
+\section*{Wstęp teoretyczny}
+
+\subsection*{Pojęcia ciepła i temperatury}
+
+\textbf{Ciepło} jest formą przekazywania energii wewnętrznej pomiędzy układami w wyniku różnicy temperatur. W przeciwieństwie do pracy, ciepło nie jest związane z uporządkowanym ruchem makroskopowym cząstek, lecz z mikroskopowymi procesami wewnętrznymi.
+\textbf{Temperatura} jest skalarną wielkością fizyczną określającą stan termiczny ciała i jest miarą średniej energii kinetycznej ruchu termicznego cząsteczek tworzących substancję. Jednostką temperatury w układzie SI jest kelwin (K).
+
+\subsection*{Zasada zachowania energii w odniesieniu do ciepła. Bilans cieplny}
+
+Zasada zachowania energii głosi, że energia nie może być tworzona ani niszczona — może jedynie zmieniać formę.
+W kontekście procesów cieplnych oznacza to, że suma przekazanych ilości ciepła między wszystkimi składnikami układu izolowanego musi wynosić zero:
+\[
+    \sum_i Q_i = 0
+\]
+gdzie \( Q_i \) to ilość ciepła wymieniona przez \( i \)-ty składnik układu.
+
+Dla układu składającego się z badanego ciała, wody i kalorymetru bilans cieplny przyjmuje postać:
+\[
+    m_c c_c (T_c - T_k) + m_w c_w (T_p - T_k) + m_k c_k (T_p - T_k) = 0
+\]
+gdzie:
+\( m \) — masa,
+\( c \) — ciepło właściwe,
+\( T \) — temperatura,
+a indeksy \( c \), \( w \), \( k \) odpowiadają kolejno badanemu ciału, wodzie i kalorymetrowi, natomiast \( T_p \) i \( T_k \) oznaczają temperaturę początkową i końcową.
+
+\subsection*{Kalorymetria}
+
+\textbf{Kalorymetria} to dział fizyki zajmujący się pomiarem ilości ciepła wymienianego podczas procesów fizycznych i chemicznych. Podstawowym urządzeniem wykorzystywanym w tych pomiarach jest \textbf{kalorymetr} — naczynie zapewniające minimalną wymianę ciepła z otoczeniem. Uwzględnienie pojemności cieplnej kalorymetru jest niezbędne dla poprawnego przeprowadzenia bilansu cieplnego.
+
+\subsection*{Pojemność cieplna ciał stałych, ciepło właściwe i jego zależność od temperatury}
+
+\textbf{Pojemność cieplna} \( C \) ciała określa ilość ciepła potrzebną do zmiany temperatury całego ciała o jednostkę temperatury:
+\[
+    C = \frac{Q}{\Delta T}
+\]
+\textbf{Ciepło właściwe} \( c \) definiuje się jako ilość ciepła potrzebną do zmiany temperatury jednostki masy substancji o jednostkę temperatury:
+\[
+    c = \frac{Q}{m \Delta T}
+\]
+Ciepło właściwe ciał stałych w ogólności zależy od temperatury, zwłaszcza w zakresie niskich temperatur (kilka–kilkadziesiąt K). W temperaturze pokojowej dla większości metali ciepło właściwe można jednak traktować jako stałe.
+
+\subsection*{Prawo Dulonga i Petita}
+
+\textbf{Prawo Dulonga i Petita} stwierdza, że dla większości ciał stałych w temperaturze pokojowej molowa pojemność cieplna wynosi około:
+\[
+    C_m \approx 3R
+\]
+gdzie \( C_m \) to molowa pojemność cieplna, a \( R \) to stała gazowa (\( R \approx 8{,}314\, \mathrm{J\,mol^{-1}K^{-1}} \)).
+Przekłada się to na przybliżoną wartość ciepła właściwego metali:
+\[
+    c \approx \frac{3R}{M}
+\]
+gdzie \( M \) to masa molowa substancji. Prawo to wynika z klasycznego modelu drgań atomów w sieci krystalicznej i obowiązuje w temperaturach dużo wyższych od temperatury Debye'a.
+
+\subsection*{Idealny i rzeczywisty przebieg wymiany ciepła w kalorymetrze — metoda interpolacji}
+
+W idealnym przypadku wymiana ciepła między ciałem a wodą zachodzi natychmiastowo, bez strat do otoczenia. W rzeczywistości proces trwa pewien czas i w jego trakcie zachodzi częściowa wymiana ciepła z otoczeniem oraz zmiana temperatury wody i ciała.
+
+Aby zminimalizować błędy pomiarowe wynikające z nieidealności procesu, stosuje się \textbf{metodę interpolacji}: sporządza się wykres temperatury w funkcji czasu przed wrzuceniem ciała oraz po wrzuceniu, a następnie ekstrapoluje się te przebiegi do chwili zetknięcia (\( t=0 \)), wyznaczając interpolowane wartości temperatury odpowiadające hipotetycznie nieskończenie szybkiemu przebiegowi wymiany ciepła.
+
+\end{document}
