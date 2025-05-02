@@ -81,10 +81,10 @@ Mierząc okres drgań układu oraz odległość między wychyleniami masy $m$ wz
 gdzie:
 \begin{itemize}
     \setlength{\itemsep}{0em}
-    \item $L = 0,86\text{ m}$ - odległość zwierciadła od ekranu
-    \item $r = 0,045\text{ m}$ - odległość między środkami mas $M$ i $m$
-    \item $d = 0,05\text{ m}$ - odległość małej kulki od osi obrotu
-    \item $M = 1,5\text{ kg}$ - masa dużej kulki
+    \item $L = 0{,}86\text{ m}$ - odległość zwierciadła od ekranu
+    \item $r = 0{,}047\text{ m}$ - odległość między środkami mas $M$ i $m$
+    \item $d = 0{,}05\text{ m}$ - odległość małej kulki od osi obrotu
+    \item $M = 1{,}5\text{ kg}$ - masa dużej kulki
     \item $T$ - okres drgań układu (wyznaczony w doświadczeniu)
     \item $\Delta b$ - Różnica między wychyleniami masy $m$ względem położenia równowagi w dwóch różnych ustawieniach masy $M$ (wyznaczona w doświadczeniu)
 \end{itemize}
@@ -270,44 +270,21 @@ $$
 
 \subsection{Wyznaczanie stałej grawitacji}
 
-Niepewność pomiaru stałej grawitacji wyznaczono korzystając ze wzoru (18) z instrukcji ONP:
-
-\begin{equation*}
-    \Delta y = \sum_{k=1}^{K} \left| \frac{\partial f}{\partial x_k} \Delta x_k \right|
-\end{equation*}
-
-Podstawiając wzór na stałą grawitacji:
+Stałą grawitacji wyznaczono korzystając ze wzoru:
 
 \begin{equation*}
     G = \frac{\pi^2 r^2 d \Delta b}{MT^2L}
 \end{equation*}
 
-Wyznaczamy odpowiednie pochodne cząstkowe:
-
-\begin{align*}
-    \frac{\partial G}{\partial \Delta b} & = \frac{\pi^2 r^2 d}{MT^2L} = \frac{G}{\Delta b}       \\[8pt]
-    \frac{\partial G}{\partial T}        & = \frac{-2\pi^2 r^2 d \Delta b}{MT^3L} = \frac{-2G}{T}
-\end{align*}
-
-Uwzględniając największy wpływ niepewności wyznaczenia $\Delta b$ oraz okresu drgań $T$, otrzymujemy:
-
-\begin{equation*}
-    \Delta G = \left| \frac{\partial G}{\partial T} \Delta T \right| + \left| \frac{\partial G}{\partial \Delta b} \Delta(\Delta b) \right| = \left| \frac{-2G}{T} \Delta T \right| + \left| \frac{G}{\Delta b} \Delta(\Delta b) \right|
-\end{equation*}
-
 Podstawiając wartości liczbowe:
 
 \begin{align*}
-    \Delta G & = \left| \frac{-2 \cdot 7{,}45 \cdot 10^{-11}}{630} \cdot 60 \right| + \left| \frac{7{,}45 \cdot 10^{-11}}{0{,}035} \cdot 0{,}010 \right| \\[8pt]
-             & = 1{,}42 \cdot 10^{-12} + 2{,}13 \cdot 10^{-11}                                                                                           \\[8pt]
-             & = 2{,}27 \cdot 10^{-11} \frac{\text{m}^3}{\text{kg} \cdot \text{s}^2}
+    G & = \frac{\pi^2 \cdot (0{,}047)^2 \cdot 0{,}05 \cdot 0{,}03765 \cdot 10^{-3}}{
+    1.5 \cdot (630{,}610)^2 \cdot 0{,}086}                                           \\
+      & = 8{,}00089 \cdot 10^{-11} \frac{\text{m}^3}{\text{kg} \cdot \text{s}^2}
 \end{align*}
 
-Zatem niepewność wyznaczenia stałej grawitacji wynosi:
 
-\begin{equation}
-    \Delta G = 2{,}27 \cdot 10^{-11} \frac{\text{m}^3}{\text{kg} \cdot \text{s}^2}
-\end{equation}
 
 \subsection{Wyznaczanie masy Ziemi}
 
@@ -335,8 +312,8 @@ Stąd porównując wzory \eqref{eq:f_ziemia} i \eqref{eq:f_ziemia_2} otrzymujemy
 Podstawiając wartości liczbowe:
 
 \begin{align*}
-    M_Z & = \frac{9{,}81 \cdot (6{,}38 \cdot 10^6)^2}{7{,}45 \cdot 10^{-11}} \\
-        & = 5{,}36 \cdot 10^{24} \text{ kg}
+    M_Z & = \frac{9{,}81 \cdot (6{,}38 \cdot 10^6)^2}{8{,}00089 \cdot 10^{-11}} \\
+        & = 4{,}99 \cdot 10^{24} \text{ kg}
 \end{align*}
 
 
@@ -386,11 +363,16 @@ stąd maksymalna niepewność $\Delta(\Delta b)$ wynosi:
 
 \subsection{Niepewność $T$}
 
-Pomiary były wykonywane co 30 sekund, więc niepewność pomiaru czasu wynosi $\Delta t = 30 \text{ s}$.
-Okres został obliczony jako różnica między dwoma pomiarami czasu, stąd jej niepewność wynosi:
+Niepewność przyrządu pomiarowego wynosi $\Delta t_p = 0{,}01 \text{ s}$, a niepewność eksperymentatora $\Delta t_e = 1{,}0 \text{ s}$. Całkowita niepewność pomiaru czasu wynosi:
 
 $$
-    \Delta T = 2 \cdot 30 \text{ s} = 60 \text{ s}
+    \Delta t = \Delta t_p + \Delta t_e = 1{,}01 \text{ s}
+$$
+
+Okres został obliczony jako różnica między dwoma pomiarami czasu, stąd jego niepewność wynosi:
+
+$$
+    \Delta T = 2 \cdot \Delta t = 2{,}02 \text{ s}
 $$
 
 \subsection{Niepewność $G$}
@@ -428,8 +410,8 @@ Uwzględniając największy wpływ niepewności wyznaczenia $\Delta b$ oraz okre
 Podstawiając wartości liczbowe:
 
 \begin{equation*}
-    \Delta G = | \frac{-2 \cdot 7{,}45 \cdot 10^{-11}}{630} \cdot 60 | + | \frac{7{,}45 \cdot 10^{-11}}{0{,}035} \cdot 0{,}010 |
-    = 3{,}55 \cdot 10^{-11} \frac{\text{m}^3}{\text{kg} \cdot \text{s}^2}
+    \Delta G = | \frac{-2 \cdot 8{,}00089 \cdot 10^{-11}}{630} \cdot 2{,}02 | + | \frac{8{,}00089 \cdot 10^{-11}}{0{,}03765} \cdot 0{,}010 \cdot 10^{-3} |
+    = 0{,}053 \cdot 10^{-11} \frac{\text{m}^3}{\text{kg} \cdot \text{s}^2}
 \end{equation*}
 
 
@@ -438,13 +420,12 @@ Podstawiając wartości liczbowe:
 \section{Wnioski}
 
 \begin{enumerate}
-    \item Obliczona wartość stałej grawitacji wynosi $7{,}45 \cdot 10^{-11} \frac{\text{m}^3}{\text{kg} \cdot \text{s}^2}$ z niepewnością maksymalną $3{,}55 \cdot 10^{-11} \frac{\text{m}^3}{\text{kg} \cdot \text{s}^2}$. Rzeczywista wartość stałej grawitacji wynosi $6{,}67 \cdot 10^{-11} \frac{\text{m}^3}{\text{kg} \cdot \text{s}^2}$, co mieści się w przedziale niepewności.
+    \item Obliczona wartość stałej grawitacji wynosi $8{,}001 \cdot 10^{-11} \frac{\text{m}^3}{\text{kg} \cdot \text{s}^2}$ z niepewnością maksymalną $0{,}053 \cdot 10^{-11} \frac{\text{m}^3}{\text{kg} \cdot \text{s}^2}$. Rzeczywista wartość stałej grawitacji wynosi $6{,}67 \cdot 10^{-11} \frac{\text{m}^3}{\text{kg} \cdot \text{s}^2}$, co nie mieści się w przedziale niepewności.
 
-    \item Obliczona wartość masy Ziemi wynosi $5{,}36 \cdot 10^{24} \text{ kg}$. Rzeczywista wartość masy Ziemi wynosi $5{,}98 \cdot 10^{24} \text{ kg}$.
+    \item Obliczona wartość masy Ziemi wynosi $4{,}99 \cdot 10^{24} \text{ kg}$. Rzeczywista wartość masy Ziemi wynosi $5{,}98 \cdot 10^{24} \text{ kg}$.
 
     \item Główne źródła niepewności w pomiarze to:
           \begin{itemize}
-              \item Duża niepewność pomiaru czasu ($\Delta T = 60$ s), która wynikała z przyjętego interwału pomiarowego (co 30 s).
               \item Wpływ czynników zewnętrznych (drgania podłoża, ruchy powietrza), które mogły zaburzać ruch wahadła pomimo osłony szklanej.
               \item Trudności w precyzyjnym odczytaniu położenia plamki na skali (przyjęto niepewność $0{,}050$ mm).
           \end{itemize}
