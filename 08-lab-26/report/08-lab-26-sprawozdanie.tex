@@ -1,0 +1,80 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} % Do ustawień marginesów
+\usepackage{multicol} % Dla podziału na kolumny
+\usepackage{ragged2e} % Dla justowania tekstu
+\usepackage{graphicx} % Required for inserting images
+\usepackage{float}
+\usepackage{caption}
+\usepackage{amsmath} % Math formulas
+\usepackage{amssymb} % Symbols
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=orange]{hyperref} % Hyperlinks
+\usepackage{polski} % Polish language
+\usepackage[utf8]{inputenc} % Text encoding
+\usepackage{enumitem} % Pakiet do elastycznego sterowania listami
+\usepackage{indentfirst}
+\usepackage{array}
+
+\begin{document}
+
+% Górna część strony
+\noindent
+\begin{minipage}{0.5\textwidth}
+    \raggedright
+    \textbf{Piotr Durniat} \\
+    I rok, Fizyka \\
+    Wtorek, 8:00-10:15 \\
+    \vspace{0.5cm}
+    \vspace{0.5cm}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \raggedleft
+    Data wykonania pomiarów: \\
+    29.04.2025 \\
+    \vspace{0.5cm} % Dodatkowa linia przerwy
+    Prowadząca: \\
+    dr Iwona Mróz
+\end{minipage}
+
+% Tytuł ćwiczenia
+\vspace{2cm} % Odstęp
+\begin{center}
+    \LARGE \textbf{Ćwiczenie nr 26} \\[0.5cm]
+    \Large \textbf{Wyznaczanie ciepła właściwego ciał stałych przy użyciu kalorymetru}
+\end{center}
+
+% Reszta treści
+\vspace{1cm} % Kolejny odstęp
+\noindent
+
+\tableofcontents
+\newpage
+
+% ---------- WSTĘP TEORETYCZNY ----------
+\section{Wstęp teoretyczny}
+
+% ---------- OPIS DOŚWIADCZENIA ----------
+\section{Opis doświadczenia}
+
+% ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
+\section{Opracowanie wyników pomiarów}
+
+% ---------- TABELE ----------
+\subsection{Tabele pomiarowe}
+
+% ---------- OBLICZENIA ----------
+\subsection{...}
+
+% ---------- NIEPEWNOŚCI ----------
+\section{Ocena niepewności pomiaru}
+
+% ---------- WNIOSKI ----------
+\section{Wnioski}
+
+% ---------- WYKRESY ----------
+\section{Wykresy}
+
+\bibliographystyle{plain}
+\bibliography{bibliography}
+
+\end{document}
