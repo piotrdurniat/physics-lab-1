@@ -53,8 +53,63 @@
 % ---------- WSTĘP TEORETYCZNY ----------
 \section{Wstęp teoretyczny}
 
+Ciepło właściwe substancji $c$ określa ilość energii potrzebnej do podwyższenia temperatury jednostkowej masy ciała o jednostkę temperatury. Jest ono definiowane jako:
+
+\begin{equation}
+    c = \frac{Q}{m \cdot \Delta T}
+\end{equation}
+
+gdzie $Q$ to dostarczona energia cieplna, $m$ to masa ciała, a $\Delta T$ to zmiana temperatury.
+
+W doświadczeniu wykorzystujemy kalorymetr, który pozwala na pomiar ciepła właściwego ciał stałych. Metoda opiera się na zasadzie bilansu cieplnego, zgodnie z którą suma ciepła oddanego i pobranego w układzie izolowanym jest równa zeru:
+
+\begin{equation}
+    Q_1 + Q_2 = 0
+\end{equation}
+
+gdzie $Q_1$ to ciepło oddane przez ciało o wyższej temperaturze (wartość ujemna), a $Q_2$ to ciepło pobrane przez ciało o niższej temperaturze (wartość dodatnia).
+
+Dla badanego ciała stałego o masie $m_c$, temperaturze początkowej $T_c$ i cieple właściwym $c_p$, które zostaje umieszczone w wodzie o masie $m_w$, temperaturze początkowej $T_p$ i cieple właściwym $c_w$, przy uwzględnieniu pojemności cieplnej naczynka kalorymetrycznego $K_n = m_n \cdot c_n$, bilans cieplny przyjmuje postać:
+
+\begin{equation}
+    m_c \cdot c_p \cdot (T_k - T_c) + [m_w \cdot c_w + m_n \cdot c_n] \cdot (T_k - T_p) = 0
+\end{equation}
+
+gdzie $T_k$ to temperatura końcowa układu.
+
+Przekształcając powyższe równanie, otrzymujemy wzór na ciepło właściwe badanego ciała:
+
+\begin{equation}
+    c_p = \frac{[m_w \cdot c_w + m_n \cdot c_n] \cdot (T_p - T_k)}{m_c \cdot (T_k - T_c)}
+\end{equation}
+
+Prawo Dulonga-Petita stanowi, że molowe ciepło właściwe pierwiastków stałych w temperaturze pokojowej jest w przybliżeniu stałe i wynosi około $3R \approx 25\,\frac{\text{J}}{\text{mol} \cdot \text{K}}$, gdzie $R$ to stała gazowa. Prawo to jest przybliżeniem i sprawdza się głównie dla metali i prostych substancji krystalicznych w temperaturze pokojowej.
+
+W rzeczywistym przebiegu doświadczenia występuje wymiana ciepła z otoczeniem, co wprowadza błąd systematyczny. Aby go zminimalizować, stosuje się metodę interpolacji do wyznaczenia rzeczywistych temperatur początkowej i końcowej, analizując zmiany temperatury w czasie przed i po osiągnięciu stanu równowagi.
+
+Wstęp teoretyczny został opracowany na podstawie podręcznika Fizyka dla szkół wyższych, Tom 2, Dział Temodynamika, rozdział 1 - Temperatura i Ciepło \cite{fizyka_dla_szkół_wyższych_tom_2}.
+
+
+
+
 % ---------- OPIS DOŚWIADCZENIA ----------
 \section{Opis doświadczenia}
+
+\begin{enumerate}
+    \item Zważenie badanych ciał oraz naczyńka kalorymetrycznego z mieszadełkiem.
+    \item Napełnienie naczyńka wodą (do 2/3 objętości) i określenie jej masy.
+    \item Ogrzanie badanego ciała w ogrzewaczu elektrycznym z termoparą do temperatury 100-105°C.
+    \item Rejestracja temperatury początkowej wody w kalorymetrze przez 5 minut (pomiar co 30 sekund).
+    \item Przeniesienie ogrzanego ciała do kalorymetru i pomiar zmian temperatury:
+          \begin{itemize}
+              \item pierwsze 5 minut: pomiar co 30 sekund
+              \item następnie: pomiar co minutę
+          \end{itemize}
+    \item Powtórzenie procedury dla pozostałych badanych ciał.
+\end{enumerate}
+
+Doświadczenie pozwala wyznaczyć pojemność cieplną badanych ciał poprzez analizę wymiany ciepła między ogrzanym ciałem a wodą w kalorymetrze.
+
 
 % ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
 \section{Opracowanie wyników pomiarów}

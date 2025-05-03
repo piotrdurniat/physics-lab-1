@@ -53,61 +53,70 @@
 % ---------- WSTĘP TEORETYCZNY ----------
 \section{Wstęp teoretyczny}
 
-Ciepło właściwe substancji $c$ określa ilość energii potrzebnej do podwyższenia temperatury jednostkowej masy ciała o jednostkę temperatury. Jest ono definiowane jako:
+Ciężar właściwy ciała jest to stosunek ciężaru ciała do jego objętości, wyrażony wzorem:
 
-\begin{equation}
-    c = \frac{Q}{m \cdot \Delta T}
-\end{equation}
+\begin{equation*}
+    \gamma = \frac{P}{V}
+\end{equation*}
 
-gdzie $Q$ to dostarczona energia cieplna, $m$ to masa ciała, a $\Delta T$ to zmiana temperatury.
+gdzie:
+\begin{itemize}
+    \setlength{\itemsep}{0em}
+    \item $P$ - ciężar ciała,
+    \item $V$ - objętość ciała.
+\end{itemize}
 
-W doświadczeniu wykorzystujemy kalorymetr, który pozwala na pomiar ciepła właściwego ciał stałych. Metoda opiera się na zasadzie bilansu cieplnego, zgodnie z którą suma ciepła oddanego i pobranego w układzie izolowanym jest równa zeru:
+W ogólności ciała rozszerzają się, gdy rośnie temperatura, tym samym ponieważ masa pozostaje stała, to gęstość ciała maleje. Istnieją jednak wyjątki od tej reguły, np. woda, która w temperaturze poniżej 4 stopni Celsjusza zachowuje się anomalnie - wzrasta jej gęstość wraz ze wzrostem temperatury, a poniżej 4 stopni Celsjusza zachowuje się odwrotnie - maleje gęstość wraz ze wzrostem temperatury.
 
-\begin{equation}
-    Q_1 + Q_2 = 0
-\end{equation}
+Wyprowadzenie wzoru na względną gęstość ciała stałego wyznaczonego za pomocą wagi Jolly'ego:
+\ldots
 
-gdzie $Q_1$ to ciepło oddane przez ciało o wyższej temperaturze (wartość ujemna), a $Q_2$ to ciepło pobrane przez ciało o niższej temperaturze (wartość dodatnia).
+Wyprowadzenie wzoru na względną gęstość ciała stałęgo wyznaczonego za pomocą wagi Mohra:
+\ldots
 
-Dla badanego ciała stałego o masie $m_c$, temperaturze początkowej $T_c$ i cieple właściwym $c_p$, które zostaje umieszczone w wodzie o masie $m_w$, temperaturze początkowej $T_p$ i cieple właściwym $c_w$, przy uwzględnieniu pojemności cieplnej naczynka kalorymetrycznego $K_n = m_n \cdot c_n$, bilans cieplny przyjmuje postać:
+Moment siły $M$ jest to iloczyn siły $F$ i ramienia $r$:
 
-\begin{equation}
-    m_c \cdot c_p \cdot (T_k - T_c) + [m_w \cdot c_w + m_n \cdot c_n] \cdot (T_k - T_p) = 0
-\end{equation}
+\begin{equation*}
+    M = F \cdot r
+\end{equation*}
 
-gdzie $T_k$ to temperatura końcowa układu.
+Równowaga momentów sił\dots
 
-Przekształcając powyższe równanie, otrzymujemy wzór na ciepło właściwe badanego ciała:
-
-\begin{equation}
-    c_p = \frac{[m_w \cdot c_w + m_n \cdot c_n] \cdot (T_p - T_k)}{m_c \cdot (T_k - T_c)}
-\end{equation}
-
-Prawo Dulonga-Petita stanowi, że molowe ciepło właściwe pierwiastków stałych w temperaturze pokojowej jest w przybliżeniu stałe i wynosi około $3R \approx 25\,\frac{\text{J}}{\text{mol} \cdot \text{K}}$, gdzie $R$ to stała gazowa. Prawo to jest przybliżeniem i sprawdza się głównie dla metali i prostych substancji krystalicznych w temperaturze pokojowej.
-
-W rzeczywistym przebiegu doświadczenia występuje wymiana ciepła z otoczeniem, co wprowadza błąd systematyczny. Aby go zminimalizować, stosuje się metodę interpolacji do wyznaczenia rzeczywistych temperatur początkowej i końcowej, analizując zmiany temperatury w czasie przed i po osiągnięciu stanu równowagi.
-
-Wstęp teoretyczny został opracowany na podstawie podręcznika Fizyka dla szkół wyższych, Tom 2, Dział Temodynamika, rozdział 1 - Temperatura i Ciepło \cite{fizyka_dla_szkół_wyższych_tom_2}.
+Wstęp teoretyczny opracowano na podstawie podręcznika Fizyka dla szkół wyższych, tom 2, dział Termodynamika, rozdziały 1.3 Rozszerzalność ciaplna, oraz ... \cite{fizyka_dla_szkół_wyższych_tom_2}.
 
 
 
 % ---------- OPIS DOŚWIADCZENIA ----------
 \section{Opis doświadczenia}
 
+Doświadczenie polega na wyznaczeniu gęstości cieczy oraz gęstości ciał stałych przy użyciu dwóch metod: wagi Mohra oraz wagi Jolly'ego.
+
+\subsection*{Część I: Waga Mohra}
 \begin{enumerate}
-    \item Zważenie badanych ciał oraz naczyńka kalorymetrycznego z mieszadełkiem.
-    \item Napełnienie naczyńka wodą (do 2/3 objętości) i określenie jej masy.
-    \item Ogrzanie badanego ciała w ogrzewaczu elektrycznym z termoparą do temperatury 100-105°C.
-    \item Rejestracja temperatury początkowej wody w kalorymetrze przez 5 minut (pomiar co 30 sekund).
-    \item Przeniesienie ogrzanego ciała do kalorymetru i pomiar zmian temperatury:
-          \begin{itemize}
-              \item pierwsze 5 minut: pomiar co 30 sekund
-              \item następnie: pomiar co minutę
-          \end{itemize}
-    \item Powtórzenie procedury dla pozostałych badanych ciał.
+    \setlength{\itemsep}{0em}
+    \item Zrównoważenie wagi z nurkiem w powietrzu
+    \item Zanurzenie nurka w wodzie destylowanej i zrównoważenie wagi za pomocą koników o znanych masach umownych
+    \item Powtórzenie pomiaru dla alkoholu
+    \item Odczyt i zapisanie położenia koników dla każdej cieczy
 \end{enumerate}
 
-Doświadczenie pozwala wyznaczyć pojemność cieplną badanych ciał poprzez analizę wymiany ciepła między ogrzanym ciałem a wodą w kalorymetrze.
+\subsection*{Część II: Waga Jolly'ego}
+\begin{enumerate}
+    \setlength{\itemsep}{0em}
+    \item Przygotowanie co najmniej czterech różnych ciał stałych do badań
+    \item Wyznaczenie położenia zerowego wagi ($h_0$)
+    \item Ważenie ciał na górnej szalce ($h_p$)
+    \item Ważenie ciał na dolnej szalce zanurzonej w wodzie ($h_w$)
+    \item Powtórzenie pomiarów dla alkoholu
+\end{enumerate}
+
+\subsection*{Część III: Sprawdzenie prawa Hooke'a}
+\begin{enumerate}
+    \setlength{\itemsep}{0em}
+    \item Ustalenie położenia zerowego wagi Jolly'ego bez zanurzania szalek w cieczy
+    \item Obciążanie szalki odważnikami od 1g do 10g, z odczytem położenia wskazówki wagi przy każdym obciążeniu
+    \item Powtórzenie pomiarów dla obciążeń malejących
+\end{enumerate}
 
 % ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
 \section{Opracowanie wyników pomiarów}

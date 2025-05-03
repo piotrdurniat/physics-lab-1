@@ -23,8 +23,8 @@
 
 - [instrukcja](./04-lab-11/04-lab-11-instrukcja.pdf)
 - [wstęp](./04-lab-11/04-lab-11-wstep.pdf)
-- [sprawozdanie](./04-lab-11/report/04-sprawozdanie.pdf)
-- [obliczenia](./04-lab-11/04-obliczenia.ipynb)
+- [sprawozdanie](./04-lab-11/report/04-lab-11-sprawozdanie.pdf)
+- [obliczenia](./04-lab-11/04-lab-11-obliczenia.ipynb)
 
 ## 5. ćwiczenie 15 - Drgania masy zawieszonej na sprężynie
 
@@ -35,12 +35,13 @@
 ## 6. ćwiczenie 19 - Pomiar stałej grawitacji G (ważenie Ziemi)
 
 - [instrukcja](./06-lab-19/06-lab-19-instrukcja.md)
-- [sprawozdanie](./06-lab-19/report/06-lab-19.pdf)
+- [sprawozdanie](./06-lab-19/report/06-lab-19-sprawozdanie.pdf)
 - [obliczenia](./06-lab-19/06-lab-19-obliczenia.ipynb)
 
 ## 7. ćwiczenie 25 - Wyznaczanie współczynnika rozszerzalności cieplnej metali za pomocą dylatometru
 
-- [instrukcja](./07-lab-25/07-lab-25-instrukcja.md)
+- [instrukcja](./07-lab-25/07-lab-25-instrukcja.pdf)
+- [wstęp](./07-lab-25/07-lab-25-wstęp.pdf)
 - [sprawozdanie](./07-lab-25/report/07-lab-25-sprawozdanie.pdf)
 - [obliczenia](./07-lab-25/07-lab-25-obliczenia.ipynb)
 
