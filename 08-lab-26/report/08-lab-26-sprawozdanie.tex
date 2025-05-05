@@ -14,6 +14,8 @@
 \usepackage{enumitem} % Pakiet do elastycznego sterowania listami
 \usepackage{indentfirst}
 \usepackage{array}
+% \usepackage{subfig}
+\usepackage{subcaption}
 
 \begin{document}
 
@@ -117,8 +119,130 @@ Doświadczenie pozwala wyznaczyć pojemność cieplną badanych ciał poprzez an
 % ---------- TABELE ----------
 \subsection{Tabele pomiarowe}
 
+
+\section{Tabele Pomiarowe}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{t [min:sec]} & \textbf{T1 [°C]} & \textbf{T2 [°C]} & \textbf{T3 [°C]} \\
+        \hline
+        00:00:00 & 25{,}3 & 24{,}9 & 25{,}1 \\
+        \hline
+        00:00:30 & 25{,}3 & 24{,}9 & 25{,}1 \\
+        \hline
+        00:01:00 & 25{,}3 & 24{,}9 & 25{,}1 \\
+        \hline
+        00:01:30 & 25{,}3 & 24{,}9 & 25{,}1 \\
+        \hline
+        00:02:00 & 25{,}3 & 24{,}9 & 25{,}1 \\
+        \hline
+        00:02:30 & 25{,}3 & 24{,}9 & 25{,}1 \\
+        \hline
+        00:03:00 & 25{,}3 & 24{,}9 & 25{,}1 \\
+        \hline
+        00:03:30 & 25{,}3 & 24{,}9 & 25{,}1 \\
+        \hline
+        00:04:00 & 25{,}3 & 24{,}9 & 25{,}1 \\
+        \hline
+        00:04:30 & 25{,}3 & 24{,}9 & 25{,}1 \\
+        \hline
+        00:05:00 & 25{,}2 & 24{,}9 & 25{,}1 \\
+        \hline
+        00:05:30 & 27{,}6 & 25{,}0 & 27{,}5 \\
+        \hline
+        00:06:00 & 29{,}8 & 27{,}9 & 27{,}6 \\
+        \hline
+        00:06:30 & 30{,}3 & 29{,}0 & 27{,}6 \\
+        \hline
+        00:07:00 & 30{,}4 & 29{,}4 & 27{,}7 \\
+        \hline
+        00:07:30 & 30{,}5 & 31{,}0 & 27{,}6 \\
+        \hline
+        00:08:00 & 30{,}4 & 30{,}0 & 27{,}6 \\
+        \hline
+        00:08:30 & 30{,}3 & 29{,}9 & 27{,}6 \\
+        \hline
+        00:09:00 & 30{,}3 & 29{,}8 & 27{,}6 \\
+        \hline
+        00:09:30 & 30{,}2 & 29{,}7 & 27{,}6 \\
+        \hline
+        00:10:00 & 30{,}1 & 29{,}7 & 27{,}5 \\
+        \hline
+        00:11:00 & 30{,}0 & 29{,}6 & 27{,}4 \\
+        \hline
+        00:12:00 & 29{,}9 & 29{,}4 & 27{,}4 \\
+        \hline
+        00:13:00 & 29{,}8 & 29{,}3 & 27{,}3 \\
+        \hline
+        00:14:00 & 29{,}7 & 29{,}0 & 27{,}3 \\
+        \hline
+        00:15:00 & 29{,}5 & 28{,}8 & 27{,}3 \\
+        \hline
+    \end{tabular}
+    \caption{Pomiary temperatury ciał.}
+\end{table}
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|}
+        \hline
+        \textbf{Badane ciała} & \textbf{Temperatura początkowa badanych ciał [\textdegree C]} \\
+        \hline
+        1 - Miedziane & 100{,}2 \\
+        2 - Mosiężne & 100{,}4 \\
+        3 - Aluminiowe & 102{,}4 \\
+        \hline
+    \end{tabular}
+    \caption{Temperatury początkowe badanych ciał}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        \multicolumn{8}{|c|}{\textbf{Masa [g]}} \\
+        \hline
+        $m_1$ & $m_2$ & $m_3$ & $m_k$ & $m_w + m_k$ & $m_{w1}$ & $m_{w2}$ & $m_{w3}$ \\
+        \hline
+        73 & 70{,}8 & 15{,}2 & 126{,}1 & 192{,}9 & 66{,}8 & & \\
+        \hline
+    \end{tabular}
+    \caption{Masy }
+\end{table}
+
 % ---------- OBLICZENIA ----------
-\subsection{...}
+\subsection{Wyznaczenie temperatury początkowej i końcowej}
+
+Temperatury początkowe i końcowe wyznaczone zostały przy użyciu interpolacji liniowej. Do 10 pierwszych pomiarów temperatury wody (zanim wrzucono ciało do kalorymetru) dopasowano linię prostą, następnie do 10 ostatnich pomiarów temperatury wody (po wrzuceniu ciała do kalorymetru) dopasowano drugą linię prostą. Dla czasu $t = 330$ lub $t = 300$ sekund wykonano interpolację temperatury wody, odczytując temperatury początkowe i końcowe.
+
+Otrzymane wyniki interpolacji temperatury wody przedstawiono na wykresach \ref{fig:t1_interpolacja}, \ref{fig:t2_interpolacja} i \ref{fig:t3_interpolacja}.
+
+Wartości temperatur początkowych i końcowych odczytano z wykresów i przedstawiono w tabeli \ref{tab:temperatury}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Ciało} & \textbf{Temperatura początkowa} & \textbf{Temperatura końcowa} \\
+        \hline
+        Miedziane & 25{,}30 & 30{,}75 \\
+        \hline
+        Mosiężne & 24{,}90 & 30{,}40 \\
+        \hline
+        Aluminiowe & 25{,}10 & 27{,}78 \\
+        \hline
+    \end{tabular}
+    \caption{Temperatury początkowe i końcowe}
+    \label{tab:temperatury}
+\end{table}
+
+
+
+
+
+\subsection{Ciepło właściwe poszczególnych ciał}
 
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
@@ -127,7 +251,35 @@ Doświadczenie pozwala wyznaczyć pojemność cieplną badanych ciał poprzez an
 \section{Wnioski}
 
 % ---------- WYKRESY ----------
+
+\newpage
+
 \section{Wykresy}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.65\textwidth}
+        \includegraphics[width=\textwidth]{t1_interpolacja.png}
+        \caption{Interpolacja temperatury dla ciała miedzianego}
+        \label{fig:t1_interpolacja}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.65\textwidth}
+        \includegraphics[width=\textwidth]{t2_interpolacja.png}
+        \caption{Interpolacja temperatury dla ciała mosiężnego}
+        \label{fig:t2_interpolacja}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.65\textwidth}
+        \includegraphics[width=\textwidth]{t3_interpolacja.png}
+        \caption{Interpolacja temperatury dla ciała aluminiowego}
+        \label{fig:t3_interpolacja}
+    \end{subfigure}
+    \caption{Wykresy interpolacji temperatury dla badanych ciał}
+\end{figure}
+
+
+
 
 \bibliographystyle{plain}
 \bibliography{bibliography}
