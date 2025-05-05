@@ -83,6 +83,7 @@ Przekształcając powyższe równanie, otrzymujemy wzór na ciepło właściwe b
 
 \begin{equation}
     c_p = \frac{[m_w \cdot c_w + m_n \cdot c_n] \cdot (T_p - T_k)}{m_c \cdot (T_k - T_c)}
+    \label{eq:cieplo_wlasciwe}
 \end{equation}
 
 Prawo Dulonga-Petita stanowi, że molowe ciepło właściwe pierwiastków stałych w temperaturze pokojowej jest w przybliżeniu stałe i wynosi około $3R \approx 25\,\frac{\text{J}}{\text{mol} \cdot \text{K}}$, gdzie $R$ to stała gazowa. Prawo to jest przybliżeniem i sprawdza się głównie dla metali i prostych substancji krystalicznych w temperaturze pokojowej.
@@ -204,7 +205,7 @@ Doświadczenie pozwala wyznaczyć pojemność cieplną badanych ciał poprzez an
         \hline
         \multicolumn{8}{|c|}{\textbf{Masa [g]}} \\
         \hline
-        $m_1$ & $m_2$ & $m_3$ & $m_k$ & $m_w + m_k$ & $m_{w1}$ & $m_{w2}$ & $m_{w3}$ \\
+        $m_1$ & $m_2$ & $m_3$ & $m_n$ & $m_w + m_n$ & $m_{w1}$ & $m_{w2}$ & $m_{w3}$ \\
         \hline
         73 & 70{,}8 & 15{,}2 & 126{,}1 & 192{,}9 & 66{,}8 & & \\
         \hline
@@ -241,8 +242,64 @@ Wartości temperatur początkowych i końcowych odczytano z wykresów i przedsta
 
 
 
-
 \subsection{Ciepło właściwe poszczególnych ciał}
+
+Korzystając z wyprowadzonego wzoru \ref{eq:cieplo_wlasciwe} obliczono ciepło właściwe poszczególnych ciał.
+
+Przykładowe obliczenia dla ciała miedzianego:
+
+\begin{equation}
+    c_p = \frac{[0{,}0668 \cdot 4186 + 0{,}1261 \cdot 377] \cdot (25{,}30 - 30{,}75)}{0{,}073 \cdot (30{,}75 - 100{,}2)} = 351{,}70\,\frac{\text{J}}{\text{kg} \cdot \text{K}}
+\end{equation}
+
+\begin{equation}
+    c_p = \frac{[0{,}0612 \cdot 4186 + 0{,}1261 \cdot 377] \cdot (24{,}90 - 30{,}40)}{0{,}0708 \cdot (30{,}40 - 100{,}4)} = 337{,}06\,\frac{\text{J}}{\text{kg} \cdot \text{K}}
+\end{equation}
+
+\begin{equation}
+    c_p = \frac{[0{,}0756 \cdot 4186 + 0{,}1261 \cdot 377] \cdot (25{,}10 - 27{,}78)}{0{,}0152 \cdot (27{,}78 - 102{,}4)} = 860{,}08\,\frac{\text{J}}{\text{kg} \cdot \text{K}}
+\end{equation}
+
+Wyniki obliczeń ciepła właściwego dla wszystkich badanych ciał przedstawiono w tabeli \ref{tab:cieplo_wlasciwe}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Ciało} & \textbf{Ciepło właściwe [J/kgK]} \\
+        \hline
+        Miedziane & 351{,}70 \\
+        \hline
+        Mosiężne & 337{,}06 \\
+        \hline
+        Aluminium & 860{,}08 \\
+        \hline
+    \end{tabular}
+    \caption{Ciepło właściwe poszczególnych ciał}
+    \label{tab:cieplo_wlasciwe}
+\end{table}
+
+Tabela rzeczywistych ciepł właściwych poszczególnych ciał przedstawiona jest w tabeli \ref{tab:cieplo_wlasciwe_rzeczywiste}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Ciało} & \textbf{Ciepło właściwe [J/kgK]} \\
+        \hline
+        Miedź & 385{,}00 \\
+        \hline
+        Mosiądz & 375{,}00 \\
+        \hline
+        Aluminium & 900{,}00 \\
+        \hline
+    \end{tabular}
+    \caption{Ciepło właściwe poszczególnych ciał (źródło: \cite{cieplo_wlasciwe_tabele})}
+    \label{tab:cieplo_wlasciwe_rzeczywiste}
+\end{table}
+
+
+
 
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
