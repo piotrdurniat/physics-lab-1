@@ -292,16 +292,83 @@ Położenia koników były zdeterminowane przez haczyki zamocowane na stałe na 
 Niepewność wzorcowania położenia wskazówki wagi Jolly'ego wynosi:
 
 \begin{equation*}
-    \Delta_d h = 0{,}1 \text{cm}
+    \Delta_d h = 0{,}1 \text{cm} = 0{,}001 \text{m}
 \end{equation*}
 
-Korzystając z prawa przenoszenia niepewności maksymalnych:
+Korzystając z prawa przenoszenia niepewności maksymalnych i wzoru \ref{eq:wzgledna_gestosc_jolly} otrzymujemy:
+
+\begin{align*}
+    \Delta R & = \sum_{i=1}^{n} \left | \frac{\partial R}{\partial x_i} \right | \cdot \Delta x_i =                               \\
+             & = \sum_{i=1}^{n} \left | \frac{\partial}{\partial h_i} \cdot \frac{h_p - h_0}{h_p - h_w} \right | \cdot \Delta h_i
+\end{align*}
+
+Obliczając pochodne cząstkowe otrzymujemy:
+
+\begin{align*}
+    \left | \frac{\partial R}{\partial h_0} \right | & = \left | \frac{-1}{h_p - h_w} \right |                                  \\
+    \left | \frac{\partial R}{\partial h_p} \right | & = \left | \frac{1}{h_p - h_w} - \frac{h_p - h_0}{(h_p - h_w)^2} \right | \\
+    \left | \frac{\partial R}{\partial h_w} \right | & = \left | \frac{h_p - h_0}{(h_p - h_w)^2} \right |
+\end{align*}
+
+Ostatecznie otrzymujemy:
 
 \begin{equation}
-    \Delta R = \sum_{i=1}^{n} \left | \frac{\partial R}{\partial x_i} \right | \cdot \Delta x_i
+    \Delta R = \Delta h \left(
+    \frac{1}{|h_p - h_w|}
+    + \left| \frac{1}{h_p - h_w} - \frac{h_p - h_0}{(h_p - h_w)^2} \right|
+    + \frac{|h_p - h_0|}{(h_p - h_w)^2}
+    \right)
 \end{equation}
 
+Przykładowo dla wody destylowanej i ciała 1 otrzymujemy:
 
+\begin{align*}
+    \Delta R & = 0{,}001 \left(
+    \frac{1}{|0{,}254 - 0{,}242|}
+    + \left| \frac{1}{0{,}254 - 0{,}242} - \frac{0{,}254 - 0{,}223}{(0{,}254 - 0{,}242)^2} \right|
+    + \frac{|0{,}254 - 0{,}223|}{(0{,}254 - 0{,}242)^2}
+    \right)                     \\
+             & = 0.43
+\end{align*}
+
+Dla wszystkich ciał otrzymujemy następujące niepewności względnej gęstości:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Ciało} & \textbf{Niepewność dla wody} & \textbf{Niepewność dla alkoholu} \\
+        \hline
+        Ciało 1 & 0{,}43 & 0{,}74 \\
+        \hline
+        Ciało 2 & 1{,}1 & 1{,}7 \\
+        \hline
+        Ciało 3 & 3{,}9 & 3{,}9 \\
+        \hline
+        Ciało 4 & 2{,}6 & 4{,}6 \\
+        \hline
+    \end{tabular}
+    \caption{Niepewności względnej gęstości dla poszczególnych ciał}
+    \label{tab:niepewnosci}
+\end{table}
+
+\subsection{Niepewność współczynnika sprężystości}
+
+Współczynnik sprężystości $k$ został obliczony z regresji liniowej, dla zależności $F = k \cdot x$. Niepewność współczynnika sprężystości jest równa niepewności współczynnika $a$ wyznaczonego z regresji liniowej, która została obliczona na podstawie wzoru \ref{eq:niepewnosc_a}.
+
+
+\begin{align*}
+    s_y & = \sqrt{\frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{n-2}}         \\
+    u_a & = s_y \sqrt{\frac{n}{n \sum x_i^2 - \left( \sum x_i \right)^2}}
+    \label{eq:niepewnosc_a}
+\end{align*}
+
+gdzie $x_i$ to wartości zmiennej niezależnej, $y_i$ to wartości zmierzone, $\hat{y}_i$ to wartości przewidywane przez model regresji, a $n$ to liczba punktów pomiarowych.
+
+Po podstawieniu wartości otrzymujemy:
+
+\begin{itemize}
+    \item $u_a = x{,}x\,\frac{\text{N}}{\text{m}}$
+\end{itemize}
 
 % ---------- WNIOSKI ----------
 \section{Wnioski}
