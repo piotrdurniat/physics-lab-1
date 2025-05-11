@@ -70,22 +70,73 @@ W ogólności ciała rozszerzają się, gdy rośnie temperatura, tym samym ponie
 
 Wyprowadzenie wzoru na względną gęstość ciała stałego wyznaczonego za pomocą wagi Jolly'ego:
 
-Względna gęstość ciała stałego względem cieczy:
+Waga Jolly'ego to przyrząd wykorzystujący prawo Hooke'a do pomiaru siły wyporu i wyznaczenia gęstości ciał. Zgodnie z prawem Hooke'a, siła sprężystości jest proporcjonalna do odkształcenia sprężyny i wyraża się wzorem:
+\begin{equation*}
+    F_s = -k \cdot \Delta x
+\end{equation*}
+gdzie $k$ jest współczynnikiem sprężystości, a $\Delta x$ oznacza zmianę długości sprężyny.
+
+Rozważmy dwa przypadki pomiarowe. W pierwszym przypadku, gdy ciało znajduje się w powietrzu, zachodzi równowaga sił:
+\begin{equation*}
+    F_s + F_g = 0
+\end{equation*}
+gdzie $F_g$ to siła ciężkości działająca na ciało. Po podstawieniu otrzymujemy:
+\begin{equation*}
+    -k(h_p - h_0) + \rho_{s} V g = 0
+\end{equation*}
+
+gdzie $h_p$ to położenie wskazówki wagi z ciężarkiem w powietrzu, a $h_0$ to położenie wskazówki bez obciążenia. Z tego wynika, że:
 
 \begin{equation}
-    \label{eq:wzgledna_gestosc_jolly}
-    R = \frac{\rho_{s}}{\rho_c}=  \frac{h_p - h_0}{h_p - h_w}
+    \label{eq:case1}
+    k(h_p - h_0) = \rho_{s} V g
 \end{equation}
 
-gdzie:
+W drugim przypadku, gdy ciało jest zanurzone w cieczy, równowaga sił uwzględnia dodatkowo siłę wyporu:
+\begin{equation*}
+    F_s + F_{\text{wypór}} = F_g
+\end{equation*}
+
+Po podstawieniu otrzymujemy:
+
+\begin{equation*}
+    -k(h_w - h_0) + \rho_{c} V g = \rho_{s} V g
+\end{equation*}
+
+gdzie $h_w$ to położenie wskazówki wagi z ciężarkiem zanurzonym w cieczy. Przekształcając to równanie, uzyskujemy:
+\begin{equation}
+    \label{eq:case2}
+    k(h_w - h_0) = (\rho_{s} - \rho_{c}) V g
+\end{equation}
+
+Aby wyznaczyć względną gęstość ciała, dzielimy równanie \eqref{eq:case1} przez równanie \eqref{eq:case2}:
+\begin{equation*}
+    \frac{h_p - h_0}{h_w - h_0} = \frac{\rho_{s}}{(\rho_{s} - \rho_{c})}
+\end{equation*}
+
+Następnie przekształcamy to wyrażenie:
+\begin{equation*}
+    \frac{h_w - h_0}{h_p - h_0} = \frac{\rho_{s} - \rho_{c}}{\rho_{s}}
+\end{equation*}
+
+\begin{equation*}
+    1 - \frac{h_w - h_0}{h_p - h_0} = \frac{\rho_{c}}{\rho_{s}}
+\end{equation*}
+
+Odwracając ostatnie równanie, otrzymujemy wzór na względną gęstość ciała stałego:
+\begin{equation}
+    \label{eq:wzgledna_gestosc_jolly}
+    R = \frac{\rho_{s}}{\rho_c} = \frac{h_p - h_0}{h_p - h_w}
+\end{equation}
+
+W powyższym wzorze:
 \begin{itemize}
     \item $\rho_{s}$ to gęstość badanego ciała stałego,
     \item $\rho_c$ to gęstość cieczy,
     \item $h_p$ to położenie wskazówki wagi, gdy ciężarek znajduje się w powietrzu (na górnej szalce),
-    \item $h_w$ to położenie wskazówki wagi, gdy ciężarek znajduje się w cieczy (na dolnej szalce),
+    \item $h_w$ to położenie wskazówki wagi, gdy ciężarek jest zanurzony w cieczy (na dolnej szalce),
     \item $h_0$ to położenie wskazówki wagi, gdy obie szalki są puste (bez ciężarka).
 \end{itemize}
-
 
 \subsection*{Moment siły}
 
@@ -179,7 +230,7 @@ Doświadczenie polega na wyznaczeniu gęstości cieczy oraz gęstości ciał sta
 
 \subsubsection*{Waga Jolly'ego}
 
-Położenie początkowe wagi Jolly'ego: $h_0 = 2{,}4$ cm.
+Położenie początkowe wagi Jolly'ego (bez żadnych obciążeń, ani zanurzonych szalek): $h_0 = 23{,}4$ cm.
 
 \begin{table}[h]
     \centering
@@ -197,6 +248,7 @@ Położenie początkowe wagi Jolly'ego: $h_0 = 2{,}4$ cm.
         \hline
     \end{tabular}
     \caption{Pomiary dla wody}
+    \label{tab:waga_jolly_woda}
 \end{table}
 
 \begin{table}[h]
@@ -215,6 +267,30 @@ Położenie początkowe wagi Jolly'ego: $h_0 = 2{,}4$ cm.
         \hline
     \end{tabular}
     \caption{Pomiary dla alkoholu}
+    \label{tab:waga_jolly_alkohol}
+\end{table}
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Masa [g]} & \textbf{Wychylenie [cm]} & \textbf{Położenie 0 [cm]} \\
+        \hline
+        1  & 23{,}1 & 22{,}7 \\
+        2  & 23{,}5 & 22{,}7 \\
+        3  & 24{,}0 & 22{,}7 \\
+        4  & 24{,}4 & 22{,}7 \\
+        5  & 24{,}7 & 22{,}7 \\
+        6  & 25{,}7 & 22{,}7 \\
+        7  & 25{,}7 & 22{,}7 \\
+        8  & 26{,}3 & 22{,}7 \\
+        9  & 26{,}6 & 22{,}7 \\
+        10 & 27{,}1 & 22{,}7 \\
+        \hline
+    \end{tabular}
+    \caption{Położenia sprężyny dla poszczególnych mas}
+    \label{tab:pozycje_sprężyny}
 \end{table}
 
 \subsubsection*{Waga Mohra}
@@ -268,8 +344,7 @@ Pozycje i rodzaje koników dla wody destylowanej oraz alkoholu przedstawiono w p
 % ---------- OBLICZENIA ----------
 \subsection{Waga Mohra}
 
-
-Korzystając z wzoru \ref{eq:wzgledna_gestosc} oraz danych z tabel \ref{tab:waga_mohra_woda} oraz \ref{tab:waga_mohra_alkohol} otrzymujemy:
+Korzystając z wzoru \eqref{eq:wzgledna_gestosc} oraz danych z tabel \ref{tab:waga_mohra_woda} oraz \ref{tab:waga_mohra_alkohol} otrzymujemy:
 
 \begin{align*}
     R & = \frac{1 m_1 + 7 m_1 + 2 m_2 + 4 m_3 + 5 m_3}{3 m_1 + 7 m_1 + 2 m_2 + 4 m_3 + 6 m_3 + 8 m_3}                            \\
@@ -277,11 +352,38 @@ Korzystając z wzoru \ref{eq:wzgledna_gestosc} oraz danych z tabel \ref{tab:waga
 \end{align*}
 
 
+\subsection{Waga Jolly'ego}
+
+Podstawiając do wzoru \eqref{eq:wzgledna_gestosc_jolly} wartości z tabel \ref{tab:waga_jolly_woda} oraz \ref{tab:waga_jolly_alkohol} otrzymano wartości gęstości względnych przedstawione w tabeli \ref{tab:wzgledna_gestosc_jolly}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Ciało} & $R$ (woda) & $R$ (alkohol) \\
+        \hline
+        1 & 2{,}58 & 3{,}33 \\
+        \hline
+        2 & 8{,}20 & 10{,}25 \\
+        \hline
+        3 & 7{,}75 & 7{,}75 \\
+        \hline
+        4 & 10{,}38 & 13{,}67 \\
+        \hline
+    \end{tabular}
+    \caption{Względne gęstości ciał w wodzie i alkoholu}
+    \label{tab:wzgledna_gestosc_jolly}
+\end{table}
+
+Przykładowo dla wody destylowanej i ciała 1 otrzymujemy:
+
+\begin{align*}
+    R & = \frac{25{,}4 - 22{,}3}{25{,}4 - 24{,}2} = 2{,}58
+\end{align*}
+
 
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
-
-
 
 \subsection{Względna gęstość obliczona z wagi Mohra}
 
@@ -295,7 +397,7 @@ Niepewność wzorcowania położenia wskazówki wagi Jolly'ego wynosi:
     \Delta_d h = 0{,}1 \text{cm} = 0{,}001 \text{m}
 \end{equation*}
 
-Korzystając z prawa przenoszenia niepewności maksymalnych i wzoru \ref{eq:wzgledna_gestosc_jolly} otrzymujemy:
+Korzystając z prawa przenoszenia niepewności maksymalnych i wzoru \eqref{eq:wzgledna_gestosc_jolly} otrzymujemy:
 
 \begin{align*}
     \Delta R & = \sum_{i=1}^{n} \left | \frac{\partial R}{\partial x_i} \right | \cdot \Delta x_i =                               \\
@@ -353,14 +455,14 @@ Dla wszystkich ciał otrzymujemy następujące niepewności względnej gęstośc
 
 \subsection{Niepewność współczynnika sprężystości}
 
-Współczynnik sprężystości $k$ został obliczony z regresji liniowej, dla zależności $F = k \cdot x$. Niepewność współczynnika sprężystości jest równa niepewności współczynnika $a$ wyznaczonego z regresji liniowej, która została obliczona na podstawie wzoru \ref{eq:niepewnosc_a}.
+Współczynnik sprężystości $k$ został obliczony z regresji liniowej, dla zależności $F = k \cdot x$. Niepewność współczynnika sprężystości jest równa niepewności współczynnika $a$ wyznaczonego z regresji liniowej, która została obliczona na podstawie wzoru \eqref{eq:niepewnosc_a}.
 
 
-\begin{align*}
+\begin{align}
+    \label{eq:niepewnosc_a}
     s_y & = \sqrt{\frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{n-2}}         \\
     u_a & = s_y \sqrt{\frac{n}{n \sum x_i^2 - \left( \sum x_i \right)^2}}
-    \label{eq:niepewnosc_a}
-\end{align*}
+\end{align}
 
 gdzie $x_i$ to wartości zmiennej niezależnej, $y_i$ to wartości zmierzone, $\hat{y}_i$ to wartości przewidywane przez model regresji, a $n$ to liczba punktów pomiarowych.
 
