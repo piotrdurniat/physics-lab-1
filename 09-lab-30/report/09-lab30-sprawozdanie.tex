@@ -179,7 +179,7 @@ Masa wypartej cieczy przez ciężarek równa się więc sumie mas zastępczych w
 gdzie $n_i$ to numer podziałki, na której zawieszony jest $i$-ty konik, a $N$ to liczba koników.
 
 
-W tym doświadczeniu szukana wielkość to względna gęstość alkoholu względem gęstości wody, ponieważ objętość cieczy wypartej przez konik jest taka sama, niezależnie od cieczy, to otrzymujemy:
+W tym doświadczeniu szukana wielkość to względna gęstość alkoholu izopropylowego względem gęstości wody destylowanej, ponieważ objętość cieczy wypartej przez konik jest taka sama, niezależnie od cieczy, to otrzymujemy:
 
 \begin{equation}
     \label{eq:wzgledna_gestosc}
@@ -266,7 +266,7 @@ Położenie początkowe wagi Jolly'ego (bez żadnych obciążeń, ani zanurzonyc
         4 & 22,4 & 30,6 & 30,0 \\
         \hline
     \end{tabular}
-    \caption{Pomiary dla alkoholu}
+    \caption{Pomiary dla alkoholu izopropylowego}
     \label{tab:waga_jolly_alkohol}
 \end{table}
 
@@ -381,6 +381,9 @@ Przykładowo dla wody destylowanej i ciała 1 otrzymujemy:
     R & = \frac{25{,}4 - 22{,}3}{25{,}4 - 24{,}2} = 2{,}58
 \end{align*}
 
+\subsection{Sprawdzenie prawa Hooke'a}
+
+Na podstawie danych z tabeli \ref{tab:pozycje_sprężyny} wyprowadzono wzór na siłę wydłużającą sprężynę za pomocą regresji liniowej dla zależności $F = k \cdot x$. Do obliczeń wykorzystano program Python i bibliotekę numpy. Otrzymano współczynnik sprężystości $k = 0{,}045 \frac{\text{N}}{\text{m}}$. Punkty pomiarowe oraz regresję liniową przedstawiono na wykresie \ref{fig:wykres}.
 
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
@@ -469,14 +472,57 @@ gdzie $x_i$ to wartości zmiennej niezależnej, $y_i$ to wartości zmierzone, $\
 Po podstawieniu wartości otrzymujemy:
 
 \begin{itemize}
-    \item $u_a = x{,}x\,\frac{\text{N}}{\text{m}}$
+    \item $u_a = 0{,}030\,\frac{\text{N}}{\text{m}}$
 \end{itemize}
 
 % ---------- WNIOSKI ----------
 \section{Wnioski}
 
+\begin{enumerate}
+    \item{\textbf{Waga Mohra}}
+
+          Za pomocą wagi Mohra wyznaczono względną gęstość alkoholu izopropylowego względem gęstości wody destylowanej. Otrzymano wartość $R = 0{,}799$. Ze względu na brak bezpośrednich pomiarów nie wyznaczono niepewności względnej gęstości.
+
+    \item{\textbf{Waga Jolly'ego}}
+
+          Za pomocą wagi Jolly'ego wyznaczono względną gęstość ciał stałych w wodzie oraz alkoholu izopropylowym. Otrzymano następujące wartości.
+
+          \begin{table}[H]
+              \centering
+              \begin{tabular}{|c|c|c|}
+                  \hline
+                  \textbf{Ciało} & $R$ (woda) & $R$ (alkohol) \\
+                  \hline
+                  1 & $2{,}58 \pm 0{,}43$ & $3{,}33 \pm 0{,}74$ \\
+                  \hline
+                  2 & $8{,}2 \pm 1{,}1$ & $10{,}2 \pm 1{,}7$ \\
+                  \hline
+                  3 & $7{,}8 \pm 3{,}9$ & $7{,}8 \pm 3{,}9$ \\
+                  \hline
+                  4 & $10{,}4 \pm 2{,}6$ & $13{,}7 \pm 4{,}6$ \\
+                  \hline
+              \end{tabular}
+              \caption{Względne gęstości ciał w wodzie i alkoholu wraz z niepewnościami}
+              \label{tab:wzgledna_gestosc_jolly_wyniki}
+          \end{table}
+
+    \item{\textbf{Sprawdzenie prawa Hooke'a}}
+
+          Pomiary wykazały zgodność z prawem Hooke'a. Współczynnik sprężystości wagi Jolly'ego wyniósł $k = 2{,}160 \frac{\text{N}}{\text{m}}$ z niepewnością $u_k = 0{,}030 \frac{\text{N}}{\text{m}}$.
+
+\end{enumerate}
+
 % ---------- WYKRESY ----------
+% \newpage
 \section{Wykresy}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textheight,angle=90]{Wykres_prosta_regresji_cw30.png}
+    \caption{Wydłużenie sprężyny w zależności od masy obciążającej (źródło: opracowanie własne).}
+    \label{fig:wykres}
+\end{figure}
+
 
 \bibliographystyle{plain}
 \bibliography{bibliography}
