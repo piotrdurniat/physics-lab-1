@@ -15,6 +15,8 @@
 \usepackage{indentfirst}
 \usepackage{array}
 
+\setlist[itemize]{itemsep=0pt, topsep=0pt}
+
 \begin{document}
 
 % Górna część strony
@@ -53,26 +55,39 @@
 % ---------- WSTĘP TEORETYCZNY ----------
 \section{Wstęp teoretyczny}
 
-Ciężar właściwy ciała jest to stosunek ciężaru ciała do jego objętości, wyrażony wzorem:
+\subsection*{Ciężar właściwy ciała}
+
+Ciężar właściwy ciała ($\gamma$) jest to stosunek ciężaru ciała ($P$) do jego objętości ($V$), wyrażony wzorem:
 
 \begin{equation*}
     \gamma = \frac{P}{V}
 \end{equation*}
 
-gdzie:
-\begin{itemize}
-    \setlength{\itemsep}{0em}
-    \item $P$ - ciężar ciała,
-    \item $V$ - objętość ciała.
-\end{itemize}
 
 W ogólności ciała rozszerzają się, gdy rośnie temperatura, tym samym ponieważ masa pozostaje stała, to gęstość ciała maleje. Istnieją jednak wyjątki od tej reguły, np. woda, która w temperaturze poniżej 4 stopni Celsjusza zachowuje się anomalnie - wzrasta jej gęstość wraz ze wzrostem temperatury, a poniżej 4 stopni Celsjusza zachowuje się odwrotnie - maleje gęstość wraz ze wzrostem temperatury.
 
-Wyprowadzenie wzoru na względną gęstość ciała stałego wyznaczonego za pomocą wagi Jolly'ego:
-\ldots
+\subsection*{Waga Jolly'ego}
 
-Wyprowadzenie wzoru na względną gęstość ciała stałęgo wyznaczonego za pomocą wagi Mohra:
-\ldots
+Wyprowadzenie wzoru na względną gęstość ciała stałego wyznaczonego za pomocą wagi Jolly'ego:
+
+Względna gęstość ciała stałego względem cieczy:
+
+\begin{equation}
+    \label{eq:wzgledna_gestosc_jolly}
+    R = \frac{\rho_{s}}{\rho_c}=  \frac{h_p - h_0}{h_p - h_w}
+\end{equation}
+
+gdzie:
+\begin{itemize}
+    \item $\rho_{s}$ to gęstość badanego ciała stałego,
+    \item $\rho_c$ to gęstość cieczy,
+    \item $h_p$ to położenie wskazówki wagi, gdy ciężarek znajduje się w powietrzu (na górnej szalce),
+    \item $h_w$ to położenie wskazówki wagi, gdy ciężarek znajduje się w cieczy (na dolnej szalce),
+    \item $h_0$ to położenie wskazówki wagi, gdy obie szalki są puste (bez ciężarka).
+\end{itemize}
+
+
+\subsection*{Moment siły}
 
 Moment siły $M$ jest to iloczyn siły $F$ i ramienia $r$:
 
@@ -80,11 +95,49 @@ Moment siły $M$ jest to iloczyn siły $F$ i ramienia $r$:
     M = F \cdot r
 \end{equation*}
 
-Równowaga momentów sił\dots
+\subsection*{Waga Mohra}
 
-Wstęp teoretyczny opracowano na podstawie podręcznika Fizyka dla szkół wyższych, tom 2, dział Termodynamika, rozdziały 1.3 Rozszerzalność ciaplna, oraz ... \cite{fizyka_dla_szkół_wyższych_tom_2}.
+Waga Mohra składa się z wysuwanego ramienia, na którym umieszczona jest belka. Jedno z ramion belki jest podzielone na 10 równych działek, na których można wieszać ciężarki o znanych masach umownych. Na końcu belki znajduje się nurek, który umieszczany jest w badanej cieczy. Po umieszczeniu nurka w cieczy, należy zrównoważyć wagę za pomocą ciężarków umieszczonych na szalkach. Zając wagi koników i ich położenia, można wyznaczyć masę wypartej cieczy, korzystając z równowagi momentów sił.
+W stanie równowagi belki zachodzi równowaga momentów sił między ciężarkiem zawieszonym na 10 podziałce, a konikiem zawieszonym na $n$-tej podziałce. Porównując momenty sił dla obu ramion belki otrzymujemy:
+
+\begin{equation*}
+    m_z gR = m_i g \frac{R}{10} n
+\end{equation*}
+
+gdzie:
+\begin{itemize}
+    \item $m_z$ - masa zastępcza ciężarka na 10 podziałce
+    \item $m_i$ - masa $i$-tego konika
+    \item $n$ - numer podziałki, na której wieszony jest konik
+    \item $R$ - długość ramienia
+\end{itemize}
+
+Stąd masa zastępcza konika zawieszonego na $n$-tej podziałce wynosi:
+
+\begin{equation*}
+    m_z = m_i \frac{n}{10}
+\end{equation*}
+
+Masa wypartej cieczy przez ciężarek równa się więc sumie mas zastępczych wszystkich zawieszonych koników.
+
+\begin{equation}
+    \label{eq:waga_mohra}
+    m_w = \sum_{i=1}^{N} \frac{m_i n_i}{10}
+\end{equation}
+
+gdzie $n_i$ to numer podziałki, na której zawieszony jest $i$-ty konik, a $N$ to liczba koników.
 
 
+W tym doświadczeniu szukana wielkość to względna gęstość alkoholu względem gęstości wody, ponieważ objętość cieczy wypartej przez konik jest taka sama, niezależnie od cieczy, to otrzymujemy:
+
+\begin{equation}
+    \label{eq:wzgledna_gestosc}
+    R = \frac{\rho_a}{\rho_w} = \frac{\frac{m_a}{V_a}}{\frac{m_w}{V_w}} = \frac{m_a}{m_w} = \frac{\sum_{i=1}^{N_a} m_{a,i} n_{a,i}}{\sum_{i=1}^{N_w} m_{w,i} n_{w,i}}
+\end{equation}
+
+gdzie $R$ to względna gęstość alkoholu względem gęstości wody, a $m_w$ oraz $m_a$ to masy wypartej cieczy odpowiednio dla wody oraz alkoholu, $m_{a, i}$ oraz $m_{w, i}$ to masy koników odpowiednio dla alkoholu oraz wody, a $n_{a, i}$ oraz $n_{w, i}$ to numery podziałek, na których zawieszony jest $i$-ty konik.
+
+Wstęp teoretyczny opracowano na podstawie podręcznika Fizyka dla szkół wyższych, tom 2, dział Termodynamika, rozdziały 1.3 Rozszerzalność cieplna~\cite{fizyka_dla_szkół_wyższych_tom_2}, oraz rozdziały 8 i 9 podręcznika Ćwiczenia laboratoryjne z fizyki, wydanie V~\cite{Drynski1976}.
 
 % ---------- OPIS DOŚWIADCZENIA ----------
 \section{Opis doświadczenia}
@@ -124,11 +177,131 @@ Doświadczenie polega na wyznaczeniu gęstości cieczy oraz gęstości ciał sta
 % ---------- TABELE ----------
 \subsection{Tabele pomiarowe}
 
+\subsubsection*{Waga Jolly'ego}
+
+Położenie początkowe wagi Jolly'ego: $h_0 = 2{,}4$ cm.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Ciało & $h_0$ [cm] & $h_p$ [cm] & $h_w$ [cm] \\
+        \hline
+        1 & 22,3 & 25,4 & 24,2 \\
+        \hline
+        2 & 22,3 & 34,6 & 33,1 \\
+        \hline
+        3 & 22,3 & 25,4 & 25,0 \\
+        \hline
+        4 & 22,3 & 30,6 & 29,8 \\
+        \hline
+    \end{tabular}
+    \caption{Pomiary dla wody}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Ciało & $h_0$ [cm] & $h_p$ [cm] & $h_w$ [cm] \\
+        \hline
+        1 & 22,4 & 25,4 & 24,5 \\
+        \hline
+        2 & 22,4 & 34,7 & 33,5 \\
+        \hline
+        3 & 22,4 & 25,5 & 25,1 \\
+        \hline
+        4 & 22,4 & 30,6 & 30,0 \\
+        \hline
+    \end{tabular}
+    \caption{Pomiary dla alkoholu}
+\end{table}
+
+\subsubsection*{Waga Mohra}
+
+Masy zastępcze koników oznaczono jako $m_1, m_2, m_3$, wynoszą odpowiednio:
+
+\begin{itemize}
+    \item $m_1 = 1A$
+    \item $m_2 = 0{,}1 A$
+    \item $m_3 = 0{,}01 A$
+\end{itemize}
+
+Pozycje i rodzaje koników dla wody destylowanej oraz alkoholu przedstawiono w poniższych tabelach.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Numer podziałki & Rodzaj konika \\
+        \hline
+        3 & $m_1$ \\
+        7 & $m_1$ \\
+        2 & $m_2$ \\
+        4 & $m_3$ \\
+        6 & $m_3$ \\
+        8 & $m_3$ \\
+        \hline
+    \end{tabular}
+    \caption{Pozycje i rodzaje koników dla wody destylowanej (waga Mohra)}
+    \label{tab:waga_mohra_woda}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Numer podziałki & Rodzaj konika \\
+        \hline
+        1 & $m_1$ \\
+        7 & $m_1$ \\
+        2 & $m_2$ \\
+        4 & $m_3$ \\
+        5 & $m_3$ \\
+        \hline
+    \end{tabular}
+    \caption{Pozycje i rodzaje koników dla alkoholu (waga Mohra)}
+    \label{tab:waga_mohra_alkohol}
+\end{table}
+
+
 % ---------- OBLICZENIA ----------
-\subsection{...}
+\subsection{Waga Mohra}
+
+
+Korzystając z wzoru \ref{eq:wzgledna_gestosc} oraz danych z tabel \ref{tab:waga_mohra_woda} oraz \ref{tab:waga_mohra_alkohol} otrzymujemy:
+
+\begin{align*}
+    R & = \frac{1 m_1 + 7 m_1 + 2 m_2 + 4 m_3 + 5 m_3}{3 m_1 + 7 m_1 + 2 m_2 + 4 m_3 + 6 m_3 + 8 m_3}                            \\
+      & = \frac{8 m_1 + 2 m_2 + 9 m_3}{10 m_1 + 2 m_2 + 18 m_3}  = \frac{8 A + 0.2 A + 0.09 A}{10 A + 0.2 A + 0.18 A}  = 0{,}799
+\end{align*}
+
+
 
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
+
+
+
+\subsection{Względna gęstość obliczona z wagi Mohra}
+
+Położenia koników były zdeterminowane przez haczyki zamocowane na stałe na belce, których niepewność położenia nie jest znana (w eksperymencie nie ma możliwości ich przesunięcia, a ich położenie nie zostało zmierzone bezpośrednio). Drugim czynnikiem jest niepewność wagi koników. Koniki nie były ważone bezpośrednio (ich masy są określone w instrukcji), więc niepewność wagi koników również nie jest znana. Kolejnym czynnikiem jest dokładność odczytu położenia równowagi belki, która wynosi jedną podziałkę, lecz w doświadczeniu nie zostało zmierzone, jak wpływa to na dokładność wyznaczenia względnej gęstości.
+
+\subsection{Względna gęstość obliczona z wagi Jolly'ego}
+
+Niepewność wzorcowania położenia wskazówki wagi Jolly'ego wynosi:
+
+\begin{equation*}
+    \Delta_d h = 0{,}1 \text{cm}
+\end{equation*}
+
+Korzystając z prawa przenoszenia niepewności maksymalnych:
+
+\begin{equation}
+    \Delta R = \sum_{i=1}^{n} \left | \frac{\partial R}{\partial x_i} \right | \cdot \Delta x_i
+\end{equation}
+
+
 
 % ---------- WNIOSKI ----------
 \section{Wnioski}

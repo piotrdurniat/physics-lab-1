@@ -207,7 +207,7 @@ Doświadczenie pozwala wyznaczyć pojemność cieplną badanych ciał poprzez an
         \hline
         $m_1$ & $m_2$ & $m_3$ & $m_n$ & $m_w + m_n$ & $m_{w1}$ & $m_{w2}$ & $m_{w3}$ \\
         \hline
-        73 & 70{,}8 & 15{,}2 & 126{,}1 & 192{,}9 & 66{,}8 & & \\
+        73 & 70{,}8 & 15{,}2 & 126{,}1 & 192{,}9 & 66{,}8 & 61{,}2 & 75{,}6 \\
         \hline
     \end{tabular}
     \caption{Masy }
@@ -248,17 +248,17 @@ Korzystając z wyprowadzonego wzoru \ref{eq:cieplo_wlasciwe} obliczono ciepło w
 
 Przykładowe obliczenia dla ciała miedzianego:
 
-\begin{equation}
+\begin{equation*}
     c_p = \frac{[0{,}0668 \cdot 4186 + 0{,}1261 \cdot 377] \cdot (25{,}30 - 30{,}75)}{0{,}073 \cdot (30{,}75 - 100{,}2)} = 351{,}70\,\frac{\text{J}}{\text{kg} \cdot \text{K}}
-\end{equation}
+\end{equation*}
 
-\begin{equation}
+\begin{equation*}
     c_p = \frac{[0{,}0612 \cdot 4186 + 0{,}1261 \cdot 377] \cdot (24{,}90 - 30{,}40)}{0{,}0708 \cdot (30{,}40 - 100{,}4)} = 337{,}06\,\frac{\text{J}}{\text{kg} \cdot \text{K}}
-\end{equation}
+\end{equation*}
 
-\begin{equation}
+\begin{equation*}
     c_p = \frac{[0{,}0756 \cdot 4186 + 0{,}1261 \cdot 377] \cdot (25{,}10 - 27{,}78)}{0{,}0152 \cdot (27{,}78 - 102{,}4)} = 860{,}08\,\frac{\text{J}}{\text{kg} \cdot \text{K}}
-\end{equation}
+\end{equation*}
 
 Wyniki obliczeń ciepła właściwego dla wszystkich badanych ciał przedstawiono w tabeli \ref{tab:cieplo_wlasciwe}.
 
@@ -304,8 +304,105 @@ Tabela rzeczywistych ciepł właściwych poszczególnych ciał przedstawiona jes
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
 
+\subsection{Niepewność pomiaru masy}
+
+Masa została zmierzona za pomocą wagi laboratoryjnej, której niepewność maksymalna wynosi $\Delta m = 0{,}0001\,\text{kg}$.
+
+\subsection{Niepewność pomiaru temperatury}
+
+Temperatura została zmierzona za pomocą termometru laboratoryjnego, którego niepewność wynosi $\Delta T = 0{,}01\,\text{K}$.
+
+\subsection{Niepewność pomiaru ciepła właściwego}
+
+Niepewność pomiaru ciepła właściwego obliczono zgodnie z zasadami propagacji niepewności.
+
+\begin{equation}
+    \Delta c_p = \sum_{i=1}^{n} \left | \frac{\partial c_p}{\partial x_i} \right | \cdot \Delta x_i
+\end{equation}
+
+Obliczając poszczególne pochodne cząstkowe, otrzymano:
+
+\begin{align*}
+    \frac{\partial c_i}{\partial m_{w}}      & = \frac{c_{w} \Delta T}{m_i \Delta T_i}                         \\
+    \frac{\partial c_i}{\partial m_{n}}      & = \frac{c_{n} \Delta T}{m_i \Delta T_i}                         \\
+    \frac{\partial c_i}{\partial \Delta T}   & = \frac{m_{w} c_{w} + m_{n} c_{n}}{m_i \Delta T_i}              \\
+    \frac{\partial c_i}{\partial m_i}        & = -\frac{(m_{w} c_{w} + m_{n} c_{n})\Delta T}{m_i^2 \Delta T_i} \\
+    \frac{\partial c_i}{\partial \Delta T_i} & = -\frac{(m_{w} c_{w} + m_{n} c_{n})\Delta T}{m_i\Delta T_i^2}
+\end{align*}
+
+Przykładowe obliczenia dla ciała miedzianego:
+
+
+\begin{align*}
+    \frac{\partial c_i}{\partial m_w}        & = \frac{c_w \cdot \Delta T}{m_i \cdot \Delta T_i} = 4499{,}876722\,\text{J/(kg$\cdot$K)} \\
+    \frac{\partial c_i}{\partial m_n}        & = \frac{c_n \cdot \Delta T}{m_i \cdot \Delta T_i} = 405{,}268400\,\text{J/(kg$\cdot$K)}  \\
+    \frac{\partial c_i}{\partial \Delta T}   & = \frac{Q}{m_i \cdot \Delta T_i} = -64{,}531396\,\text{J/(kg$\cdot$K$^2$)}               \\
+    \frac{\partial c_i}{\partial m_i}        & = -\frac{c_i}{m_i} = -4817{,}754936\,\text{J/(kg$^2\cdot$K)}                             \\
+    \frac{\partial c_i}{\partial \Delta T_i} & = -\frac{c_i}{\Delta T_i} = 5{,}064019\,\text{J/(kg$\cdot$K$^2$)}
+\end{align*}
+
+\begin{align*}
+    \Delta c_1 & = \left|\frac{\partial c_i}{\partial m_w}\right| \cdot \Delta m_w + \left|\frac{\partial c_i}{\partial m_n}\right| \cdot \Delta m_n + \left|\frac{\partial c_i}{\partial \Delta T}\right| \cdot \Delta T_p + \left|\frac{\partial c_i}{\partial \Delta T}\right| \cdot \Delta T_k \\
+               & + \left|\frac{\partial c_i}{\partial \Delta T_i}\right| \cdot \Delta T_k + \left|\frac{\partial c_i}{\partial \Delta T_i}\right| \cdot \Delta T_c + \left|\frac{\partial c_i}{\partial m_i}\right| \cdot \Delta m_i                                                               \\
+               & = 4499{,}876722 \cdot 0{,}0001 + 405{,}268400 \cdot 0{,}0001 + 64{,}531396 \cdot 0{,}01 + 64{,}531396 \cdot 0{,}01                                                                                                                                                                \\
+               & + 5{,}064019 \cdot 0{,}01 + 5{,}064019 \cdot 0{,}01 + 4817{,}754936 \cdot 0{,}0001                                                                                                                                                                                                \\
+               & = 0{,}450 + 0{,}041 + 0{,}645 + 0{,}645 + 0{,}051 + 0{,}051 + 0{,}482                                                                                                                                                                                                             \\
+               & = 2{,}365\,\text{J/(kg$\cdot$K)}
+\end{align*}
+
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Ciało} & \textbf{Niepewność pomiaru ciepła właściwego [J/(kg·K)]} \\
+        \hline
+        Miedź & $2{,}4$ \\
+        \hline
+        Mosiądz & $2{,}3$ \\
+        \hline
+        Aluminium & $13$ \\
+        \hline
+    \end{tabular}
+    \caption{Niepewności pomiaru ciepła właściwego}
+    \label{tab:niepewnosci_cieplo_wlasciwe}
+\end{table}
+
+
+
 % ---------- WNIOSKI ----------
 \section{Wnioski}
+
+
+\begin{enumerate}
+    \item \textbf{Wyznaczone wartości ciepła właściwego} dla badanych ciał wynoszą:
+          \begin{itemize}
+              \item Dla ciała miedzianego: $(351{,}7 \pm 2{,}4)$ J/(kg$\cdot$K)
+              \item Dla ciała mosiężnego: $(337{,}1 \pm 2{,}3)$ J/(kg$\cdot$K)
+              \item Dla ciała aluminiowego: $(860 \pm 13)$ J/(kg$\cdot$K)
+          \end{itemize}
+
+
+    \item \textbf{Porównanie z wartościami tablicowymi:} Wszystkie wyznaczone wartości ciepła właściwego są niższe od wartości tablicowych, co może wskazywać na systematyczne błędy pomiarowe.
+
+    \item \textbf{Dokładność pomiarów dla poszczególnych materiałów:}
+          \begin{itemize}
+              \item Najlepszą zgodność z wartościami tablicowymi uzyskano dla aluminium (różnica 4,44\%).
+              \item Największe rozbieżności wystąpiły dla mosiądzu (różnica 10,12\%).
+          \end{itemize}
+
+    \item \textbf{Potencjalne źródła błędów systematycznych:}
+          \begin{itemize}
+              \item Straty ciepła do otoczenia podczas przenoszenia ogrzanego ciała do kalorymetru.
+              \item Wymiana ciepła kalorymetru z otoczeniem w trakcie pomiarów.
+              \item Niedoskonała izolacja termiczna kalorymetru.
+          \end{itemize}
+
+    \item \textbf{Identyfikacja materiałów:} Na podstawie uzyskanych wyników ciepła właściwego możemy z dużą pewnością potwierdzić, że badane ciała były wykonane z miedzi, mosiądzu i aluminium, zgodnie z przewidywaniami.
+
+\end{enumerate}
+
 
 % ---------- WYKRESY ----------
 
