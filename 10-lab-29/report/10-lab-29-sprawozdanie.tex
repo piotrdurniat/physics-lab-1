@@ -138,14 +138,14 @@
 
 Na podstawie zmierzonej wysokości słupa wody obliczono objętość wody w kapilarze według wzoru:
 \begin{equation}
-    V = \pi \cdot \frac{d^2}{4} \cdot h
+    V = V_{\text{kolby}} +\pi \cdot \frac{d^2}{4} \cdot h
 \end{equation}
 
-gdzie $d = 1,7$ mm jest średnicą wewnętrzną kapilary, a $h$ jest wysokością słupa wody.
+gdzie $d = 1,7$ mm jest średnicą wewnętrzną kapilary, a $h$ jest wysokością słupa wody, $V_{\text{kolby}} = 300 \cdot 10^{-6} \text{ m}^3$ jest objętością kolby.
 
-Obliczono również zmianę objętości $\Delta V$ względem objętości początkowej (dla temperatury 11,0°C):
+Obliczono również zmianę objętości $\Delta V$ względem objętości minimalnej (dla temperatury 4°C):
 \begin{equation}
-    \Delta V = V - V_{11,0°C}
+    \Delta V = V - V_{4^\circ C}
 \end{equation}
 
 \begin{table}[H]
@@ -156,23 +156,34 @@ Obliczono również zmianę objętości $\Delta V$ względem objętości począt
         \hline
         $T$ [$^\circ$C] & $V_1$ [m$^3$] & $V_2$ [m$^3$] & $\Delta V_1$ [m$^3$] & $\Delta V_2$ [m$^3$] \\
         \hline
-        11,0 & 1,82$\cdot$10$^{-7}$ & 1,61$\cdot$10$^{-7}$ & 0 & 0 \\
-        10,0 & 1,57$\cdot$10$^{-7}$ & 1,41$\cdot$10$^{-7}$ & -2,50$\cdot$10$^{-8}$ & -2,04$\cdot$10$^{-8}$ \\
-        9,0 & 1,38$\cdot$10$^{-7}$ & 1,23$\cdot$10$^{-7}$ & -4,31$\cdot$10$^{-8}$ & -3,86$\cdot$10$^{-8}$ \\
-        8,0 & 1,20$\cdot$10$^{-7}$ & 1,04$\cdot$10$^{-7}$ & -6,13$\cdot$10$^{-8}$ & -5,67$\cdot$10$^{-8}$ \\
-        7,0 & 1,07$\cdot$10$^{-7}$ & 9,08$\cdot$10$^{-8}$ & -7,49$\cdot$10$^{-8}$ & -7,04$\cdot$10$^{-8}$ \\
-        6,0 & 9,53$\cdot$10$^{-8}$ & 9,08$\cdot$10$^{-8}$ & -8,63$\cdot$10$^{-8}$ & -7,04$\cdot$10$^{-8}$ \\
-        5,0 & 8,85$\cdot$10$^{-8}$ & 6,81$\cdot$10$^{-8}$ & -9,31$\cdot$10$^{-8}$ & -9,31$\cdot$10$^{-8}$ \\
-        4,0 & 8,40$\cdot$10$^{-8}$ & 6,81$\cdot$10$^{-8}$ & -9,76$\cdot$10$^{-8}$ & -9,31$\cdot$10$^{-8}$ \\
-        3,0 & 8,40$\cdot$10$^{-8}$ & 6,81$\cdot$10$^{-8}$ & -9,76$\cdot$10$^{-8}$ & -9,31$\cdot$10$^{-8}$ \\
-        2,0 & 8,63$\cdot$10$^{-8}$ & 7,49$\cdot$10$^{-8}$ & -9,53$\cdot$10$^{-8}$ & -8,63$\cdot$10$^{-8}$ \\
-        1,0 & 9,31$\cdot$10$^{-8}$ & 8,40$\cdot$10$^{-8}$ & -8,85$\cdot$10$^{-8}$ & -7,72$\cdot$10$^{-8}$ \\
-        0,2 & 9,76$\cdot$10$^{-8}$ & 9,31$\cdot$10$^{-8}$ & -8,40$\cdot$10$^{-8}$ & -6,81$\cdot$10$^{-8}$ \\
+        11,0 & 3,0018$\cdot$10$^{-4}$ & 3,0016$\cdot$10$^{-4}$ & 9,76$\cdot$10$^{-8}$ & 9,31$\cdot$10$^{-8}$ \\
+        10,0 & 3,0016$\cdot$10$^{-4}$ & 3,0014$\cdot$10$^{-4}$ & 7,26$\cdot$10$^{-8}$ & 7,26$\cdot$10$^{-8}$ \\
+        9,0 & 3,0014$\cdot$10$^{-4}$ & 3,0012$\cdot$10$^{-4}$ & 5,45$\cdot$10$^{-8}$ & 5,45$\cdot$10$^{-8}$ \\
+        8,0 & 3,0012$\cdot$10$^{-4}$ & 3,0010$\cdot$10$^{-4}$ & 3,63$\cdot$10$^{-8}$ & 3,63$\cdot$10$^{-8}$ \\
+        7,0 & 3,0011$\cdot$10$^{-4}$ & 3,0009$\cdot$10$^{-4}$ & 2,27$\cdot$10$^{-8}$ & 2,27$\cdot$10$^{-8}$ \\
+        6,0 & 3,0010$\cdot$10$^{-4}$ & 3,0008$\cdot$10$^{-4}$ & 1,36$\cdot$10$^{-8}$ & 1,36$\cdot$10$^{-8}$ \\
+        5,0 & 3,0009$\cdot$10$^{-4}$ & 3,0007$\cdot$10$^{-4}$ & 4,54$\cdot$10$^{-9}$ & 4,54$\cdot$10$^{-9}$ \\
+        4,0 & 3,0008$\cdot$10$^{-4}$ & 3,0007$\cdot$10$^{-4}$ & 0,00$\cdot$10$^{-8}$ & 0,00$\cdot$10$^{-8}$ \\
+        3,0 & 3,0008$\cdot$10$^{-4}$ & 3,0007$\cdot$10$^{-4}$ & 2,27$\cdot$10$^{-9}$ & 4,54$\cdot$10$^{-9}$ \\
+        2,0 & 3,0009$\cdot$10$^{-4}$ & 3,0007$\cdot$10$^{-4}$ & 4,54$\cdot$10$^{-9}$ & 9,08$\cdot$10$^{-9}$ \\
+        1,0 & 3,0009$\cdot$10$^{-4}$ & 3,0008$\cdot$10$^{-4}$ & 6,81$\cdot$10$^{-9}$ & 1,13$\cdot$10$^{-8}$ \\
+        0,2 & 3,0010$\cdot$10$^{-4}$ & 3,0009$\cdot$10$^{-4}$ & 9,08$\cdot$10$^{-9}$ & 1,36$\cdot$10$^{-8}$ \\
         \hline
     \end{tabular}
 \end{table}
 
 Pełne dane objętości dla wszystkich pomiarów przedstawiono na wykresie (Rys.~\ref{fig:height_vs_temperature}). Można zauważyć, że woda osiąga najmniejszą objętość (największą gęstość) w okolicy temperatury 4°C, co potwierdza zjawisko anomalii rozszerzalności cieplnej wody.
+
+\subsection{Względna zmiana gęstości}
+
+Względna zmiana gęstości wody w temperaturze $10^\circ$C względem maksymalnej gęstości. Na podstawie wykresu (Rys.~\ref{fig:height_vs_temperature}) woda osiąga największą gęstość w temperaturze 4°C.
+
+\begin{align*}
+     & V_{10^\circ C} = 300 \cdot 10^{-6} + \frac{\pi \cdot 0{,}0017^2 \cdot 0{,}037}{4} = 0.00030008 \text{ m}^3                                          \\
+     & V_{4^\circ C} = 300 \cdot 10^{-6} + \frac{\pi \cdot 0{,}0017^2 \cdot 0{,}069}{4} = 0.0003001 \text{ m}^3                                            \\
+     & \frac{\rho(T=4^\circ C) - \rho(T=10^\circ C)}{\rho_{T=4^\circ C}} = \frac{\frac{m}{V(4^\circ C)} - \frac{m}{V(10^\circ C)}}{\frac{m}{V(4^\circ C)}} \\
+     & = \frac{V_{10^\circ C} - V_{4^\circ C}}{V_{10^\circ C}} = \frac{0.0003001 - 0.00030008}{0.0003001} = 0.00024 = 2{,}4 \cdot 10^{-4}
+\end{align*}
 
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
@@ -187,7 +198,7 @@ Pełne dane objętości dla wszystkich pomiarów przedstawiono na wykresie (Rys.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textheight,angle=90]{height_vs_temperature.png}
-    \caption{Wysokość słupa wody w zależności od temperatury}
+    \caption{Wysokość słupa wody oraz zmiana objętości wody w zależności od temperatury.}
     \label{fig:height_vs_temperature}
 \end{figure}
 
