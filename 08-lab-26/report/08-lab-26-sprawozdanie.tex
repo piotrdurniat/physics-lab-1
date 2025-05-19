@@ -216,7 +216,8 @@ Doświadczenie pozwala wyznaczyć pojemność cieplną badanych ciał poprzez an
 % ---------- OBLICZENIA ----------
 \subsection{Wyznaczenie temperatury początkowej i końcowej}
 
-Temperatury początkowe i końcowe wyznaczone zostały przy użyciu interpolacji liniowej. Do 10 pierwszych pomiarów temperatury wody (zanim wrzucono ciało do kalorymetru) dopasowano linię prostą, następnie do 10 ostatnich pomiarów temperatury wody (po wrzuceniu ciała do kalorymetru) dopasowano drugą linię prostą. Dla czasu $t = 330$ lub $t = 300$ sekund wykonano interpolację temperatury wody, odczytując temperatury początkowe i końcowe.
+Temperatury początkowe i końcowe wyznaczone zostały przy użyciu interpolacji liniowej. Do 10 pierwszych pomiarów temperatury wody (zanim wrzucono ciało do kalorymetru) dopasowano linię prostą, następnie do 10 ostatnich pomiarów temperatury wody (po wrzuceniu ciała do kalorymetru) dopasowano drugą linię prostą.
+Wyznaczono następnie linię pionową w taki sposób, żeby pola ograniczone przez tą linię, linie dopasowań oraz linię punktów pomiarowych, po obu stronach linii pionowej były sobie równe.
 
 Otrzymane wyniki interpolacji temperatury wody przedstawiono na wykresach \ref{fig:t1_interpolacja}, \ref{fig:t2_interpolacja} i \ref{fig:t3_interpolacja}.
 
@@ -228,11 +229,11 @@ Wartości temperatur początkowych i końcowych odczytano z wykresów i przedsta
         \hline
         \textbf{Ciało} & \textbf{Temperatura początkowa} & \textbf{Temperatura końcowa} \\
         \hline
-        Miedziane & 25{,}30 & 30{,}75 \\
+        Miedziane & 25{,}30 & 30{,}67 \\
         \hline
-        Mosiężne & 24{,}90 & 30{,}40 \\
+        Mosiężne & 24{,}90 & 30{,}29 \\
         \hline
-        Aluminiowe & 25{,}10 & 27{,}78 \\
+        Aluminiowe & 25{,}10 & 27{,}75 \\
         \hline
     \end{tabular}
     \caption{Temperatury początkowe i końcowe}
@@ -249,15 +250,15 @@ Korzystając z wyprowadzonego wzoru \ref{eq:cieplo_wlasciwe} obliczono ciepło w
 Przykładowe obliczenia dla ciała miedzianego:
 
 \begin{equation*}
-    c_p = \frac{[0{,}0668 \cdot 4186 + 0{,}1261 \cdot 377] \cdot (25{,}30 - 30{,}75)}{0{,}073 \cdot (30{,}75 - 100{,}2)} = 351{,}70\,\frac{\text{J}}{\text{kg} \cdot \text{K}}
+    c_p = \frac{[0{,}0668 \cdot 4186 + 0{,}1261 \cdot 377] \cdot (25{,}30 - 30{,}67)}{0{,}073 \cdot (30{,}67 - 100{,}2)} = 346{,}13\,\frac{\text{J}}{\text{kg} \cdot \text{K}}
 \end{equation*}
 
 \begin{equation*}
-    c_p = \frac{[0{,}0612 \cdot 4186 + 0{,}1261 \cdot 377] \cdot (24{,}90 - 30{,}40)}{0{,}0708 \cdot (30{,}40 - 100{,}4)} = 337{,}06\,\frac{\text{J}}{\text{kg} \cdot \text{K}}
+    c_p = \frac{[0{,}0612 \cdot 4186 + 0{,}1261 \cdot 377] \cdot (24{,}90 - 30{,}29)}{0{,}0708 \cdot (30{,}29 - 100{,}4)} = 329{,}80\,\frac{\text{J}}{\text{kg} \cdot \text{K}}
 \end{equation*}
 
 \begin{equation*}
-    c_p = \frac{[0{,}0756 \cdot 4186 + 0{,}1261 \cdot 377] \cdot (25{,}10 - 27{,}78)}{0{,}0152 \cdot (27{,}78 - 102{,}4)} = 860{,}08\,\frac{\text{J}}{\text{kg} \cdot \text{K}}
+    c_p = \frac{[0{,}0756 \cdot 4186 + 0{,}1261 \cdot 377] \cdot (25{,}10 - 27{,}75)}{0{,}0152 \cdot (27{,}75 - 102{,}4)} = 850{,}11\,\frac{\text{J}}{\text{kg} \cdot \text{K}}
 \end{equation*}
 
 Wyniki obliczeń ciepła właściwego dla wszystkich badanych ciał przedstawiono w tabeli \ref{tab:cieplo_wlasciwe}.
@@ -268,11 +269,11 @@ Wyniki obliczeń ciepła właściwego dla wszystkich badanych ciał przedstawion
         \hline
         \textbf{Ciało} & \textbf{Ciepło właściwe [J/kgK]} \\
         \hline
-        Miedziane & 351{,}70 \\
+        Miedziane & 346{,}13 \\
         \hline
-        Mosiężne & 337{,}06 \\
+        Mosiężne & 329{,}80 \\
         \hline
-        Aluminium & 860{,}08 \\
+        Aluminium & 850{,}11 \\
         \hline
     \end{tabular}
     \caption{Ciepło właściwe poszczególnych ciał}
@@ -310,7 +311,7 @@ Masa została zmierzona za pomocą wagi laboratoryjnej, której niepewność mak
 
 \subsection{Niepewność pomiaru temperatury}
 
-Temperatura została zmierzona za pomocą termometru laboratoryjnego, którego niepewność wynosi $\Delta T = 0{,}01\,\text{K}$.
+Temperatura została zmierzona za pomocą termometru laboratoryjnego, którego niepewność wynosi $\Delta T = 0{,}1\,\text{K}$.
 
 \subsection{Niepewność pomiaru ciepła właściwego}
 
@@ -344,12 +345,11 @@ Przykładowe obliczenia dla ciała miedzianego:
 \begin{align*}
     \Delta c_1 & = \left|\frac{\partial c_i}{\partial m_w}\right| \cdot \Delta m_w + \left|\frac{\partial c_i}{\partial m_n}\right| \cdot \Delta m_n + \left|\frac{\partial c_i}{\partial \Delta T}\right| \cdot \Delta T_p + \left|\frac{\partial c_i}{\partial \Delta T}\right| \cdot \Delta T_k \\
                & + \left|\frac{\partial c_i}{\partial \Delta T_i}\right| \cdot \Delta T_k + \left|\frac{\partial c_i}{\partial \Delta T_i}\right| \cdot \Delta T_c + \left|\frac{\partial c_i}{\partial m_i}\right| \cdot \Delta m_i                                                               \\
-               & = 4499{,}876722 \cdot 0{,}0001 + 405{,}268400 \cdot 0{,}0001 + 64{,}531396 \cdot 0{,}01 + 64{,}531396 \cdot 0{,}01                                                                                                                                                                \\
-               & + 5{,}064019 \cdot 0{,}01 + 5{,}064019 \cdot 0{,}01 + 4817{,}754936 \cdot 0{,}0001                                                                                                                                                                                                \\
+               & = 4499{,}876722 \cdot 0{,}0001 + 405{,}268400 \cdot 0{,}0001 + 64{,}531396 \cdot 0{,}1 + 64{,}531396 \cdot 0{,}1                                                                                                                                                                  \\
+               & + 5{,}064019 \cdot 0{,}1 + 5{,}064019 \cdot 0{,}1 + 4817{,}754936 \cdot 0{,}0001                                                                                                                                                                                                  \\
                & = 0{,}450 + 0{,}041 + 0{,}645 + 0{,}645 + 0{,}051 + 0{,}051 + 0{,}482                                                                                                                                                                                                             \\
-               & = 2{,}365\,\text{J/(kg$\cdot$K)}
+               & = 14{,}84\,\text{J/(kg$\cdot$K)}
 \end{align*}
-
 
 
 \begin{table}[H]
@@ -358,11 +358,11 @@ Przykładowe obliczenia dla ciała miedzianego:
         \hline
         \textbf{Ciało} & \textbf{Niepewność pomiaru ciepła właściwego [J/(kg·K)]} \\
         \hline
-        Miedź & $2{,}4$ \\
+        Miedź & $14{,}84$ \\
         \hline
-        Mosiądz & $2{,}3$ \\
+        Mosiądz & $14{,}14$ \\
         \hline
-        Aluminium & $13$ \\
+        Aluminium & $73{,}10$ \\
         \hline
     \end{tabular}
     \caption{Niepewności pomiaru ciepła właściwego}
@@ -378,9 +378,9 @@ Przykładowe obliczenia dla ciała miedzianego:
 \begin{enumerate}
     \item \textbf{Wyznaczone wartości ciepła właściwego} dla badanych ciał wynoszą:
           \begin{itemize}
-              \item Dla ciała miedzianego: $(351{,}7 \pm 2{,}4)$ J/(kg$\cdot$K)
-              \item Dla ciała mosiężnego: $(337{,}1 \pm 2{,}3)$ J/(kg$\cdot$K)
-              \item Dla ciała aluminiowego: $(860 \pm 13)$ J/(kg$\cdot$K)
+              \item Dla ciała miedzianego: $(346 \pm 14)$ J/(kg$\cdot$K)
+              \item Dla ciała mosiężnego: $(329 \pm 14)$ J/(kg$\cdot$K)
+              \item Dla ciała aluminiowego: $(850 \pm 73)$ J/(kg$\cdot$K)
           \end{itemize}
 
 
@@ -388,7 +388,7 @@ Przykładowe obliczenia dla ciała miedzianego:
 
     \item \textbf{Dokładność pomiarów dla poszczególnych materiałów:}
           \begin{itemize}
-              \item Najlepszą zgodność z wartościami tablicowymi uzyskano dla aluminium (różnica 4,44\%).
+              \item Najlepszą zgodność z wartościami tablicowymi uzyskano dla aluminium (różnica 5,54\%).
               \item Największe rozbieżności wystąpiły dla mosiądzu (różnica 10,12\%).
           \end{itemize}
 
@@ -407,29 +407,29 @@ Przykładowe obliczenia dla ciała miedzianego:
 % ---------- WYKRESY ----------
 
 \newpage
-
 \section{Wykresy}
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.65\textwidth}
-        \includegraphics[width=\textwidth]{t1_interpolacja.png}
-        \caption{Interpolacja temperatury dla ciała miedzianego}
-        \label{fig:t1_interpolacja}
-    \end{subfigure}
+    \includegraphics[width=0.9\textheight,angle=90]{t1_interpolacja.png}
+    \caption{Interpolacja temperatury dla ciała miedzianego}
+    \label{fig:t1_interpolacja}
+\end{figure}
 
-    \begin{subfigure}[b]{0.65\textwidth}
-        \includegraphics[width=\textwidth]{t2_interpolacja.png}
-        \caption{Interpolacja temperatury dla ciała mosiężnego}
-        \label{fig:t2_interpolacja}
-    \end{subfigure}
+\newpage
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textheight,angle=90]{t2_interpolacja.png}
+    \caption{Interpolacja temperatury dla ciała mosiężnego}
+    \label{fig:t2_interpolacja}
+\end{figure}
 
-    \begin{subfigure}[b]{0.65\textwidth}
-        \includegraphics[width=\textwidth]{t3_interpolacja.png}
-        \caption{Interpolacja temperatury dla ciała aluminiowego}
-        \label{fig:t3_interpolacja}
-    \end{subfigure}
-    \caption{Wykresy interpolacji temperatury dla badanych ciał}
+\newpage
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textheight,angle=90]{t3_interpolacja.png}
+    \caption{Interpolacja temperatury dla ciała aluminiowego}
+    \label{fig:t3_interpolacja}
 \end{figure}
 
 
