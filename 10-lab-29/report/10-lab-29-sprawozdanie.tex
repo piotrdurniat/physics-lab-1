@@ -15,6 +15,7 @@
 \usepackage{indentfirst}
 \usepackage{array}
 \usepackage{longtable}
+\usepackage{siunitx}
 
 \setlist[itemize]{itemsep=0pt, topsep=0pt}
 
@@ -186,7 +187,25 @@ Względna zmiana gęstości wody w temperaturze $10^\circ$C względem maksymalne
 \end{align*}
 
 % ---------- NIEPEWNOŚCI ----------
-\section{Ocena niepewności pomiaru}
+\section{Ocena niepewności pomiarowych}
+
+\subsection{Niepewność pomiaru temperatury}
+
+Do pomiaru temperatury użyto termometru elektronicznego o niepewności maksymalnej $\Delta_d T = 0{,}1^\circ$C. Niepewność standardową oszacowano za pomocą metody typu B:
+
+\begin{equation}
+    u(t) = \frac{\Delta_d T}{\sqrt{3}} = \frac{0{,}1}{\sqrt{3}} \approx 0{,}0577\,\text{°C}
+\end{equation}
+
+\subsection{Niepewność pomiaru wysokości słupa cieczy}
+
+Wysokość słupa wody w kapilarze była odczytywana z niepewnością maksymalną $\Delta_d h = 0{,}001\,\text{m}$. Niepewność standardową oszacowano za pomocą metody typu B:
+
+\begin{equation}
+    u(h) = \frac{\Delta h}{\sqrt{3}} = \frac{0{,}001}{\sqrt{3}} \approx 0{,}00058\,\text{m}
+\end{equation}
+
+Wykres razem z niepewnościami przedstawiono na Rys.~\ref{fig:height_vs_temperature_with_uncertainties}.
 
 % ---------- WNIOSKI ----------
 \section{Wnioski}
@@ -202,6 +221,12 @@ Względna zmiana gęstości wody w temperaturze $10^\circ$C względem maksymalne
     \label{fig:height_vs_temperature}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textheight,angle=90]{height_vs_temperature_uncertainties.png}
+    \caption{Wysokość słupa wody oraz zmiana objętości wody w zależności od temperatury z uwzględnieniem niepewności.}
+    \label{fig:height_vs_temperature_with_uncertainties}
+\end{figure}
 
 \bibliographystyle{plain}
 \bibliography{bibliography}
