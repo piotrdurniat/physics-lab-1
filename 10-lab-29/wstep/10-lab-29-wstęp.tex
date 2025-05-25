@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+
+% --- PAKIETY ---
+\usepackage[utf8]{inputenc}       % polskie znaki
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}        % język polski
+\usepackage{amsmath}              % zaawansowana matematyka
+\usepackage{amssymb}              % symbole matematyczne
+\usepackage{graphicx}             % grafika
+\usepackage{geometry}             % ustawienia strony
+\usepackage{float}                % kontrola położenia figur
+\usepackage{siunitx}              % jednostki SI
+\usepackage{enumitem}             % większa kontrola nad listami
+
+\geometry{a4paper, margin=2.5cm}
+
+\begin{document}
+
+\maketitle
+
+\section*{Wstęp teoretyczny}
+
+\subsection*{Prawo gazu doskonałego – równanie Clapeyrona}
+Zachowanie gazów w warunkach zbliżonych do idealnych opisuje równanie stanu gazu doskonałego, zwane równaniem Clapeyrona:
+\[
+    pV = nRT,
+\]
+gdzie: $p$ – ciśnienie gazu, $V$ – objętość, $n$ – liczba moli, $R$ – uniwersalna stała gazowa, a $T$ – temperatura bezwzględna. Równanie to przybliża rzeczywiste właściwości powietrza atmosferycznego, traktowanego jako mieszanina gazów doskonałych, i jest punktem wyjścia do dalszej analizy pary wodnej.
+
+\subsection*{Para nasycona wody – własności i prawo Clausiusa-Clapeyrona}
+Para nasycona to para wodna będąca w równowadze termodynamicznej z cieczą – oznacza to, że szybkość parowania i kondensacji są równe. Jej ciśnienie zależy wyłącznie od temperatury. Zależność tę opisuje równanie Clausiusa-Clapeyrona:
+\[
+    \frac{d p}{d T} = \frac{L}{T \Delta V},
+\]
+gdzie $L$ to molowe ciepło parowania, a $\Delta V$ – zmiana objętości podczas przejścia fazowego. Przy założeniu, że objętość cieczy jest pomijalnie mała względem objętości pary, a para zachowuje się jak gaz doskonały, równanie to można przekształcić do postaci:
+\[
+    \ln p = -\frac{L}{R} \cdot \frac{1}{T} + C,
+\]
+co pozwala na wyznaczenie ciepła parowania na podstawie pomiarów ciśnienia pary nasyconej w funkcji temperatury.
+
+\subsection*{Para nienasycona – przejście do stanu nasycenia}
+Para nienasycona zawiera mniej cząsteczek pary wodnej niż wynosi maksymalna możliwa ilość przy danej temperaturze i ciśnieniu. Po osiągnięciu odpowiedniej ilości pary – np. przez ochłodzenie lub dodanie pary – układ osiąga stan nasycenia. Wtedy dalsze zwiększanie zawartości pary powoduje jej kondensację.
+
+\subsection*{Wilgotność bezwzględna i względna – definicje i zależność wzajemna}
+Wilgotność bezwzględna ($\rho$) to masa pary wodnej zawarta w jednostce objętości powietrza, wyrażana najczęściej w g/m³. Z kolei wilgotność względna $\varphi$ określa stopień nasycenia powietrza parą wodną i definiowana jest jako stosunek ciśnienia pary wodnej rzeczywistej $p$ do ciśnienia pary nasyconej $p_n$ w tej samej temperaturze:
+\[
+    \varphi = \frac{p}{p_n} \cdot 100\%.
+\]
+Ponieważ $p_n$ rośnie wraz z temperaturą, to przy stałej zawartości pary wilgotność względna maleje ze wzrostem temperatury. Wilgotność względna jest wielkością najczęściej wykorzystywaną w meteorologii.
+
+\subsection*{Metody pomiaru wilgotności względnej powietrza atmosferycznego}
+Wilgotność względną można mierzyć kilkoma metodami. Najczęściej stosowane to:
+\begin{itemize}[label=--]
+    \item \textbf{Psychrometryczna} – opiera się na pomiarze temperatury za pomocą dwóch termometrów: suchego i zwilżonego. Różnica temperatur zależy od parowania i wilgotności powietrza. Na tej podstawie, korzystając z tablic psychrometrycznych lub wzorów empirycznych, wyznacza się wilgotność względną.
+    \item \textbf{Metoda punktu rosy} – polega na schładzaniu próbki powietrza aż do momentu, w którym para zaczyna się skraplać. Temperatura kondensacji to punkt rosy, z którego można wyliczyć wilgotność względną.
+    \item \textbf{Higrometryczna} – stosuje się higrometry włosowe, elektroniczne lub kondensacyjne, które mierzą zmiany właściwości fizycznych materiałów zależnych od zawartości pary wodnej.
+\end{itemize}
+
+\end{document}
