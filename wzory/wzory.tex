@@ -21,10 +21,76 @@
 
 \section{Wzory}
 
+\subsection{Niepewność standardowa typu A}
+Niepewność standardowa typu A wyznaczana jest na podstawie rozrzutu wyników pomiarów:
+
+\begin{equation}
+    u_A(x) = \sqrt{\frac{1}{N-1} \sum_{i=1}^{N} (x_i - \bar{x})^2}
+\end{equation}
+
+gdzie:
+\begin{itemize}
+    \item $N$ - liczba pomiarów
+    \item $x_i$ - i-ty wynik pomiaru
+    \item $\bar{x}$ - wartość średnia wyników pomiarów
+\end{itemize}
+
+\subsection{Niepewność standardowa typu B}
+Niepewność standardowa typu B wyznaczana jest na podstawie niepewności wzorcowania przyrządu pomiarowego:
+
+\begin{equation}
+    u_B(x) = \frac{\Delta_d x}{\sqrt{3}}
+\end{equation}
+
+gdzie:
+\begin{itemize}
+    \item $\Delta_d x$ - niepewność wzorcowania przyrządu pomiarowego
+\end{itemize}
+
+\subsection{Całkowita niepewność standardowa}
+Całkowita niepewność standardowa jest pierwiastkiem z sumy kwadratów niepewności typu A i B:
+
+\begin{equation}
+    u_c(x) = \sqrt{u_A^2(x) + u_B^2(x)}
+\end{equation}
+
+\subsection{Prawo przenoszenia niepewności standardowych}
+Dla funkcji wielu zmiennych $y = f(x_1, x_2, \ldots, x_K)$, niepewność standardowa złożona wyznaczana jest ze wzoru:
+
+\begin{equation}
+    u_c(y) = \sqrt{\sum_{k=1}^{K} \left( \frac{\partial f}{\partial x_k} \right)^2 u^2(x_k)}
+\end{equation}
+
+gdzie:
+\begin{itemize}
+    \item $\frac{\partial f}{\partial x_k}$ - pochodna cząstkowa funkcji $f$ względem zmiennej $x_k$
+    \item $u(x_k)$ - niepewność standardowa zmiennej $x_k$
+\end{itemize}
+
 \subsection{Prawo przenoszenia niepewności maksymalnych}
 
 \begin{equation}
     \Delta y = \sum_{i=1}^{n} \left | \frac{\partial f}{\partial x_i} \right | \cdot \Delta x_i
+\end{equation}
+
+\subsection{Niepewność względna}
+Często używana jest również niepewność względna, która pozwala określić procentową niepewność wyniku:
+
+\begin{equation}
+    \frac{\Delta y}{|y|} = \sum_{i=1}^{n} \frac{\left | \frac{\partial f}{\partial x_i} \right | \cdot \Delta x_i}{|y|}
+\end{equation}
+
+W przypadku prostych zależności funkcyjnych (jak np. iloczyn czy iloraz), niepewność względna może być wyrażona jako suma niepewności względnych poszczególnych zmiennych:
+
+\begin{equation}
+    \frac{\Delta g}{|g|} = \frac{\Delta x}{|x|} + \frac{\Delta y}{|y|} + \ldots
+\end{equation}
+
+\subsection{Niepewność średniej arytmetycznej}
+Niepewność średniej arytmetycznej z $N$ pomiarów wyznaczana jest ze wzoru:
+
+\begin{equation}
+    u(\bar{x}) = \frac{u(x)}{\sqrt{N}}
 \end{equation}
 
 \subsection{Niepewność pomiarowa współczynników prostej regresji liniowej}
@@ -45,9 +111,25 @@ Niepewności pomiarowe dla wyznaczonej prostej regresji liniowej $y = ax + b$ ob
 
 gdzie $x_i$ to wartości zmiennej niezależnej, $y_i$ to wartości zmierzone, $\hat{y}_i$ to wartości przewidywane przez model regresji, a $n$ to liczba punktów pomiarowych. Dzielnik $n-2$ wynika z faktu, że model regresji liniowej ma dwa parametry ($a$ i $b$).
 
+\subsection{Szczególne przypadki przenoszenia niepewności}
 
-Obliczone wartości niepewności dla współczynników prostej regresji wynoszą:
+\subsubsection{Suma lub różnica}
+Dla funkcji $f = x \pm y$:
+\begin{equation}
+    u(f) = \sqrt{u^2(x) + u^2(y)}
+\end{equation}
 
+\subsubsection{Iloczyn lub iloraz}
+Dla funkcji $f = x \cdot y$ lub $f = \frac{x}{y}$:
+\begin{equation}
+    \frac{u(f)}{|f|} = \sqrt{\left(\frac{u(x)}{|x|}\right)^2 + \left(\frac{u(y)}{|y|}\right)^2}
+\end{equation}
+
+\subsubsection{Potęgowanie}
+Dla funkcji $f = x^n$:
+\begin{equation}
+    \frac{u(f)}{|f|} = |n| \cdot \frac{u(x)}{|x|}
+\end{equation}
 
 \end{document}
 
