@@ -265,7 +265,7 @@ Powyższe wartości zostały zapisane w tabeli \ref{tab:rosy}.
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
 
-\subsection{Złożona niepewność standardowa pomiaru wilgotności względnej}
+\subsection{Złożona niepewność standardowa pomiaru wilgotności względnej (metoda punktu rosy)}
 
 Złożoną niepewność standardową obliczono na podstawie wzoru:
 
@@ -285,6 +285,28 @@ Po podstawieniu wartości do wzoru otrzymujemy:
     u_c(S) = 0{,}0027
 \end{equation}
 
+\section{Niepewność standardowa pomiaru wilgotności względnej (metoda psychrometryczna)}
+
+Dla psychrometru Assmanna wykonano tylko jeden pomiar, dlatego niepewność standardową oszacowano jako niepewność typu B. Niepewność pomiarowa termometrów użytych w psychrometrze wynosi $\Delta_d T = 0{,}1^\circ C$, co daje niepewność standardową:
+
+\begin{equation}
+    u_B(T) = \frac{\Delta_d T}{\sqrt{3}} = \frac{0{,}1}{\sqrt{3}} \approx 0{,}058^\circ C
+\end{equation}
+
+Wilgotność względna $S$ w metodzie psychrometrycznej zależy od różnicy temperatur $\Delta T = T_s - T_m$, zatem korzystając z prawa przenoszenia niepewności:
+
+\begin{equation}
+    u_B(\Delta T) = \sqrt{u_B^2(T_s) + u_B^2(T_m)} = \sqrt{2} \cdot u_B(T) \approx 0{,}082^\circ C
+\end{equation}
+
+
+\subsection{Niepewność standardowa pomiaru wilgotności względnej (metoda higrometryczna)}
+
+Dla higrometru włosowego niepewność standardową oszacowano jako niepewność typu B, wynikającą z dokładności odczytu skali przyrządu. Przy podziałce co 1\%, niepewność odczytu wynosi $\Delta_d S = 1\%$ wilgotności względnej, co daje niepewność standardową:
+
+\begin{equation}
+    u_B(S_{higr}) = \frac{\Delta_d S}{\sqrt{3}} = \frac{1}{\sqrt{3}} \approx 0{,}58\%
+\end{equation}
 
 % ---------- WNIOSKI ----------
 \section{Wnioski}
@@ -298,7 +320,7 @@ Na podstawie przeprowadzonych pomiarów wilgotności powietrza atmosferycznego p
           \end{equation}
           co wyrażone w procentach daje wartość $(48{,}24 \pm 0{,}27)\%$.
 
-    \item Za pomocą higrometru włosowego uzyskano dwa odczyty wilgotności względnej: $59\%$ na początku wykonywania pomiarów oraz $61\%$ na końcu.
+    \item Za pomocą higrometru włosowego uzyskano dwa odczyty wilgotności względnej: $59{,}00\%$ na początku wykonywania pomiarów oraz $61{,}00\%$ na końcu. Niepewność standardowa wynosi $u_B(S) = 0{,}58\%$.
 
     \item Psychrometr Assmanna wskazał wilgotność względną na poziomie $63\%$, przy temperaturze suchego termometru $T_s = 25{,}00^\circ C$ i mokrego termometru $T_m = 20{,}00^\circ C$.
 
