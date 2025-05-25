@@ -79,3 +79,10 @@
 - [sprawozdanie PDF](./11-lab-22/report/11-lab-22-sprawozdanie.pdf)
 - [sprawozdanie LaTeX](./11-lab-22/report/11-lab-22-sprawozdanie.tex)
 - [obliczenia](./11-lab-22/11-lab-22-obliczenia.ipynb)
+
+## 12. ćwiczenie 38 - Pomiar napięcia powierzchniowego
+
+- [instrukcja](./12-lab-38/12-lab-38-instrukcja.md)
+- [sprawozdanie PDF](./12-lab-38/report/12-lab-38-sprawozdanie.pdf)
+- [sprawozdanie LaTeX](./12-lab-38/report/12-lab-38-sprawozdanie.tex)
+- [obliczenia](./12-lab-38/12-lab-38-obliczenia.ipynb)
