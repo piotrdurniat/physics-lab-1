@@ -17,6 +17,7 @@
 \usepackage{longtable}
 \usepackage{multirow}
 \setlist[itemize]{itemsep=0pt, topsep=0pt}
+\setlist[enumerate]{itemsep=0pt, topsep=0pt}
 
 \begin{document}
 
@@ -122,27 +123,51 @@ Pomiary wykonano przy użyciu wagi torsyjnej (Rys. 1 w instrukcji).
 % ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
 \section{Opracowanie wyników pomiarów}
 
-% ---------- TABELE ----------
 \subsection{Tabele pomiarowe}
 
-\begin{table}[h!]
+
+\begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|}
+    \begin{tabular}{|c|}
         \hline
-        \multicolumn{2}{|c|}{\textbf{Wymiary płytki pomiarowej}} \\
+        \textbf{Długość płytki $l$ [mm]} \\
         \hline
-        \textbf{Wielkość} & \textbf{Wartość [mm]} \\
-        \hline
-        Długość ($l$) & 9{,}5 \\
-        \hline
-        Grubość ($d$) & 0{,}92 \\
+        9{,}5 \\ % [cite: 36]
         \hline
     \end{tabular}
-    \caption{Zmierzone wymiary płytki pomiarowej.}
-    \label{tab:wymiary_plytki}
+    \caption{Zmierzona długość płytki pomiarowej.}
+    \label{tab:dlugosc_plytki}
 \end{table}
 
-\begin{table}[h!]
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{3}{|c|}{\textbf{Grubość płytki [mm]}} \\
+        \hline
+        \textbf{Wskazanie} & \textbf{Błąd wskazania zerowego ($\Delta d$) } & \textbf{Wartość skorygowana} \\
+        \hline
+        0{,}92 & 0{,}46 & 0{,}46 \\
+        \hline
+    \end{tabular}
+    \caption{Pomiar grubości płytki pomiarowej wraz z korektą błędu wskazania zerowego.}
+    \label{tab:grubosc_plytki}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|}
+        \hline
+        \textbf{Masa spoczynkowa [mg]} \\
+        \hline
+        272 \\
+        \hline
+    \end{tabular}
+    \caption{Masa spoczynkowa płytki pomiarowej.}
+    \label{tab:masa_spoczynkowa}
+\end{table}
+
+\begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|}
         \hline
@@ -150,34 +175,93 @@ Pomiary wykonano przy użyciu wagi torsyjnej (Rys. 1 w instrukcji).
         \hline
         \textbf{Pomiar} & \textbf{Woda} & \textbf{Alkohol} & \textbf{Aceton} \\
         \hline
-        1 & 398 & 308 & 312 \\
+        1 & 398 & 308 & 312 \\ % [cite: 37]
         \hline
-        2 & 394 & 310 & 312 \\
+        2 & 394 & 310 & 312 \\ % [cite: 37]
         \hline
-        3 & 392 & 310 & 310 \\
+        3 & 392 & 310 & 310 \\ % [cite: 37]
         \hline
-        4 & 392 & 310 & 314 \\
+        4 & 392 & 310 & 314 \\ % [cite: 37]
         \hline
-        5 & 396 & 312 & 312 \\
+        5 & 396 & 312 & 312 \\ % [cite: 37]
         \hline
-        6 & 396 & 308 & 312 \\
+        6 & 396 & 308 & 312 \\ % [cite: 38]
         \hline
-        7 & 398 & 308 & 314 \\
+        7 & 398 & 308 & 314 \\ % [cite: 38]
         \hline
-        8 & 398 & 310 & 314 \\
+        8 & 398 & 310 & 314 \\ % [cite: 38]
         \hline
-        9 & 398 & 312 & 314 \\
+        9 & 398 & 312 & 314 \\ % [cite: 38]
         \hline
-        10 & 398 & 310 & 312 \\
+        10 & 398 & 310 & 312 \\ % [cite: 39]
         \hline
     \end{tabular}
     \caption{Siła odrywająca płytkę dla różnych cieczy.}
     \label{tab:sila_odrywania}
 \end{table}
 
-
 % ---------- OBLICZENIA ----------
 \subsection{Obliczenia}
+
+Obliczono średnią arytmetyczną wartości siły odrywającej płytkę $\bar{F}_{\text{mg}}$ (wskazania wagi w jednostkach masy [mg]) dla każdej cieczy na podstawie 10 pomiarów.
+
+$$
+    \bar{F}_{\text{mg}} = \frac{\sum_{i=1}^{n} F_i}{n}
+$$
+
+gdzie $F_i$ to kolejne pomiary siły, a $n$ to liczba pomiarów ($n=10$).
+
+Przeliczono średnią siłę odrywania $\bar{F}_{\text{N}}$ na niutony [N], wykorzystując zależność, że $1 \, [\text{mg}]$ odpowiada sile $9{,}807 \cdot 10^{-6} \, [\text{N}]$.
+
+$$
+    \bar{F}_{\text{N}} = \bar{F}_{\text{mg}} \cdot 9{,}807 \cdot 10^{-6} \, \text{N/mg}
+$$
+
+Obliczono wartość napięcia powierzchniowego $\sigma$ dla każdej cieczy, korzystając ze wzoru (\ref{eq:odrywanie}):
+
+$$
+    \sigma = \frac{\bar{F}_{\text{N}}}{2(l+d)}
+$$
+
+\noindent\textbf{Wymiary płytki:}
+\begin{itemize}
+    \item Długość ($l$): $9{,}5 \text{ mm} = 0{,}0095 \text{ m}$
+    \item Grubość ($d$): $0{,}46 \text{ mm} = 0{,}00046 \text{ m}$
+    \item Obwód całkowity $2(l+d) = 2(0{,}0095 + 0{,}00046) = 0{,}0199 \text{ m}$
+\end{itemize}
+
+\noindent\textbf{Przykładowe obliczenia dla wody destylowanej:}
+
+Średnia siła odrywająca (wskazanie wagi):
+\begin{align*}
+     & \bar{F}_{\text{mg, woda}} = \frac{398+394+392+392+396+396+398+398+398+398}{10} \\
+     & = \frac{3960}{10} = 396{,}00 \text{ mg}                                        \\
+     & = 396{,}00 \cdot 9{,}807 \cdot 10^{-6} = 0{,}00388357 \text{ N}
+\end{align*}
+
+Napięcie powierzchniowe wody:
+$$
+    \sigma_{\text{woda}} = \frac{0{,}00388357}{0{,}0199} = 0{,}1950 \frac{\text{N}}{\text{m}}
+$$
+
+\noindent\textbf{Wyniki obliczeń dla wszystkich cieczy:}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|c|c|c|}
+        \hline
+        \textbf{Ciecz} & \textbf{$\bar{F}_{\text{mg}}$ [mg]} & \textbf{$\bar{F}_{\text{N}}$ [N]} & \textbf{$\sigma$ [N/m]} \\
+        \hline
+        Woda destylowana & $396{,}00$ & $0{,}00388357$ & $0{,}1950$ \\
+        \hline
+        Alkohol & $309{,}80$ & $0{,}00303821$ & $0{,}1525$ \\
+        \hline
+        Aceton & $312{,}60$ & $0{,}00306567$ & $0{,}1539$ \\
+        \hline
+    \end{tabular}
+    \caption{Zestawienie obliczonych wartości siły odrywającej i napięcia powierzchniowego.}
+    \label{tab:wyniki_obliczen_odrywanie}
+\end{table}
 
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
