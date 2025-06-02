@@ -15,6 +15,7 @@
 \usepackage{indentfirst}
 \usepackage{array}
 \usepackage{longtable}
+\usepackage{multirow}
 \setlist[itemize]{itemsep=0pt, topsep=0pt}
 
 \begin{document}
@@ -55,8 +56,68 @@
 % ---------- WSTĘP TEORETYCZNY ----------
 \section{Wstęp teoretyczny}
 
+\subsection{Napięcie powierzchniowe}
+
+Napięcie powierzchniowe jest zjawiskiem fizycznym występującym na granicy faz, najczęściej ciecz-gaz, i wynika z oddziaływań międzycząsteczkowych w cieczy. Cząsteczki znajdujące się wewnątrz cieczy oddziałują z sąsiednimi cząsteczkami we wszystkich kierunkach, natomiast cząsteczki na powierzchni oddziałują głównie z cząsteczkami znajdującymi się pod nimi. Ta nierównowaga sił powoduje, że powierzchnia cieczy zachowuje się jak napięta błona, dążąc do przyjęcia kształtu o minimalnej powierzchni.
+
+Napięcie powierzchniowe ($\sigma$) definiuje się jako stosunek siły ($F$) działającej stycznie do powierzchni cieczy wzdłuż linii o długości ($l$):
+
+\begin{equation}
+    \sigma = \frac{F}{l}
+\end{equation}
+
+Jednostką napięcia powierzchniowego w układzie SI jest N/m (newton na metr).
+
+\subsection{Zjawiska związane z napięciem powierzchniowym}
+
+Na granicy ośrodków ciecz-ciało stałe-gaz obserwuje się zjawisko menisku (wklęsłego lub wypukłego), zależnie od oddziaływań między cieczą a ciałem stałym. Jeśli siły przyciągania między cząsteczkami cieczy a ciałem stałym są silniejsze niż między samymi cząsteczkami cieczy, powstaje menisk wklęsły (np. woda w szklanej rurce). W przeciwnym przypadku tworzy się menisk wypukły (np. rtęć w szklanej rurce).
+
+Zjawisko włoskowatości (kapilarności) jest bezpośrednim skutkiem napięcia powierzchniowego i zwilżalności powierzchni. Polega ono na samorzutnym podnoszeniu się lub obniżaniu cieczy w wąskich kapilarach. Wysokość słupa cieczy w kapilarze zależy od napięcia powierzchniowego, gęstości cieczy oraz promienia kapilary.
+
+\subsection{Metody pomiaru napięcia powierzchniowego}
+
+W niniejszym ćwiczeniu wykorzystano dwie metody pomiaru napięcia powierzchniowego:
+
+\begin{itemize}
+    \item \textbf{Metoda odrywania} - polega na pomiarze siły $F$ potrzebnej do oderwania płytki od powierzchni cieczy. Napięcie powierzchniowe $\sigma$ jest zdefiniowane jako siła działająca na jednostkę długości krawędzi. Całkowita długość krawędzi styku płytki (o długości $l$ i grubości $d$) z cieczą wynosi $2(l+d)$. Zatem siła napięcia powierzchniowego $F$ (równa sile odrywania, po uwzględnieniu ciężaru płytki oraz przy założeniu kąta zwilżania $\gamma \approx 0$, czyli $\cos\gamma \approx 1$) wyraża się jako $F = \sigma \cdot 2(l+d)$. Przekształcając ten wzór, otrzymujemy:
+          \begin{equation}
+              \sigma = \frac{F}{2(l+d)} \label{eq:odrywanie}
+          \end{equation}
+          gdzie $F$ to mierzona siła odrywania (po skompensowaniu ciężaru płytki), $l$ to długość płytki, a $d$ to jej grubość.
+
+    \item \textbf{Metoda stalagmometru} - opiera się na pomiarze masy kropel cieczy, które odrywają się od kapilary o znanym promieniu. Napięcie powierzchniowe wyznacza się, porównując masy kropel badanej cieczy i cieczy wzorcowej o znanym napięciu powierzchniowym.
+\end{itemize}
+
+Napięcie powierzchniowe zależy od temperatury (na ogół maleje liniowo wraz z jej wzrostem) oraz od obecności zanieczyszczeń i substancji powierzchniowo czynnych, które mogą znacząco obniżyć jego wartość.
+
+Wstęp teoretyczny został opracowany na podstawie podręcznika \cite{fizyka_dla_szkół_wyższych_tom_2} oraz materiałów dydaktycznych Politechniki Wrocławskiej \cite{lab12_pwr}.
+
 % ---------- OPIS DOŚWIADCZENIA ----------
 \section{Opis doświadczenia}
+
+Celem doświadczenia było wyznaczenie napięcia powierzchniowego dla wody destylowanej, alkoholu i acetonu przy użyciu dwóch metod: metody odrywania oraz metody stalagmometru.
+
+\subsection{Metoda odrywania}
+
+Pomiary wykonano przy użyciu wagi torsyjnej (Rys. 1 w instrukcji).
+\begin{enumerate}
+    \item Zmierzono 3-krotnie grubość $d$ płytki pomiarowej za pomocą śruby mikrometrycznej oraz długość jej podstawy $l$ za pomocą suwmiarki. Płytkę następnie osuszono i zawieszono na haczyku wagi.
+    \item Odaretowano wagę i zważono płytkę, notując jej masę spoczynkową (wskazanie wagi bez dodatkowego obciążenia).
+    \item Pod płytkę podstawiono naczynko z badaną cieczą (wodą destylowaną) tak, aby dolna krawędź płytki niemal dotykała powierzchni cieczy. Waga była zaaretowana.
+    \item Odaretowano wagę, doprowadzając do zanurzenia dolnej części płytki w cieczy. Następnie powoli obracano pokrętłem wagi, zwiększając siłę, aż do momentu oderwania płytki od powierzchni cieczy. Odczytano maksymalną siłę $F$ (wskazanie wagi w jednostkach masy [mg]) działającą w momencie odrywania.
+    \item Pomiar siły odrywającej $F$ wykonano 10-krotnie dla wody destylowanej.
+    \item Kroki 3-5 powtórzono dla alkoholu i acetonu.
+\end{enumerate}
+
+\subsection{Metoda stalagmometru}
+\begin{enumerate}
+    \item Zważono czyste i osuszone naczynko pomiarowe.
+    \item Sprawdzono drożność kapilary stalagmometru i zmierzono jej zewnętrzny promień $R$.
+    \item Napełniono naczynko 30 kroplami wody destylowanej, które odrywały się od kapilary, a następnie zważono naczynko z cieczą.
+    \item Pomiar masy 30 kropel (krok 3) powtórzono 3-krotnie dla wody destylowanej.
+    \item Zanotowano temperaturę otoczenia.
+    \item Kroki 1, 3 i 4 powtórzono dla alkoholu i acetonu.
+\end{enumerate}
 
 % ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
 \section{Opracowanie wyników pomiarów}
@@ -64,8 +125,59 @@
 % ---------- TABELE ----------
 \subsection{Tabele pomiarowe}
 
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Wymiary płytki pomiarowej}} \\
+        \hline
+        \textbf{Wielkość} & \textbf{Wartość [mm]} \\
+        \hline
+        Długość ($l$) & 9{,}5 \\
+        \hline
+        Grubość ($d$) & 0{,}92 \\
+        \hline
+    \end{tabular}
+    \caption{Zmierzone wymiary płytki pomiarowej.}
+    \label{tab:wymiary_plytki}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{4}{|c|}{\textbf{Siła odrywająca [mg]}} \\
+        \hline
+        \textbf{Pomiar} & \textbf{Woda} & \textbf{Alkohol} & \textbf{Aceton} \\
+        \hline
+        1 & 398 & 308 & 312 \\
+        \hline
+        2 & 394 & 310 & 312 \\
+        \hline
+        3 & 392 & 310 & 310 \\
+        \hline
+        4 & 392 & 310 & 314 \\
+        \hline
+        5 & 396 & 312 & 312 \\
+        \hline
+        6 & 396 & 308 & 312 \\
+        \hline
+        7 & 398 & 308 & 314 \\
+        \hline
+        8 & 398 & 310 & 314 \\
+        \hline
+        9 & 398 & 312 & 314 \\
+        \hline
+        10 & 398 & 310 & 312 \\
+        \hline
+    \end{tabular}
+    \caption{Siła odrywająca płytkę dla różnych cieczy.}
+    \label{tab:sila_odrywania}
+\end{table}
+
+
 % ---------- OBLICZENIA ----------
-\subsection{...}
+\subsection{Obliczenia}
 
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
