@@ -16,7 +16,13 @@
 \usepackage{array}
 \usepackage{longtable}
 \usepackage{multirow}
+\usepackage{booktabs}    % Dla ładniejszych tabel
+\usepackage{amsmath}     % Dla symboli matematycznych i środowisk
+\usepackage{siunitx}     % Do poprawnego formatowania jednostek i liczb (opcjonalnie, ale zalecane)
+                         % Jeśli używasz siunitx, wartości w tabeli można formatować np. \SI{0,07280}{\newton\per\metre}
+
 \setlist[itemize]{itemsep=0pt, topsep=0pt}
+
 \setlist[enumerate]{itemsep=0pt, topsep=0pt}
 
 \begin{document}
@@ -274,11 +280,134 @@ $$
     \label{tab:wyniki_obliczen_odrywanie}
 \end{table}
 
+
+Poniższa tabela \ref{tab:napiecia_powierzchniowe} przedstawia wartości napięcia powierzchniowego (w \SI{}{\newton\per\metre}) dla wody, etanolu i acetonu w temperaturze 20 °C. Główne wartości pochodzą ze źródła \cite{SurfaceTensionDE2024}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|c|}
+        \toprule
+        Substancja & Napięcie powierzchniowe (N/m) \\ % Lub używając siunitx: Napięcie powierzchniowe (\si{\newton\per\metre})
+        \midrule
+        Woda       & 0,07280 \\ % Lub \num{0.07280} jeśli używasz siunitx z odpowiednimi ustawieniami regionalnymi
+        \hline
+        Etanol     & 0,02210 \\ % Lub \num{0.02210}
+        \hline
+        Aceton     & 0,02520 \\ % Lub \num{0.02520}
+        \bottomrule
+    \end{tabular}
+    \caption{Wartości napięcia powierzchniowego dla wybranych cieczy w temp. 20 °C.}
+    \label{tab:napiecia_powierzchniowe}
+\end{table}
+
+\subsection{Obliczenia niepewności}
+
+Niepewność złożoną napięcia powierzchniowego $u_c(\sigma)$ obliczono korzystając z prawa przenoszenia niepewności standardowych. Dla funkcji $\sigma = \frac{F}{2(l+d)}$:
+
+$$
+    u_c(\sigma) = \sqrt{\left(\frac{\partial \sigma}{\partial F}\right)^2 u^2(F) + \left(\frac{\partial \sigma}{\partial l}\right)^2 u^2(l) + \left(\frac{\partial \sigma}{\partial d}\right)^2 u^2(d)}
+$$
+
+Pochodne cząstkowe wynoszą:
+\begin{align*}
+    \frac{\partial \sigma}{\partial F} & = \frac{1}{2(l+d)}                    \\
+    \frac{\partial \sigma}{\partial l} & = -\frac{F}{2(l+d)^2} = -\sigma/(l+d) \\
+    \frac{\partial \sigma}{\partial d} & = -\frac{F}{2(l+d)^2} = -\sigma/(l+d)
+\end{align*}
+
+\noindent\textbf{Składowe niepewności:}
+
+1. Niepewność pomiaru siły $u(F)$ składa się z:
+\begin{itemize}
+    \item Niepewności typu A (rozrzut pomiarów):
+          $$u_A(F) = \sqrt{\frac{1}{N-1} \sum_{i=1}^{N} (F_i - \bar{F})^2}$$
+    \item Niepewności typu B (dokładność wagi): $u_B(F) = \frac{1 \text{ mg}}{\sqrt{3}} \cdot 9{,}807 \cdot 10^{-6} \text{ N/mg}$
+\end{itemize}
+
+2. Niepewność pomiaru długości $u(l)$:
+$$u(l) = \frac{0{,}05 \text{ mm}}{\sqrt{3}} = 0{,}029 \text{ mm} = 2{,}9 \cdot 10^{-5} \text{ m}$$
+
+3. Niepewność pomiaru grubości $u(d)$:
+$$u(d) = \frac{0{,}01 \text{ mm}}{\sqrt{3}} = 0{,}0058 \text{ mm} = 5{,}8 \cdot 10^{-6} \text{ m}$$
+
+\noindent\textbf{Przykładowe obliczenia dla wody:}
+
+Niepewność typu A siły (dla wody):
+\begin{align*}
+    u_A(F) & = \sqrt{\frac{1}{9} \sum_{i=1}^{10} (F_i - 124{,}00)^2} \text{ mg} \cdot 9{,}807 \cdot 10^{-6} \text{ N/mg} \\
+           & = 0{,}000008 \text{ N}
+\end{align*}
+
+Niepewność typu B siły:
+$$u_B(F) = \frac{1}{\sqrt{3}} \cdot 9{,}807 \cdot 10^{-6} = 0{,}000006 \text{ N}$$
+
+Całkowita niepewność siły:
+$$u(F) = \sqrt{u_A^2(F) + u_B^2(F)} = 0{,}000010 \text{ N}$$
+
+Podstawiając do wzoru na niepewność złożoną napięcia powierzchniowego:
+\begin{align*}
+    u_c(\sigma) & = \sqrt{\left(\frac{1}{0{,}01992}\right)^2 (0{,}000010)^2 + \left(-\frac{0{,}0610}{0{,}00996}\right)^2 (2{,}9 \cdot 10^{-5})^2 + \left(-\frac{0{,}0610}{0{,}00996}\right)^2 (5{,}8 \cdot 10^{-6})^2} \\
+                & = 0{,}0005 \text{ N/m}
+\end{align*}
+
+\noindent\textbf{Wyniki końcowe z niepewnościami:}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Ciecz} & \textbf{$\sigma$ [N/m]} & \textbf{$u_c(\sigma)$ [N/m]} \\
+        \hline
+        Woda destylowana & $0{,}0610$ & $0{,}0005$ \\
+        \hline
+        Alkohol & $0{,}0186$ & $0{,}0004$ \\
+        \hline
+        Aceton & $0{,}0200$ & $0{,}0004$ \\
+        \hline
+    \end{tabular}
+    \caption{Wartości napięcia powierzchniowego wraz z niepewnościami standardowymi złożonymi.}
+    \label{tab:wyniki_z_niepewnosciami}
+\end{table}
+
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
 
 % ---------- WNIOSKI ----------
 \section{Wnioski}
+
+W ramach przeprowadzonego doświadczenia wyznaczono wartości napięcia powierzchniowego dla trzech cieczy w temperaturze pokojowej:
+
+\begin{itemize}
+    \item Woda destylowana: $\sigma = 0{,}0610 \text{ N/m}$, $u_c(\sigma) = 0{,}0005 \text{ N/m}$
+    \item Alkohol: $\sigma = 0{,}0186 \text{ N/m}$, $u_c(\sigma) = 0{,}0004 \text{ N/m}$
+    \item Aceton: $\sigma = 0{,}0200 \text{ N/m}$, $u_c(\sigma) = 0{,}0004 \text{ N/m}$
+\end{itemize}
+
+Otrzymane wartości są znacząco niższe od wartości tablicowych, które wynoszą odpowiednio:
+\begin{itemize}
+    \item Woda destylowana: $\sigma_{\text{ref}} = 0{,}0728 \text{ N/m}$ (w temp. 20°C)
+    \item Alkohol etylowy: $\sigma_{\text{ref}} = 0{,}0223 \text{ N/m}$ (w temp. 20°C)
+    \item Aceton: $\sigma_{\text{ref}} = 0{,}0237 \text{ N/m}$ (w temp. 20°C)
+\end{itemize}
+
+Różnice między wartościami zmierzonymi a tablicowymi mogą wynikać z kilku czynników:
+
+\begin{enumerate}
+    \item Niedokładności metody pomiarowej - metoda odrywania jest wrażliwa na dokładne ustawienie płytki względem powierzchni cieczy.
+    \item Temperatura - napięcie powierzchniowe maleje wraz ze wzrostem temperatury, a pomiary były wykonywane w warunkach laboratoryjnych, gdzie temperatura mogła być wyższa niż referencyjna.
+    \item Czystość użytych cieczy - szczególnie w przypadku wody destylowanej, gdzie śladowe zanieczyszczenia mogą znacząco wpłynąć na wynik.
+\end{enumerate}
+
+Analiza błędów względnych względem wartości tablicowych wykazała systematyczne zaniżenie wyników o podobną wartość procentową dla wszystkich cieczy:
+\begin{itemize}
+    \item Woda: $\delta = 16{,}2\%$ (różnica bezwzględna: $0{,}0118 \text{ N/m}$)
+    \item Alkohol: $\delta = 16{,}6\%$ (różnica bezwzględna: $0{,}0037 \text{ N/m}$)
+    \item Aceton: $\delta = 15{,}6\%$ (różnica bezwzględna: $0{,}0037 \text{ N/m}$)
+\end{itemize}
+
+Zbliżone wartości błędów względnych (około 16\%) dla wszystkich badanych cieczy sugerują obecność systematycznego błędu w metodzie pomiarowej, który w podobnym stopniu wpływa na wszystkie wykonane pomiary.
+
+Niepewności pomiarowe są stosunkowo małe (rzędu 1-2\% wartości mierzonej), co świadczy o dobrej powtarzalności pomiarów.
 
 % ---------- WYKRESY ----------
 \section{Wykresy}
