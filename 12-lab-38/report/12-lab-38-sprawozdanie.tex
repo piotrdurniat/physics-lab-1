@@ -211,10 +211,16 @@ $$
 
 gdzie $F_i$ to kolejne pomiary siły, a $n$ to liczba pomiarów ($n=10$).
 
-Przeliczono średnią siłę odrywania $\bar{F}_{\text{N}}$ na niutony [N], wykorzystując zależność, że $1 \, [\text{mg}]$ odpowiada sile $9{,}807 \cdot 10^{-6} \, [\text{N}]$.
+Od każdego pomiaru siły odrywającej należy odjąć masę spoczynkową płytki $m_0$, aby uzyskać siłę netto:
 
 $$
-    \bar{F}_{\text{N}} = \bar{F}_{\text{mg}} \cdot 9{,}807 \cdot 10^{-6} \, \text{N/mg}
+    F_{\text{netto}} = F_{\text{zmierzone}} - m_0
+$$
+
+Przeliczono średnią siłę netto $\bar{F}_{\text{N}}$ na niutony [N], wykorzystując zależność, że $1 \, [\text{mg}]$ odpowiada sile $9{,}807 \cdot 10^{-6} \, [\text{N}]$.
+
+$$
+    \bar{F}_{\text{N}} = \bar{F}_{\text{netto}} \cdot 9{,}807 \cdot 10^{-6} \, \text{N/mg}
 $$
 
 Obliczono wartość napięcia powierzchniowego $\sigma$ dla każdej cieczy, korzystając ze wzoru (\ref{eq:odrywanie}):
@@ -225,9 +231,9 @@ $$
 
 \noindent\textbf{Wymiary płytki:}
 \begin{itemize}
-    \item Długość ($l$): $9{,}5 \text{ mm} = 0{,}0095 \text{ m}$
-    \item Grubość ($d$): $0{,}46 \text{ mm} = 0{,}00046 \text{ m}$
-    \item Obwód całkowity $2(l+d) = 2(0{,}0095 + 0{,}00046) = 0{,}0199 \text{ m}$
+    \item Długość ($l$): $9{,}5 \text{ mm} = 0{,}00950 \text{ m}$
+    \item Grubość skorygowana ($d_{\text{sk}}$): $0{,}46 \text{ mm} = 0{,}00046 \text{ m}$
+    \item Obwód całkowity $2(l+d_{\text{sk}}) = 2(0{,}00950 + 0{,}00046) = 0{,}01992 \text{ m}$
 \end{itemize}
 
 \noindent\textbf{Przykładowe obliczenia dla wody destylowanej:}
@@ -235,28 +241,33 @@ $$
 Średnia siła odrywająca (wskazanie wagi):
 \begin{align*}
      & \bar{F}_{\text{mg, woda}} = \frac{398+394+392+392+396+396+398+398+398+398}{10} \\
-     & = \frac{3960}{10} = 396{,}00 \text{ mg}                                        \\
-     & = 396{,}00 \cdot 9{,}807 \cdot 10^{-6} = 0{,}00388357 \text{ N}
+     & = \frac{3960}{10} = 396{,}00 \text{ mg}
+\end{align*}
+
+Siła netto (po odjęciu masy spoczynkowej $m_0 = 272{,}00 \text{ mg}$):
+\begin{align*}
+     & \bar{F}_{\text{netto, woda}} = 396{,}00 - 272{,}00 = 124{,}00 \text{ mg} \\
+     & = 124{,}00 \cdot 9{,}807 \cdot 10^{-6} = 0{,}00121607 \text{ N}
 \end{align*}
 
 Napięcie powierzchniowe wody:
 $$
-    \sigma_{\text{woda}} = \frac{0{,}00388357}{0{,}0199} = 0{,}1950 \frac{\text{N}}{\text{m}}
+    \sigma_{\text{woda}} = \frac{0{,}00121607}{0{,}01992} = 0{,}0610 \frac{\text{N}}{\text{m}}
 $$
 
 \noindent\textbf{Wyniki obliczeń dla wszystkich cieczy:}
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|l|c|c|c|}
+    \begin{tabular}{|l|c|c|c|c|}
         \hline
-        \textbf{Ciecz} & \textbf{$\bar{F}_{\text{mg}}$ [mg]} & \textbf{$\bar{F}_{\text{N}}$ [N]} & \textbf{$\sigma$ [N/m]} \\
+        \textbf{Ciecz} & \textbf{$\bar{F}_{\text{mg}}$ [mg]} & \textbf{$\bar{F}_{\text{netto}}$ [mg]} & \textbf{$\bar{F}_{\text{N}}$ [N]} & \textbf{$\sigma$ [N/m]} \\
         \hline
-        Woda destylowana & $396{,}00$ & $0{,}00388357$ & $0{,}1950$ \\
+        Woda destylowana & $396{,}00$ & $124{,}00$ & $0{,}00121607$ & $0{,}0610$ \\
         \hline
-        Alkohol & $309{,}80$ & $0{,}00303821$ & $0{,}1525$ \\
+        Alkohol & $309{,}80$ & $37{,}80$ & $0{,}00037070$ & $0{,}0186$ \\
         \hline
-        Aceton & $312{,}60$ & $0{,}00306567$ & $0{,}1539$ \\
+        Aceton & $312{,}60$ & $40{,}60$ & $0{,}00039816$ & $0{,}0200$ \\
         \hline
     \end{tabular}
     \caption{Zestawienie obliczonych wartości siły odrywającej i napięcia powierzchniowego.}
