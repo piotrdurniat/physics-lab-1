@@ -206,8 +206,28 @@ Pomiary wykonano przy użyciu wagi torsyjnej (Rys. 1 w instrukcji).
     \label{tab:sila_odrywania}
 \end{table}
 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Nr pomiaru} & \textbf{Ciecz} & $m_n\,\text{[g]}$ & $m_{nw}\,\text{[g]}$ \\
+        \hline
+        1 & Woda & 2{,}007 & 3{,}452 \\
+        2 & Woda & 2{,}038 & 3{,}537 \\
+        3 & Woda & 2{,}016 & 3{,}519 \\
+        \hline
+        1 & Alkohol & 1{,}997 & 2{,}186 \\
+        \hline
+    \end{tabular}
+    \caption{Pomiary masy naczynia dla różnych cieczy. $m_n$ - masa naczynia, $m_{nw}$ - masa naczynia z cieczą.}
+    \label{tab:stalagmometr}
+\end{table}
+
+
 % ---------- OBLICZENIA ----------
 \subsection{Obliczenia}
+
+\subsubsection{Obliczenia dla metody odrywania:}
 
 Obliczono średnią arytmetyczną wartości siły odrywającej płytkę $\bar{F}_{\text{mg}}$ (wskazania wagi w jednostkach masy [mg]) dla każdej cieczy na podstawie 10 pomiarów.
 
@@ -300,74 +320,41 @@ Poniższa tabela \ref{tab:napiecia_powierzchniowe} przedstawia wartości napięc
     \label{tab:napiecia_powierzchniowe}
 \end{table}
 
-\subsection{Obliczenia niepewności}
+\subsubsection{Obliczenia dla metody stalagmometru:}
 
-Niepewność złożoną napięcia powierzchniowego $u_c(\sigma)$ obliczono korzystając z prawa przenoszenia niepewności standardowych. Dla funkcji $\sigma = \frac{F}{2(l+d)}$:
+Masę cieczy obliczono jako różnicę masy naczynia z cieczą i masy pustego naczynia:
+$$m_w = m_{nw} - m_n$$
 
-$$
-    u_c(\sigma) = \sqrt{\left(\frac{\partial \sigma}{\partial F}\right)^2 u^2(F) + \left(\frac{\partial \sigma}{\partial l}\right)^2 u^2(l) + \left(\frac{\partial \sigma}{\partial d}\right)^2 u^2(d)}
-$$
+\noindent\textbf{Przykładowe obliczenia dla wody (pomiar 1):}
+$$m_w = 3{,}452\text{ g} - 2{,}007\text{ g} = 1{,}445\text{ g}$$
 
-Pochodne cząstkowe wynoszą:
-\begin{align*}
-    \frac{\partial \sigma}{\partial F} & = \frac{1}{2(l+d)}                    \\
-    \frac{\partial \sigma}{\partial l} & = -\frac{F}{2(l+d)^2} = -\sigma/(l+d) \\
-    \frac{\partial \sigma}{\partial d} & = -\frac{F}{2(l+d)^2} = -\sigma/(l+d)
-\end{align*}
+Średnia masa 30 kropli wody:
+$$\bar{m}_w = \frac{1{,}445\text{ g} + 1{,}499\text{ g} + 1{,}503\text{ g}}{3} = 1{,}4823\text{ g}$$
 
-\noindent\textbf{Składowe niepewności:}
+Masa pojedynczej kropli (dla wody):
+$$m_{w1} = \frac{\bar{m}_w}{30} = \frac{1{,}4823\text{ g}}{30} = 0{,}0494\text{ g}$$
 
-1. Niepewność pomiaru siły $u(F)$ składa się z:
+\noindent\textbf{Dla alkoholu:}
+$$m_a = 2{,}186\text{ g} - 1{,}997\text{ g} = 0{,}1890\text{ g}$$
+$$m_{a1} = \frac{0{,}1890\text{ g}}{30} = 0{,}0063\text{ g}$$
+
+Stosunek napięć powierzchniowych obliczono ze wzoru:
+$$\frac{\sigma_a}{\sigma_w} = \frac{\rho_a m_{a1}}{\rho_w m_{w1}}$$
+gdzie:
 \begin{itemize}
-    \item Niepewności typu A (rozrzut pomiarów):
-          $$u_A(F) = \sqrt{\frac{1}{N-1} \sum_{i=1}^{N} (F_i - \bar{F})^2}$$
-    \item Niepewności typu B (dokładność wagi): $u_B(F) = \frac{1 \text{ mg}}{\sqrt{3}} \cdot 9{,}807 \cdot 10^{-6} \text{ N/mg}$
+    \item $\rho_w = 0{,}9982\text{ g/cm}^3$ - gęstość wody w 20°C
+    \item $\rho_a = 0{,}789\text{ g/cm}^3$ - gęstość alkoholu w 20°C
+    \item $m_{w1}, m_{a1}$ - masy pojedynczych kropli
 \end{itemize}
 
-2. Niepewność pomiaru długości $u(l)$:
-$$u(l) = \frac{0{,}05 \text{ mm}}{\sqrt{3}} = 0{,}029 \text{ mm} = 2{,}9 \cdot 10^{-5} \text{ m}$$
+Podstawiając wartości:
+$$\frac{\sigma_a}{\sigma_w} = \frac{0{,}789 \cdot 0{,}0063}{0{,}9982 \cdot 0{,}0494} = 0{,}1008$$
 
-3. Niepewność pomiaru grubości $u(d)$:
-$$u(d) = \frac{0{,}01 \text{ mm}}{\sqrt{3}} = 0{,}0058 \text{ mm} = 5{,}8 \cdot 10^{-6} \text{ m}$$
+Wartość tablicowa stosunku napięć powierzchniowych:
+$$\left(\frac{\sigma_a}{\sigma_w}\right)_{\text{ref}} = \frac{0{,}0223\text{ N/m}}{0{,}0728\text{ N/m}} = 0{,}3036$$
 
-\noindent\textbf{Przykładowe obliczenia dla wody:}
-
-Niepewność typu A siły (dla wody):
-\begin{align*}
-    u_A(F) & = \sqrt{\frac{1}{9} \sum_{i=1}^{10} (F_i - 124{,}00)^2} \text{ mg} \cdot 9{,}807 \cdot 10^{-6} \text{ N/mg} \\
-           & = 0{,}000008 \text{ N}
-\end{align*}
-
-Niepewność typu B siły:
-$$u_B(F) = \frac{1}{\sqrt{3}} \cdot 9{,}807 \cdot 10^{-6} = 0{,}000006 \text{ N}$$
-
-Całkowita niepewność siły:
-$$u(F) = \sqrt{u_A^2(F) + u_B^2(F)} = 0{,}000010 \text{ N}$$
-
-Podstawiając do wzoru na niepewność złożoną napięcia powierzchniowego:
-\begin{align*}
-    u_c(\sigma) & = \sqrt{\left(\frac{1}{0{,}01992}\right)^2 (0{,}000010)^2 + \left(-\frac{0{,}0610}{0{,}00996}\right)^2 (2{,}9 \cdot 10^{-5})^2 + \left(-\frac{0{,}0610}{0{,}00996}\right)^2 (5{,}8 \cdot 10^{-6})^2} \\
-                & = 0{,}0005 \text{ N/m}
-\end{align*}
-
-\noindent\textbf{Wyniki końcowe z niepewnościami:}
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{|l|c|c|}
-        \hline
-        \textbf{Ciecz} & \textbf{$\sigma$ [N/m]} & \textbf{$u_c(\sigma)$ [N/m]} \\
-        \hline
-        Woda destylowana & $0{,}0610$ & $0{,}0005$ \\
-        \hline
-        Alkohol & $0{,}0186$ & $0{,}0004$ \\
-        \hline
-        Aceton & $0{,}0200$ & $0{,}0004$ \\
-        \hline
-    \end{tabular}
-    \caption{Wartości napięcia powierzchniowego wraz z niepewnościami standardowymi złożonymi.}
-    \label{tab:wyniki_z_niepewnosciami}
-\end{table}
+Błąd względny:
+$$\delta = \frac{|0{,}1008 - 0{,}3036|}{0{,}3036} \cdot 100\% = 66{,}8\%$$
 
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
