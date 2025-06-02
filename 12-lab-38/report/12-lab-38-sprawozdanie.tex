@@ -375,20 +375,24 @@ Podstawiając do wzoru na niepewność złożoną napięcia powierzchniowego:
 % ---------- WNIOSKI ----------
 \section{Wnioski}
 
-W ramach przeprowadzonego doświadczenia wyznaczono wartości napięcia powierzchniowego dla trzech cieczy w temperaturze pokojowej:
+W ramach przeprowadzonego doświadczenia wyznaczono wartości napięcia powierzchniowego dla trzech cieczy w temperaturze pokojowej. Poniższa tabela przedstawia zestawienie otrzymanych wyników wraz z wartościami tablicowymi oraz analizą błędów:
 
-\begin{itemize}
-    \item Woda destylowana: $\sigma = 0{,}0610 \text{ N/m}$, $u_c(\sigma) = 0{,}0005 \text{ N/m}$
-    \item Alkohol: $\sigma = 0{,}0186 \text{ N/m}$, $u_c(\sigma) = 0{,}0004 \text{ N/m}$
-    \item Aceton: $\sigma = 0{,}0200 \text{ N/m}$, $u_c(\sigma) = 0{,}0004 \text{ N/m}$
-\end{itemize}
-
-Otrzymane wartości są znacząco niższe od wartości tablicowych, które wynoszą odpowiednio:
-\begin{itemize}
-    \item Woda destylowana: $\sigma_{\text{ref}} = 0{,}0728 \text{ N/m}$ (w temp. 20°C)
-    \item Alkohol etylowy: $\sigma_{\text{ref}} = 0{,}0223 \text{ N/m}$ (w temp. 20°C)
-    \item Aceton: $\sigma_{\text{ref}} = 0{,}0237 \text{ N/m}$ (w temp. 20°C)
-\end{itemize}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|c|c|c|c|c|}
+        \hline
+        \textbf{Ciecz} & \textbf{$\sigma$ [N/m]} & \textbf{$u_c(\sigma)$ [N/m]} & \textbf{$\sigma_{\text{ref}}$ [N/m]} & \textbf{$\Delta\sigma$ [N/m]} & \textbf{$\delta$ [\%]} \\
+        \hline
+        Woda destylowana & $0{,}0610$ & $0{,}0005$ & $0{,}0728$ & $0{,}0118$ & $16{,}2$ \\
+        \hline
+        Alkohol & $0{,}0186$ & $0{,}0004$ & $0{,}0223$ & $0{,}0037$ & $16{,}6$ \\
+        \hline
+        Aceton & $0{,}0200$ & $0{,}0004$ & $0{,}0237$ & $0{,}0037$ & $15{,}6$ \\
+        \hline
+    \end{tabular}
+    \caption{Zestawienie wyników pomiarów z wartościami tablicowymi (w temp. 20°C). $\sigma$ - wartość zmierzona, $u_c(\sigma)$ - niepewność złożona, $\sigma_{\text{ref}}$ - wartość tablicowa, $\Delta\sigma$ - różnica bezwzględna, $\delta$ - błąd względny.}
+    \label{tab:wyniki_koncowe}
+\end{table}
 
 Różnice między wartościami zmierzonymi a tablicowymi mogą wynikać z kilku czynników:
 
@@ -398,16 +402,7 @@ Różnice między wartościami zmierzonymi a tablicowymi mogą wynikać z kilku 
     \item Czystość użytych cieczy - szczególnie w przypadku wody destylowanej, gdzie śladowe zanieczyszczenia mogą znacząco wpłynąć na wynik.
 \end{enumerate}
 
-Analiza błędów względnych względem wartości tablicowych wykazała systematyczne zaniżenie wyników o podobną wartość procentową dla wszystkich cieczy:
-\begin{itemize}
-    \item Woda: $\delta = 16{,}2\%$ (różnica bezwzględna: $0{,}0118 \text{ N/m}$)
-    \item Alkohol: $\delta = 16{,}6\%$ (różnica bezwzględna: $0{,}0037 \text{ N/m}$)
-    \item Aceton: $\delta = 15{,}6\%$ (różnica bezwzględna: $0{,}0037 \text{ N/m}$)
-\end{itemize}
-
-Zbliżone wartości błędów względnych (około 16\%) dla wszystkich badanych cieczy sugerują obecność systematycznego błędu w metodzie pomiarowej, który w podobnym stopniu wpływa na wszystkie wykonane pomiary.
-
-Niepewności pomiarowe są stosunkowo małe (rzędu 1-2\% wartości mierzonej), co świadczy o dobrej powtarzalności pomiarów.
+Analiza błędów względnych wykazała systematyczne zaniżenie wyników o podobną wartość procentową (około 16\%) dla wszystkich cieczy, co sugeruje obecność systematycznego błędu w metodzie pomiarowej, który w podobnym stopniu wpływa na wszystkie wykonane pomiary. Niepewności pomiarowe są stosunkowo małe (rzędu 1-2\% wartości mierzonej), co świadczy o dobrej powtarzalności pomiarów.
 
 % ---------- WYKRESY ----------
 \section{Wykresy}
