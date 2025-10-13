@@ -1,0 +1,126 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} % Do ustawień marginesów
+\usepackage{multicol} % Dla podziału na kolumny
+\usepackage{ragged2e} % Dla justowania tekstu
+\usepackage{graphicx} % Required for inserting images
+\usepackage{float}
+\usepackage{caption}
+\usepackage{amsmath} % Math formulas
+\usepackage{amssymb} % Symbols
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=orange]{hyperref} % Hyperlinks
+\usepackage{polski} % Polish language
+\usepackage[utf8]{inputenc} % Text encoding
+\usepackage{enumitem} % Pakiet do elastycznego sterowania listami
+\usepackage{indentfirst}
+\usepackage{array}
+\usepackage{longtable}
+\setlist[itemize]{itemsep=0pt, topsep=0pt}
+
+\begin{document}
+
+% Górna część strony
+\noindent
+\begin{minipage}{0.5\textwidth}
+    \raggedright
+    \textbf{Piotr Durniat} \\
+    II rok, Fizyka \\
+    Wtorek, 8:00-10:15 \\
+    \vspace{0.5cm}
+    \vspace{0.5cm}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \raggedleft
+    Data wykonania pomiarów: \\
+    14.10.2025 \\
+    \vspace{0.5cm}
+    Prowadząca: \\
+    dr Sylwia Owczarek
+\end{minipage}
+
+% Tytuł ćwiczenia
+\vspace{2cm}
+\begin{center}
+    \LARGE \textbf{Ćwiczenie nr 66} \\[0.5cm]
+    \Large \textbf{Analiza widmowa za pomocą spektroskopu}
+\end{center}
+
+% Reszta treści
+\vspace{1cm} % Kolejny odstęp
+\noindent
+
+% \tableofcontents
+% \newpage
+
+% ---------- WSTĘP TEORETYCZNY ----------
+\section{Wstęp teoretyczny}
+
+\subsection*{Emisja światła}
+
+Emisja światła to proces emisji fotonów przez atomy. Zachodzi, gdy atomy przechodzą ze stanu wzbudzonego do stanu podstawowego, emitując energię w postaci światła.~\cite{Drynski1976}
+
+\subsection*{Budowa atomu}
+
+Atom składa się z jądra atomowego, zawierającego protony i neutrony, oraz elektronów na określonych poziomach energetycznych.~\cite{Drynski1976}
+
+\subsection*{Rodzaje widm}
+
+Widmo to obraz promieniowania rozłożonego na poszczególne długości fali. Główne rodzaje to:
+
+\begin{itemize}
+    \item Widmo emisyjne: Powstaje, gdy świecący gaz emituje światło. Składa się z kolorowych linii na ciemnym tle.
+
+    \item Widmo absorpcyjne: Powstaje, gdy światło przechodzi przez gaz, widoczne jest w postaci czarnych linii na ciągłym spektrum.~\cite{fizyka_dla_szkół_wyższych_tom_3}
+\end{itemize}
+
+
+\subsection*{Serie widmowe}
+
+To uporządkowane grupy linii w widmie atomu, które odpowiadają przejściom elektronów z różnych wyższych poziomów energetycznych na ten sam, określony niższy poziom (lub odwrotnie). Przykładowo seria Balmera to grupa linii w widmie odpowiadających przejściom elektronów ze lub do stanu $n=2$ atomu wodoru. Opisuje ją wzór Balmera. ~\cite{fizyka_dla_szkół_wyższych_tom_3}
+
+\subsection*{Budowa i zasada działania spektroskopu}
+
+Spektroskop to urządzenie do analizy widm świetlnych. Składa się z:
+
+\begin{itemize}
+    \item Kolimatora (K): Tworzy z rozbieżnej wiązki światła wiązkę równoległą.
+    
+    \item Pryzmatu (P): Rozszczepia światło na skutek zjawiska dyspersji.
+    
+    \item Lunety (L): Umożliwia obserwację powstałego widma.
+\end{itemize}
+
+\subsection*{Rozszczepienie światła przez pryzmat (dyspersja)}
+
+Dyspersja to zjawisko zależności współczynnika załamania światła od jego częstotliwości (lub długości fali) w danym ośrodku. Prowadzi to do rozszczepienia światła białego na barwy składowe podczas przejścia np. przez pryzmat.~\cite{Drynski1976}
+
+
+\subsection*{Analiza widmowa za pomocą spektroskopu}
+
+Substancję identyfikuje się poprzez porównanie jej unikalnego widma z widmami wzorcowymi.
+
+% ---------- OPIS DOŚWIADCZENIA ----------
+% \section{Opis doświadczenia}
+
+% ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
+% \section{Opracowanie wyników pomiarów}
+
+% ---------- TABELE ----------
+% \subsection{Tabele pomiarowe}
+
+% ---------- OBLICZENIA ----------
+% \subsection{...}
+
+% ---------- NIEPEWNOŚCI ----------
+% \section{Ocena niepewności pomiaru}
+
+% ---------- WNIOSKI ----------
+% \section{Wnioski}
+
+% ---------- WYKRESY ----------
+% \section{Wykresy}
+
+\bibliographystyle{plain}
+\bibliography{bibliography}
+
+\end{document}

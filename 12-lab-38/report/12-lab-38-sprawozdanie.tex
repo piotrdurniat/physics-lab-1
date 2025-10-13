@@ -19,7 +19,6 @@
 \usepackage{booktabs}    % Dla ładniejszych tabel
 \usepackage{amsmath}     % Dla symboli matematycznych i środowisk
 \usepackage{siunitx}     % Do poprawnego formatowania jednostek i liczb (opcjonalnie, ale zalecane)
-                         % Jeśli używasz siunitx, wartości w tabeli można formatować np. \SI{0,07280}{\newton\per\metre}
 
 \setlist[itemize]{itemsep=0pt, topsep=0pt}
 
@@ -61,12 +60,14 @@
 \newpage
 
 % ---------- WSTĘP TEORETYCZNY ----------
-\section{Wstęp teoretyczny}
+\section{Wstęp
+  teoretyczny}
 
 \subsection{Napięcie powierzchniowe}
 
-Napięcie powierzchniowe jest zjawiskiem fizycznym występującym na granicy faz, najczęściej ciecz-gaz, i wynika z oddziaływań międzycząsteczkowych w cieczy. Cząsteczki znajdujące się wewnątrz cieczy oddziałują z sąsiednimi cząsteczkami we wszystkich kierunkach, natomiast cząsteczki na powierzchni oddziałują głównie z cząsteczkami znajdującymi się pod nimi. Ta nierównowaga sił powoduje, że powierzchnia cieczy zachowuje się jak napięta błona, dążąc do przyjęcia kształtu o minimalnej powierzchni.
-
+Napięcie powierzchniowe jest zjawiskiem fizycznym występującym na granicy faz, najczęściej ciecz-gaz, i wynika z oddziaływań międzycząsteczkowych w cieczy.
+Cząsteczki znajdujące się wewnątrz cieczy oddziałują z sąsiednimi cząsteczkami we wszystkich kierunkach, natomiast cząsteczki na powierzchni oddziałują głównie z cząsteczkami znajdującymi się pod nimi.
+Ta nierównowaga sił powoduje, że powierzchnia cieczy zachowuje się jak napięta błona, dążąc do przyjęcia kształtu o minimalnej powierzchni.
 Napięcie powierzchniowe ($\sigma$) definiuje się jako stosunek siły ($F$) działającej stycznie do powierzchni cieczy wzdłuż linii o długości ($l$):
 
 \begin{equation}
@@ -74,44 +75,50 @@ Napięcie powierzchniowe ($\sigma$) definiuje się jako stosunek siły ($F$) dzi
 \end{equation}
 
 Jednostką napięcia powierzchniowego w układzie SI jest N/m (newton na metr).
-
 \subsection{Zjawiska związane z napięciem powierzchniowym}
 
-Na granicy ośrodków ciecz-ciało stałe-gaz obserwuje się zjawisko menisku (wklęsłego lub wypukłego), zależnie od oddziaływań między cieczą a ciałem stałym. Jeśli siły przyciągania między cząsteczkami cieczy a ciałem stałym są silniejsze niż między samymi cząsteczkami cieczy, powstaje menisk wklęsły (np. woda w szklanej rurce). W przeciwnym przypadku tworzy się menisk wypukły (np. rtęć w szklanej rurce).
-
-Zjawisko włoskowatości (kapilarności) jest bezpośrednim skutkiem napięcia powierzchniowego i zwilżalności powierzchni. Polega ono na samorzutnym podnoszeniu się lub obniżaniu cieczy w wąskich kapilarach. Wysokość słupa cieczy w kapilarze zależy od napięcia powierzchniowego, gęstości cieczy oraz promienia kapilary.
-
+Na granicy ośrodków ciecz-ciało stałe-gaz obserwuje się zjawisko menisku (wklęsłego lub wypukłego), zależnie od oddziaływań między cieczą a ciałem stałym.
+Jeśli siły przyciągania między cząsteczkami cieczy a ciałem stałym są silniejsze niż między samymi cząsteczkami cieczy, powstaje menisk wklęsły (np. woda w szklanej rurce).
+W przeciwnym przypadku tworzy się menisk wypukły (np. rtęć w szklanej rurce).
+Zjawisko włoskowatości (kapilarności) jest bezpośrednim skutkiem napięcia powierzchniowego i zwilżalności powierzchni.
+Polega ono na samorzutnym podnoszeniu się lub obniżaniu cieczy w wąskich kapilarach.
+Wysokość słupa cieczy w kapilarze zależy od napięcia powierzchniowego, gęstości cieczy oraz promienia kapilary.
 \subsection{Metody pomiaru napięcia powierzchniowego}
 
 W niniejszym ćwiczeniu wykorzystano dwie metody pomiaru napięcia powierzchniowego:
 
 \begin{itemize}
-    \item \textbf{Metoda odrywania} - polega na pomiarze siły $F$ potrzebnej do oderwania płytki od powierzchni cieczy. Napięcie powierzchniowe $\sigma$ jest zdefiniowane jako siła działająca na jednostkę długości krawędzi. Całkowita długość krawędzi styku płytki (o długości $l$ i grubości $d$) z cieczą wynosi $2(l+d)$. Zatem siła napięcia powierzchniowego $F$ (równa sile odrywania, po uwzględnieniu ciężaru płytki oraz przy założeniu kąta zwilżania $\gamma \approx 0$, czyli $\cos\gamma \approx 1$) wyraża się jako $F = \sigma \cdot 2(l+d)$. Przekształcając ten wzór, otrzymujemy:
+    \item \textbf{Metoda odrywania} - polega na pomiarze siły $F$ potrzebnej do oderwania płytki od powierzchni cieczy.
+          Napięcie powierzchniowe $\sigma$ jest zdefiniowane jako siła działająca na jednostkę długości krawędzi.
+          Całkowita długość krawędzi styku płytki (o długości $l$ i grubości $d$) z cieczą wynosi $2(l+d)$.
+          Zatem siła napięcia powierzchniowego $F$ (równa sile odrywania, po uwzględnieniu ciężaru płytki oraz przy założeniu kąta zwilżania $\gamma \approx 0$, czyli $\cos\gamma \approx 1$) wyraża się jako $F = \sigma \cdot 2(l+d)$.
+          Przekształcając ten wzór, otrzymujemy:
           \begin{equation}
               \sigma = \frac{F}{2(l+d)} \label{eq:odrywanie}
           \end{equation}
           gdzie $F$ to mierzona siła odrywania (po skompensowaniu ciężaru płytki), $l$ to długość płytki, a $d$ to jej grubość.
-
-    \item \textbf{Metoda stalagmometru} - opiera się na pomiarze masy kropel cieczy, które odrywają się od kapilary o znanym promieniu. Napięcie powierzchniowe wyznacza się, porównując masy kropel badanej cieczy i cieczy wzorcowej o znanym napięciu powierzchniowym.
+    \item \textbf{Metoda stalagmometru} - opiera się na pomiarze masy kropel cieczy, które odrywają się od kapilary o znanym promieniu.
+          Napięcie powierzchniowe wyznacza się, porównując masy kropel badanej cieczy i cieczy wzorcowej o znanym napięciu powierzchniowym.
 \end{itemize}
 
 Napięcie powierzchniowe zależy od temperatury (na ogół maleje liniowo wraz z jej wzrostem) oraz od obecności zanieczyszczeń i substancji powierzchniowo czynnych, które mogą znacząco obniżyć jego wartość.
-
 Wstęp teoretyczny został opracowany na podstawie podręcznika \cite{fizyka_dla_szkół_wyższych_tom_2} oraz materiałów dydaktycznych Politechniki Wrocławskiej \cite{lab12_pwr}.
-
 % ---------- OPIS DOŚWIADCZENIA ----------
 \section{Opis doświadczenia}
 
 Celem doświadczenia było wyznaczenie napięcia powierzchniowego dla wody destylowanej, alkoholu i acetonu przy użyciu dwóch metod: metody odrywania oraz metody stalagmometru.
-
 \subsection{Metoda odrywania}
 
 Pomiary wykonano przy użyciu wagi torsyjnej (Rys. 1 w instrukcji).
 \begin{enumerate}
-    \item Zmierzono 3-krotnie grubość $d$ płytki pomiarowej za pomocą śruby mikrometrycznej oraz długość jej podstawy $l$ za pomocą suwmiarki. Płytkę następnie osuszono i zawieszono na haczyku wagi.
+    \item Zmierzono 3-krotnie grubość $d$ płytki pomiarowej za pomocą śruby mikrometrycznej oraz długość jej podstawy $l$ za pomocą suwmiarki.
+          Płytkę następnie osuszono i zawieszono na haczyku wagi.
     \item Odaretowano wagę i zważono płytkę, notując jej masę spoczynkową (wskazanie wagi bez dodatkowego obciążenia).
-    \item Pod płytkę podstawiono naczynko z badaną cieczą (wodą destylowaną) tak, aby dolna krawędź płytki niemal dotykała powierzchni cieczy. Waga była zaaretowana.
-    \item Odaretowano wagę, doprowadzając do zanurzenia dolnej części płytki w cieczy. Następnie powoli obracano pokrętłem wagi, zwiększając siłę, aż do momentu oderwania płytki od powierzchni cieczy. Odczytano maksymalną siłę $F$ (wskazanie wagi w jednostkach masy [mg]) działającą w momencie odrywania.
+    \item Pod płytkę podstawiono naczynko z badaną cieczą (wodą destylowaną) tak, aby dolna krawędź płytki niemal dotykała powierzchni cieczy.
+          Waga była zaaretowana.
+    \item Odaretowano wagę, doprowadzając do zanurzenia dolnej części płytki w cieczy.
+          Następnie powoli obracano pokrętłem wagi, zwiększając siłę, aż do momentu oderwania płytki od powierzchni cieczy.
+          Odczytano maksymalną siłę $F$ (wskazanie wagi w jednostkach masy [mg]) działającą w momencie odrywania.
     \item Pomiar siły odrywającej $F$ wykonano 10-krotnie dla wody destylowanej.
     \item Kroki 3-5 powtórzono dla alkoholu i acetonu.
 \end{enumerate}
@@ -149,6 +156,7 @@ Pomiary wykonano przy użyciu wagi torsyjnej (Rys. 1 w instrukcji).
     \centering
     \begin{tabular}{|c|c|c|c|}
         \hline
+
         \multicolumn{3}{|c|}{\textbf{Grubość płytki [mm]}} \\
         \hline
         \textbf{Wskazanie} & \textbf{Błąd wskazania zerowego ($\Delta d$) } & \textbf{Wartość skorygowana} \\
@@ -164,6 +172,7 @@ Pomiary wykonano przy użyciu wagi torsyjnej (Rys. 1 w instrukcji).
     \centering
     \begin{tabular}{|c|}
         \hline
+
         \textbf{Masa spoczynkowa [mg]} \\
         \hline
         272 \\
@@ -179,7 +188,8 @@ Pomiary wykonano przy użyciu wagi torsyjnej (Rys. 1 w instrukcji).
         \hline
         \multicolumn{4}{|c|}{\textbf{Siła odrywająca [mg]}} \\
         \hline
-        \textbf{Pomiar} & \textbf{Woda} & \textbf{Alkohol} & \textbf{Aceton} \\
+        \textbf{Pomiar} & \textbf{Woda} & \textbf{Alkohol} & \textbf{Aceton}
+        \\
         \hline
         1 & 398 & 308 & 312 \\ % [cite: 37]
         \hline
@@ -187,7 +197,8 @@ Pomiary wykonano przy użyciu wagi torsyjnej (Rys. 1 w instrukcji).
         \hline
         3 & 392 & 310 & 310 \\ % [cite: 37]
         \hline
-        4 & 392 & 310 & 314 \\ % [cite: 37]
+        4 & 392 & 310 &
+        314 \\ % [cite: 37]
         \hline
         5 & 396 & 312 & 312 \\ % [cite: 37]
         \hline
@@ -195,7 +206,8 @@ Pomiary wykonano przy użyciu wagi torsyjnej (Rys. 1 w instrukcji).
         \hline
         7 & 398 & 308 & 314 \\ % [cite: 38]
         \hline
-        8 & 398 & 310 & 314 \\ % [cite: 38]
+        8 &
+        398 & 310 & 314 \\ % [cite: 38]
         \hline
         9 & 398 & 312 & 314 \\ % [cite: 38]
         \hline
@@ -209,6 +221,7 @@ Pomiary wykonano przy użyciu wagi torsyjnej (Rys. 1 w instrukcji).
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|}
+
         \hline
         \textbf{Nr pomiaru} & \textbf{Ciecz} & $m_n\,\text{[g]}$ & $m_{nw}\,\text{[g]}$ \\
         \hline
@@ -217,9 +230,11 @@ Pomiary wykonano przy użyciu wagi torsyjnej (Rys. 1 w instrukcji).
         3 & Woda & 2{,}016 & 3{,}519 \\
         \hline
         1 & Alkohol & 1{,}997 & 2{,}186 \\
+
         \hline
     \end{tabular}
-    \caption{Pomiary masy naczynia dla różnych cieczy. $m_n$ - masa naczynia, $m_{nw}$ - masa naczynia z cieczą.}
+    \caption{Pomiary masy naczynia dla różnych cieczy.
+        $m_n$ - masa naczynia, $m_{nw}$ - masa naczynia z cieczą.}
     \label{tab:stalagmometr}
 \end{table}
 
@@ -230,13 +245,11 @@ Pomiary wykonano przy użyciu wagi torsyjnej (Rys. 1 w instrukcji).
 \subsubsection{Obliczenia dla metody odrywania:}
 
 Obliczono średnią arytmetyczną wartości siły odrywającej płytkę $\bar{F}_{\text{mg}}$ (wskazania wagi w jednostkach masy [mg]) dla każdej cieczy na podstawie 10 pomiarów.
-
 $$
     \bar{F}_{\text{mg}} = \frac{\sum_{i=1}^{n} F_i}{n}
 $$
 
 gdzie $F_i$ to kolejne pomiary siły, a $n$ to liczba pomiarów ($n=10$).
-
 Od każdego pomiaru siły odrywającej należy odjąć masę spoczynkową płytki $m_0$, aby uzyskać siłę netto:
 
 $$
@@ -244,7 +257,6 @@ $$
 $$
 
 Przeliczono średnią siłę netto $\bar{F}_{\text{N}}$ na niutony [N], wykorzystując zależność, że $1 \, [\text{mg}]$ odpowiada sile $9{,}807 \cdot 10^{-6} \, [\text{N}]$.
-
 $$
     \bar{F}_{\text{N}} = \bar{F}_{\text{netto}} \cdot 9{,}807 \cdot 10^{-6} \, \text{N/mg}
 $$
@@ -267,7 +279,8 @@ $$
 Średnia siła odrywająca (wskazanie wagi):
 \begin{align*}
      & \bar{F}_{\text{mg, woda}} = \frac{398+394+392+392+396+396+398+398+398+398}{10} \\
-     & = \frac{3960}{10} = 396{,}00 \text{ mg}
+     & = \frac{3960}{10} = 396{,}00
+    \text{ mg}
 \end{align*}
 
 Siła netto (po odjęciu masy spoczynkowej $m_0 = 272{,}00 \text{ mg}$):
@@ -288,6 +301,7 @@ $$
     \begin{tabular}{|l|c|c|c|c|}
         \hline
         \textbf{Ciecz} & \textbf{$\bar{F}_{\text{mg}}$ [mg]} & \textbf{$\bar{F}_{\text{netto}}$ [mg]} & \textbf{$\bar{F}_{\text{N}}$ [N]} & \textbf{$\sigma$ [N/m]} \\
+
         \hline
         Woda destylowana & $396{,}00$ & $124{,}00$ & $0{,}00121607$ & $0{,}0610$ \\
         \hline
@@ -301,7 +315,9 @@ $$
 \end{table}
 
 
-Poniższa tabela \ref{tab:napiecia_powierzchniowe} przedstawia wartości napięcia powierzchniowego (w \SI{}{\newton\per\metre}) dla wody, etanolu i acetonu w temperaturze 20 °C. Główne wartości pochodzą ze źródła \cite{SurfaceTensionDE2024}.
+Poniższa tabela \ref{tab:napiecia_powierzchniowe}
+przedstawia wartości napięcia powierzchniowego (w \SI{}{\newton\per\metre}) dla wody, etanolu i acetonu w temperaturze 20 °C.
+Główne wartości pochodzą ze źródła \cite{SurfaceTensionDE2024}.
 
 \begin{table}[H]
     \centering
@@ -311,12 +327,14 @@ Poniższa tabela \ref{tab:napiecia_powierzchniowe} przedstawia wartości napięc
         \midrule
         Woda       & 0,07280 \\ % Lub \num{0.07280} jeśli używasz siunitx z odpowiednimi ustawieniami regionalnymi
         \hline
-        Etanol     & 0,02210 \\ % Lub \num{0.02210}
+        Etanol     & 0,02210
+        \\ % Lub \num{0.02210}
         \hline
         Aceton     & 0,02520 \\ % Lub \num{0.02520}
         \bottomrule
     \end{tabular}
-    \caption{Wartości napięcia powierzchniowego dla wybranych cieczy w temp. 20 °C.}
+    \caption{Wartości napięcia powierzchniowego dla wybranych cieczy w temp.
+        20 °C.}
     \label{tab:napiecia_powierzchniowe}
 \end{table}
 
@@ -342,27 +360,124 @@ Stosunek napięć powierzchniowych obliczono ze wzoru:
 $$\frac{\sigma_a}{\sigma_w} = \frac{\rho_a m_{a1}}{\rho_w m_{w1}}$$
 gdzie:
 \begin{itemize}
-    \item $\rho_w = 0{,}9982\text{ g/cm}^3$ - gęstość wody w 20°C
+    \item $\rho_w = 0{,}9982\text{ g/cm}^3$
+          - gęstość wody w 20°C
     \item $\rho_a = 0{,}789\text{ g/cm}^3$ - gęstość alkoholu w 20°C
     \item $m_{w1}, m_{a1}$ - masy pojedynczych kropli
 \end{itemize}
 
 Podstawiając wartości:
-$$\frac{\sigma_a}{\sigma_w} = \frac{0{,}789 \cdot 0{,}0063}{0{,}9982 \cdot 0{,}0494} = 0{,}1008$$
+$$\frac{\sigma_a}{\sigma_w} = \frac{0,789 \cdot 0,0063}{0,9982 \cdot 0,0494} = 0,1008$$
 
 Wartość tablicowa stosunku napięć powierzchniowych:
-$$\left(\frac{\sigma_a}{\sigma_w}\right)_{\text{ref}} = \frac{0{,}0223\text{ N/m}}{0{,}0728\text{ N/m}} = 0{,}3036$$
+$$\left(\frac{\sigma_a}{\sigma_w}\right)_{\text{ref}} = \frac{0,02210\text{ N/m}}{0,0728\text{ N/m}} = 0,3036$$
 
 Błąd względny:
-$$\delta = \frac{|0{,}1008 - 0{,}3036|}{0{,}3036} \cdot 100\% = 66{,}8\%$$
+$$\delta = \frac{|0,1008 - 0,3036|}{0,3036} \cdot 100\% = 66,8\%$$
 
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
 
+\subsection{Obliczenia niepewności dla metody odrywania}
+
+Niepewność złożoną napięcia powierzchniowego $u_c(\sigma)$ obliczono korzystając z prawa przenoszenia niepewności standardowych. Dla funkcji $\sigma = \frac{F}{2(l+d)}$:
+
+$$
+    u_c(\sigma) = \sqrt{\left(\frac{\partial \sigma}{\partial F}\right)^2 u^2(F) + \left(\frac{\partial \sigma}{\partial l}\right)^2 u^2(l) + \left(\frac{\partial \sigma}{\partial d}\right)^2 u^2(d)}
+$$
+
+Pochodne cząstkowe wynoszą:
+\begin{align*}
+    \frac{\partial \sigma}{\partial F} & = \frac{1}{2(l+d)}                    \\
+    \frac{\partial \sigma}{\partial l} & = -\frac{F}{2(l+d)^2} = -\sigma/(l+d) \\
+    \frac{\partial \sigma}{\partial d} & = -\frac{F}{2(l+d)^2} = -\sigma/(l+d)
+\end{align*}
+
+\noindent\textbf{Składowe niepewności:}
+
+1. Niepewność pomiaru siły $u(F)$ składa się z:
+\begin{itemize}
+    \item Niepewności typu A (rozrzut pomiarów):
+          $$u_A(F) = \sqrt{\frac{1}{N-1} \sum_{i=1}^{N} (F_i - \bar{F})^2}$$
+    \item Niepewności typu B (dokładność wagi): $u_B(F) = \frac{1 \text{ mg}}{\sqrt{3}} \cdot 9{,}807 \cdot 10^{-6} \text{ N/mg}$
+\end{itemize}
+
+2. Niepewność pomiaru długości $u(l)$:
+$$u(l) = \frac{0{,}05 \text{ mm}}{\sqrt{3}} = 0{,}029 \text{ mm} = 2{,}9 \cdot 10^{-5} \text{ m}$$
+
+3. Niepewność pomiaru grubości $u(d)$:
+$$u(d) = \frac{0{,}01 \text{ mm}}{\sqrt{3}} = 0{,}0058 \text{ mm} = 5{,}8 \cdot 10^{-6} \text{ m}$$
+
+\noindent\textbf{Przykładowe obliczenia dla wody:}
+
+Niepewność typu A siły (dla wody):
+\begin{align*}
+    u_A(F) & = \sqrt{\frac{1}{9} \sum_{i=1}^{10} (F_i - 124{,}00)^2} \text{ mg} \cdot 9{,}807 \cdot 10^{-6} \text{ N/mg} \\
+           & = 0{,}000008 \text{ N}
+\end{align*}
+
+Niepewność typu B siły:
+$$u_B(F) = \frac{1}{\sqrt{3}} \cdot 9{,}807 \cdot 10^{-6} = 0{,}000006 \text{ N}$$
+
+Całkowita niepewność siły:
+$$u(F) = \sqrt{u_A^2(F) + u_B^2(F)} = 0{,}000010 \text{ N}$$
+
+Podstawiając do wzoru na niepewność złożoną napięcia powierzchniowego:
+\begin{align*}
+    u_c(\sigma) & = \sqrt{\left(\frac{1}{0{,}01992}\right)^2 (0{,}000010)^2 + \left(-\frac{0{,}0610}{0{,}00996}\right)^2 (2{,}9 \cdot 10^{-5})^2 + \left(-\frac{0{,}0610}{0{,}00996}\right)^2 (5{,}8 \cdot 10^{-6})^2} \\
+                & = 0{,}0005 \text{ N/m}
+\end{align*}
+
+\noindent\textbf{Wyniki końcowe z niepewnościami:}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Ciecz} & \textbf{$\sigma$ [N/m]} & \textbf{$u_c(\sigma)$ [N/m]} \\
+        \hline
+        Woda destylowana & $0{,}0610$ & $0{,}0005$ \\
+        \hline
+        Alkohol & $0{,}0186$ & $0{,}0004$ \\
+        \hline
+        Aceton & $0{,}0200$ & $0{,}0004$ \\
+        \hline
+    \end{tabular}
+    \caption{Wartości napięcia powierzchniowego wraz z niepewnościami standardowymi złożonymi.}
+    \label{tab:wyniki_z_niepewnosciami}
+\end{table}
+
+\subsection{Obliczenia niepewności dla metody stalagmometru}
+
+Dla metody stalagmometru obliczono niepewność stosunku napięć powierzchniowych. Uwzględniono niepewność pomiaru masy:
+\begin{itemize}
+    \item Niepewność pomiaru masy: $\Delta m = 0{,}001\text{ g}$
+\end{itemize}
+
+Dla stosunku napięć powierzchniowych $\frac{\sigma_a}{\sigma_w} = \frac{\rho_a m_a}{\rho_w m_w}$ niepewność względną obliczono ze wzoru na prawo przenoszenia niepewności maksymalnych, uwzględniając tylko niepewności mas (gęstości są wartościami tablicowymi):
+
+$$\frac{\Delta(\sigma_a/\sigma_w)}{|\sigma_a/\sigma_w|} = \frac{\Delta m_a}{|m_a|} + \frac{\Delta m_w}{|m_w|}$$
+
+Podstawiając wartości:
+\begin{align*}
+    \frac{\Delta m_a}{|m_a|} & = \frac{0{,}0001}{0{,}0063} = 0{,}0159  \\
+    \frac{\Delta m_w}{|m_w|} & = \frac{0{,}0001}{0{,}0494} = 0{,}00202
+\end{align*}
+
+Całkowita niepewność względna:
+$$\frac{\Delta(\sigma_a/\sigma_w)}{|\sigma_a/\sigma_w|} = 0{,}0179$$
+
+Stąd niepewność bezwzględna stosunku napięć powierzchniowych:
+$$\Delta(\sigma_a/\sigma_w) = 0{,}0179 \cdot 0{,}1008 = 0{,}0012$$
+
 % ---------- WNIOSKI ----------
 \section{Wnioski}
 
-W ramach przeprowadzonego doświadczenia wyznaczono wartości napięcia powierzchniowego dla trzech cieczy w temperaturze pokojowej. Poniższa tabela przedstawia zestawienie otrzymanych wyników wraz z wartościami tablicowymi oraz analizą błędów:
+W ramach przeprowadzonego doświadczenia wyznaczono wartości napięcia powierzchniowego dla cieczy w temperaturze pokojowej, wykorzystując dwie metody pomiarowe.
+
+\noindent\textbf{Metoda odrywania płytki:}
+
+Poniższa tabela przedstawia zestawienie otrzymanych wyników wraz z wartościami tablicowymi oraz analizą błędów:
 
 \begin{table}[H]
     \centering
@@ -377,19 +492,27 @@ W ramach przeprowadzonego doświadczenia wyznaczono wartości napięcia powierzc
         Aceton & $0{,}0200$ & $0{,}0004$ & $0{,}0237$ & $0{,}0037$ & $15{,}6$ \\
         \hline
     \end{tabular}
-    \caption{Zestawienie wyników pomiarów z wartościami tablicowymi (w temp. 20°C). $\sigma$ - wartość zmierzona, $u_c(\sigma)$ - niepewność złożona, $\sigma_{\text{ref}}$ - wartość tablicowa, $\Delta\sigma$ - różnica bezwzględna, $\delta$ - błąd względny.}
+    \caption{Zestawienie wyników pomiarów z wartościami tablicowymi (w temp. 20°C).  $\sigma$ - wartość zmierzona, $u_c(\sigma)$ - niepewność złożona, $\sigma_{\text{ref}}$ - wartość tablicowa, $\Delta\sigma$ - różnica bezwzględna, $\delta$ - błąd względny.}
     \label{tab:wyniki_koncowe}
 \end{table}
 
-Różnice między wartościami zmierzonymi a tablicowymi mogą wynikać z kilku czynników:
-
-\begin{enumerate}
-    \item Niedokładności metody pomiarowej - metoda odrywania jest wrażliwa na dokładne ustawienie płytki względem powierzchni cieczy.
-    \item Temperatura - napięcie powierzchniowe maleje wraz ze wzrostem temperatury, a pomiary były wykonywane w warunkach laboratoryjnych, gdzie temperatura mogła być wyższa niż referencyjna.
-    \item Czystość użytych cieczy - szczególnie w przypadku wody destylowanej, gdzie śladowe zanieczyszczenia mogą znacząco wpłynąć na wynik.
-\end{enumerate}
-
 Analiza błędów względnych wykazała systematyczne zaniżenie wyników o podobną wartość procentową (około 16\%) dla wszystkich cieczy, co sugeruje obecność systematycznego błędu w metodzie pomiarowej, który w podobnym stopniu wpływa na wszystkie wykonane pomiary. Niepewności pomiarowe są stosunkowo małe (rzędu 1-2\% wartości mierzonej), co świadczy o dobrej powtarzalności pomiarów.
+
+\noindent\textbf{Metoda stalagmometru:}
+
+Dla metody stalagmometru wyznaczono stosunek napięć powierzchniowych alkoholu i wody:
+$$
+    \frac{\sigma_a}{\sigma_w} = 0{,}1008 \pm 0{,}0012
+$$
+
+Porównując z wartością tablicową tego stosunku ($0{,}3036$), otrzymano znacznie większy błąd względny (66,8\%) niż w metodzie odrywania.
+
+\noindent\textbf{Porównanie metod:}
+\begin{itemize}
+    \item Metoda odrywania płytki wykazała systematyczne zaniżenie wyników o około 16\% dla wszystkich badanych cieczy, zachowując przy tym dobre wartości niepewności pomiarowych.
+    \item Metoda stalagmometru dała znacznie gorsze wyniki, z błędem względnym ponad 66\%.
+    \item Obie metody wykazały systematyczne zaniżenie wyników względem wartości tablicowych, co może sugerować obecność czynników systematycznie wpływających na pomiary, takich jak temperatura czy czystość cieczy.
+\end{itemize}
 
 % ---------- WYKRESY ----------
 \section{Wykresy}
