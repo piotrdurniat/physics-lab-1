@@ -50,8 +50,8 @@
 \vspace{1cm} % Kolejny odstęp
 \noindent
 
-% \tableofcontents
-% \newpage
+\tableofcontents
+\newpage
 
 % ---------- WSTĘP TEORETYCZNY ----------
 \section{Wstęp teoretyczny}
@@ -70,14 +70,12 @@ Widmo to obraz promieniowania rozłożonego na poszczególne długości fali. G�
 
 \begin{itemize}
     \item Widmo emisyjne: Powstaje, gdy świecący gaz emituje światło. Składa się z kolorowych linii na ciemnym tle.
-
     \item Widmo absorpcyjne: Powstaje, gdy światło przechodzi przez gaz, widoczne jest w postaci czarnych linii na ciągłym spektrum.~\cite{fizyka_dla_szkół_wyższych_tom_3}
 \end{itemize}
 
-
 \subsection*{Serie widmowe}
 
-To uporządkowane grupy linii w widmie atomu, które odpowiadają przejściom elektronów z różnych wyższych poziomów energetycznych na ten sam, określony niższy poziom (lub odwrotnie). Przykładowo seria Balmera to grupa linii w widmie odpowiadających przejściom elektronów ze lub do stanu $n=2$ atomu wodoru. Opisuje ją wzór Balmera. ~\cite{fizyka_dla_szkół_wyższych_tom_3}
+Serie widmowe to uporządkowane grupy linii w widmie atomu, które odpowiadają przejściom elektronów z różnych wyższych poziomów energetycznych na ten sam, określony niższy poziom (lub odwrotnie). Przykładowo seria Balmera to grupa linii w widmie odpowiadających przejściom elektronów ze lub do stanu $n=2$ atomu wodoru. Opisuje ją wzór Balmera. ~\cite{fizyka_dla_szkół_wyższych_tom_3}
 
 \subsection*{Budowa i zasada działania spektroskopu}
 
@@ -85,9 +83,7 @@ Spektroskop to urządzenie do analizy widm świetlnych. Składa się z:
 
 \begin{itemize}
     \item Kolimatora (K): Tworzy z rozbieżnej wiązki światła wiązkę równoległą.
-
     \item Pryzmatu (P): Rozszczepia światło na skutek zjawiska dyspersji.
-
     \item Lunety (L): Umożliwia obserwację powstałego widma.
 \end{itemize}
 
@@ -95,13 +91,18 @@ Spektroskop to urządzenie do analizy widm świetlnych. Składa się z:
 
 Dyspersja to zjawisko zależności współczynnika załamania światła od jego częstotliwości (lub długości fali) w danym ośrodku. Prowadzi to do rozszczepienia światła białego na barwy składowe podczas przejścia np. przez pryzmat.~\cite{Drynski1976}
 
-
 \subsection*{Analiza widmowa za pomocą spektroskopu}
 
 Substancję identyfikuje się poprzez porównanie jej unikalnego widma z widmami wzorcowymi.
 
 % ---------- OPIS DOŚWIADCZENIA ----------
-% \section{Opis doświadczenia}
+\section{Opis doświadczenia}
+
+Doświadczenie polegało na analizie widmowej kilku pierwiastków przy użyciu spektroskopu pryzmatycznego.
+
+W pierwszej części ćwiczenia spektroskop został skalibrowany przy użyciu wzorcowego źródła światła -- lampy helowej. Po uzyskaniu ostrych prążków widmowych, zarejestrowano położenia charakterystycznych linii helu na skali przyrządu, notując ich barwę oraz intensywność.
+
+Następnie, bez zmiany ustawień spektroskopu, zmierzono widma emisyjne trzech nieznanych pierwiastków, oznaczonych jako 1, 2 i 3. Dla każdego z nich zarejestrowano położenia obserwowanych linii widmowych na tej samej skali.
 
 % ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
 \section{Opracowanie wyników pomiarów}
@@ -109,7 +110,6 @@ Substancję identyfikuje się poprzez porównanie jej unikalnego widma z widmami
 % ---------- TABELE ----------
 \subsection{Tabele pomiarowe}
 
-% --- Tabela 1 ---
 \begin{table}[H]
     \centering
     \begin{tabular}{|r|c|l|}
@@ -128,7 +128,6 @@ Substancję identyfikuje się poprzez porównanie jej unikalnego widma z widmami
     \label{tab:hel}
 \end{table}
 
-% --- Tabela 2 ---
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|l|}
@@ -142,7 +141,6 @@ Substancję identyfikuje się poprzez porównanie jej unikalnego widma z widmami
     \caption{Położenie linii widmowych pierwiastka nr 1 (kolor światła: jasno niebieski/miętowy).}
 \end{table}
 
-% --- Tabela 3 ---
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|l|}
@@ -169,7 +167,6 @@ Substancję identyfikuje się poprzez porównanie jej unikalnego widma z widmami
     \caption{Położenie linii widmowych pierwiastka nr 2 (kolor światła: różowy).}
 \end{table}
 
-% --- Tabela 4 ---
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|l|}
@@ -188,7 +185,7 @@ Substancję identyfikuje się poprzez porównanie jej unikalnego widma z widmami
 % ---------- OBLICZENIA ----------
 \subsection{Wyznaczenie krzywej dyspersji}
 
-Na podstawie pomiarów z tabeli \ref{tab:hel} i tabeli długości fal lini widmowych z instrukcji do ćwiczenia dopasowano położenia linii do długości fal w tabeli \ref{tab:hel_dispersion}. Do punktów dopasowano wielomian drugiego stopnia za pomocą funkcji \texttt{np.polyfit} dla funkcji postaci $\lambda(u) = au^2 + bu + c$. Otrzymano następujące współczynniki:
+Na podstawie pomiarów z tabeli \ref{tab:hel} i tabeli długości fal lini widmowych z instrukcji do ćwiczenia, dopasowano położenia linii do długości fal (tabela \ref{tab:hel_dispersion}). Do punktów dopasowano wielomian drugiego stopnia za pomocą funkcji \texttt{np.polyfit}. Dla funkcji postaci $\lambda(u) = au^2 + bu + c$ otrzymano następujące współczynniki:
 \begin{itemize}
     \item $a = 2{,}404954$
     \item $b = -58{,}388917$
@@ -215,62 +212,62 @@ Na podstawie pomiarów z tabeli \ref{tab:hel} i tabeli długości fal lini widmo
 
 \subsection{Określenie długości fal dla nieznanych pierwiastków}
 
-Na podstawie dopasowanej funkcji obliczono długości fal prążków dla nieznanych pierwiastków. Wyniki, zaokrąglone zgodnie z zasadami wynikającymi z obliczonej niepewności pomiarowej, zebrano w poniższych tabelach.
+Na podstawie dopasowanej funkcji obliczono długości fal prążków dla nieznanych pierwiastków. Wyniki, zaokrąglone zgodnie z analizą niepewności, zebrano w tabelach poniżej.
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|r|r|c|r|}
+    \begin{tabular}{|c|r|}
         \hline
-        Nr & Położenie linii [u] & Barwa & Długość fali [nm] \\ \hline
-        1 & 2{,}5 & Żółty & 666 \\ \hline
-        2 & 3{,}6 & Jasny zielony & 618 \\ \hline
-        3 & 5{,}6 & Ciemny niebieski & 546 \\ \hline
-        4 & 9{,}0 & Fioletowy & 467 \\ \hline
+        Położenie linii [u] & Długość fali [nm] \\ \hline
+        2{,}5 & 666 \\ \hline
+        3{,}6 & 618 \\ \hline
+        5{,}6 & 546 \\ \hline
+        9{,}0 & 467 \\ \hline
     \end{tabular}
-    \caption{Pierwiastek nr 1: obliczone długości fal dla zmierzonych położeń.}
+    \caption{Pierwiastek nr 1: obliczone długości fal.}
     \label{tab:unknown1}
 \end{table}
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|r|r|c|r|}
+    \begin{tabular}{|c|r|}
         \hline
-        Nr & Położenie linii [u] & Barwa & Długość fali [nm] \\ \hline
-        1 & 0{,}0 & Ciemny czerwony & 797 \\ \hline
-        2 & 0{,}1 & Jasny czerwony & 791 \\ \hline
-        3 & 0{,}7 & Bardzo ciemny czerwony & 758 \\ \hline
-        4 & 1{,}0 & Ciemny czerwony & 741 \\ \hline
-        5 & 1{,}5 & Bardzo ciemny czerwony & 715 \\ \hline
-        6 & 1{,}7 & Bardzo ciemny czerwono-pomarańczowy & 705 \\ \hline
-        7 & 2{,}0 & Jasny pomarańczowy & 690 \\ \hline
-        8 & 2{,}8 & Ciemny żółty & 653 \\ \hline
-        9 & 3{,}0 & Ciemny zielony & 644 \\ \hline
-        10 & 3{,}4 & Ciemny zielony & 627 \\ \hline
-        11 & 4{,}5 & Jasny zielony & 583 \\ \hline
-        12 & 6{,}8 & Bardzo jasny miętowy & 511 \\ \hline
-        13 & 8{,}0 & Ciemny fioletowy & 484 \\ \hline
-        14 & 8{,}4 & Ciemny fioletowy & 476 \\ \hline
-        15 & 9{,}4 & Jasny fioletowy & 461 \\ \hline
-        16 & 10{,}3 & Jasny fioletowy & 451 \\ \hline
-        17 & 10{,}6 & Jasny fioletowy & 449 \\ \hline
+        Położenie linii [u] & Długość fali [nm] \\ \hline
+        0{,}0 & 797 \\ \hline
+        0{,}1 & 791 \\ \hline
+        0{,}7 & 758 \\ \hline
+        1{,}0 & 741 \\ \hline
+        1{,}5 & 715 \\ \hline
+        1{,}7 & 705 \\ \hline
+        2{,}0 & 690 \\ \hline
+        2{,}8 & 653 \\ \hline
+        3{,}0 & 644 \\ \hline
+        3{,}4 & 627 \\ \hline
+        4{,}5 & 583 \\ \hline
+        6{,}8 & 511 \\ \hline
+        8{,}0 & 484 \\ \hline
+        8{,}4 & 476 \\ \hline
+        9{,}4 & 461 \\ \hline
+        10{,}3 & 451 \\ \hline
+        10{,}6 & 449 \\ \hline
     \end{tabular}
-    \caption{Pierwiastek nr 2: obliczone długości fal dla zmierzonych położeń.}
+    \caption{Pierwiastek nr 2: obliczone długości fal.}
     \label{tab:unknown2}
 \end{table}
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|r|r|c|r|}
+    \begin{tabular}{|c|r|}
         \hline
-        Nr & Położenie linii [u] & Barwa & Długość fali [nm] \\ \hline
-        1 & 1{,}1 & Jasny czerwony & 736 \\ \hline
-        2 & 1{,}8 & Jasny pomarańczowy & 700 \\ \hline
-        3 & 2{,}4 & Jasny żółty & 671 \\ \hline
-        4 & 3{,}8 & Bardzo ciemny zielony & 610 \\ \hline
-        5 & 4{,}9 & Bardzo ciemny zielony & 569 \\ \hline
-        6 & 6{,}8 & Jasny fioletowy & 511 \\ \hline
+        Położenie linii [u] & Długość fali [nm] \\ \hline
+        1{,}1 & 736 \\ \hline
+        1{,}8 & 700 \\ \hline
+        2{,}4 & 671 \\ \hline
+        3{,}8 & 610 \\ \hline
+        4{,}9 & 569 \\ \hline
+        6{,}8 & 511 \\ \hline
     \end{tabular}
-    \caption{Pierwiastek nr 3: obliczone długości fal dla zmierzonych położeń.}
+    \caption{Pierwiastek nr 3: obliczone długości fal.}
     \label{tab:unknown3}
 \end{table}
 
@@ -279,15 +276,15 @@ Na podstawie dopasowanej funkcji obliczono długości fal prążków dla nieznan
 Zgodność długości fal z wartościami tablicowymi była niska, stąd skorzystano głównie z analizy sekwencji kolorów i charakterystyki linii widm referencyjnych.
 
 \begin{itemize}
-    \item \textbf{Pierwiastek nr 1: Rtęć (Hg)} \\
+    \item \textbf{Pierwiastek nr 1: Rtęć (Hg)}
           \begin{itemize}
               \item Obserwowana linia \textbf{żółta} (666 nm) najprawdopodobniej odpowiada liniom 577,0 nm i 579,1 nm.
               \item Obserwowana \textbf{jasna linia zielona} (618 nm) odpowiada linii zielonej rtęci (546,1 nm).
-              \item Obserwowana \textbf{ciemna linia niebieska} (546 nm) odpowiada średniej intensitywności linii niebieskiej (435,8 nm).
+              \item Obserwowana \textbf{ciemna linia niebieska} (546 nm) odpowiada średniej intensywności linii niebieskiej (435,8 nm).
               \item Obserwowana linia \textbf{fioletowa} (467 nm) odpowiada liniom fioletowym (404,7 nm i 407,8 nm).
           \end{itemize}
 
-    \item \textbf{Pierwiastek nr 2: Neon (Ne)} \\
+    \item \textbf{Pierwiastek nr 2: Neon (Ne)}
           Cechą diagnostyczną widma tego pierwiastka jest duża liczba intensywnych linii w zakresie czerwonym i pomarańczowym na początku widma, co jest zgodne z obserwacjami.
           \begin{itemize}
               \item Zaobserwowane linie takie jak \textbf{"Ciemny czerwony", "Jasny czerwony"} i \textbf{"Jasny pomarańczowy"}, pasują do spektrum neonu w zakresie 614,3 nm, 640,2 nm, 659,9 nm, 724,5 nm.
@@ -295,7 +292,7 @@ Zgodność długości fal z wartościami tablicowymi była niska, stąd skorzyst
               \item Pozostałe linie (zielone, fioletowe) również mają swoje odpowiedniki w widmie neonu.
           \end{itemize}
 
-    \item \textbf{Pierwiastek nr 3: Argon (Ar)} \\
+    \item \textbf{Pierwiastek nr 3: Argon (Ar)}
           \begin{itemize}
               \item Obserwowane linie \textbf{czerwona} i \textbf{pomarańczowa/żółta} odpowiadają liniom argonu (czerwone: 696,5 nm i 641,6 nm; żółta: 591,2 nm).
               \item Obserwowane linie \textbf{zielone} odpowiadają liniom w zakresie 549,5 nm - 565,0 nm.
@@ -308,17 +305,15 @@ Zgodność długości fal z wartościami tablicowymi była niska, stąd skorzyst
 \section{Ocena niepewności pomiaru}
 
 \subsection{Niepewność położenia na skali}
-
-Niepewność standardową położenia na skali $u$ obliczono na podstawie wzoru na niepewność standardową typu B. Zakładając, że przedział niepewności odczytu wynosi $\pm a = \pm 1$ podziałkę, otrzymano:
-
+Niepewność standardową położenia na skali $u(u)$ obliczono na podstawie wzoru na niepewność standardową typu B. Zakładając, że przedział niepewności odczytu wynosi $\pm a = \pm 1$ podziałkę, otrzymano:
 \begin{equation*}
-    u(u) = \frac{a}{\sqrt{3}} = \frac{1}{\sqrt{3}} \approx 0{,}58 \text{ podziałek}
+    u(u) = \frac{a}{\sqrt{3}} = \frac{1}{\sqrt{3}} \approx 0{,}58 \text{ u}
 \end{equation*}
 
 
 \subsection{Niepewność współczynników wielomianu}
 
-Niepewności standardowe współczynników dopasowanego wielomianu wyznaczono z macierzy kowariancji. Otrzymane wartości, zaokrąglone zgodnie z zasadami rachunku niepewności, wynoszą:
+Niepewności standardowe współczynników dopasowanego wielomianu wyznaczono z macierzy kowariancji. Otrzymane wartości wynoszą:
 
 \begin{itemize}
     \item $a = 2{,}4, u(a) = 1{,}0$
@@ -327,18 +322,15 @@ Niepewności standardowe współczynników dopasowanego wielomianu wyznaczono z 
 \end{itemize}
 
 \subsection{Niepewność długości fali}
-
-
-Na podstawie wzoru na niepewność złożoną (przy błędnym założeniu niezależności zmiennych):
+Na podstawie wzoru na niepewność złożoną:
 $$
-    u_c^2(f) = \sum_{i=1}^{n} \left(\frac{\partial f}{\partial x_i}\right)^2 u^2(x_i)
+    u_c^2(\lambda) = \sum_{i=1}^{n} \left(\frac{\partial \lambda}{\partial x_i}\right)^2 u^2(x_i)
 $$
 wyprowadzono wzór na niepewność długości fali $\lambda$:
 $$
     u_c(\lambda) = \sqrt{ (2au + b)^2 u^2(u) + u^4 u^2(a) + u^2 u^2(b) + u^2(c) }
 $$
 Dla przykładowego pomiaru $u = 5{,}6$ [u] podstawiono wartości:
-
 \begin{align*}
     u_c(\lambda) & = \sqrt{ (2 \cdot 2{,}4 \cdot 5{,}6 - 58)^2 \cdot 0{,}58^2 + (5{,}6)^4 \cdot (1{,}0)^2 + (5{,}6)^2 \cdot 13^2 + 33^2 } \\
     u_c(\lambda) & = \sqrt{ (26{,}88 - 58)^2 \cdot 0{,}3364 + 983{,}5 \cdot 1 + 31{,}36 \cdot 169 + 1089 }                                \\
@@ -347,7 +339,7 @@ Dla przykładowego pomiaru $u = 5{,}6$ [u] podstawiono wartości:
     u_c(\lambda) & = \sqrt{ 325{,}8 + 7372{,}5 }                                                                                          \\
     u_c(\lambda) & = \sqrt{ 7698{,}3 } \approx 87{,}7 \text{ nm}
 \end{align*}
-Po zaokrągleniu wyniku do jednej cyfry znaczącej otrzymujemy ostateczną niepewność pomiaru:
+Po zaokrągleniu wyniku do jednej cyfry znaczącej otrzymano ostateczną niepewność pomiaru:
 $$
     u_c(\lambda) \approx 90 \text{ nm}
 $$
@@ -359,19 +351,35 @@ gdzie:
     \item $u(u), u(a), u(b), u(c)$: Niepewności standardowe odpowiednich wielkości.
 \end{itemize}
 % ---------- WNIOSKI ----------
-% \section{Wnioski}
+\section{Wnioski}
+
+Na podstawie analizy sekwencji kolorów w obserwowanych widmach, zidentyfikowano następujące pierwiastki:
+\begin{itemize}
+    \item Pierwiastek nr 1: \textbf{Rtęć (Hg)}
+    \item Pierwiastek nr 2: \textbf{Neon (Ne)}
+    \item Pierwiastek nr 3: \textbf{Argon (Ar)}
+\end{itemize}
+
+Obliczone długości fal wykazały znaczne rozbieżności z wartościami tablicowymi.
+Jedną z przyczyn może być dopasowanie do pomiarów wielomianu drugiego stopnia metodą najmniejszych kwadratów. Rzeczywista krzywa dyspersji może mieć inną charakterystykę. Na wykresie \ref{fig:helium_dispersion} widać niskie dopasowanie tej krzywej do punktów pomiarowych, widać również, że pomiar nr. 3 odstaje od pozostałych, co zaburza dopasowanie krzwej. Należało by rozważyć dopasowanie innej krzywej i odrzucenie wartości odstającej.
+Drugą, możliwą przyczyną rozbieżności jest przesunięcie skali, do którego mogło dojść po kalibracji.
+Dodatkowo trudność sprawiało odczytanie dokładnego położenia na skali, ponieważ była ona słabo widoczna, co mogło skutkować błędnymi odczytami.
+
+
+Obliczona niepewność złożona długości fali jest duża, wynosi $u_c(\lambda) \approx 90 \text{ nm}$, co jest równe niepewności względnej $16\%$.
+
 
 % ---------- WYKRESY ----------
 \section{Wykresy}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.4\textwidth,height=0.9\textheight,keepaspectratio,angle=90]{../images/helium_dispersion.png}
+    \includegraphics[width=1.3\textwidth,height=0.9\textheight,keepaspectratio,angle=90]{../images/helium_dispersion.png}
     \caption{Wykres krzywej dyspersji dla widma helu.}
     \label{fig:helium_dispersion}
 \end{figure}
 
-\newpage
+% \newpage
 
 \bibliographystyle{plain}
 \bibliography{bibliography}
