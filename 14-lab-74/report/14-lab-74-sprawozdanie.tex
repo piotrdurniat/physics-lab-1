@@ -237,16 +237,109 @@ Ostateczną wartość prędkości światła obliczono jako średnią arytmetyczn
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
 
+\subsection{Niepewności maksymalne pomiarów bezpośrednich}
+
 Położenie między impulsami można było odczytać z dokładnością do $\num{0,5}$ podziałki, stąd maksymalna niepewność odległości impulsów $\Delta_d(\Delta d) = 1 \text{ podziałka}$
 
 Odległość między źródłem światła a lustrem mierzono za pomocą miarki z podziałką \SI{0.001}{\meter}. Ze względu na to, że trudności sprawiało dokładne ułożenie miarki, to niepewność pomiaru odległości oszacowano na $\Delta_d L = \SI{0.01}{\meter}$.
 
+\subsection{Niepewności standardowe pomiarów bezpośrednich}
+
+Niepewność standardowa pomiaru odległości do lustra została obliczona na podstawie wzoru:
+\begin{equation*}
+    u(L) = \frac{\Delta_d L}{\sqrt{3}} = \frac{\SI{0.01}{\meter}}{\sqrt{3}} \approx \SI{0.0058}{\meter}
+\end{equation*}
+
+Niepewność standardowa pomiaru odległości między podziałkami została obliczona na podstawie wzoru:
 
 
+\begin{equation*}
+    u(\Delta d) = \frac{\Delta_d(\Delta d)}{\sqrt{3}} = \frac{1 \text{ działka}}{\sqrt{3}} \approx 0{,}58 \text{ działki}
+\end{equation*}
+
+\subsection{Niepewność standardowa czasu opóźnienia}
+
+Czas opóźnienia \( t \) obliczany jest ze wzoru \( t = \Delta d \cdot T \). Zakładając, że niepewność podstawy czasu \( u(T) \approx 0 \), niepewność standardową \( u(t) \) wyznaczono z prawa propagacji niepewności dla wielkości nieskorelowanych:
+$$
+    u(t) = \sqrt{ \left(\frac{\partial t}{\partial \Delta d}\right)^2 u^2(\Delta d) + \left(\frac{\partial t}{\partial T}\right)^2 u^2(T) }
+$$
+
+$$
+    u(t) = \sqrt{ \left( T \right)^2 u^2(\Delta d) + \left( \Delta d \right)^2 u^2(T) }
+    =  \sqrt{ T^2 u^2(\Delta d) + (\Delta d)^2 \cdot 0 } = |T| \cdot u(\Delta d)
+$$
+
+Podstawiając wartość \( T = \SI{0.1e-6}{\second/\text{działkę}} \) oraz \( u(\Delta d) \approx 0{,}58 \text{ działki} \):
+
+$$
+    u(t) \approx \num{0.1e-6} \cdot 0{,}58  \approx \SI{5.8e-8}{\second}
+$$
+
+\subsection{Niepewność standardowa prędkości}
+
+Niepewność standardową prędkości obliczono ze wzoru na niepewność złożonąch \eqref{eq:niepewnosc_zlozona}.
+
+\begin{equation}
+    \label{eq:niepewnosc_zlozona}
+    u_c(y) = \sqrt{ \sum_{i=1}^{n} \left(\frac{\partial f}{\partial x_i}\right)^2 u^2(x_i) }
+\end{equation}
+Dla wzoru $v = \frac{2L}{t}$ otrzymano równanie:
+
+\begin{equation*}
+    u_c(v) = \sqrt{ \left(\frac{\partial v}{\partial L}\right)^2 u^2(L) + \left(\frac{\partial v}{\partial t}\right)^2 u^2(t) } = \sqrt{ \left(\frac{2}{t}\right)^2 u^2(L) + \left(-\frac{2L}{t^2}\right)^2 u^2(t) }
+\end{equation*}
+Otrzymane wartości zapisano w tabeli \ref{tab:final_uncertainties}.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|r|r|r|r|}
+        \hline
+        {\textbf{$L$ [\si{\meter}]}} & {\textbf{$t$ [\si{\second}]}} & {\textbf{$v$ [\si{\meter/\second}]}} & {\textbf{$u_c(v)$ [\si{\meter/\second}]}} \\
+        \hline
+        \num{10.000} & \num{7.0e-8} & \num{2.857e8} & \num{2.4e8} \\
+        \hline
+        \num{8.500}  & \num{6.0e-8} & \num{2.833e8} & \num{2.7e8} \\
+        \hline
+        \num{6.250}  & \num{4.0e-8} & \num{3.125e8} & \num{4.5e8} \\
+        \hline
+        \num{11.450} & \num{8.0e-8} & \num{2.862e8} & \num{2.1e8} \\
+        \hline
+        \num{13.860} & \num{1.0e-7} & \num{2.772e8} & \num{1.6e8} \\
+        \hline
+        \num{3.950}  & \num{2.0e-8} & \num{3.950e8} & \num{1.1e9} \\
+        \hline
+    \end{tabular}
+    \caption{Obliczone prędkości światła i ich niepewności złożone}
+    \label{tab:final_uncertainties} % Caption and Label moved to the bottom
+\end{table}
+
+\subsection*{Przykładowe obliczenia (dla L = \SI{10.000}{\meter})}
+
+Dla \(L=\SI{10.000}{\meter}\), \(t=\SI{7.0e-8}{\second}\), \(v \approx \SI{2.857e8}{\meter/\second}\), \(u(L) \approx \SI{0.00577}{\meter}\), \(u(t) \approx \SI{5.77e-8}{\second}\), niepewność złożona wynosi:
+\begin{align*}
+    u_c(v) & = \SI{2.857e8}{\meter/\second} \cdot \sqrt{ \left( \frac{\SI{0.00577}{\meter}}{\SI{10.000}{\meter}} \right)^2 + \left( \frac{\SI{5.77e-8}{\second}}{\SI{7.0e-8}{\second}} \right)^2 } \approx \SI{2.4e8}{\meter/\second}
+\end{align*}
+
+\subsection{Niepewność standardowa średniej prędkości światła}
+
+Średnią prędkość światła \( \bar{v} \approx \SI{2.8900e8}{\meter/\second} \) obliczono jako średnią arytmetyczną z \( N=5 \) pomiarów (po odrzuceniu ostatniego). Niepewność standardową tej średniej \( u(\bar{v}) \) wyznaczono metodą typu A, korzystając ze wzoru na odchylenie standardowe średniej arytmetycznej \eqref{eq:odchylenie-std}:
+\begin{equation}
+    \label{eq:odchylenie-std}
+    u(\bar{v}) = \sqrt{\frac{1}{N(N-1)} \sum_{i=1}^{N} (v_i - \bar{v})^2}
+\end{equation}
+gdzie \( v_i \) to wynik \(i\)-tego pomiaru prędkości. Podstawiając wartości (w \si{\meter/\second}) dla pierwszych pięciu pomiarów:
+\begin{align*}
+    u(\bar{v}) & = \sqrt{\frac{1}{5(5-1)} \left[ (\num{2.857e8} - \num{2.890e8})^2 + \dots + (\num{2.772e8} - \num{2.890e8})^2 \right]} \approx \SI{6.09e6}{\meter/\second}
+\end{align*}
 
 
 % ---------- WNIOSKI ----------
-% \section{Wnioski}
+\section{Wnioski}
+
+
+Na podstawie przeprowadzonych pomiarów i obliczeń wyznaczono średnią prędkość światła w powietrzu. Po odrzuceniu jednego pomiaru obarczonego dużym błędem, jako wynik końcowy przyjęto średnią arytmetyczną z pozostałych pięciu pomiarów.
+
+Wyznaczona średnia prędkość światła wyniosła $\bar{v} = \SI{2.890e8}{\meter/\second}$, a jej niepewność standardowa $u(\bar{v}) = \SI{0.061e8}{\meter/\second}$
 
 % ---------- WYKRESY ----------
 % \section{Wykresy}
