@@ -1,0 +1,142 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} % Do ustawień marginesów
+\usepackage{multicol} % Dla podziału na kolumny
+\usepackage{ragged2e} % Dla justowania tekstu
+\usepackage{graphicx} % Required for inserting images
+\usepackage{float}
+\usepackage{caption}
+\usepackage{amsmath} % Math formulas
+\usepackage{amssymb} % Symbols
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=orange]{hyperref} % Hyperlinks
+\usepackage{polski} % Polish language
+\usepackage[utf8]{inputenc} % Text encoding
+\usepackage{enumitem} % Pakiet do elastycznego sterowania listami
+\usepackage{indentfirst}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\setlist[itemize]{itemsep=0pt, topsep=0pt}
+\usepackage[round]{natbib}
+
+\begin{document}
+
+% Górna część strony
+\noindent
+\begin{minipage}{0.5\textwidth}
+    \raggedright
+    \textbf{Piotr Durniat, 347364} \\
+    II rok, Fizyka \\
+    Wtorek, 8:00-10:15 \\
+    \vspace{0.5cm}
+    \vspace{0.5cm}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \raggedleft
+    22.10.2025 \\
+    \vspace{0.5cm}
+    Prowadząca: \\
+    dr Sylwia Owczarek
+\end{minipage}
+
+% Tytuł ćwiczenia
+\vspace{2cm}
+\begin{center}
+    \LARGE \textbf{Ćwiczenie nr 74} \\[0.5cm]
+    \Large \textbf{Wyznaczanie prędkości światła}
+\end{center}
+
+% Reszta treści
+\vspace{1cm} % Kolejny odstęp
+\noindent
+
+% \tableofcontents
+% \newpage
+
+% ---------- WSTĘP TEORETYCZNY ----------
+\section{Wstęp teoretyczny}
+
+\subsection*{Fale elektromagnetyczne}
+
+Fale elektromagnetyczne (EM) to fale poprzeczne składające się ze zmieniających się w czasie pól elektrycznego i magnetycznego, które drgają w kierunkach prostopadłych do kierunku rozchodzenia się fali i do siebie nawzajem.
+Przykładowymi falami elektromagnetycznymi są: światło widzialne,fale radiowe, podczerwień, ultrafiolet i promieniowanie rentgenowskie.
+W przeciwieństwie do fal mechanicznych, fale EM nie potrzebują ośrodka do propagacji, mogą rozchodzić się w próżni.
+Polaryzacja fali EM jest zdefiniowana jako kierunek równoległy do wektora natężenia pola elektrycznego $\vec{E}$~\citep{fizyka_dla_szkol_wyzszych_tom_3}.
+
+\subsection*{Równanie falowe, prędkość fali}
+
+Istnienie i zachowanie fal elektromagnetycznych jest opisywane przez równania Maxwella. Z tych równań można wyprowadzić równanie falowe, które dla fali płaskiej poruszającej się w próżni wzdłuż osi x przyjmuje postać:
+
+$$
+    \frac{\partial^2 E_y}{\partial x^2} = \epsilon_0 \mu_0 \frac{\partial^2 E_y}{\partial t^2}
+$$
+Z porównania tego równania z ogólną postacią równania falowego wynika, że prędkość fali elektromagnetycznej w próżni, oznaczana jako $c$, jest stałą fizyczną i wynosi:
+$$
+    c = \frac{1}{\sqrt{\epsilon_0 \mu_0}}
+$$
+gdzie:
+\begin{itemize}
+    \item $\epsilon_0$ to przenikalność elektryczna próżni,
+    \item $\mu_0$ to przenikalność magnetyczna próżni.
+\end{itemize}
+
+Wartość tej prędkości wynosi $c = 299 \ 792 \ 458 \ \text{m/s}$.\citep{fizyka_dla_szkol_wyzszych_tom_3}
+
+\subsection*{Własności fal w próżni i ośrodkach. Prędkość rozchodzenia się fal a współczynnik załamania ośrodka}
+
+Prędkość światła w ośrodku materialnym ($v$) jest mniejsza niż w próżni ($c$), ponieważ światło oddziałuje z atomami w danym ośrodku. Zależność ta opisywan jest przez stałą materiałowa zwaną współczynnikiem załamania $n$:
+
+$$
+    n = \frac{c}{v}
+$$
+
+Współczynnik załamania $n$ jest zawsze większy lub równy 1, ponieważ $v$ jest zawsze mniejsze lub równe $c$. Dla próżni wynosi 1.
+Wartość współczynnika załamania zależy od rodzaju ośrodka oraz od od długości fali światła.
+Zależność współczynnika załamania od długości światła prowadzi do zjawiska rozszczepienia (dyspersji)~\citep{fizyka_dla_szkol_wyzszych_tom_3}.
+
+\subsection*{Metody pomiaru prędkości światła}
+
+Historycznie prędkość światła mierzono wieloma metodami, zarówno astronomicznymi, jak i laboratoryjnymi.
+\begin{itemize}
+    \item \textbf{Metoda astronomiczna Rømera (1675):} Ole Rømer, obserwując zaćmienia księżyca Jowisza -- Io, zauważył, że okresy jego obiegu wydają się zmieniać w zależności od położenia Ziemi na orbicie. Zinterpretował to jako efekt skończonej prędkości światła, które potrzebuje więcej lub mniej czasu, aby dotrzeć do Ziemi, gdy ta oddala się od Jowisza lub się do niego zbliża. Na tej podstawie oszacował prędkość światła na $2 \cdot 10^8 \ \text{m/s}$.
+    \item \textbf{Metoda koła zębatego Fizeau (1849):} Armand Fizeau użył obracającego się koła zębatego, aby "ciąć" wiązkę światła na impulsy. Impulsy te przebywały odległość do odległego lustra i z powrotem. Prędkość obrotu koła była tak dobrana, aby powracające światło było blokowane przez kolejny ząb. Znając prędkość obrotową koła, liczbę zębów i odległość, Fizeau wyznaczył prędkość światła na $3,15 \cdot 10^8 \ \text{m/s}$.
+    \item \textbf{Metoda wirującego zwierciadła Foucaulta (1862):} Jean Foucault udoskonalił metodę Fizeau, zastępując koło zębate wirującym lustrem, co pozwoliło na dokładniejszy pomiar. Jego wynik wyniósł ($2,98 \cdot 10^8 \ \text{m/s}$) i różni się tylko o 0,6\% od dzisiejszej wartości~\citep{fizyka_dla_szkol_wyzszych_tom_3}
+\end{itemize}
+
+\subsection*{Zasada działania oscyloskopu}
+
+Oscyloskop to przyrząd pomiarowy służący do obserwacji i analizy sygnałów elektrycznych w funkcji czasu. Posiada ekran, na którym wyświetlany jest wykres sygnału.
+
+\begin{itemize}
+    \item \textbf{Oś pozioma (X)} reprezentuje \textbf{czas}. Plamka świetlna przesuwa się po niej ze stałą, regulowaną prędkością, tworząc podstawę czasu. Ustawienie podstawy czasu (pokrętło B w instrukcji) pozwala na "rozciąganie" lub "ściskanie" obserwowanego przebiegu w osi czasu.
+    \item \textbf{Oś pionowa (Y)} reprezentuje \textbf{napięcie (amplitudę)} sygnału wejściowego. Badany sygnał powoduje odchylenie plamki w pionie, proporcjonalne do jego chwilowej wartości. Czułość (pokrętło A w instrukcji) reguluje wzmocnienie sygnału w osi pionowej.
+\end{itemize}
+
+W rezultacie na ekranie powstaje obraz zależności napięcia sygnału od czasu. W tym ćwiczeniu oscyloskop jest używany do pomiaru przesunięcia czasowego ($\Delta t$) między dwoma impulsami świetlnymi.
+
+
+% ---------- OPIS DOŚWIADCZENIA ----------
+% \section{Opis doświadczenia}
+
+% ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
+% \section{Opracowanie wyników pomiarów}
+
+% ---------- TABELE ----------
+% \subsection{Tabele pomiarowe}
+
+% ---------- OBLICZENIA ----------
+% \subsection{...}
+
+% ---------- NIEPEWNOŚCI ----------
+% \section{Ocena niepewności pomiaru}
+
+% ---------- WNIOSKI ----------
+% \section{Wnioski}
+
+% ---------- WYKRESY ----------
+% \section{Wykresy}
+
+\bibliographystyle{apalike}
+\bibliography{bibliography}
+
+\end{document}
