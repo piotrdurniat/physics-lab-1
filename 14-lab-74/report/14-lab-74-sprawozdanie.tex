@@ -18,6 +18,10 @@
 \usepackage{pdflscape}
 \setlist[itemize]{itemsep=0pt, topsep=0pt}
 \usepackage[round]{natbib}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,}}
+\sisetup{exponent-product = \cdot}
+% LTeX: language=pl-PL
 
 \begin{document}
 
@@ -116,19 +120,130 @@ W rezultacie na ekranie powstaje obraz zależności napięcia sygnału od czasu.
 
 
 % ---------- OPIS DOŚWIADCZENIA ----------
-% \section{Opis doświadczenia}
+\section{Opis doświadczenia}
 
 % ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
-% \section{Opracowanie wyników pomiarów}
+\section{Opracowanie wyników pomiarów}
 
 % ---------- TABELE ----------
-% \subsection{Tabele pomiarowe}
+\subsection{Tabele pomiarowe}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|r|c|}
+        \hline
+        \textbf{Odległość od lustra [m]} & \textbf{Odległość między impulsami [l. podziałek]} \\ \hline
+        \num{10.000} & $\frac{\num{3.5}}{5}$ \\ \hline
+        \num{8.500}  & $\frac{3}{5}$ \\ \hline
+        \num{6.250}  & $\frac{2}{5}$ \\ \hline
+        \num{11.450} & $\frac{4}{5}$ \\ \hline
+        \num{13.860} & $\frac{5}{5}$ \\ \hline
+        \num{3.950}  & $\frac{1}{5}$ \\ \hline
+    \end{tabular}
+    \caption{Pomiary odległości źródła światła od lustra oraz odległości między impulsami.}
+\end{table}
 
 % ---------- OBLICZENIA ----------
-% \subsection{...}
+\subsection{Czas opóźnienia impulsu światła}
+
+Czas opóźnienia ($t$) został obliczony na podstawie wzoru \eqref{eq:czas_opoznienia} i przedstawiony w tabeli \ref{tab:tabela_opóznień}.
+
+\begin{equation}
+    \label{eq:czas_opoznienia}
+    t = \Delta d \cdot T
+\end{equation}
+
+gdzie:
+\begin{itemize}
+    \item $\Delta d$ to liczba podziałek odczytana z oscyloskopu,
+    \item $T$ to podstawa czasu, która wynosi ($T = \SI{0.1}{\micro\second/\text{działkę}}$).
+\end{itemize}
+
+\begin{table}[h!]
+    \centering
+    \resizebox{0.95\textwidth}{!}{ % Zostawione resizebox zgodnie z prośbą
+        \begin{tabular}{|r|r|r|}
+            \hline
+            \textbf{Odległość od lustra {[}m{]}} & \textbf{Liczba podziałek ($\Delta d$)}  & \textbf{Czas opóźnienia $t$ {[}ns{]}} \\ \hline
+            \num{10.000} & \num{0.7} &  \num{70} \\ \hline
+            \num{8.500} & \num{0.6} & \num{60} \\ \hline
+            \num{6.250} & \num{0.4} & \num{40} \\ \hline
+            \num{11.450} & \num{0.8} & \num{80} \\ \hline
+            \num{13.860} &  \num{1.0} & \num{100} \\ \hline
+            \num{3.950} &  \num{0.2} & \num{20} \\ \hline
+        \end{tabular}
+    }
+    \caption{Czas opóźnienia impulsu światła.}
+    \label{tab:tabela_opóznień}
+\end{table}
+
+\subsubsection*{Przykładowe obliczenia}
+
+Dla odległości od lustra \SI{10.000}{\meter}, liczba podziałek odczytana z oscyloskopu wyniosła $\frac{3.5}{5}$.
+
+\begin{align*}
+    t & = \Delta d \cdot T = 0{,}7 \cdot 0.1 = \SI{0.07}{\micro\second} = \SI{70}{\nano\second}
+\end{align*}
+
+\subsection{Prędkość światła dla każdego pomiaru}
+
+Prędkość światła ($v$) została obliczona dla każdego pomiaru na podstawie wzoru \eqref{eq:speed_of_light}, a wyniki zapisano w tabeli \ref{tab:speed_of_light}
+
+\begin{equation}
+    \label{eq:speed_of_light}
+    v = \frac{2L}{t}
+\end{equation}
+
+gdzie:
+\begin{itemize}
+    \item $L$ to odległość od lustra [m],
+    \item $t$ to czas opóźnienia [s].
+\end{itemize}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Odległość od lustra $L$ [m]} & \textbf{Czas opóźnienia $t$ [ns]} & \textbf{Prędkość światła $v$ [m/s]} \\ \hline
+        \num{10.000} & \num{70} & \num{2.857e8} \\ \hline
+        \num{8.500} & \num{60} & \num{2.833e8} \\ \hline
+        \num{6.250} & \num{40} & \num{3.125e8} \\ \hline
+        \num{11.450} & \num{80} & \num{2.863e8} \\ \hline
+        \num{13.860} & \num{100} & \num{2.772e8} \\ \hline
+        \num{3.950} & \num{20} & \num{3.950e8} \\ \hline
+    \end{tabular}
+    % }
+    \caption{Prędkość światła dla poszczególnych pomiarów}
+    \label{tab:speed_of_light}
+\end{table}
+
+\subsubsection*{Przykładowe obliczenia}
+
+Dla odległości od lustra $L = \SI{10.000}{\meter}$ i czasu opóźnienia $t = \SI{70}{\nano\second}$ obliczona prędkość światła $v$:
+
+\begin{align*}
+    v & = \frac{2L}{t} = \frac{2 \cdot \SI{10.000}{\meter}}{\SI{70e-9}{\second}} = \frac{\SI{20.000}{\meter}}{\SI{70e-9}{\second}} \approx \SI{2.857e8}{\meter/\second}
+\end{align*}
+
+\subsection{Ostateczna prędkość światła}
+
+Ostateczną wartość prędkości światła obliczono jako średnią arytmetyczną prędkości, otrzymanych z pierwszych 5 pomiarów. Pomiar dla odległości \SI{3.950}{\meter} został odrzucony, gdyż dokładne określenie odległości między impulsami było dla niego problematyczne -- impulsy nakładały się, a otrzymana wartość prędkości odstaje od pozostałych pomiarów. Otrzymano wynik:
+
+\begin{equation*}
+    \bar{v} \approx \SI{2.8900e8}{\frac{m}{s}}
+\end{equation*}
+
 
 % ---------- NIEPEWNOŚCI ----------
-% \section{Ocena niepewności pomiaru}
+\section{Ocena niepewności pomiaru}
+
+Położenie między impulsami można było odczytać z dokładnością do $\num{0,5}$ podziałki, stąd maksymalna niepewność odległości impulsów $\Delta_d(\Delta d) = 1 \text{ podziałka}$
+
+Odległość między źródłem światła a lustrem mierzono za pomocą miarki z podziałką \SI{0.001}{\meter}. Ze względu na to, że trudności sprawiało dokładne ułożenie miarki, to niepewność pomiaru odległości oszacowano na $\Delta_d L = \SI{0.01}{\meter}$.
+
+
+
+
 
 % ---------- WNIOSKI ----------
 % \section{Wnioski}
