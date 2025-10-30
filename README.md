@@ -80,9 +80,26 @@
 - [sprawozdanie LaTeX](./11-lab-22/report/11-lab-22-sprawozdanie.tex)
 - [obliczenia](./11-lab-22/11-lab-22-obliczenia.ipynb)
 
-## 12. ćwiczenie 38 - Pomiar napięcia powierzchniowego
+## 12. ćw 38 - Pomiar napięcia powierzchniowego
 
 - [instrukcja](./12-lab-38/12-lab-38-instrukcja.md)
 - [sprawozdanie PDF](./12-lab-38/report/12-lab-38-sprawozdanie.pdf)
 - [sprawozdanie LaTeX](./12-lab-38/report/12-lab-38-sprawozdanie.tex)
 - [obliczenia](./12-lab-38/12-lab-38-obliczenia.ipynb)
+
+## 13. ćw. 66 - Analiza widmowa za pomocą spektroskopu
+
+- [sprawozdanie PDF](./13-lab-66/report/13-lab-66-sprawozdanie.pdf)
+- [sprawozdanie LaTeX](./13-lab-66/report/13-lab-66-sprawozdanie.tex)
+- [obliczenia](./13-lab-66/13-lab-66-obliczenia.ipynb)
+
+## 14. ćw. 74 - Wyznaczanie prędkości światła
+
+- [sprawozdanie PDF](./14-lab-74/report/14-lab-74-sprawozdanie.pdf)
+- [sprawozdanie LaTeX](./14-lab-74/report/14-lab-74-sprawozdanie.tex)
+- [obliczenia](./14-lab-74/14-lab-74-obliczenia.ipynb)
+
+## 15. ćw. 65 - Wyznaczanie promienia krzywizny soczewki za pomocą pierścieni Newtona
+
+- [sprawozdanie PDF](./15-lab-65/report/15-lab-65-sprawozdanie.pdf)
+- [sprawozdanie LaTeX](./15-lab-65/report/15-lab-65-sprawozdanie.tex)
