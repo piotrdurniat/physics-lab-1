@@ -46,7 +46,7 @@
 \vspace{2cm}
 \begin{center}
     \LARGE \textbf{Ćwiczenie nr 65} \\[0.5cm]
-    \Large \textbf{Template}
+    \Large \textbf{Wyznaczanie promienia krzywizny soczewki za pomocą pierścieni Newtona}
 \end{center}
 
 % Reszta treści
@@ -58,6 +58,52 @@
 
 % ---------- WSTĘP TEORETYCZNY ----------
 \section{Wstęp teoretyczny}
+
+\subsection*{Interferencja światła i spójność}
+Interferencja jest zjawiskiem charakterystycznym dla ruchów falowych, obserwowanym, gdy fale nakładają się na siebie. Zjawisko to jest ściśle związane z pojęciem spójności (koherencji) fal. Gdy fale pochodzące ze spójnych źródeł (np. drgających ze stałą częstością) interferują, powstaje regularna struktura miejsc, w których drgania się wygaszają i wzmacniają~\citep{Drynski1976}.
+
+\subsection*{Warunki interferencji i prążki jednakowej grubości}
+Wzmocnienie (maksimum) występuje, gdy różnica dróg optycznych interferujących promieni jest równa całkowitej wielokrotności długości fali (\(k\lambda\)), a wygaszenie (minimum) dla nieparzystej wielokrotności połówek długości fali (\((2k+1)\frac{\lambda}{2}\)). Należy uwzględnić ewentualną zmianę fazy o \(\pi\) (odpowiadającą zmianie drogi optycznej o \(\lambda/2\)) przy odbiciu od ośrodka optycznie gęstszego~\citep{Drynski1976}.
+
+W przypadku oświetlenia cienkiej płytki o zmiennej grubości światłem rozciągłym, obserwuje się prążki interferencyjne umiejscowione na powierzchni płytki, biegnące przez punkty o jednakowej grubości. Są to tzw. \textbf{krzywe jednakowej grubości}~\citep{Drynski1976}.
+
+\subsection*{Pierścienie Newtona}
+
+Najdogodniejszym sposobem uzyskania regularnych prążków jednakowej grubości jest użycie \textbf{zestawu Newtona}. Składa się on z płasko-równoległej płytki szklanej i soczewki płasko-wypukłej o dużym promieniu krzywizny, położonej wypukłą stroną na płytce. Między soczewką a płytką tworzy się klin powietrzny o grubości \(d\) rosnącej wraz z odległością \(r\) od punktu styku~\citep{Drynski1976}.
+
+Gdy układ jest oświetlony prostopadle światłem jednorodnym (monochromatycznym), interferencja zachodzi między promieniami odbitymi od dolnej powierzchni soczewki i od górnej powierzchni płytki szklanej. Ponieważ grubość klina powietrznego jest stała wzdłuż okręgu o środku w punkcie styku, powstają koncentryczne prążki interferencyjne zwane \textbf{pierścieniami Newtona}. W centrum obserwuje się ciemny prążek (\(k=0\)), gdyż przy odbiciu od płytki szklanej (ośrodek gęstszy) następuje zmiana fazy o \(\pi\)~\citep{Drynski1976}.
+
+Dla padania prostopadłego (\(\cos\beta \approx 1\)), warunek na \(k\)-ty ciemny pierścień (minimum), uwzględniający zmianę fazy przy odbiciu od płytki, ma postać:
+$$
+    2nd = k\lambda
+$$
+Dla klina powietrznego (\(n=1\)):
+$$
+    2d_k = k\lambda
+$$
+gdzie \(d_k\) to grubość warstwy powietrza dla \(k\)-tego ciemnego pierścienia (\(k=0, 1, 2...\))~\citep{Drynski1976}.
+
+\subsection*{Zasada pomiaru promienia krzywizny soczewki}
+Grubość warstwy powietrza \(d\) w odległości \(r\) od punktu styku można powiązać z promieniem krzywizny \(R\) soczewki. Z geometrii układu (rys. 157 w \citep{Drynski1976}) wynika zależność \(2Rd - d^2 = r^2\). Ponieważ \(d\) jest bardzo małe w porównaniu z \(R\), można pominąć człon \(d^2\), co daje przybliżony wzór:
+$$
+    d \approx \frac{r^2}{2R}
+$$
+Podstawiając to do warunku na \(k\)-ty ciemny pierścień (\(2d_k = k\lambda\)), otrzymujemy:
+$$
+    2 \frac{r_k^2}{2R} = k\lambda
+$$
+$$
+    r_k^2 = k R \lambda
+$$
+gdzie \(r_k\) to promień \(k\)-tego ciemnego pierścienia. Stąd można wyznaczyć promień krzywizny soczewki \(R\):
+$$
+    R = \frac{r_k^2}{k\lambda}
+$$
+Aby uniknąć błędu związanego z niedokładnym wyznaczeniem środka pierścieni, mierzy się średnice dwóch ciemnych pierścieni, \(k\)-tego i \((k+m)\)-tego, a następnie wykorzystuje różnicę kwadratów ich promieni:
+$$
+    r_{(k+m)}^2 - r_k^2 = (k+m)R\lambda - kR\lambda = mR\lambda
+$$
+Znając długość fali światła sodowego \(\lambda\), mierząc promienie (lub średnice) pierścieni \(r_k\) i \(r_{(k+m)}\) oraz znając \(m\), można wyznaczyć promień krzywizny soczewki \(R\)~\citep{Drynski1976}.
 
 % ---------- OPIS DOŚWIADCZENIA ----------
 % \section{Opis doświadczenia}
@@ -81,6 +127,6 @@
 % \section{Wykresy}
 
 \bibliographystyle{apalike}
-% \bibliography{bibliography}
+\bibliography{bibliography}
 
 \end{document}
