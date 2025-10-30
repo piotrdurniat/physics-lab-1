@@ -144,11 +144,11 @@ gdzie indeks $n$ określa numer prążka.
         \hline
         \textbf{$n$} & \textbf{$D_{X}\,[\SI{e-3}{\meter}]$} & \textbf{$D_{Y}\,[\SI{e-3}{\meter}]$} & \textbf{$r_{n}\,[\SI{e-3}{\meter}]$} \\
         \hline
-        \num{2} & \num{3.73} & \num{3.69} & \num{1.855} \\ \hline
+        \num{2} & \num{3.73} & \num{3.69} & \num{1.8550} \\ \hline
         \num{3} & \num{4.87} & \num{4.84} & \num{2.4275} \\ \hline
-        \num{4} & \num{5.80} & \num{5.66} & \num{2.865} \\ \hline
-        \num{5} & \num{6.65} & \num{6.53} & \num{3.295} \\ \hline
-        \num{6} & \num{7.34} & \num{7.26} & \num{3.650} \\ \hline
+        \num{4} & \num{5.80} & \num{5.66} & \num{2.8650} \\ \hline
+        \num{5} & \num{6.65} & \num{6.53} & \num{3.2950} \\ \hline
+        \num{6} & \num{7.34} & \num{7.26} & \num{3.6500} \\ \hline
     \end{tabular}
     \caption{Średnice (pozioma i pionowa) oraz średnie promienie prążków.}
     \label{tab:radii}
@@ -158,9 +158,9 @@ gdzie indeks $n$ określa numer prążka.
 \subsubsection*{Przykładowe obliczenia}
 Dla $n=2$:
 \begin{align*}
-    D_{X,\,2} & = (\num{23.62} - \num{19.89})\cdot \num{e-3} = \SI{3.73e-3}{\meter}          \\
-    D_{Y,\,2} & = (\num{7.92} - \num{4.23})\cdot \num{e-3}= \SI{3.69e-3}{\meter}             \\
-    r_{2}     & = \frac{(\num{3.73} + \num{3.69})\cdot \num{e-3}}{4} = \SI{1.855e-3}{\meter}
+    D_{X,\,2} & = (\num{23.62} - \num{19.89})\cdot \num{e-3} = \SI{3.73e-3}{\meter}           \\
+    D_{Y,\,2} & = (\num{7.92} - \num{4.23})\cdot \num{e-3}= \SI{3.69e-3}{\meter}              \\
+    r_{2}     & = \frac{(\num{3.73} + \num{3.69})\cdot \num{e-3}}{4} = \SI{1.8550e-3}{\meter}
 \end{align*}
 
 \subsection{Promień krzywizny soczewki}
@@ -184,16 +184,16 @@ gdzie:
         \hline
         \textbf{$n$} & \textbf{$R_n\,[\si{\meter}]$} \\ \hline
         \num{2} & \num{2.921} \\ \hline
-        \num{3} & \num{3.354} \\ \hline
+        \num{3} & \num{3.335} \\ \hline
         \num{4} & \num{3.484} \\ \hline
         \num{5} & \num{3.687} \\ \hline
-        \num{6} & \num{3.792} \\ \hline
+        \num{6} & \num{3.770} \\ \hline
     \end{tabular}
     \caption{Promienie krzywizny dla każdego prążka.}
     \label{tab:radii_and_curvature}
 \end{table}
 
-Ostateczna wartość promienia krzywizny $\bar R$ została obliczona jako średnia arytmetyczna promieni krzywizny dla wszystkich prążków \eqref{eq:avg_lens_curv} i wyniosła $\SI{3.448}{\meter}$.
+Ostateczna wartość promienia krzywizny $\bar R$ została obliczona jako średnia arytmetyczna promieni krzywizny dla wszystkich prążków \eqref{eq:avg_lens_curv} i wyniosła $\SI{3.439}{\meter}$.
 \begin{equation}
     \label{eq:avg_lens_curv}
     \bar R =  \frac{1}{5}\sum\limits_{n=2}^{6} R_n
@@ -202,8 +202,8 @@ Ostateczna wartość promienia krzywizny $\bar R$ została obliczona jako średn
 \subsubsection*{Przykładowe obliczenia}
 
 \begin{align*}
-    R_2     & = \frac{(\num{1.855e-3})^2}{2 \cdot \num{589e-9}}  \approx \SI{2.921}{\meter}                              \\
-    \bar{R} & = \frac{\num{2.921} + \num{3.354} + \num{3.484} + \num{3.687} + \num{3.792}}{5} \approx \SI{3.448}{\meter}
+    R_2     & = \frac{(\num{1.8550e-3})^2}{2 \cdot \num{589e-9}}  \approx \SI{2.921}{\meter}                             \\
+    \bar{R} & = \frac{\num{2.921} + \num{3.335} + \num{3.484} + \num{3.687} + \num{3.770}}{5} \approx \SI{3.439}{\meter}
 \end{align*}
 
 % ---------- NIEPEWNOŚCI ----------
