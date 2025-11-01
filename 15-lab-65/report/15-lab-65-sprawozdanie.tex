@@ -209,8 +209,87 @@ Ostateczna wartość promienia krzywizny $\bar R$ została obliczona jako średn
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
 
+\subsection{Niepewności pomiarów bezpośrednich}
+
+Niepewność maksymalna pomiaru położenia wynosi $\Delta x = \Delta y = \SI{0.01e-3}{\meter}$. Niepewność standardowa typu B wynosi \eqref{eq:uncertainty_b}.
+
+\begin{equation}
+    \label{eq:uncertainty_b}
+    u(x) = \frac{\Delta x}{\sqrt{3}} = \frac{\SI{0.01e-3}{\meter}}{\sqrt{3}} = \SI{5.8e-6}{\meter}
+\end{equation}
+
+Niepewność standardowa długości fali $\lambda$ została przyjęta jako $\SI{0.1e-9}{\meter}$, ze względu na to, że z taką dokładnością została podana w instukcji.
+
+\begin{equation}
+    \label{eq:uncertainty_lambda}
+    u(\lambda) = \SI{0.1e-9}{\meter}
+\end{equation}
+
+
+\subsection{Niepewność promienia prążków}
+
+Średni promień prążka obliczany jest ze wzoru \eqref{eq:avg_radius}. Niepewność standardowa obliczona została z prawa propagacji niepewności wielkości nieskorelowanych \eqref{eq:uncertainty_avg_radius}. Niepewność $u(x_{min}) = u(x_{max}) = u(y_{min}) = u(y_{max}) = u(x)$.
+
+\begin{equation}
+    \label{eq:uncertainty_avg_radius}
+    u(r_n) = \sqrt{
+        \left(\frac{1}{4}\right)^2 u(x)^2 +
+        \left(-\frac{1}{4}\right)^2 u(x)^2 +
+        \left(\frac{1}{4}\right)^2 u(x)^2 +
+        \left(-\frac{1}{4}\right)^2 u(x)^2
+    } = \frac{u(x)}{2} = \SI{2.9e-6}{\meter}
+\end{equation}
+
+\subsection{Niepewność promienia krzywizny soczewki}
+
+Promień krzywizny soczewki obliczany jest ze wzoru \eqref{eq:lens_radius}. Niepewność standardowa obliczona została z prawa propagacji niepewności wielkości nieskorelowanych \eqref{eq:uncertainty_lens_radius}. Wyniki zapisano w tabeli \ref{tab:uncertainty_R_n}.
+
+
+\begin{equation}
+    \label{eq:uncertainty_lens_radius}
+    u(R_n) = \sqrt{ \left(\frac{\partial R_n}{\partial r_n}\right)^2 u^2(r_n) + \left(\frac{\partial R_n}{\partial \lambda}\right)^2 u^2(\lambda) } = \sqrt{ \left(\frac{2r_n}{n\lambda}\right)^2 u^2(r_n) + \left(-\frac{r_n^2}{n\lambda^2}\right)^2 u^2(\lambda) }
+\end{equation}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|r|r|}
+        \hline
+        \textbf{Numer prążka ($n$)} & \textbf{$R_n\,[\si{\meter}]$} & \textbf{$u(R_n)\,[\si{\meter}]$} \\
+        \hline
+        \num{2} & \num{2.921} & \num{9.5e-3} \\ \hline
+        \num{3} & \num{3.335} & \num{8.6e-3} \\ \hline
+        \num{4} & \num{3.484} & \num{7.8e-3} \\ \hline
+        \num{5} & \num{3.687} & \num{7.4e-3} \\ \hline
+        \num{6} & \num{3.770} & \num{7.0e-3} \\ \hline
+    \end{tabular}
+    \caption{Obliczone wartości promienia krzywizny $R_n$ oraz ich niepewności $u(R_n)$.}
+    \label{tab:uncertainty_R_n}
+\end{table}
+
+\subsubsection*{Przykładowe obliczenia (dla $n=2$)}
+Dla $n=2$ (gdzie $R_2 = \SI{2.921}{\meter}$, $r_2 = \SI{1.855e-3}{\meter}$, $u(r_n) = \SI{1.45e-6}{\meter}$, $\lambda = \SI{589e-9}{\meter}$, $u(\lambda) = \SI{0.58e-9}{\meter}$), niepewność złożoną $u(R_2)$ obliczono następująco:
+\begin{align*}
+    u(R_2) & = \SI{2.921}{\meter} \cdot \sqrt{ 4 \left( \frac{\SI{1.45e-6}{\meter}}{\SI{1.855e-3}{\meter}} \right)^2 + \left( \frac{\SI{0.58e-9}{\meter}}{\SI{589e-9}{\meter}} \right)^2 } \approx \SI{9.5e-3}{\meter}
+\end{align*}
+
+\subsection{Niepewność standardowa średniej promienia krzywizny}
+
+Średnią wartość promienia krzywizny $R$ obliczono jako średnią arytmetyczną z $N=5$ pomiarów . Niepewność standardową tej średniej $u(\bar R)$ wyznaczono metodą typu A, korzystając bezpośrednio ze wzoru na odchylenie standardowe średniej arytmetycznej \eqref{eq:uncertainty_avg_lens_curv}.
+\begin{equation}
+    \label{eq:uncertainty_avg_lens_curv}
+    u(\bar{R}) = \sqrt{\frac{1}{N(N-1)} \sum_{n=2}^{6} (R_n - \bar{R})^2}
+\end{equation}
+gdzie $R_i$ to wynik $i$-tego pomiaru promienia krzywizny. Podstawiając wartości z tabeli \ref{tab:uncertainty_R_n} do wzoru \eqref{eq:uncertainty_avg_lens_curv}.
+
+\begin{align*}
+    u(\bar{R}) & = \sqrt{\frac{1}{5(4)} \left[ (\num{2.921} - \num{3.439})^2 + \dots + (\num{3.770} - \num{3.439})^2 \right]} \approx \SI{1.5e-1}{\meter}
+\end{align*}
+
 % ---------- WNIOSKI ----------
-% \section{Wnioski}
+\section{Wnioski}
+
+W wyniku przeprowadzonych pomiarów i obliczeń wyznaczono promień krzywizny soczewki jako $\bar R = \SI{3.4}{\meter}$ z niepewnością standardową $u(\bar R) = \SI{0.15}{\meter}$.
+
 
 % ---------- WYKRESY ----------
 % \section{Wykresy}
