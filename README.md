@@ -104,3 +104,9 @@
 - [sprawozdanie PDF](./15-lab-65/report/15-lab-65-sprawozdanie.pdf)
 - [sprawozdanie LaTeX](./15-lab-65/report/15-lab-65-sprawozdanie.tex)
 - [obliczenia](./15-lab-65/15-lab-65-obliczenia.ipynb)
+
+## 16. lab 64 - Wyznaczanie stałej siatki dyfrakcyjnej przy użyciu spektrometru
+
+- [sprawozdanie PDF](./16-lab-64/report/16-lab-64-sprawozdanie.pdf)
+- [sprawozdanie LaTeX](./16-lab-64/report/16-lab-64-sprawozdanie.tex)
+- [obliczenia](./16-lab-64/16-lab-64-obliczenia.ipynb)
