@@ -1,0 +1,125 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} % Do ustawień marginesów
+\usepackage{multicol} % Dla podziału na kolumny
+\usepackage{ragged2e} % Dla justowania tekstu
+\usepackage{graphicx} % Required for inserting images
+\usepackage{float}
+\usepackage{caption}
+\usepackage{amsmath} % Math formulas
+\usepackage{amssymb} % Symbols
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=orange]{hyperref} % Hyperlinks
+\usepackage{polski} % Polish language
+\usepackage[utf8]{inputenc} % Text encoding
+\usepackage{enumitem} % Pakiet do elastycznego sterowania listami
+\usepackage{indentfirst}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage[round]{natbib}
+\setlist[itemize]{itemsep=0pt, topsep=0pt}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,}}
+\sisetup{exponent-product = \cdot}
+% LTeX: language=pl-PL
+
+\begin{document}
+
+% Górna część strony
+\noindent
+\begin{minipage}{0.5\textwidth}
+    \raggedright
+    \textbf{} \\
+    II rok, Fizyka \\
+    Wtorek, 8:00-10:15
+    \vspace{0.5cm}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+    \raggedleft
+    29.04.2025 \\
+    \vspace{0.5cm}
+    Prowadząca: \\
+    dr Sylwia Owczarek
+\end{minipage}
+
+% Tytuł ćwiczenia
+\vspace{2cm}
+\begin{center}
+    \LARGE \textbf{Ćwiczenie nr 64} \\[0.5cm]
+    \Large \textbf{Wyznaczanie stałej siatki dyfrakcyjnej przy użyciu spektrometru}
+\end{center}
+
+% Reszta treści
+\vspace{1cm} % Kolejny odstęp
+\noindent
+
+% \tableofcontents
+% \newpage
+
+% ---------- WSTĘP TEORETYCZNY ----------
+\section{Wstęp teoretyczny}
+
+\subsection*{Siatka dyfrakcyjna, dyfrakcja i interferencja}
+Siatka dyfrakcyjna to układ składający się z szeregu szczelin umieszczonych w równych odległościach od siebie na nieprzezroczystym ekranie. W praktyce, siatkę taką otrzymuje się często poprzez porysowanie płaskorównoległej płytki szklanej równoległymi kreskami przy użyciu diamentu. Nieprzezroczyste rysy pełnią rolę zasłon, a przezroczyste przestrzenie między nimi działają jak szczeliny. Odległość między środkami sąsiednich szczelin nazywana jest \textbf{stałą siatki} i oznaczana jako $d$ \citep{Drynski1976}.
+
+Gdy na siatkę pada prostopadle wiązka promieni równoległych, zgodnie z zasadą Huygensa, każda szczelina staje się źródłem nowych drgań, które rozchodzą się we wszystkich kierunkach. Zjawisko to, polegające na uginaniu prostoliniowego biegu promieni, nazywane jest \textbf{dyfrakcją} \citep{Drynski1976}.
+
+Promienie ugięte na różnych szczelinach są promieniami spójnymi, co oznacza, że mogą się ze sobą nakładać, czyli \textbf{interferować}. W zależności od kierunku (kąta ugięcia $\varphi$), promienie te będą się wzajemnie wzmacniać lub wygaszać \citep{Drynski1976}.
+
+\subsection*{Warunek wzmocnienia}
+Do wzmocnienia promieni ugiętych (interferencji konstruktywnej) dochodzi w tych kierunkach, dla których różnica dróg geometrycznych promieni wychodzących z sąsiednich szczelin jest równa całkowitej wielokrotności długości fali światła padającego ($\lambda$). Warunek ten, zwany równaniem siatki dyfrakcyjnej, ma postać \citep{Drynski1976}:
+$$
+    n\lambda = d \sin \varphi
+$$
+gdzie:
+\begin{itemize}
+    \item $n = 1, 2, 3, \dots$ -- rząd widma (kolejny numer wzmocnienia),
+    \item $\lambda$ -- długość fali światła,
+    \item $d$ -- stała siatki dyfrakcyjnej,
+    \item $\varphi$ -- kąt ugięcia promieni, pod którym obserwuje się wzmocnienie.
+\end{itemize}
+
+\subsection*{Sieć krystaliczna jako siatka dyfrakcyjna}
+Promieniowanie rentgenowskie (promienie X) ma długość fali (rzędu 0,1 nm) porównywalną z odległościami między atomami w ciałach stałych. Z tego powodu regularna, trójwymiarowa struktura atomów w krysztale, zwana siecią krystaliczną, może działać dla promieni X jak trójwymiarowa siatka dyfrakcyjna. Gdy promienie X padają na kryształ, ulegają ugięciu (odbiciu) na kolejnych równoległych płaszczyznach atomowych. Dochodzi do interferencji konstruktywnej (wzmocnienia) tylko pod określonymi kątami, zgodnie z warunkiem znanym jako \textbf{prawo Bragga} \citep{fizyka_dla_szkół_wyższych_tom_3}:
+$$
+    n\lambda = 2d \sin \theta
+$$
+gdzie $n$ to rząd widma (liczba całkowita), $\lambda$ to długość fali promieniowania X, $d$ to odległość między sąsiednimi płaszczyznami sieci krystalicznej, a $\theta$ to kąt padania promieni mierzony względem płaszczyzny kryształu \citep{fizyka_dla_szkół_wyższych_tom_3}.
+
+\subsection*{Zasada pomiaru spektrometrem}
+Spektrometr jest przyrządem pozwalającym na uzyskanie dokładniejszych wyników pomiarów kątów ugięcia $\varphi$ niż metody uproszczone. Pomiar polega na ustawieniu siatki dyfrakcyjnej na stoliku spektrometru, prostopadle do osi kolimatora \citep{Drynski1976}.
+
+Za pomocą lunety spektrometru, wyposażonej w noniusze, odczytuje się położenia kątowe dla prążków interferencyjnych (linii widmowych) danego rzędu $n$. Aby wyznaczyć średni kąt ugięcia, notuje się pozycje noniuszów $a_1$ i $a_2$ dla prążka po jednej stronie obrazu nieugiętego (centralnego) oraz $b_1$ i $b_2$ dla symetrycznego prążka tego samego rzędu po drugiej stronie. Średni kąt ugięcia $\varphi$ oblicza się ze wzoru \citep{Drynski1976}:
+$$
+    \varphi = \frac{a_1 - b_1 + a_2 - b_2}{2}
+$$
+Mierząc kąt ugięcia $\varphi$ dla światła o znanej długości fali $\lambda$ (np. z lasera), można na podstawie równania siatki wyznaczyć jej stałą $d$ \citep{Drynski1976}:
+$$
+    d = \frac{n\lambda}{\sin \varphi}
+$$
+
+% ---------- OPIS DOŚWIADCZENIA ----------
+% \section{Opis doświadczenia}
+
+% ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
+% \section{Opracowanie wyników pomiarów}
+
+% ---------- TABELE ----------
+% \subsection{Tabele pomiarowe}
+
+% ---------- OBLICZENIA ----------
+% \subsection{...}
+
+% ---------- NIEPEWNOŚCI ----------
+% \section{Ocena niepewności pomiaru}
+
+% ---------- WNIOSKI ----------
+% \section{Wnioski}
+
+% ---------- WYKRESY ----------
+% \section{Wykresy}
+
+\bibliographystyle{apalike}
+\bibliography{bibliography}
+
+\end{document}
