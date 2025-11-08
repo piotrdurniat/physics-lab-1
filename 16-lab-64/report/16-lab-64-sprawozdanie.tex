@@ -102,13 +102,63 @@ $$
 % \section{Opis doświadczenia}
 
 % ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
-% \section{Opracowanie wyników pomiarów}
+\section{Opracowanie wyników pomiarów}
+
 
 % ---------- TABELE ----------
-% \subsection{Tabele pomiarowe}
+\subsection{Tabele pomiarowe}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        & \multicolumn{2}{c|}{\textbf{Lewa}} & \multicolumn{2}{c|}{\textbf{Prawa}} \\ \hline
+        \textbf{n} & \textbf{$\varphi_{1L}$} & \textbf{$\varphi_{2L}$} & \textbf{$\varphi_{1P}$} & \textbf{$\varphi_{2P}$} \\ \hline
+        % 1 & $358^\circ 20'$ & $178^\circ 20'$ & $0^\circ 45'$ & $180^\circ 45'$ \\ \hline
+        % 2 & $356^\circ 30'$ & $176^\circ 30'$ & $3^\circ 30'$ & $183^\circ 30'$ \\ \hline
+        0 & $353^\circ 40'$ & $173^\circ 50'$ & -- & --  \\ \hline
+        1 & $351^\circ 05'$ & $171^\circ 05'$ & $359^\circ 10'$ & $179^\circ 06'$ \\ \hline
+        2 & $348^\circ 20'$ & $168^\circ 20'$ & $1^\circ 50'$ & $181^\circ 35'$ \\ \hline
+        3 & $345^\circ 35'$ & $165^\circ 35'$ & $4^\circ 39'$ & $184^\circ 39'$ \\ \hline
+        4 & -- & -- & $7^\circ 35'$ & $187^\circ 30'$ \\ \hline
+    \end{tabular}
+    \caption{Wartości kątów odpowiadające położeniu prążków.}
+    \label{tab:pomiary_katow}
+\end{table}
 
 % ---------- OBLICZENIA ----------
-% \subsection{...}
+\subsection{Średni kąt ugięcia}
+
+Dla każdego rzędu $n \in [1, 3]$ średni kąt ugięcia $\varphi$ obliczony został jako średnia arytmetyczna kąta ugięcia z lewej i prawej strony wiązki nieugiętej \eqref{eq:kat_ugiecia}. Otrzymane wartości zapisano w tabeli \ref{tab:katy_ugiecia}.
+
+Natomiast dla rzędu $n = 0$...
+
+\begin{equation}
+    \label{eq:kat_ugiecia}
+    \varphi = \frac{\varphi_{1L} - \varphi_{1P} + 
+    \varphi_{2L} - \varphi_{2P}}{2}
+\end{equation}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|r|}
+        \hline
+        \textbf{Numer prążka ($n$)} & \textbf{Kąt ugięcia $\varphi_n\,[\si{\degree}]$} \\
+        \hline
+        \num{0} & -- \\ \hline
+        \num{1} & \num{-8.05} \\ \hline
+        \num{2} & \num{166.625} \\ \hline
+        \num{3} & \num{160.933} \\ \hline
+    \end{tabular}
+    \caption{Obliczone kąty ugięcia $\varphi_n$ dla każdego rzędu prążka.}
+    \label{tab:katy_ugiecia}
+\end{table}
+
+
+
+
+
+
 
 % ---------- NIEPEWNOŚCI ----------
 % \section{Ocena niepewności pomiaru}
