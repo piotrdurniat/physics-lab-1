@@ -135,13 +135,27 @@ Pomiary przeprowadzono zgodnie z następującą procedurą:
 % ---------- OBLICZENIA ----------
 \subsection{Średni kąt ugięcia}
 
-Dla każdego rzędu $n \in [1, 3]$ średni kąt ugięcia $\varphi_n$ obliczony został jako połowa średniej arytmetycznej separacji kątowej między prążkami z lewej i prawej strony wiązki nieugiętej \eqref{eq:kat_ugiecia}. Różnice kątowe $|\dots|_{\text{cykl}}$ obliczono z uwzględnieniem "przejścia przez zero" na tarczy goniometru. Otrzymane wartości zapisano w tabeli \ref{tab:katy_ugiecia}.
-Natomiast dla rzędu $n = 0$ kąt ugięcia przyjęto z definicji jako $\varphi_0 = 0^\circ$.
+Dla każdego rzędu $n \in [1, 3]$ średni kąt ugięcia $\varphi_n$ obliczony został jako średnia arytmetyczna separacji kątowej między prążkami z lewej i prawej strony wiązki nieugiętej \eqref{eq:kat_ugiecia}.
+
+Różnicę kątową $|\dots|_{\text{cykl}}$ wyznaczano jako moduł różnicy odczytów. Ze względu na cykliczność skali goniometru, w przypadku gdy różnica ta przekraczała $180^\circ$ (przejście przez zero), obliczano dopełnienie do kąta pełnego ($360^\circ - |\text{odczyt}_L - \text{odczyt}_P|$). Otrzymane wartości zapisano w tabeli \ref{tab:katy_ugiecia}. Natomiast dla rzędu $n = 0$ kąt ugięcia przyjęto z definicji jako $\varphi_0 = 0^\circ$.
 
 \begin{equation}
 	\label{eq:kat_ugiecia}
-	\varphi_n = \frac{|\varphi_{1L} - \varphi_{1P}|_{\text{cykl}} + |\varphi_{2L} - \varphi_{2P}|_{\text{cykl}}}{4}
+	\varphi_n = \frac{|\varphi_{1L} - \varphi_{1P}|_{\text{cykl}} + |\varphi_{2L} - \varphi_{2P}|_{\text{cykl}}}{2}
 \end{equation}
+
+\subsubsection*{Przykładowe obliczenia (dla $n=1$)}
+Podstawiając wartości kątowe zmierzone dla prążków pierwszego rzędu:
+$$
+	\Delta \varphi_{\text{noniusz 1}} = |351^\circ 05' - 359^\circ 10'| = 8^\circ 05'
+$$
+$$
+	\Delta \varphi_{\text{noniusz 2}} = |171^\circ 05' - 179^\circ 06'| = 8^\circ 01'
+$$
+Średnia separacja kątowa:
+$$
+	\varphi_1 = \frac{8^\circ 05' + 8^\circ 01'}{2} = 8^\circ 03' = 8 + \frac{3}{60}^\circ \approx 8,050^\circ
+$$
 
 \begin{table}[H]
 	\centering
@@ -149,7 +163,6 @@ Natomiast dla rzędu $n = 0$ kąt ugięcia przyjęto z definicji jako $\varphi_0
 		\hline
 		\textbf{Numer prążka ($n$)} & \textbf{Separacja kątowa $\varphi_n\,[\si{\degree}]$} \\
 		\hline
-		\num{0}                     & \num{44.958}                                          \\ \hline
 		\num{1}                     & \num{8.050}                                           \\ \hline
 		\num{2}                     & \num{13.375}                                          \\ \hline
 		\num{3}                     & \num{19.067}                                          \\ \hline
@@ -157,7 +170,6 @@ Natomiast dla rzędu $n = 0$ kąt ugięcia przyjęto z definicji jako $\varphi_0
 	\caption{Obliczone średnie separacje kątowe \(\varphi_n\) (wg wzoru \ref{eq:kat_ugiecia}).}
 	\label{tab:katy_ugiecia}
 \end{table}
-
 \subsection{Wyznaczenie stałej siatki dyfrakcyjnej}
 
 Stała siatki dyfrakcyjnej dla każdego rzędu $n$ obliczona została ze wzoru \eqref{eq:stala_siatki}. Następnie obliczono końcową wartość stałej siatki dyfrakcyjnej $\bar{d}$ jako średnią arytmetyczną tych wszystkich wartości. Wartości dla poszczególnych rzędów oraz wartość średnią zapisano w tabeli \ref{tab:stala_siatki}.
@@ -250,7 +262,29 @@ Podstawiając wartości (\( \bar{d} \approx \SI{5.27e-6}{\meter} \), \( u(\bar{d
 \end{equation}
 
 % ---------- WNIOSKI ----------
-% \section{Wnioski}
+\section{Wnioski}
+
+Celem ćwiczenia było wyznaczenie stałej siatki dyfrakcyjnej przy użyciu spektrometru goniometrycznego. Na podstawie przeprowadzonych pomiarów kątów ugięcia dla trzech rzędów widma sformułowano następujące wnioski:
+
+\begin{enumerate}
+	\item Wyznaczona średnia wartość stałej siatki dyfrakcyjnej oraz jej niepewność standardowa wynoszą odpowiednio:
+	      $$
+		      \bar{d} = \num{5.27e-6}\,\si{\meter}
+	      $$
+	      $$
+		      u(\bar{d}) = \num{7.4e-7}\,\si{\meter}
+	      $$
+
+	\item Na podstawie wyznaczonej stałej obliczono gęstość siatki, która wynosi:
+	      $$
+		      N \approx 190\,\si{\per\milli\meter}
+	      $$
+	      z niepewnością $u(N) \approx 14\,\si{\per\milli\meter}$.
+
+	\item Analiza niepewności wskazuje na dominujący udział niepewności typu A (statystycznej) nad niepewnością typu B (wynikającą z dokładności noniusza). Wartość $u(\bar{d})$ rzędu $10^{-7}\,\si{\meter}$ jest znacznie wyższa niż niepewności pojedynczych pomiarów $u(d_n)$ (rzędu $10^{-9}\,\si{\meter}$), co świadczy o dużym rozrzucie wyników między poszczególnymi rzędami widma.
+
+	\item Zauważalna jest systematyczna zależność wyników od rzędu widma (wzrost wartości $d$ wraz ze wzrostem $n$). Sugeruje to występowanie błędu systematycznego, którego źródłem mogło być nieidealnie prostopadłe ustawienie płaszczyzny siatki dyfrakcyjnej względem osi wiązki padającej (osi kolimatora).
+\end{enumerate}
 
 % ---------- WYKRESY ----------
 % \section{Wykresy}
