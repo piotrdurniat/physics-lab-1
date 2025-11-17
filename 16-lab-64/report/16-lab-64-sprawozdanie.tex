@@ -205,10 +205,10 @@ Zatem:
 (gdzie \( u(\varphi) \) wyrażono w radianach).
 
 \subsubsection*{Przykładowe obliczenia (dla $n=1$)}
-Podstawiając wartości dla pierwszego rzędu: $d_1 \approx \SI{9.02e-6}{\meter}$, $\varphi_1 \approx \ang{4.025}$ oraz $u(\varphi) \approx \num{1.7e-4}$ rad:
+Podstawiając wartości dla pierwszego rzędu: $d_1 \approx \SI{4.52e-6}{\meter}$, $\varphi_1 \approx \ang{8.05}$ oraz $u(\varphi) \approx \num{1.7e-4}$ rad:
 
 \begin{equation}
-	u(d_1) = \num{9.02e-6} \cdot |\ctg(\ang{4.025})| \cdot \num{1.7e-4} \approx \SI{2.2e-8}{\meter}
+	u(d_1) = \num{4.52e-6} \cdot |\ctg(\ang{8.05})| \cdot \num{1.7e-4} \approx \SI{5.4e-9}{\meter}
 \end{equation}
 
 
@@ -220,10 +220,10 @@ $$
 	u(\bar{d}) = \sqrt{\frac{1}{k(k-1)} \sum_{i=1}^{k} (d_i - \bar{d})^2}
 $$
 
-Podstawiając obliczone wartości dla \( k=3 \) rzędów (gdzie \(\bar{d} \approx \SI{1.04e-5}{\meter}\)):
+Podstawiając obliczone wartości dla \( k=3 \) rzędów (gdzie \(\bar{d} \approx \SI{5.27e-6}{\meter}\)):
 
 \begin{align*}
-	 & u(\bar{d}) = \sqrt{\frac{1}{3(3-1)} \left[ (\num{9.02e-6} - \num{1.04e-5})^2 + \dots + (\num{1.15e-5} - \num{1.04e-5})^2 \right]} \\
+	 & u(\bar{d}) = \sqrt{\frac{1}{3(3-1)} \left[ (\num{4.52e-6} - \num{5.27e-6})^2 + \dots + (\num{5.81e-6} - \num{5.27e-6})^2 \right]} \\
 	 & \approx \SI{7.4e-7}{\meter}
 \end{align*}
 
@@ -235,10 +235,10 @@ Niepewność wyznaczenia gęstości rys \( N = 1/\bar{d} \) obliczono z prawa pr
 	u(N) = \left| \frac{\partial N}{\partial \bar{d}} \right| u(\bar{d}) = \frac{u(\bar{d})}{\bar{d}^2} = N \cdot \frac{u(\bar{d})}{\bar{d}}
 \end{equation}
 
-Podstawiając wartości (\( \bar{d} \approx \SI{1.04e-5}{\meter} \), \( u(\bar{d}) \approx \SI{7.4e-7}{\meter} \), \( N \approx \SI{96}{\per\milli\meter} \)):
+Podstawiając wartości (\( \bar{d} \approx \SI{5.27e-6}{\meter} \), \( u(\bar{d}) \approx \SI{7.4e-7}{\meter} \), \( N \approx \SI{190}{\per\milli\meter} \)):
 
 \begin{equation}
-	u(N) \approx \SI{96}{\per\milli\meter} \cdot \frac{\num{7.4e-7}}{\num{1.04e-5}} \approx \SI{6.8}{\per\milli\meter}
+	u(N) \approx \SI{190}{\per\milli\meter} \cdot \frac{\num{7.4e-7}}{\num{5.27e-6}} \approx \SI{1.4e1}{\per\milli\meter}
 \end{equation}
 
 % ---------- WNIOSKI ----------
