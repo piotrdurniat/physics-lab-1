@@ -197,6 +197,20 @@ gdzie $\lambda = \SI{632.8}{\nano\meter}$ to długość fali światła lasera u�
 	\label{tab:stala_siatki}
 \end{table}
 
+\subsection{Liczba rys na milimetr}
+
+Znając średnią stałą siatki $\bar{d}$, wyznaczono liczbę rys (szczelin) przypadającą na szerokość \SI{1}{\milli\meter}. Wielkość tę obliczono jako odwrotność stałej siatki wyrażonej w milimetrach:
+
+\begin{equation}
+	N = \frac{1}{\bar{d}\,[\si{\milli\meter}]} = \frac{\num{1e-3}\,\si{\meter}}{\bar{d}\,[\si{\meter}]}
+\end{equation}
+
+Podstawiając obliczoną wartość średnią $\bar{d} \approx \SI{5.267e-6}{\meter}$:
+
+\begin{equation}
+	N = \frac{\num{1e-3}}{\num{5.267e-6}} \approx \SI{189.86}{\per\milli\meter}
+\end{equation}
+
 
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
@@ -244,7 +258,7 @@ Podstawiając obliczone wartości dla \( k=3 \) rzędów (gdzie \(\bar{d} \appro
 
 \begin{align*}
 	 & u(\bar{d}) = \sqrt{\frac{1}{3(3-1)} \left[ (\num{4.52e-6} - \num{5.27e-6})^2 + \dots + (\num{5.81e-6} - \num{5.27e-6})^2 \right]} \\
-	 & \approx \SI{7.4e-7}{\meter}
+	 & \approx \SI{3.9e-7}{\meter}
 \end{align*}
 
 \subsection{Niepewność liczby rys na milimetr}
@@ -272,7 +286,7 @@ Celem ćwiczenia było wyznaczenie stałej siatki dyfrakcyjnej przy użyciu spek
 		      \bar{d} = \num{5.27e-6}\,\si{\meter}
 	      $$
 	      $$
-		      u(\bar{d}) = \num{7.4e-7}\,\si{\meter}
+		      u(\bar{d}) = \num{3.9e-7}\,\si{\meter}
 	      $$
 
 	\item Na podstawie wyznaczonej stałej obliczono gęstość siatki, która wynosi:
