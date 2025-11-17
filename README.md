@@ -1,3 +1,7 @@
+---
+lang: "pl-PL"
+---
+
 # 1 Pracownia fizyczna
 
 ## 1. lab. 09 - Wyznaczanie modułu Younga metodą jednostronnego rozciągania
@@ -7,7 +11,7 @@
 - [sprawozdanie LaTeX](./01-lab-09/report/01-lab-09-sprawozdanie.tex)
 - [obliczenia](./01-lab-09/01-lab-09-obliczenia.ipynb)
 
-## 2. lab. 14 - Wyznaczanie przyspieszenia ziemskiego przy użyciu wahadała rewersyjnego
+## 2. lab. 14 - Wyznaczanie przyspieszenia ziemskiego przy użyciu wahadła rewersyjnego
 
 - [instrukcja](./02-lab-14/02-lab-14-instrukcja.pdf)
 - [sprawozdanie PDF](./02-lab-14/report/02-lab-14-sprawozdanie.pdf)
