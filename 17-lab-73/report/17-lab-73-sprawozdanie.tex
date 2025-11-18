@@ -28,57 +28,92 @@
 % Górna część strony
 \noindent
 \begin{minipage}{0.5\textwidth}
-    \raggedright
-    \textbf{Piotr Durniat, 347264} \\
-    II rok, Fizyka \\
-    Wtorek, 8:00-10:15
-    \vspace{0.5cm}
+	\raggedright
+	\textbf{} \\
+	II rok, Fizyka \\
+	Wtorek, 8:00-10:15
+	\vspace{0.5cm}
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
-    \raggedleft
-    29.04.2025 \\
-    \vspace{0.5cm}
-    Prowadząca: \\
-    dr Sylwia Owczarek
+	\raggedleft
+	18.11.2025 \\
+	\vspace{0.5cm}
+	Prowadząca: \\
+	dr Sylwia Owczarek
 \end{minipage}
 
 % Tytuł ćwiczenia
 \vspace{2cm}
 \begin{center}
-    \LARGE \textbf{Ćwiczenie nr 00} \\[0.5cm]
-    \Large \textbf{Template}
+	\LARGE \textbf{Ćwiczenie nr 73} \\[0.5cm]
+	\Large \textbf{Wyznaczanie prędkości fali dźwiękowej w powietrzu metodą rury rezonansowej}
 \end{center}
 
 % Reszta treści
 \vspace{1cm} % Kolejny odstęp
 \noindent
 
-\tableofcontents
-\newpage
+% \tableofcontents
+% \newpage
 
 % ---------- WSTĘP TEORETYCZNY ----------
 \section{Wstęp teoretyczny}
 
+\subsection{Rodzaje fal, równanie falowe, prędkość fazowa fali}
+Fale można podzielić na podłużne i poprzeczne, w zależności od kierunku drgań ośrodka względem kierunku rozchodzenia się fali. Fala dźwiękowa w powietrzu jest falą mechaniczną podłużną, polegającą na rozchodzeniu się zaburzeń gęstości i ciśnienia ośrodka. Ogólne równanie różniczkowe fali (równanie falowe) dla jednowymiarowego przypadku ma postać:
+\begin{equation}
+	\frac{\partial^2 \Psi}{\partial x^2} = \frac{1}{v^2} \frac{\partial^2 \Psi}{\partial t^2}
+\end{equation}
+gdzie $\Psi(x,t)$ reprezentuje zaburzenie (np. ciśnienie akustyczne), a $v$ jest prędkością fazową fali. Prędkość fazowa opisuje szybkość przemieszczania się punktów o stałej fazie i dla fali harmonicznej wyraża się wzorem $v = \frac{\omega}{k}$, gdzie $\omega$ to częstość kołowa, a $k$ to liczba falowa \citep{fizyka_dla_szkół_wyższych_tom_3}.
+
+\subsection{Równanie opisujące falę harmoniczną}
+Najprostszym rozwiązaniem równania falowego jest fala harmoniczna (sinusoidalna). Równanie opisujące taką falę biegnącą w kierunku dodatnim osi $x$ ma postać:
+\begin{equation}
+	\Psi(x,t) = A \sin(kx - \omega t + \phi)
+\end{equation}
+gdzie $A$ to amplituda fali, $k = \frac{2\pi}{\lambda}$ jest liczbą falową, $\omega = 2\pi f$ jest częstością kołową, a $\phi$ fazą początkową. Wielkości te wiążą się z prędkością propagacji zależnością $v = \lambda f$ \citep{fizyka_dla_szkół_wyższych_tom_3}.
+
+\subsection{Rezonans akustyczny - fala stojąca}
+Fala stojąca powstaje w wyniku interferencji (superpozycji) dwóch fal o tej samej częstotliwości i amplitudzie, biegnących w przeciwne strony. Zjawisko to zachodzi w ograniczonych ośrodkach, np. w rurze, gdzie fala padająca nakłada się z falą odbitą od końca rury. Równanie fali stojącej można zapisać jako:
+\begin{equation}
+	\Psi_{st}(x,t) = 2A \sin(kx) \cos(\omega t)
+\end{equation}
+Charakterystyczną cechą fali stojącej jest występowanie węzłów (punktów o zerowej amplitudzie) oraz strzałek (punktów o maksymalnej amplitudzie). Odległość między sąsiednimi węzłami (lub strzałkami) wynosi $\frac{\lambda}{2}$. W rurze jednostronnie zamkniętej (tzw. rezonator ćwierćfalowy) węzeł przemieszczenia cząsteczek powstaje na końcu zamkniętym (strzałka ciśnienia), a strzałka przemieszczenia na końcu otwartym (węzeł ciśnienia). Warunek rezonansu dla takiej rury o długości $L$ jest spełniony, gdy:
+\begin{equation}
+	L = (2n - 1) \frac{\lambda}{4}, \quad \text{gdzie } n = 1, 2, 3, \dots
+\end{equation}
+
+\subsection{Prędkość rozchodzenia się fali dźwiękowej w powietrzu}
+Prędkość dźwięku w gazach zależy od ich właściwości termodynamicznych. Zgodnie z teorią kinetyczną gazów, prędkość ta wyraża się wzorem:
+\begin{equation}
+	v = \sqrt{\frac{\kappa R T}{M}}
+\end{equation}
+gdzie $\kappa$ to wykładnik adiabaty (dla powietrza ok. 1,4), $R$ to uniwersalna stała gazowa, $T$ to temperatura bezwzględna, a $M$ to masa molowa gazu. Widać stąd, że prędkość dźwięku rośnie wraz z pierwiastkiem temperatury \citep{fizyka_dla_szkół_wyższych_tom_2}.
+Pomiar prędkości dźwięku można zrealizować metodą rury rezonansowej (jak w niniejszym ćwiczeniu) lub np. rurą Kundta, gdzie wizualizuje się węzły i strzałki za pomocą pyłu korkowego. W obecnym ćwiczeniu wykorzystuje się zmianę długości słupa powietrza ("Puzon") przy stałej częstotliwości źródła, co pozwala wyznaczyć długość fali $\lambda$ z odległości między maksimami natężenia dźwięku.
+
+\subsection{Generacja i detekcja fal dźwiękowych}
+W układzie pomiarowym źródłem fali dźwiękowej jest głośnik zasilany z generatora akustycznego, który przetwarza sygnał elektryczny na drgania mechaniczne membrany. Detekcja odbywa się za pomocą mikrofonu, który zamienia zmiany ciśnienia akustycznego na sygnał napięciowy. Sygnał ten jest następnie wzmacniany i mierzony za pomocą woltomierza. Maksymalne wskazania woltomierza odpowiadają występowaniu rezonansu (strzałki fali stojącej) przy mikrofonie.
+
 % ---------- OPIS DOŚWIADCZENIA ----------
-\section{Opis doświadczenia}
+% \section{Opis doświadczenia}
 
 % ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
-\section{Opracowanie wyników pomiarów}
+% \section{Opracowanie wyników pomiarów}
 
 % ---------- TABELE ----------
-\subsection{Tabele pomiarowe}
+% \subsection{Tabele pomiarowe}
 
 % ---------- OBLICZENIA ----------
-\subsection{...}
+% \subsection{...}
 
 % ---------- NIEPEWNOŚCI ----------
-\section{Ocena niepewności pomiaru}
+% \section{Ocena niepewności pomiaru}
 
 % ---------- WNIOSKI ----------
-\section{Wnioski}
+% \section{Wnioski}
 
 % ---------- WYKRESY ----------
-\section{Wykresy}
+% \section{Wykresy}
 
 \bibliographystyle{apalike}
 \bibliography{bibliography}
