@@ -1,17 +1,17 @@
 \documentclass[a4paper,12pt]{article}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} % Do ustawień marginesów
-\usepackage{multicol} % Dla podziału na kolumny
-\usepackage{ragged2e} % Dla justowania tekstu
-\usepackage{graphicx} % Required for inserting images
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{multicol}
+\usepackage{ragged2e}
+\usepackage{graphicx}
 \usepackage{float}
 \usepackage{caption}
-\usepackage{amsmath} % Math formulas
-\usepackage{amssymb} % Symbols
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage[svgnames]{xcolor}
-\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=orange]{hyperref} % Hyperlinks
-\usepackage{polski} % Polish language
-\usepackage[utf8]{inputenc} % Text encoding
-\usepackage{enumitem} % Pakiet do elastycznego sterowania listami
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=orange]{hyperref}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
 \usepackage{indentfirst}
 \usepackage{array}
 \usepackage{longtable}
@@ -21,100 +21,206 @@
 \usepackage{siunitx}
 \sisetup{output-decimal-marker={,}}
 \sisetup{exponent-product = \cdot}
-% LTeX: language=pl-PL
 
 \begin{document}
 
 % Górna część strony
 \noindent
 \begin{minipage}{0.5\textwidth}
-	\raggedright
-	\textbf{} \\
-	II rok, Fizyka \\
-	Wtorek, 8:00-10:15
-	\vspace{0.5cm}
+    \raggedright
+    \textbf{} \\
+    II rok, Fizyka \\
+    Wtorek, 8:00-10:15
+    \vspace{0.5cm}
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
-	\raggedleft
-	18.11.2025 \\
-	\vspace{0.5cm}
-	Prowadząca: \\
-	dr Sylwia Owczarek
+    \raggedleft
+    18.11.2025 \\
+    \vspace{0.5cm}
+    Prowadząca: \\
+    dr Sylwia Owczarek
 \end{minipage}
 
 % Tytuł ćwiczenia
 \vspace{2cm}
 \begin{center}
-	\LARGE \textbf{Ćwiczenie nr 73} \\[0.5cm]
-	\Large \textbf{Wyznaczanie prędkości fali dźwiękowej w powietrzu metodą rury rezonansowej}
+    \LARGE \textbf{Ćwiczenie nr 73} \\[0.5cm]
+    \Large \textbf{Wyznaczanie prędkości fali dźwiękowej w powietrzu metodą rury rezonansowej}
 \end{center}
 
-% Reszta treści
-\vspace{1cm} % Kolejny odstęp
+\vspace{1cm}
 \noindent
-
-% \tableofcontents
-% \newpage
 
 % ---------- WSTĘP TEORETYCZNY ----------
 \section{Wstęp teoretyczny}
 
-\subsection{Rodzaje fal, równanie falowe, prędkość fazowa fali}
-Fale można podzielić na podłużne i poprzeczne, w zależności od kierunku drgań ośrodka względem kierunku rozchodzenia się fali. Fala dźwiękowa w powietrzu jest falą mechaniczną podłużną, polegającą na rozchodzeniu się zaburzeń gęstości i ciśnienia ośrodka. Ogólne równanie różniczkowe fali (równanie falowe) dla jednowymiarowego przypadku ma postać:
+\subsection{Rodzaje fal i równanie falowe}
+Fale można podzielić na podłużne i poprzeczne, w zależności od kierunku drgań ośrodka względem kierunku rozchodzenia się fali. Fala dźwiękowa w powietrzu jest falą mechaniczną podłużną, polegającą na rozchodzeniu się zaburzeń gęstości i ciśnienia ośrodka \citep{szczeniowski1972}. Ogólne równanie różniczkowe fali (równanie falowe) dla jednowymiarowego przypadku ma postać:
 \begin{equation}
-	\frac{\partial^2 \Psi}{\partial x^2} = \frac{1}{v^2} \frac{\partial^2 \Psi}{\partial t^2}
+    \frac{\partial^2 \Psi}{\partial x^2} = \frac{1}{v^2} \frac{\partial^2 \Psi}{\partial t^2}
 \end{equation}
-gdzie $\Psi(x,t)$ reprezentuje zaburzenie (np. ciśnienie akustyczne), a $v$ jest prędkością fazową fali. Prędkość fazowa opisuje szybkość przemieszczania się punktów o stałej fazie i dla fali harmonicznej wyraża się wzorem $v = \frac{\omega}{k}$, gdzie $\omega$ to częstość kołowa, a $k$ to liczba falowa \citep{fizyka_dla_szkół_wyższych_tom_3}.
+gdzie $\Psi(x,t)$ reprezentuje zaburzenie (np. ciśnienie akustyczne), a $v$ jest prędkością fazową fali.
 
-\subsection{Równanie opisujące falę harmoniczną}
-Najprostszym rozwiązaniem równania falowego jest fala harmoniczna (sinusoidalna). Równanie opisujące taką falę biegnącą w kierunku dodatnim osi $x$ ma postać:
+\subsection{Rezonans akustyczny i fala stojąca}
+Fala stojąca powstaje w wyniku interferencji dwóch fal o tej samej częstotliwości i amplitudzie, biegnących w przeciwne strony \citep{szydlowski1999}. W rurze jednostronnie zamkniętej (rezonator ćwierćfalowy) na końcu zamkniętym powstaje węzeł przemieszczenia (strzałka ciśnienia), a na końcu otwartym strzałka przemieszczenia (węzeł ciśnienia). Warunek rezonansu dla takiej rury o długości $L$ jest spełniony, gdy:
 \begin{equation}
-	\Psi(x,t) = A \sin(kx - \omega t + \phi)
-\end{equation}
-gdzie $A$ to amplituda fali, $k = \frac{2\pi}{\lambda}$ jest liczbą falową, $\omega = 2\pi f$ jest częstością kołową, a $\phi$ fazą początkową. Wielkości te wiążą się z prędkością propagacji zależnością $v = \lambda f$ \citep{fizyka_dla_szkół_wyższych_tom_3}.
-
-\subsection{Rezonans akustyczny - fala stojąca}
-Fala stojąca powstaje w wyniku interferencji (superpozycji) dwóch fal o tej samej częstotliwości i amplitudzie, biegnących w przeciwne strony. Zjawisko to zachodzi w ograniczonych ośrodkach, np. w rurze, gdzie fala padająca nakłada się z falą odbitą od końca rury. Równanie fali stojącej można zapisać jako:
-\begin{equation}
-	\Psi_{st}(x,t) = 2A \sin(kx) \cos(\omega t)
-\end{equation}
-Charakterystyczną cechą fali stojącej jest występowanie węzłów (punktów o zerowej amplitudzie) oraz strzałek (punktów o maksymalnej amplitudzie). Odległość między sąsiednimi węzłami (lub strzałkami) wynosi $\frac{\lambda}{2}$. W rurze jednostronnie zamkniętej (tzw. rezonator ćwierćfalowy) węzeł przemieszczenia cząsteczek powstaje na końcu zamkniętym (strzałka ciśnienia), a strzałka przemieszczenia na końcu otwartym (węzeł ciśnienia). Warunek rezonansu dla takiej rury o długości $L$ jest spełniony, gdy:
-\begin{equation}
-	L = (2n - 1) \frac{\lambda}{4}, \quad \text{gdzie } n = 1, 2, 3, \dots
+    L = (2n - 1) \frac{\lambda}{4}, \quad \text{gdzie } n = 1, 2, 3, \dots
 \end{equation}
 
-\subsection{Prędkość rozchodzenia się fali dźwiękowej w powietrzu}
-Prędkość dźwięku w gazach zależy od ich właściwości termodynamicznych. Zgodnie z teorią kinetyczną gazów, prędkość ta wyraża się wzorem:
+\subsection{Prędkość dźwięku w powietrzu}
+Prędkość dźwięku w gazach zależy od ich właściwości termodynamicznych. Zgodnie z teorią kinetyczną gazów:
 \begin{equation}
-	v = \sqrt{\frac{\kappa R T}{M}}
+    v = \sqrt{\frac{\kappa R T}{M}}
 \end{equation}
-gdzie $\kappa$ to wykładnik adiabaty (dla powietrza ok. 1,4), $R$ to uniwersalna stała gazowa, $T$ to temperatura bezwzględna, a $M$ to masa molowa gazu. Widać stąd, że prędkość dźwięku rośnie wraz z pierwiastkiem temperatury \citep{fizyka_dla_szkół_wyższych_tom_2}.
-Pomiar prędkości dźwięku można zrealizować metodą rury rezonansowej (jak w niniejszym ćwiczeniu) lub np. rurą Kundta, gdzie wizualizuje się węzły i strzałki za pomocą pyłu korkowego. W obecnym ćwiczeniu wykorzystuje się zmianę długości słupa powietrza ("Puzon") przy stałej częstotliwości źródła, co pozwala wyznaczyć długość fali $\lambda$ z odległości między maksimami natężenia dźwięku.
-
-\subsection{Generacja i detekcja fal dźwiękowych}
-W układzie pomiarowym źródłem fali dźwiękowej jest głośnik zasilany z generatora akustycznego, który przetwarza sygnał elektryczny na drgania mechaniczne membrany. Detekcja odbywa się za pomocą mikrofonu, który zamienia zmiany ciśnienia akustycznego na sygnał napięciowy. Sygnał ten jest następnie wzmacniany i mierzony za pomocą woltomierza. Maksymalne wskazania woltomierza odpowiadają występowaniu rezonansu (strzałki fali stojącej) przy mikrofonie.
+gdzie $\kappa$ to wykładnik adiabaty (dla powietrza $\approx 1,4$), $R$ to uniwersalna stała gazowa, $T$ to temperatura bezwzględna, a $M$ to masa molowa gazu \citep{fizyka_dla_szkół_wyższych_tom_2}.
 
 % ---------- OPIS DOŚWIADCZENIA ----------
-% \section{Opis doświadczenia}
+\section{Opis doświadczenia}
+
+Układ pomiarowy zestawiono zgodnie ze schematem w instrukcji \citep{instrukcja73}, łącząc generator akustyczny z głośnikiem oraz układ detekcyjny składający się z mikrofonu, wzmacniacza i woltomierza.
+Pomiary przeprowadzono w dwóch etapach:
+\begin{enumerate}
+    \item Dla częstotliwości \SI{800}{\hertz} zmierzono rozkład napięcia wzdłuż rury, przesuwając mikrofon co \SI{1}{\centi\meter}, aby wyznaczyć kształt fali stojącej i zlokalizować węzły.
+    \item Dla częstotliwości \SI{1}{\kilo\hertz}, \SI{1.5}{\kilo\hertz}, \SI{2}{\kilo\hertz} oraz \SI{2.5}{\kilo\hertz} wyznaczono położenia strzałek i węzłów fali stojącej, szukając maksimów i minimów napięcia na woltomierzu.
+\end{enumerate}
+
+% ---------- TABELE POMIAROWE ----------
+\section{Tabele pomiarowe}
+
+\subsection{Rozkład napięcia wzdłuż rury ($f = \SI{800}{\hertz}$)}
+
+Pomiary napięcia $U$ w funkcji położenia mikrofonu $x$ wykonano dla częstotliwości generatora ustawionej na \SI{800}{\hertz}.
+
+\begin{table}[H]
+    \centering
+    \caption{Wyniki pomiarów napięcia $U$ w zależności od położenia mikrofonu $x$.}
+    \label{tab:pomiary_800}
+    \begin{tabular}{|S[table-format=2.0]|S[table-format=1.3]|}
+        \hline
+        {\textbf{Położenie $x$ [\si{\centi\meter}]}} & {\textbf{Napięcie $U$ [\si{\volt}]}} \\ \hline
+        80                                            & 0,084                                \\ \hline
+        81                                            & 0,074                                \\ \hline
+        82                                            & 0,058                                \\ \hline
+        83                                            & 0,045                                \\ \hline
+        84                                            & 0,029                                \\ \hline
+        85                                            & 0,025                                \\ \hline
+        86                                            & 0,016                                \\ \hline
+        87                                            & 0,029                                \\ \hline
+        88                                            & 0,046                                \\ \hline
+        89                                            & 0,061                                \\ \hline
+        90                                            & 0,071                                \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Położenia węzłów i strzałek dla wyższych częstotliwości}
+
+Dla częstotliwości w zakresie \SI{1}{\kilo\hertz} -- \SI{2.5}{\kilo\hertz} odczytano położenia $x$, w których obserwowano ekstrema napięcia (węzły lub strzałki fali stojącej).
+
+\begin{table}[H]
+    \centering
+    \caption{Zmierzone położenia $x$ kolejnych węzłów/strzałek dla różnych częstotliwości.}
+    \label{tab:pomiary_wezly}
+    \begin{tabular}{|S[table-format=4.0]|l|}
+        \hline
+        {\textbf{Częstotliwość $f$ [\si{\hertz}]}} & \textbf{Odczytane położenia $x$ [\si{\centi\meter}]}              \\ \hline
+        1000                                       & 87,5; 70,5; 53,0; 37,0                                            \\ \hline
+        1500                                       & 90,0; 79,0; 67,5; 56,0; 44,0; 33,0                                \\ \hline
+        2000                                       & 92,0; 83,0; 75,0; 66,0; 57,5; 49,0; 40,0; 31,5                    \\ \hline
+        2500                                       & 85,0; 78,5; 72,0; 65,0; 58,0; 51,0; 44,0; 37,0; 30,0              \\ \hline
+    \end{tabular}
+\end{table}
 
 % ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
-% \section{Opracowanie wyników pomiarów}
+\section{Opracowanie wyników pomiarów}
 
-% ---------- TABELE ----------
-% \subsection{Tabele pomiarowe}
+\subsection{Badanie fali stojącej dla f = 800 Hz}
 
-% ---------- OBLICZENIA ----------
-% \subsection{...}
+Sporządzono wykres zależności napięcia $U$ od położenia mikrofonu $x$ dla częstotliwości $f = \SI{800}{\hertz}$, który przedstawiono w sekcji \ref{sec:wykresy} (Rys. \ref{fig:wykres_800}). Na wykresie zaznaczono teoretyczną skalę długości fali, ponieważ zakres ruchu mikrofonu był krótszy od pełnej długości fali $\lambda$.
+
+\subsection{Wyznaczenie prędkości dźwięku}
+
+Dla częstotliwości z zakresu \SI{1}{\kilo\hertz} -- \SI{2.5}{\kilo\hertz} wyznaczono średnie odległości między węzłami $\Delta x_{avg}$. Długość fali obliczono jako $\lambda = 2 \cdot \Delta x_{avg}$. Prędkość fali obliczono ze wzoru $v = \lambda f$.
+
+\subsubsection*{Przykładowe obliczenia (dla $f=\SI{1000}{\hertz}$)}
+Korzystając ze średniej odległości między węzłami $\Delta x_{avg} \approx \SI{0,1683}{\meter}$:
+$$ \lambda = 2 \cdot 0,1683\,\si{\meter} = 0,3366\,\si{\meter} \approx 0,3367\,\si{\meter} $$
+$$ v \approx 0,3367\,\si{\meter} \cdot 1000\,\si{\hertz} = 336,7\,\si{\meter\per\second} $$
+
+Wyniki dla wszystkich częstotliwości przedstawiono w Tabeli \ref{tab:wyniki}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|S[table-format=4.0]|S[table-format=1.4]|S[table-format=1.4]|S[table-format=3.1]|}
+        \hline
+        {\textbf{Częstotliwość $f$ [\si{\hertz}]}} & {\textbf{$\Delta x_{avg}$ [\si{\meter}]}} & {\textbf{$\lambda$ [\si{\meter}]}} & {\textbf{$v$ [\si{\meter\per\second}]}} \\ \hline
+        1000                                       & 0.1683                                      & 0.3367                              & 336.7                                    \\ \hline
+        1500                                       & 0.1140                                      & 0.2280                              & 342.0                                    \\ \hline
+        2000                                       & 0.0864                                      & 0.1729                              & 345.7                                    \\ \hline
+        2500                                       & 0.0688                                      & 0.1375                              & 343.8                                    \\ \hline
+    \end{tabular}
+    \caption{Wyniki pomiarów długości fali i obliczone prędkości dźwięku.}
+    \label{tab:wyniki}
+\end{table}
+
+Wartość średnia prędkości dźwięku obliczona dla $n=4$ pomiarów:
+\begin{equation}
+    v_{\text{sr}} = \frac{336,7 + 342,0 + 345,7 + 343,8}{4}\,\si{\meter\per\second} = \SI{342.0}{\meter\per\second}
+\end{equation}
 
 % ---------- NIEPEWNOŚCI ----------
-% \section{Ocena niepewności pomiaru}
+\section{Ocena niepewności pomiaru}
+
+\subsection{Niepewność standardowa pojedynczego pomiaru $u(x)$}
+Niepewność pomiaru położenia mikrofonu oszacowano metodą typu B \citep{onp}. Przyjęto niepewność maksymalną eksperymentatora $\Delta x = \SI{0.5}{\centi\meter}$. Zakładając rozkład jednostajny:
+\begin{equation}
+    u(x) = \frac{\Delta x}{\sqrt{3}} = \frac{0,5}{\sqrt{3}} \approx \SI{0.29}{\centi\meter}
+\end{equation}
+
+\subsection{Niepewność złożona $u(v)$ i rozszerzona $U(v)$}
+Niepewność standardową $u(v)$ obliczono metodą typu A (odchylenie standardowe średniej) \citep{onp}.
+Podstawiając $v_{\text{sr}} = 342,0$:
+\begin{align*}
+    u(v) & = \sqrt{\frac{1}{4(4-1)}\left[ (336,7 - 342,0)^2 + \dots + (343,8 - 342,0)^2 \right]} \\
+         & = \sqrt{\frac{45,02}{12}} \approx \SI{1.936}{\meter\per\second} \approx \SI{1.9}{\meter\per\second}
+\end{align*}
+
+Niepewność rozszerzoną $U(v)$ obliczono dla poziomu ufności $95\%$ i $\nu = n-1 = 3$ stopni swobody, przyjmując współczynnik rozszerzenia $k = 3.18$ \citep{onp}:
+\begin{equation}
+    U(v) = k \cdot u(v) = 3,18 \cdot 1,936\,\si{\meter\per\second} \approx \SI{6.15}{\meter\per\second} \approx \SI{6.2}{\meter\per\second}
+\end{equation}
 
 % ---------- WNIOSKI ----------
-% \section{Wnioski}
+\section{Wnioski}
+
+\begin{enumerate}
+    \item Wyznaczona metodą rury rezonansowej średnia prędkość dźwięku w powietrzu oraz jej niepewność standardowa wynoszą:
+          \begin{equation}
+              v = \num{342.0} \, \si{\meter\per\second}
+          \end{equation}
+          \begin{equation}
+              u(v) = \num{1.9} \, \si{\meter\per\second}
+          \end{equation}
+    \item Wartość teoretyczna dla $T = \SI{293.15}{\kelvin}$ wynosi $v_{teor} = \SI{343.3}{\meter\per\second}$ \citep{fizyka_dla_szkół_wyższych_tom_2}.
+    \item Błąd względny pomiaru wynosi:
+          $$ \delta = \frac{|342,0 - 343,3|}{343,3} \cdot 100\% \approx 0,36\% $$
+          Wynik eksperymentalny jest zgodny z wartością teoretyczną (różnica $|\Delta v| = \SI{1.3}{\meter\per\second}$ jest mniejsza od niepewności standardowej $u(v) \approx \SI{1.9}{\meter\per\second}$).
+\end{enumerate}
+
 
 % ---------- WYKRESY ----------
-% \section{Wykresy}
+\section{Wykresy}
+\label{sec:wykresy}
 
+\begin{figure}[H]
+    \centering
+    % I want to keep this manual height setting 
+    \includegraphics[angle=90, height=1.3\textwidth, keepaspectratio]{img/u_x_fixed.png}
+    \caption{Zależność napięcia sygnału od położenia mikrofonu dla $f=\SI{800}{\hertz}$. Zaznaczono położenie węzła oraz skalę długości fali.}
+    \label{fig:wykres_800}
+\end{figure}
+
+
+% ---------- LITERATURA ----------
 \bibliographystyle{apalike}
 \bibliography{bibliography}
 
