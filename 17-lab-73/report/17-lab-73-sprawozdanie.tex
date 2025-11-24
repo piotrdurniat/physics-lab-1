@@ -179,23 +179,6 @@ Pomiary przeprowadzono w dwóch etapach:
 	\label{tab:pomiar_2500}
 \end{table}
 
-\subsection{Położenia węzłów i strzałek dla wyższych częstotliwości}
-
-Dla częstotliwości w zakresie \SI{1}{\kilo\hertz} -- \SI{2.5}{\kilo\hertz} odczytano położenia $x$, w których obserwowano ekstrema napięcia (węzły lub strzałki fali stojącej).
-
-\begin{table}[H]
-	\centering
-	\caption{Zmierzone położenia $x$ kolejnych węzłów/strzałek dla różnych częstotliwości.}
-	\label{tab:pomiary_wezly}
-	\begin{tabular}{|S[table-format=4.0]|l|}
-		\hline
-		{\textbf{Częstotliwość $f$ [\si{\hertz}]}} & \textbf{Odczytane położenia $x$ [\si{\centi\meter}]} \\ \hline
-		1000                                       & 87,5; 70,5; 53,0; 37,0                               \\ \hline
-		1500                                       & 90,0; 79,0; 67,5; 56,0; 44,0; 33,0                   \\ \hline
-		2000                                       & 92,0; 83,0; 75,0; 66,0; 57,5; 49,0; 40,0; 31,5       \\ \hline
-		2500                                       & 85,0; 78,5; 72,0; 65,0; 58,0; 51,0; 44,0; 37,0; 30,0 \\ \hline
-	\end{tabular}
-\end{table}
 
 % ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
 \section{Opracowanie wyników pomiarów}
@@ -209,8 +192,17 @@ Sporządzono wykres zależności napięcia $U$ od położenia mikrofonu $x$ dla 
 Dla częstotliwości z zakresu \SI{1}{\kilo\hertz} -- \SI{2.5}{\kilo\hertz} wyznaczono średnie odległości między węzłami $\Delta x_{avg}$. Długość fali obliczono jako $\lambda = 2 \cdot \Delta x_{avg}$. Prędkość fali obliczono ze wzoru $v = \lambda f$.
 
 \subsubsection*{Przykładowe obliczenia (dla $f=\SI{1000}{\hertz}$)}
-Korzystając ze średniej odległości między węzłami $\Delta x_{avg} \approx \SI{0,1683}{\meter}$:
-$$ \lambda = 2 \cdot 0,1683\,\si{\meter} = 0,3366\,\si{\meter} \approx 0,3367\,\si{\meter} $$
+Dla częstotliwości \SI{1000}{\hertz} odczytano następujące położenia węzłów (Tabela \ref{tab:pomiar_1000}): $87,5\,\text{cm}$, $70,5\,\text{cm}$, $53,0\,\text{cm}$ oraz $37,0\,\text{cm}$. Obliczono odległości między sąsiednimi węzłami:
+\begin{align*}
+	\Delta x_1 & = |87,5 - 70,5| = 17,0\,\text{cm} \\
+	\Delta x_2 & = |70,5 - 53,0| = 17,5\,\text{cm} \\
+	\Delta x_3 & = |53,0 - 37,0| = 16,0\,\text{cm}
+\end{align*}
+Średnia odległość między węzłami wynosi:
+$$ \Delta x_{avg} = \frac{17,0 + 17,5 + 16,0}{3}\,\text{cm} \approx 16,833\,\text{cm} = 0,1683\,\text{m} $$
+
+Następnie obliczono długość fali oraz prędkość dźwięku:
+$$ \lambda = 2 \cdot \Delta x_{avg} = 2 \cdot 0,1683\,\si{\meter} = 0,3366\,\si{\meter} \approx 0,3367\,\si{\meter} $$
 $$ v \approx 0,3367\,\si{\meter} \cdot 1000\,\si{\hertz} = 336,7\,\si{\meter\per\second} $$
 
 Wyniki dla wszystkich częstotliwości przedstawiono w Tabeli \ref{tab:wyniki}.
