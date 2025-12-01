@@ -1,0 +1,199 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} 
+\usepackage{multicol} 
+\usepackage{ragged2e} 
+\usepackage{graphicx} 
+\usepackage{float}
+\usepackage{caption}
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=orange]{hyperref} 
+\usepackage{polski} 
+\usepackage[utf8]{inputenc} 
+\usepackage{enumitem} 
+\usepackage{indentfirst}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage[round]{natbib}
+\setlist[itemize]{itemsep=0pt, topsep=0pt}
+\usepackage{siunitx}
+
+% SI setup preferences
+\sisetup{output-decimal-marker={,}}
+\sisetup{exponent-product = \cdot}
+\sisetup{per-mode = symbol}
+
+% LTeX: language=pl-PL
+
+\begin{document}
+
+% Górna część strony
+\noindent
+\begin{minipage}{0.5\textwidth}
+	\raggedright
+	\textbf{Imię Nazwisko} \\ % Placeholder
+	II rok, Fizyka \\
+	Wtorek, 8:00-10:15
+	\vspace{0.5cm}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+	\raggedleft
+	01.12.2025 \\
+	\vspace{0.5cm}
+	Prowadząca: \\
+	dr Sylwia Owczarek
+\end{minipage}
+
+% Tytuł ćwiczenia
+\vspace{2cm}
+\begin{center}
+	\LARGE \textbf{Ćwiczenie nr 68} \\[0.5cm]
+	\Large \textbf{Pomiar przepuszczalności optycznej filtrów barwnych za pomocą spektrofotometru „Spekol”}
+\end{center}
+
+% Reszta treści
+\vspace{1cm}
+\noindent
+
+% ---------- WSTĘP TEORETYCZNY ----------
+\section{Wstęp teoretyczny}
+
+\subsection{Absorpcja i barwa}
+Barwa ciał nieprzeźroczystych oraz filtrów optycznych wynika ze zjawiska selektywnej absorpcji promieniowania elektromagnetycznego. Filtr barwny pochłania fale o określonych długościach, przepuszczając pozostałą część widma. Zjawisko to ma charakter rezonansowy; absorpcja jest maksymalna, gdy częstość fali $\nu$ pokrywa się z częstością drgań własnych cząsteczek substancji \citep{fizyka_dla_szkół_wyższych_tom_3}. Długość fali $\lambda$ związana jest z częstością relacją:
+$$
+	\lambda = \frac{c}{\nu}
+$$
+gdzie $c$ to prędkość światła w próżni.
+
+\subsection{Transmisja optyczna}
+Miarą przepuszczalności światła przez ośrodek jest transmisja optyczna $T$ (współczynnik przepuszczalności). Definiuje się ją jako stosunek natężenia wiązki światła po przejściu przez próbkę $J_f$ do natężenia wiązki padającej (lub przechodzącej przez wzorzec) $J_{wz}$ \citep{Drynski1976}:
+$$
+	T(\lambda) = \frac{J_f(\lambda)}{J_{wz}(\lambda)} \cdot \num{100}\%
+$$
+Zależność $T(\lambda)$ nazywana jest charakterystyką widmową filtru i pozwala określić użyteczność elementu optycznego w konkretnych zastosowaniach spektroskopowych.
+
+\subsection{Spektrofotometr Spekol}
+Przyrząd wykorzystuje siatkę dyfrakcyjną do rozszczepienia światła białego (z żarówki) na widmo ciągłe. Poprzez mechaniczny obrót siatki wybierana jest wąska wiązka monochromatyczna o zadanej długości fali $\lambda$. Światło to przechodzi przez kuwetę (z filtrem lub wzorcową) i pada na detektor fotoelektryczny. Prąd fotodetektora, proporcjonalny do natężenia światła, jest mierzony przez układ analogowy.
+
+% ---------- OPIS DOŚWIADCZENIA ----------
+\section{Metodologia}
+Pomiary wykonano przy użyciu spektrofotometru Spekol. Po okresie wygrzewania urządzenia (ok. 5 min) i wyzerowaniu układu przy zamkniętej przysłonie, przeprowadzono kalibrację na „100\%” dla każdej badanej długości fali, używając pustej kuwety wzorcowej. Następnie w tor optyczny wprowadzano kuwetę z badanym filtrem i odczytywano wartość transmisji $T$. Procedurę powtórzono dla trzech filtrów: czerwonego, niebieskiego i zielonego, w zakresie długości fal od \SI{450}{nm} do \SI{850}{nm}. Punkty pomiarowe zagęszczano w obszarach szybkich zmian transmitancji.
+
+% ---------- WYNIKI ----------
+\section{Wyniki pomiarów}
+W poniższych tabelach zestawiono wyniki pomiarów transmisji $T$ w funkcji długości fali $\lambda$.
+
+\begin{table}[H]
+	\centering
+	\caption{Wyniki pomiarów dla filtru czerwonego, niebieskiego i zielonego.}
+	\label{tab:wyniki}
+	\scriptsize
+	\begin{tabular}{|S[table-format=3.0]|S[table-format=2.0]|S[table-format=3.0]|S[table-format=2.0]|S[table-format=3.0]|S[table-format=2.0]|}
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Filtr Czerwony}} & \multicolumn{2}{c|}{\textbf{Filtr Niebieski}} & \multicolumn{2}{c|}{\textbf{Filtr Zielony}}                                                                   \\
+		\hline
+		{$\lambda$ [\unit{nm}]}                       & {$T$ [\unit{\%}]}                             & {$\lambda$ [\unit{nm}]}                     & {$T$ [\unit{\%}]} & {$\lambda$ [\unit{nm}]} & {$T$ [\unit{\%}]} \\
+		\hline
+		450                                           & 10                                            & 450                                         & 56                & 450                     & 62                \\
+		470                                           & 10                                            & 470                                         & 59                & 470                     & 61                \\
+		490                                           & 10                                            & 490                                         & 58                & 490                     & 71                \\
+		510                                           & 11                                            & 510                                         & 55                & 510                     & 71                \\
+		530                                           & 12                                            & 515                                         & 52                & 530                     & 68                \\
+		550                                           & 25                                            & 520                                         & 51                & 550                     & 73                \\
+		570                                           & 35                                            & 525                                         & 48                & 560                     & 73                \\
+		590                                           & 45                                            & 530                                         & 47                & 570                     & 69                \\
+		595                                           & 51                                            & 550                                         & 47                & 580                     & 62                \\
+		600                                           & 56                                            & 555                                         & 45                & 590                     & 59                \\
+		605                                           & 59                                            & 560                                         & 43                & 610                     & 59                \\
+		610                                           & 62                                            & 565                                         & 39                & 630                     & 56                \\
+		630                                           & 64                                            & 570                                         & 35                & 650                     & 56                \\
+		650                                           & 64                                            & 590                                         & 25                & 670                     & 64                \\
+		670                                           & 71                                            & 610                                         & 26                & 675                     & 67                \\
+		675                                           & 74                                            & 630                                         & 29                & 680                     & 70                \\
+		680                                           & 77                                            & 650                                         & 39                & 685                     & 73                \\
+		685                                           & 80                                            & 670                                         & 54                & 690                     & 76                \\
+		690                                           & 83                                            & 680                                         & 61                & 710                     & 80                \\
+		710                                           & 88                                            & 690                                         & 66                & 730                     & 80                \\
+		730                                           & 88                                            & 710                                         & 70                & 750                     & 80                \\
+		750                                           & 85                                            & 730                                         & 75                & 770                     & 67                \\
+		760                                           & 78                                            & 750                                         & 80                & 780                     & 60                \\
+		770                                           & 71                                            & 760                                         & 76                & 790                     & 54                \\
+		780                                           & 64                                            & 770                                         & 70                & 800                     & 48                \\
+		790                                           & 58                                            & 780                                         & 63                & 810                     & 43                \\
+		800                                           & 51                                            & 790                                         & 56                & 820                     & 37                \\
+		810                                           & 45                                            & 810                                         & 45                & 830                     & 33                \\
+		830                                           & 35                                            & 830                                         & 35                & 840                     & 29                \\
+		850                                           & 21                                            & 850                                         & 27                & 850                     & 26                \\
+		\hline
+	\end{tabular}
+\end{table}
+
+% ---------- NIEPEWNOŚCI ----------
+\section{Analiza niepewności}
+Zastosowano metodę B szacowania niepewności pomiarowej.
+
+\subsection{Niepewność długości fali $u(\lambda)$}
+Działka elementarna bębna monochromatora wynosi $\Delta \lambda_d = \SI{5}{nm}$. Przyjmując rozkład jednostajny, niepewność standardowa wynosi:
+$$
+	u(\lambda) = \frac{\Delta \lambda_d}{\sqrt{3}} = \frac{\SI{5}{nm}}{1,73} \approx \SI{2,89}{nm}
+$$
+
+\subsection{Niepewność transmisji $u(T)$}
+Maksymalny błąd graniczny odczytu transmisji oszacowano sumując niepewność wzorcowania fotoprądu oraz niepewność paralaksy i odczytu eksperymentatora. Przyjęto $\Delta T_{max} = \SI{7}{\percent}$ (punkty procentowe na skali). Niepewność standardowa:
+$$
+	u(T) = \frac{\Delta T_{max}}{\sqrt{3}} = \frac{\SI{7}{\percent}}{1,73} \approx \SI{4,04}{\percent}
+$$
+
+% ---------- WNIOSKI ----------
+\section{Wnioski}
+Przeprowadzono analizę widmową trzech filtrów barwnych. Na podstawie wyznaczonych charakterystyk $T(\lambda)$ (por. Wykresy) można stwierdzić:
+
+\begin{itemize}
+	\item \textbf{Filtr czerwony} wykazuje cechy filtru dolnozaporowego. Silny wzrost transmisji następuje od ok. \SI{550}{nm}, osiągając maksimum $T \approx \SI{88}{\percent}$ dla $\lambda \in [\num{710}, \num{730}]\,\unit{nm}$. Skutecznie blokuje fale krótsze niż \SI{500}{nm}.
+	\item \textbf{Filtr zielony} posiada charakterystykę pasmowo-przepustową z szerokim lokalnym maksimum transmisji w obszarze \SI{550}{nm} ($T = \SI{73}{\percent}$) oraz drugim wzrostem w bliskiej podczerwieni ($> \SI{700}{nm}$).
+	\item \textbf{Filtr niebieski} wykazuje maksimum w zakresie światła niebieskiego ($\lambda \approx \SI{470}{nm}$, $T = \SI{59}{\percent}$), jednak charakteryzuje się również znaczną przepuszczalnością w zakresie czerwieni i podczerwieni.
+\end{itemize}
+
+Głównym źródłem niepewności pomiarowej jest analogowy system odczytu spektrofotometru Spekol, co skutkuje niepewnością standardową transmisji na poziomie $u(T) \approx \SI{4,0}{\percent}$.
+
+% ---------- WYKRESY ----------
+\newpage
+\section{Wykresy}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[angle=90, width=0.95\textwidth]{img/plot_combined.png}
+	\caption{Porównanie charakterystyk widmowych wszystkich badanych filtrów.}
+	\label{fig:combined}
+\end{figure}
+
+\newpage
+\begin{figure}[H]
+	\centering
+	\includegraphics[angle=90, width=0.95\textwidth]{img/plot_red.png}
+	\caption{Zależność transmisji od długości fali dla filtru czerwonego.}
+	\label{fig:red}
+\end{figure}
+
+\newpage
+\begin{figure}[H]
+	\centering
+	\includegraphics[angle=90, width=0.95\textwidth]{img/plot_green.png}
+	\caption{Zależność transmisji od długości fali dla filtru zielonego.}
+	\label{fig:green}
+\end{figure}
+
+\newpage
+\begin{figure}[H]
+	\centering
+	\includegraphics[angle=90, width=0.95\textwidth]{img/plot_blue.png}
+	\caption{Zależność transmisji od długości fali dla filtru niebieskiego.}
+	\label{fig:blue}
+\end{figure}
+
+\bibliographystyle{apalike}
+\bibliography{bibliography}
+
+\end{document}
