@@ -126,3 +126,10 @@ lang: "pl-PL"
 - [sprawozdanie PDF](./18-lab-68/report/18-lab-68-sprawozdanie.pdf)
 - [sprawozdanie LaTeX](./18-lab-68/report/18-lab-68-sprawozdanie.tex)
 - [obliczenia](./18-lab-68/18-lab-68-calculations.ipynb)
+
+## 19. lab 43 - Prawo Ohma dla prądu stałego
+
+- [sprawozdanie PDF](./19-lab-43/report/19-lab-43-sprawozdanie.pdf)
+- [sprawozdanie LaTeX](./19-lab-43/report/19-lab-43-sprawozdanie.tex)
+- [obliczenia](./19-lab-43/19-lab-43-calculations.ipynb)
+
