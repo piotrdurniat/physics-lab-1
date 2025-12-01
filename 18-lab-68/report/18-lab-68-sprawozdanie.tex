@@ -61,7 +61,7 @@
 \section{Wstęp teoretyczny}
 
 \subsection{Absorpcja i barwa}
-Barwa ciał nieprzeźroczystych oraz filtrów optycznych wynika ze zjawiska selektywnej absorpcji promieniowania elektromagnetycznego. Filtr barwny pochłania fale o określonych długościach, przepuszczając pozostałą część widma. Zjawisko to ma charakter rezonansowy; absorpcja jest maksymalna, gdy częstość fali $\nu$ pokrywa się z częstością drgań własnych cząsteczek substancji \citep{fizyka_dla_szkół_wyższych_tom_3}. Długość fali $\lambda$ związana jest z częstością relacją:
+Barwa ciał nieprzeźroczystych oraz filtrów optycznych wynika ze zjawiska selektywnej absorpcji promieniowania elektromagnetycznego. Filtr barwny pochłania fale o określonych długościach, przepuszczając pozostałą część widma. Zjawisko to ma charakter rezonansowy; absorpcja jest maksymalna, gdy częstotliwość fali $\nu$ pokrywa się z częstotliwością drgań własnych cząsteczek substancji \citep{fizyka_dla_szkół_wyższych_tom_3}. Długość fali $\lambda$ związana jest z częstotliwością relacją:
 $$
 	\lambda = \frac{c}{\nu}
 $$
@@ -78,8 +78,8 @@ Zależność $T(\lambda)$ nazywana jest charakterystyką widmową filtru i pozwa
 Przyrząd wykorzystuje siatkę dyfrakcyjną do rozszczepienia światła białego (z żarówki) na widmo ciągłe. Poprzez mechaniczny obrót siatki wybierana jest wąska wiązka monochromatyczna o zadanej długości fali $\lambda$. Światło to przechodzi przez kuwetę (z filtrem lub wzorcową) i pada na detektor fotoelektryczny. Prąd fotodetektora, proporcjonalny do natężenia światła, jest mierzony przez układ analogowy.
 
 % ---------- OPIS DOŚWIADCZENIA ----------
-\section{Metodologia}
-Pomiary wykonano przy użyciu spektrofotometru Spekol. Po okresie wygrzewania urządzenia (ok. 5 min) i wyzerowaniu układu przy zamkniętej przysłonie, przeprowadzono kalibrację na „100\%” dla każdej badanej długości fali, używając pustej kuwety wzorcowej. Następnie w tor optyczny wprowadzano kuwetę z badanym filtrem i odczytywano wartość transmisji $T$. Procedurę powtórzono dla trzech filtrów: czerwonego, niebieskiego i zielonego, w zakresie długości fal od \SI{450}{nm} do \SI{850}{nm}. Punkty pomiarowe zagęszczano w obszarach szybkich zmian transmitancji.
+\section{Przebieg doświadczenia}
+Pomiary wykonano przy użyciu spektrofotometru Spekol. Po okresie wygrzewania urządzenia (ok. 5 min) i wyzerowaniu układu przy zamkniętej przysłonie, przeprowadzono kalibrację na „100\%” dla wzorcowej długości fali, używając pustej kuwety wzorcowej. Następnie w tor optyczny wprowadzano kuwetę z badanym filtrem i odczytywano wartość transmisji $T$. Procedurę powtórzono dla trzech filtrów: czerwonego, niebieskiego i zielonego, w zakresie długości fal od \SI{450}{nm} do \SI{850}{nm}. Punkty pomiarowe zagęszczano w obszarach szybkich zmian transmitancji.
 
 % ---------- WYNIKI ----------
 \section{Wyniki pomiarów}
@@ -143,7 +143,7 @@ $$
 \subsection{Niepewność transmisji $u(T)$}
 Maksymalny błąd graniczny odczytu transmisji oszacowano sumując niepewność wzorcowania fotoprądu oraz niepewność paralaksy i odczytu eksperymentatora. Przyjęto $\Delta T_{max} = \SI{7}{\percent}$ (punkty procentowe na skali). Niepewność standardowa:
 $$
-	u(T) = \frac{\Delta T_{max}}{\sqrt{3}} = \frac{\SI{7}{\percent}}{1,73} \approx \SI{4,04}{\percent}
+	u(T) = \frac{\Delta T_{max}}{\sqrt{3}} = \frac{\SI{7}{\percent}}{1,73} \approx \SI{4,0}{\percent}
 $$
 
 % ---------- WNIOSKI ----------
@@ -151,7 +151,7 @@ $$
 Przeprowadzono analizę widmową trzech filtrów barwnych. Na podstawie wyznaczonych charakterystyk $T(\lambda)$ (por. Wykresy) można stwierdzić:
 
 \begin{itemize}
-	\item \textbf{Filtr czerwony} wykazuje cechy filtru dolnozaporowego. Silny wzrost transmisji następuje od ok. \SI{550}{nm}, osiągając maksimum $T \approx \SI{88}{\percent}$ dla $\lambda \in [\num{710}, \num{730}]\,\unit{nm}$. Skutecznie blokuje fale krótsze niż \SI{500}{nm}.
+	\item \textbf{Filtr czerwony} jest filtrem długofalowym (tzw. dolnozaporowym w domenie częstotliwości). Silny wzrost transmisji następuje od ok. \SI{550}{nm}, osiągając maksimum $T \approx \SI{88}{\percent}$ dla $\lambda \in [\num{710}, \num{730}]\,\unit{nm}$. Skutecznie blokuje fale krótsze niż \SI{500}{nm}.
 	\item \textbf{Filtr zielony} posiada charakterystykę pasmowo-przepustową z szerokim lokalnym maksimum transmisji w obszarze \SI{550}{nm} ($T = \SI{73}{\percent}$) oraz drugim wzrostem w bliskiej podczerwieni ($> \SI{700}{nm}$).
 	\item \textbf{Filtr niebieski} wykazuje maksimum w zakresie światła niebieskiego ($\lambda \approx \SI{470}{nm}$, $T = \SI{59}{\percent}$), jednak charakteryzuje się również znaczną przepuszczalnością w zakresie czerwieni i podczerwieni.
 \end{itemize}
