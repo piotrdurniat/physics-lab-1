@@ -1,0 +1,144 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} 
+\usepackage{multicol} 
+\usepackage{ragged2e} 
+\usepackage{graphicx} 
+\usepackage{float}
+\usepackage{caption}
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=orange]{hyperref} 
+\usepackage{polski} 
+\usepackage[utf8]{inputenc} 
+\usepackage{enumitem} 
+\usepackage{indentfirst}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage[round]{natbib}
+\setlist[itemize]{itemsep=0pt, topsep=0pt}
+\usepackage{siunitx}
+
+% SI setup preferences
+\sisetup{output-decimal-marker={,}}
+\sisetup{exponent-product = \cdot}
+\sisetup{per-mode = symbol}
+
+% LTeX: language=pl-PL
+
+\begin{document}
+
+\noindent
+\begin{minipage}{0.5\textwidth}
+	\raggedright
+	% full name, index number
+	\textbf{Piotr Durniat, 347264} \\
+	II rok, Fizyka \\
+	Wtorek, 8:00-10:15
+	\vspace{0.5cm}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+	\raggedleft
+	% date of the experiments
+	02.12.2025 \\
+	\vspace{0.5cm}
+	Prowadząca: \\
+	dr Sylwia Owczarek
+\end{minipage}
+
+\vspace{2cm}
+\begin{center}
+	% lab number
+	\LARGE \textbf{Ćwiczenie nr 43} \\[0.5cm]
+	% title
+	\Large \textbf{Prawo Ohma dla prądu stałego}
+\end{center}
+
+\vspace{1cm}
+\noindent
+
+% \tableofcontents
+% \newpage
+
+% ---------- WSTĘP TEORETYCZNY ----------
+\section{Wstęp teoretyczny}
+
+\subsection{Przewodnictwo elektryczne w metalach i półprzewodnikach}
+W metalach nośnikami prądu elektrycznego są elektrony swobodne, tworzące tzw. gaz elektronowy. Ich koncentracja jest stała i niezależna od temperatury \citep{fizyka_tom3}. W półprzewodnikach samoistnych nośnikami są elektrony w paśmie przewodnictwa oraz dziury w paśmie walencyjnym, powstające w wyniku generacji termicznej. Koncentracja nośników w półprzewodnikach silnie zależy od temperatury oraz obecności domieszek (półprzewodniki typu n i p) \citep{wstep_do_cwiczenia}.
+
+\subsection{Natężenie prądu i prawo Ohma}
+Natężenie prądu elektrycznego $I$ definiuje się jako stosunek ładunku $dQ$ przepływającego przez poprzeczny przekrój przewodnika do czasu $dt$:
+$$
+	I = \frac{dQ}{dt}
+$$
+Jednostką natężenia w układzie SI jest amper (\unit{\ampere}). Dla przewodników metalicznych w stałej temperaturze obowiązuje prawo Ohma, stwierdzające proporcjonalność natężenia prądu do przyłożonego napięcia $U$:
+$$
+	I = \frac{1}{R} U = G U
+$$
+gdzie $R$ to opór elektryczny, a $G$ to konduktancja \citep{fizyka_tom3}.
+
+\subsection{Opór elektryczny i jego zależność od temperatury}
+Opór elektryczny $R$ jest miarą przeciwstawiania się elementu przepływowi prądu. Jednostką oporu jest om (\unit{\ohm}).
+Dla metali opór rośnie wraz ze wzrostem temperatury w przybliżeniu liniowo:
+$$
+	R(T) = R_0 [1 + \alpha(T - T_0)]
+$$
+Wynika to ze wzrostu amplitudy drgań sieci krystalicznej, co zwiększa prawdopodobieństwo rozpraszania elektronów.
+W półprzewodnikach opór maleje wykładniczo ze wzrostem temperatury:
+$$
+	R(T) = A \exp\left(\frac{E_g}{2kT}\right)
+$$
+Jest to spowodowane gwałtownym wzrostem koncentracji nośników ładunku, który dominuje nad efektem spadku ich ruchliwości \citep{wstep_do_cwiczenia}.
+
+\subsection{Model pasmowy}
+Właściwości elektryczne ciał stałych wyjaśnia teoria pasmowa, zakładająca istnienie dozwolonych pasm energetycznych (walencyjnego i przewodnictwa) rozdzielonych pasmem wzbronionym o szerokości $E_g$.
+\begin{itemize}
+	\item \textbf{Metale:} Pasmo walencyjne zachodzi na pasmo przewodnictwa lub pasmo przewodnictwa jest tylko częściowo zapełnione. Brak przerwy energetycznej ($E_g = 0$).
+	\item \textbf{Półprzewodniki:} Istnieje niewielka przerwa energetyczna ($E_g < \SI{2}{eV}$). W $T=\SI{0}{K}$ pasmo przewodnictwa jest puste.
+	\item \textbf{Izolatory:} Szeroka przerwa energetyczna ($E_g > \SI{3}{eV}$) uniemożliwia przeskok elektronów do pasma przewodnictwa w temperaturze pokojowej \citep{fizyka_tom3}.
+\end{itemize}
+
+\subsection{Charakterystyki prądowo-napięciowe}
+Charakterystyka $I(U)$ obrazuje zależność prądu płynącego przez element od przyłożonego napięcia.
+\begin{itemize}
+	\item \textbf{Opór drutowy:} Charakterystyka liniowa, zgodna z prawem Ohma. Nachylenie prostej odpowiada konduktancji $1/R$.
+	\item \textbf{Żarówka:} Element nieliniowy. Wraz ze wzrostem napięcia rośnie temperatura włókna, co powoduje wzrost oporu i wolniejszy przyrost prądu (charakterystyka o malejącym nachyleniu).
+	\item \textbf{Dioda półprzewodnikowa:} Przewodzi prąd głównie w jedną stronę (polaryzacja przewodzenia). Zależność opisuje równanie Shockleya:
+	      $$ I = I_s [\exp(\frac{eU}{nkT}) - 1] $$
+	      W kierunku zaporowym płynie jedynie pomijalnie mały prąd nasycenia $I_s$ \citep{wstep_do_cwiczenia}.
+	\item \textbf{Termistor:} Półprzewodnikowy rezystor czuły na temperaturę. Płynący prąd powoduje wydzielanie ciepła Joule'a, co zmienia jego rezystancję (zazwyczaj maleje dla termistorów NTC), prowadząc do nieliniowej charakterystyki $I(U)$.
+\end{itemize}
+
+\subsection{Reżimy pracy zasilacza}
+Zasilacz laboratoryjny może pracować w dwóch podstawowych trybach \citep{instrukcja43}:
+\begin{itemize}
+	\item \textbf{CV (Constant Voltage):} Stabilizacja napięcia. Zasilacz utrzymuje stałe napięcie wyjściowe niezależnie od obciążenia (dopóki pobór prądu nie przekroczy ustawionego limitu).
+	\item \textbf{CC (Constant Current):} Stabilizacja prądu. Zasilacz utrzymuje stały prąd wyjściowy, dostosowując napięcie do rezystancji obciążenia. Tryb ten aktywuje się po przekroczeniu ustawionego limitu prądowego.
+\end{itemize}
+% ---------- OPIS DOŚWIADCZENIA ----------
+% \section{Opis doświadczenia}
+
+% ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
+% \section{Opracowanie wyników pomiarów}
+
+% ---------- TABELE ----------
+% \subsection{Tabele pomiarowe}
+
+% ---------- OBLICZENIA ----------
+% \subsection{...}
+
+% ---------- NIEPEWNOŚCI ----------
+% \section{Ocena niepewności pomiaru}
+
+% ---------- WNIOSKI ----------
+% \section{Wnioski}
+
+% ---------- WYKRESY ----------
+% \section{Wykresy}
+% \newpage
+
+\bibliographystyle{apalike}
+\bibliography{bibliography}
+
+\end{document}
