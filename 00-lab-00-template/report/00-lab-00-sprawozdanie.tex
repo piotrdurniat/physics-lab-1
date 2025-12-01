@@ -1,17 +1,17 @@
 \documentclass[a4paper,12pt]{article}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} % Do ustawień marginesów
-\usepackage{multicol} % Dla podziału na kolumny
-\usepackage{ragged2e} % Dla justowania tekstu
-\usepackage{graphicx} % Required for inserting images
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} 
+\usepackage{multicol} 
+\usepackage{ragged2e} 
+\usepackage{graphicx} 
 \usepackage{float}
 \usepackage{caption}
-\usepackage{amsmath} % Math formulas
-\usepackage{amssymb} % Symbols
+\usepackage{amsmath} 
+\usepackage{amssymb} 
 \usepackage[svgnames]{xcolor}
-\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=orange]{hyperref} % Hyperlinks
-\usepackage{polski} % Polish language
-\usepackage[utf8]{inputenc} % Text encoding
-\usepackage{enumitem} % Pakiet do elastycznego sterowania listami
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=orange]{hyperref} 
+\usepackage{polski} 
+\usepackage[utf8]{inputenc} 
+\usepackage{enumitem} 
 \usepackage{indentfirst}
 \usepackage{array}
 \usepackage{longtable}
@@ -19,66 +19,72 @@
 \usepackage[round]{natbib}
 \setlist[itemize]{itemsep=0pt, topsep=0pt}
 \usepackage{siunitx}
+
+% SI setup preferences
 \sisetup{output-decimal-marker={,}}
 \sisetup{exponent-product = \cdot}
+\sisetup{per-mode = symbol}
+
 % LTeX: language=pl-PL
 
 \begin{document}
 
-% Górna część strony
 \noindent
 \begin{minipage}{0.5\textwidth}
-    \raggedright
-    \textbf{Piotr Durniat, 347264} \\
-    II rok, Fizyka \\
-    Wtorek, 8:00-10:15
-    \vspace{0.5cm}
+	\raggedright
+	% full name, index number
+	\textbf{} \\
+	II rok, Fizyka \\
+	Wtorek, 8:00-10:15
+	\vspace{0.5cm}
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
-    \raggedleft
-    29.04.2025 \\
-    \vspace{0.5cm}
-    Prowadząca: \\
-    dr Sylwia Owczarek
+	\raggedleft
+	% date of the experiments
+	29.04.2025 \\
+	\vspace{0.5cm}
+	Prowadząca: \\
+	dr Sylwia Owczarek
 \end{minipage}
 
-% Tytuł ćwiczenia
 \vspace{2cm}
 \begin{center}
-    \LARGE \textbf{Ćwiczenie nr 00} \\[0.5cm]
-    \Large \textbf{Template}
+	% lab number
+	\LARGE \textbf{Ćwiczenie nr 00} \\[0.5cm]
+	% title
+	\Large \textbf{Template}
 \end{center}
 
-% Reszta treści
-\vspace{1cm} % Kolejny odstęp
+\vspace{1cm}
 \noindent
 
-\tableofcontents
-\newpage
+% \tableofcontents
+% \newpage
 
 % ---------- WSTĘP TEORETYCZNY ----------
 \section{Wstęp teoretyczny}
 
 % ---------- OPIS DOŚWIADCZENIA ----------
-\section{Opis doświadczenia}
+% \section{Opis doświadczenia}
 
 % ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
-\section{Opracowanie wyników pomiarów}
+% \section{Opracowanie wyników pomiarów}
 
 % ---------- TABELE ----------
-\subsection{Tabele pomiarowe}
+% \subsection{Tabele pomiarowe}
 
 % ---------- OBLICZENIA ----------
-\subsection{...}
+% \subsection{...}
 
 % ---------- NIEPEWNOŚCI ----------
-\section{Ocena niepewności pomiaru}
+% \section{Ocena niepewności pomiaru}
 
 % ---------- WNIOSKI ----------
-\section{Wnioski}
+% \section{Wnioski}
 
 % ---------- WYKRESY ----------
-\section{Wykresy}
+% \section{Wykresy}
+% \newpage
 
 \bibliographystyle{apalike}
 \bibliography{bibliography}
