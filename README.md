@@ -113,4 +113,16 @@ lang: "pl-PL"
 
 - [sprawozdanie PDF](./16-lab-64/report/16-lab-64-sprawozdanie.pdf)
 - [sprawozdanie LaTeX](./16-lab-64/report/16-lab-64-sprawozdanie.tex)
-- [obliczenia](./16-lab-64/16-lab-64-obliczenia.ipynb)
+- [obliczenia](./16-lab-64/16-lab-64-calculations.ipynb.ipynb)
+
+## 17. lab 73 - Wyznaczanie prędkości fali dźwiękowej w powietrzu metodą rury rezonansowej
+
+- [sprawozdanie PDF](./17-lab-73/report/17-lab-73-sprawozdanie.pdf)
+- [sprawozdanie LaTeX](./17-lab-73/report/17-lab-73-sprawozdanie.tex)
+- [obliczenia](./17-lab-73/17-lab-73-calculations.ipynb)
+
+## 18. lab 68 - Pomiar przepuszczalności optycznej filtrów barwnych za pomocą spektrofotometru „Spekol”
+
+- [sprawozdanie PDF](./18-lab-68/report/18-lab-68-sprawozdanie.pdf)
+- [sprawozdanie LaTeX](./18-lab-68/report/18-lab-68-sprawozdanie.tex)
+- [obliczenia](./18-lab-68/18-lab-68-calculations.ipynb)
