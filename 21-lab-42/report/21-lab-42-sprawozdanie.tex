@@ -143,16 +143,120 @@ Dla każdego podziału listwy $L$ obliczono stosunek $\frac{l_1}{l_2}$:
 	\caption{Wartości stosunku podziału listwy dla badanych ustawień $L$.}
 \end{table}
 
-Następnie korzystając z wzoru \eqref{eq:mostek_liniowy}, dla każdej nastawy opornicy dekadowej $R_w$ i długości listwy $L$, obliczono wartości nieznanego oporu $R_x$:
+Następnie korzystając z wzoru \eqref{eq:mostek_liniowy}, dla każdej nastawy opornicy dekadowej $R_w$ i długości listwy $L$, obliczono wartości nieznanego oporu $R_x$. Wyniki przedstawiono w tabeli poniżej.
 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\textbf{Rezystor} & \textbf{$R_x\,[\Omega]$ dla $L=1/3$} & \textbf{$R_x\,[\Omega]$ dla $L=1/2$} & \textbf{$R_x\,[\Omega]$ dla $L=2/3$} \\ \hline
+		$R_1$             & 48,5                                 & 52,0                                 & 55,2                                 \\ \hline
+		$R_2$             & 95,0                                 & 114,0                                & 76,0                                 \\ \hline
+		$R_3$             & 405,0                                & 510,0                                & 420,0                                \\ \hline
+		$R_4$             & 1135,0                               & 1440,0                               & 1220,0                               \\ \hline
+		$R_5$             & 2955,0                               & 3710,0                               & 3020,0                               \\ \hline \hline
+		$R_r$             & 32,0                                 & 32,0                                 & 32,8                                 \\ \hline
+		$R_s$             & 530,0                                & 560,0                                & 618,0                                \\ \hline
+	\end{tabular}
+	\caption{Wyznaczone wartości badanych rezystancji dla różnych ustawień mostka.}
+	\label{tab:wyniki_Rx}
+\end{table}
 
-\subsection{Ocena niepewności maksymalnych}
+\noindent \textbf{Przykładowe obliczenie} (dla rezystora $R_1$ przy ustawieniu $L=1/3$): \\
+Wartość $R_w = 97\,\Omega$, stosunek $\frac{l_1}{l_2} = 0,5$.
+\begin{equation*}
+	R_1^{(1/3)} = 97\,\Omega \cdot 0,5 = 48,5\,\Omega
+\end{equation*}
 
+\vspace{0.5cm}
+Na podstawie wyznaczonych wartości cząstkowych obliczono średnie wartości rezystancji dla każdego badanego elementu:
 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Rezystor} & \textbf{Średnia rezystancja $\overline{R}$ $[\Omega]$} \\ \hline
+		$R_1$             & 51,9                                                   \\ \hline
+		$R_2$             & 95,0                                                   \\ \hline
+		$R_3$             & 445,0                                                  \\ \hline
+		$R_4$             & 1265,0                                                 \\ \hline
+		$R_5$             & 3228,3                                                 \\ \hline \hline
+		$R_r$             & 32,3                                                   \\ \hline
+		$R_s$             & 569,3                                                  \\ \hline
+	\end{tabular}
+	\caption{Średnie wartości badanych rezystancji.}
+	\label{tab:srednie_Rx}
+\end{table}
 
+\subsection{Ocena niepewności pomiaru}
 
-% ---------- NIEPEWNOŚCI ----------
-% \section{Ocena niepewności pomiaru}
+Niepewność pomiaru $\Delta R$ oszacowano metodą maksymalnego rozrzutu wyników, zgodnie ze wzorem:
+\begin{equation}
+	\Delta R = \frac{R_{max} - R_{min}}{2}
+\end{equation}
+Wyniki obliczeń niepewności przedstawiono w tabeli poniżej.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Rezystor} & \textbf{Niepewność $\Delta R$ $[\Omega]$} \\ \hline
+		$R_1$             & 3,4                                       \\ \hline
+		$R_2$             & 19                                        \\ \hline
+		$R_3$             & 53                                        \\ \hline
+		$R_4$             & 153                                       \\ \hline
+		$R_5$             & 378                                       \\ \hline \hline
+		$R_r$             & 0,4                                       \\ \hline
+		$R_s$             & 44                                        \\ \hline
+	\end{tabular}
+	\caption{Niepewności maksymalne wyznaczonych rezystancji.}
+	\label{tab:niepewnosci}
+\end{table}
+
+\noindent \textbf{Przykładowe obliczenie} (dla rezystora $R_1$): \\
+Wartości skrajne wynoszą $R_{max} = 55,2\,\Omega$ oraz $R_{min} = 48,5\,\Omega$.
+\begin{equation*}
+	\Delta R_1 = \frac{55,2\,\Omega - 48,5\,\Omega}{2} = 3,35\,\Omega \approx 3,4\,\Omega
+\end{equation*}
+
+Ostateczne wyniki pomiarów wynoszą:
+\begin{itemize}
+	\item $R_1 = (51,9 \pm 3,4)\,\Omega$
+	\item $R_2 = (95 \pm 19)\,\Omega$
+	\item $R_3 = (445 \pm 53)\,\Omega$
+	\item $R_4 = (1265 \pm 153)\,\Omega$
+	\item $R_5 = (3228 \pm 378)\,\Omega$
+	\item $R_r = (32,3 \pm 0,4)\,\Omega$
+	\item $R_s = (569 \pm 44)\,\Omega$
+\end{itemize}
+
+\subsection{Weryfikacja prawa łączenia rezystorów}
+
+Korzystając z wyznaczonych wcześniej średnich wartości rezystancji $R_1, R_2$ oraz $R_3$, obliczono teoretyczne wartości rezystancji zastępczej dla połączenia szeregowego ($R_{s,teor}$) i równoległego ($R_{r,teor}$).
+
+Dla połączenia szeregowego:
+\begin{equation}
+	R_{s,teor} = R_1 + R_2 + R_3 = 51,9 + 95,0 + 445,0 = 591,9\,\Omega
+\end{equation}
+
+Dla połączenia równoległego:
+\begin{equation}
+	R_{r,teor} = \left( \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} \right)^{-1} = \left( \frac{1}{51,9} + \frac{1}{95,0} + \frac{1}{445,0} \right)^{-1} \approx 31,3\,\Omega
+\end{equation}
+
+Następnie porównano wartości teoretyczne z wynikami zmierzonymi bezpośrednio ($R_{pom}$), wyznaczając błąd bezwzględny $|\Delta R| = |R_{pom} - R_{teor}|$ oraz błąd względny $\delta = \frac{|\Delta R|}{R_{teor}} \cdot 100\%$.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\textbf{Połączenie} & \textbf{$R_{pom}$ [$\Omega$]} & \textbf{$R_{teor}$ [$\Omega$]} & \textbf{$|\Delta R|$ [$\Omega$]} & \textbf{$\delta$ [\%]} \\ \hline
+		Szeregowe ($R_s$)   & 569,3                         & 591,9                          & 22,6                             & 3,82                   \\ \hline
+		Równoległe ($R_r$)  & 32,3                          & 31,3                           & 1,0                              & 3,19                   \\ \hline
+	\end{tabular}
+	\caption{Porównanie zmierzonych rezystancji zastępczych z wartościami teoretycznymi.}
+	\label{tab:porownanie_teoria}
+\end{table}
 
 % ---------- WNIOSKI ----------
 % \section{Wnioski}
