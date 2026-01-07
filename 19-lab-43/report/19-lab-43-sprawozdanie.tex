@@ -33,7 +33,7 @@
 \begin{minipage}{0.5\textwidth}
 	\raggedright
 	% full name, index number
-	\textbf{} \\
+	\textbf{Piotr Durniat, 347264} \\
 	II rok, Fizyka \\
 	Wtorek, 8:00-10:15
 	\vspace{0.5cm}
@@ -254,7 +254,7 @@ Znaleziono równanie prostej dla oporu drutowego metodą regresji liniowej. Przy
 \]
 Opór elektryczny $R$ wyznaczono jako odwrotność współczynnika kierunkowego $G = \SI{0,1072}{\siemens}$:
 \[
-	R = \frac{1}{G} \approx \SI{9,33}{\ohm}
+	R = \frac{1}{G} = \frac{1}{0,1072} \approx \SI{9,33}{\ohm}
 \]
 Niepewność oporu $u(R)$ obliczono w oparciu o błąd standardowy dopasowania prostej:
 \[
@@ -269,7 +269,7 @@ Wyznaczono opór różniczkowy $R_d$ żarówki dla napięcia bliskiego \SI{600}{
 \]
 Niepewność $u(R_d)$ oszacowano metodą różniczki zupełnej, uwzględniając niepewności odczytu napięcia ($u(U)=\SI{0,0001}{\volt}$) i prądu ($u(I)=\SI{0,0001}{\ampere}$):
 \[
-	u(R_d) = \SI{2,5}{\ohm}
+	u(R_d) = R_d \sqrt{\left(\frac{\sqrt{2} \cdot u(U)}{\Delta U}\right)^2 + \left(\frac{\sqrt{2} \cdot u(I)}{\Delta I}\right)^2} = 17,1 \cdot \sqrt{\left(\frac{0,00014}{0,1661}\right)^2 + \left(\frac{0,00014}{0,0097}\right)^2} \approx \SI{2,5}{\ohm}
 \]
 
 % ---------- WNIOSKI ----------

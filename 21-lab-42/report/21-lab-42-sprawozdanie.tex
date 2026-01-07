@@ -1,0 +1,167 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} 
+\usepackage{multicol} 
+\usepackage{ragged2e} 
+\usepackage{graphicx} 
+\usepackage{float}
+\usepackage{caption}
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=orange]{hyperref} 
+\usepackage{polski} 
+\usepackage[utf8]{inputenc} 
+\usepackage{enumitem} 
+\usepackage{indentfirst}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage[round]{natbib}
+\setlist[itemize]{itemsep=0pt, topsep=0pt}
+\usepackage{siunitx}
+
+% SI setup preferences
+\sisetup{output-decimal-marker={,}}
+\sisetup{exponent-product = \cdot}
+\sisetup{per-mode = symbol}
+
+% LTeX: language=pl-PL
+
+\begin{document}
+
+\noindent
+\begin{minipage}{0.5\textwidth}
+	\raggedright
+	% full name, index number
+	\textbf{} \\
+	II rok, Fizyka \\
+	Wtorek, 8:00-10:15
+	\vspace{0.5cm}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+	\raggedleft
+	% date of the experiments
+	29.04.2025 \\
+	\vspace{0.5cm}
+	Prowadząca: \\
+	dr Sylwia Owczarek
+\end{minipage}
+
+\vspace{2cm}
+\begin{center}
+	% lab number
+	\LARGE \textbf{Ćwiczenie nr 42} \\[0.5cm]
+	% title
+	\Large \textbf{Mostek Wheatstone'a}
+\end{center}
+
+\vspace{1cm}
+\noindent
+
+% \tableofcontents
+% \newpage
+
+% ---------- WSTĘP TEORETYCZNY ----------
+\section{Wstęp teoretyczny}
+
+\subsection{Mostek Wheatstone'a}
+
+Przez mostek nie płynie prąd, tylko wtedy, gdy cztery rezystancje spełniają następującą zależność:
+
+\begin{equation}
+	\label{eq:wheatstone_proporcja}
+	\frac{R_1}{R_2} = \frac{R_3}{R_4}
+\end{equation}
+
+Gdy jeden z czterech rezystorów jest nieznany, to można wyznaczyć jego rezystancję z powyższej proporcji \eqref{eq:wheatstone_proporcja}.
+
+\subsubsection{Liniowy mostek Wheatstone'a}
+
+W liniowym mostku Wheatstone'a opory $R_1$ i $R_2$ stworzone są z drutu oporowego, rozpiętego na podstawce wzdłuż skali milimetrowej. Dla takiego mostka, korzystając z prawa Ohma, stosunek $\frac{R_1}{R_2}$ można zastąpić stosunkiem $\frac{l_1}{l_2}$.
+
+W ten sposób dla nieznanego oporu $R_x = R_3$ i znanego oporu $R_4 = R$, można określić wartość $R_x$ jako:
+
+\begin{equation}
+	\label{eq:mostek_liniowy}
+	R_x = R \frac{l_1}{l_2}
+\end{equation}
+
+
+% ---------- OPIS DOŚWIADCZENIA ----------
+% \section{Opis doświadczenia}
+
+% ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
+\section{Opracowanie wyników pomiarów}
+
+
+% ---------- TABELE ----------
+\subsection{Tabele pomiarowe}
+
+Zmierzone wartości nastaw opornicy dekadowej $R_w$ dla trzech ustawień suwaka listwy $L$ i badanych rezystorów $R_1,\,R_2,\,...,\,R_5$ zapisano w tabeli \ref{tab:nastawy_opornicy_dekadowej}. Przez $R_s$ i $R_r$ oznaczono rezystancję rezystorów 1-3, połączonych odpowiednio szeregowo i równolegle.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c||c|c|}
+		\hline
+		                     & \multicolumn{7}{c|}{\textbf{Nastawa opornicy } $R_w$ $[\Omega]$ \textbf{dla rezystora:}}                                                                     \\ \cline{2-8}
+		\textbf{Długość} $L$ & $R_1$                                                                                    & $R_2$ & $R_3$ & $R_4$ & $R_5$ & $R_r$ (równol.) & $R_s$ (szereg.) \\ \hline
+		$1/3$                & 97                                                                                       & 202   & 832   & 2320  & 6100  & 64              & 1060            \\ \hline
+		$1/2$                & 52                                                                                       & 90    & 452   & 1340  & 3299  & 32              & 560             \\ \hline
+		$2/3$                & 27,6                                                                                     & 49,3  & 232   & 653   & 1720  & 16,4            & 309             \\ \hline
+	\end{tabular}
+	\caption{Wartości nastaw opornicy dekadowej $R_w$ dla poszczególnych badanych oporów.}
+	\label{tab:nastawy_opornicy_dekadowej}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c||c|c|}
+		\hline
+		                     & \multicolumn{7}{c|}{\textbf{Napięcie} $U$ [\text{V}] \textbf{przy pomiarze rezystora:}}                                                 \\ \cline{2-8}
+		\textbf{Długość} $L$ & $R_1$                                                                                   & $R_2$ & $R_3$ & $R_4$ & $R_5$ & $R_r$ & $R_s$ \\ \hline
+		$1/3$                & 0,67                                                                                    & 0,63  & 0,62  & 0,65  & 0,61  & 0,64  & 0,62  \\ \hline
+		$1/2$                & 0,64                                                                                    & 0,63  & 0,62  & 0,62  & 0,62  & 0,64  & 0,61  \\ \hline
+		$2/3$                & 0,64                                                                                    & 0,62  & 0,61  & 0,61  & 0,62  & 0,66  & 0,61  \\ \hline
+	\end{tabular}
+	\caption{Wartości napięcia zasilania $U$ podczas pomiarów poszczególnych rezystancji.}
+\end{table}
+
+% ---------- OBLICZENIA ----------
+\subsection{Wartości badanych rezystancji i ich wartości średnie}
+
+Dla każdego podziału listwy $L$ obliczono stosunek $\frac{l_1}{l_2}$:
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Ustawienie} $L$ & \textbf{Stosunek} $\frac{l_1}{l_2}$ \\ \hline
+		$1/3$                   & 0,5                                 \\ \hline
+		$1/2$                   & 1,0                                 \\ \hline
+		$2/3$                   & 2,0                                 \\ \hline
+	\end{tabular}
+	\caption{Wartości stosunku podziału listwy dla badanych ustawień $L$.}
+\end{table}
+
+Następnie korzystając z wzoru \eqref{eq:mostek_liniowy}, dla każdej nastawy opornicy dekadowej $R_w$ i długości listwy $L$, obliczono wartości nieznanego oporu $R_x$:
+
+
+\subsection{Ocena niepewności maksymalnych}
+
+
+
+
+% ---------- NIEPEWNOŚCI ----------
+% \section{Ocena niepewności pomiaru}
+
+% ---------- WNIOSKI ----------
+% \section{Wnioski}
+
+% ---------- WYKRESY ----------
+% \section{Wykresy}
+% \newpage
+
+\bibliographystyle{apalike}
+\bibliography{bibliography}
+
+\end{document}

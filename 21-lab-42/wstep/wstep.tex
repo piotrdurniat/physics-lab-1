@@ -1,0 +1,105 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} 
+\usepackage{multicol} 
+\usepackage{ragged2e} 
+\usepackage{graphicx} 
+\usepackage{float}
+\usepackage{caption}
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=orange]{hyperref} 
+\usepackage{polski} 
+\usepackage[utf8]{inputenc} 
+\usepackage{enumitem} 
+\usepackage{indentfirst}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage[round]{natbib}
+\setlist[itemize]{itemsep=0pt, topsep=0pt}
+\usepackage{siunitx}
+
+
+\begin{document}
+%
+% \noindent
+% \begin{minipage}{0.5\textwidth}
+%     \raggedright
+%     % full name, index number
+%     \textbf{Imię Nazwisko} \\
+%     Rok, Kierunek \\
+%     Termin zajęć
+%     \vspace{0.5cm}
+% \end{minipage}
+% \begin{minipage}{0.5\textwidth}
+%     \raggedleft
+%     % date of the experiments
+%     Data wykonania \\
+%     \vspace{0.5cm}
+%     Prowadząca: \\
+%     Tytuł Imię Nazwisko
+% \end{minipage}
+%
+% \vspace{2cm}
+% \begin{center}
+%     % lab number
+%     \LARGE \textbf{Ćwiczenie nr 42} \\[0.5cm]
+%     % title
+%     \Large \textbf{Mostek Wheatstone'a}
+% \end{center}
+%
+% \vspace{1cm}
+% \noindent
+
+\vspace{2cm}
+\begin{center}
+	\LARGE \textbf{Ćwiczenie nr 42} \\[0.5cm]
+	\Large \textbf{Mostek Wheatstone'a}
+\end{center}
+% ---------- WSTĘP TEORETYCZNY ----------
+\section{Wstęp teoretyczny}
+
+\subsection{Opór elektryczny i prawa Kirchhoffa}
+Opór elektryczny $R$ przewodnika zależy od jego wymiarów geometrycznych oraz rodzaju materiału. Dla jednorodnego przewodu o długości $l$ i polu przekroju $S$, opór wyraża się wzorem \citep{wstep_do_cwiczenia}:
+$$ R = \rho \frac{l}{S} $$
+gdzie $\rho$ to opór właściwy materiału.
+Do analizy obwodów rozgałęzionych, takich jak mostek, stosuje się prawa Kirchhoffa, szczegółowo omówione w literaturze akademickiej \citep{fizyka_tom3}:
+\begin{itemize}
+	\item \textbf{I Prawo:} Suma algebraiczna prądów wpływających do i wypływających z węzła jest równa zeru ($\sum I = 0$).
+	\item \textbf{II Prawo:} W zamkniętym obwodzie (oczku) suma spadków napięć na oporach jest równa sumie sił elektromotorycznych źródeł.
+\end{itemize}
+
+\subsection{Zasada działania mostka Wheatstone'a}
+Mostek Wheatstone'a to układ służący do precyzyjnego pomiaru oporów, składający się z czterech rezystorów ($R_x, R_2, R_3, R_4$), źródła zasilania oraz galwanometru \citep{Drynski1976}.
+Metoda ta opiera się na doprowadzeniu układu do stanu równowagi, w którym przez przekątną mostka (galwanometr) nie płynie prąd ($I_g = 0$). Oznacza to, że potencjały w punktach węzłowych mostka są równe.
+Zastosowanie praw Kirchhoffa dla stanu równowagi prowadzi do relacji:
+$$ R_x R_4 = R_2 R_3 $$
+Pozwala to wyznaczyć nieznany opór $R_x$ na podstawie znanych wartości pozostałych rezystorów:
+$$ R_x = R_2 \frac{R_3}{R_4} $$
+Zaletą metody mostkowej jest to, że wynik pomiaru nie zależy od wahań napięcia zasilającego ani od oporu wewnętrznego źródła, co czyni ją jedną z najdokładniejszych metod pomiarowych w laboratoriach studenckich \citep{Drynski1976}.
+
+% ---------- OPIS DOŚWIADCZENIA ----------
+% \section{Opis doświadczenia}
+% ...
+
+% ---------- WYNIKI POMIARÓW ----------
+% \section{Wyniki pomiarów}
+% ...
+
+% ---------- OBLICZENIA ----------
+% \section{Opracowanie wyników}
+% ...
+
+% ---------- WNIOSKI ----------
+% \section{Wnioski}
+% ...
+
+% ---------- WYKRESY ----------
+% \section{Wykresy}
+% ...
+
+\bibliographystyle{apalike}
+\bibliography{bibliography}
+
+\end{document}
