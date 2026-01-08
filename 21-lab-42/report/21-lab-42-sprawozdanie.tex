@@ -66,29 +66,43 @@
 
 \subsection{Mostek Wheatstone'a}
 
-Przez mostek nie płynie prąd, tylko wtedy, gdy cztery rezystancje spełniają następującą zależność:
+Mostek Wheatstone'a to układ czterech przewodników (rezystorów), który pozwala na wyznaczenie wartości nieznanej rezystancji w sposób niewymagający bezpośredniego pomiaru natężenia prądu ani napięcia \citep{Drynski1976}. Układ ten składa się z dwóch równoległych gałęzi zasilanych ze źródła prądu stałego, połączonych poprzeczną gałęzią (mostkiem) zawierającą czuły galwanometr.
+
+Stan równowagi mostka osiągany jest wtedy, gdy przez galwanometr nie płynie prąd. Fizycznie oznacza to, że potencjały w punktach węzłowych mostka są jednakowe, a napięcie między nimi wynosi zero \citep{Drynski1976}. Warunek ten jest spełniony tylko wtedy, gdy cztery rezystancje spełniają następującą proporcję:
 
 \begin{equation}
 	\label{eq:wheatstone_proporcja}
 	\frac{R_1}{R_2} = \frac{R_3}{R_4}
 \end{equation}
 
-Gdy jeden z czterech rezystorów jest nieznany, to można wyznaczyć jego rezystancję z powyższej proporcji \eqref{eq:wheatstone_proporcja}.
+Gdy jeden z czterech rezystorów jest nieznany, to można wyznaczyć jego rezystancję z powyższej proporcji \eqref{eq:wheatstone_proporcja}, znając wartości pozostałych trzech elementów.
 
 \subsubsection{Liniowy mostek Wheatstone'a}
 
-W liniowym mostku Wheatstone'a opory $R_1$ i $R_2$ stworzone są z drutu oporowego, rozpiętego na podstawce wzdłuż skali milimetrowej. Dla takiego mostka, korzystając z prawa Ohma, stosunek $\frac{R_1}{R_2}$ można zastąpić stosunkiem $\frac{l_1}{l_2}$.
+W liniowym mostku Wheatstone'a rezystancje $R_1$ i $R_2$ stanowią fragmenty drutu oporowego o stałym przekroju $q$ i rezystywności $\rho$, rozpiętego na podstawce wzdłuż skali milimetrowej \citep{Drynski1976}. Zgodnie z drugim prawem Ohma rezystancja takiego przewodu wyraża się wzorem $R = \rho \frac{l}{q}$.
 
-W ten sposób dla nieznanego oporu $R_x = R_3$ i znanego oporu $R_4 = R$, można określić wartość $R_x$ jako:
+Ponieważ drut jest jednorodny na całej długości, parametry materiałowe i geometryczne upraszczają się, dzięki czemu stosunek rezystancji $\frac{R_1}{R_2}$ można zastąpić bezpośrednio stosunkiem długości odcinków drutu $\frac{l_1}{l_2}$ \citep{Drynski1976}.
+W ten sposób dla nieznanej rezystancji $R_x = R_3$ i znanej rezystancji z opornicy $R_4 = R$, można określić wartość $R_x$ jako:
 
 \begin{equation}
 	\label{eq:mostek_liniowy}
 	R_x = R \frac{l_1}{l_2}
 \end{equation}
 
+Najmniejszy błąd pomiaru uzyskuje się w sytuacji, gdy stosunek długości jest bliski jedności ($l_1 \approx l_2$), co odpowiada ustawieniu suwaka w pobliżu środka skali \citep{Drynski1976}.
 
 % ---------- OPIS DOŚWIADCZENIA ----------
-% \section{Opis doświadczenia}
+\section{Opis doświadczenia}
+
+Pomiary przeprowadzono zgodnie z następującą procedurą:
+
+\begin{itemize}
+	\item Zmontowano układ pomiarowy według schematu ideowego, składający się z badanego rezystora $R_x$, znanej opornicy dekadowej $R_w$, rezystancji zabezpieczającej $R_z$, listwy pomiarowej (dzielącej się na odcinki $l_1$ i $l_2$) oraz miliamperomierza służącego do wykrywania prądu w gałęzi mostka.
+	\item Zadbano o to, aby napięcie zasilające układ nie przekraczało dopuszczalnej wartości \SI{3}{\volt}.
+	\item Dla każdego z pięciu badanych rezystorów ($R_1 - R_5$) znaleziono położenie równowagi mostka, dobierając nastawy opornicy dekadowej tak, aby przez miliamperomierz nie płynął prąd.
+	\item Pomiary dla każdego elementu wykonano przy trzech ustalonych położeniach suwaka na listwie pomiarowej: w $1/3$, $1/2$ oraz $2/3$ jej całkowitej długości.
+	\item Analogiczną procedurę pomiarową powtórzono dla wskazanych przez prowadzącego układów połączeń rezystorów (szeregowego i równoległego).
+\end{itemize}
 
 % ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
 \section{Opracowanie wyników pomiarów}
@@ -109,7 +123,7 @@ Zmierzone wartości nastaw opornicy dekadowej $R_w$ dla trzech ustawień suwaka 
 		$1/2$                & 52                                                                                       & 90    & 452   & 1340  & 3299  & 32              & 560             \\ \hline
 		$2/3$                & 27,6                                                                                     & 49,3  & 232   & 653   & 1720  & 16,4            & 309             \\ \hline
 	\end{tabular}
-	\caption{Wartości nastaw opornicy dekadowej $R_w$ dla poszczególnych badanych oporów.}
+	\caption{Wartości nastaw opornicy dekadowej $R_w$ dla poszczególnych badanych rezystancji.}
 	\label{tab:nastawy_opornicy_dekadowej}
 \end{table}
 
@@ -145,7 +159,7 @@ Dla każdego podziału listwy $L$ obliczono stosunek $\frac{l_1}{l_2}$:
 	\caption{Wartości stosunku podziału listwy dla badanych ustawień $L$.}
 \end{table}
 
-Następnie korzystając ze wzoru \eqref{eq:mostek_liniowy}, dla każdej nastawy opornicy dekadowej $R_w$ i długości listwy $L$, obliczono wartości nieznanego oporu $R_x$. Wyniki przedstawiono w tabeli poniżej.
+Następnie korzystając ze wzoru \eqref{eq:mostek_liniowy}, dla każdej nastawy opornicy dekadowej $R_w$ i długości listwy $L$, obliczono wartości nieznanej rezystancji $R_x$. Wyniki przedstawiono w tabeli poniżej.
 
 \begin{table}[H]
 	\centering
@@ -167,7 +181,7 @@ Następnie korzystając ze wzoru \eqref{eq:mostek_liniowy}, dla każdej nastawy 
 \noindent \textbf{Przykładowe obliczenie} (dla rezystora $R_2$ przy ustawieniu $L=1/3$): \\
 Wartość $R_w = 202\,\Omega$, stosunek $\frac{l_1}{l_2} = 0,5$.
 \begin{equation*}
-	R_2^{(1/3)} = 202\,\Omega \cdot 0,5 = 101,0\,\Omega
+	R_2^{(1/3)} = 202 \cdot 0,5 = 101,0\,\Omega
 \end{equation*}
 
 \vspace{0.5cm}
@@ -189,6 +203,12 @@ Na podstawie wyznaczonych wartości cząstkowych obliczono średnie wartości re
 	\caption{Średnie wartości badanych rezystancji.}
 	\label{tab:srednie_Rx}
 \end{table}
+
+\noindent \textbf{Przykładowe obliczenie} (dla rezystora $R_1$): \\
+Korzystając z wartości wyznaczonych dla trzech ustawień suwaka ($48,5\,\Omega$, $52,0\,\Omega$ oraz $55,2\,\Omega$):
+\begin{equation*}
+	\overline{R_1} = \frac{48,5 + 52,0 + 55,2}{3} = \frac{155,7}{3} = 51,9\,\Omega
+\end{equation*}
 
 \subsection{Ocena niepewności pomiaru}
 
@@ -218,7 +238,7 @@ Wyniki obliczeń niepewności przedstawiono w tabeli poniżej.
 \noindent \textbf{Przykładowe obliczenie} (dla rezystora $R_2$): \\
 Wartości skrajne wynoszą $R_{max} = 101,0\,\Omega$ oraz $R_{min} = 90,0\,\Omega$.
 \begin{equation*}
-	\Delta R_2 = \frac{101,0\,\Omega - 90,0\,\Omega}{2} = 5,5\,\Omega
+	\Delta R_2 = \frac{101,0- 90,0}{2} = 5,5\,\Omega
 \end{equation*}
 
 Ostateczne wyniki pomiarów (wraz z niepewnościami) wynoszą:
@@ -263,7 +283,7 @@ Następnie porównano wartości teoretyczne z wynikami zmierzonymi bezpośrednio
 % ---------- WNIOSKI ----------
 \section{Wnioski}
 
-W ramach ćwiczenia wyznaczono wartości rezystancji pięciu nieznanych oporników oraz ich połączeń (szeregowego i równoległego) metodą mostka Wheatstone’a. Pomiary wykonano dla trzech różnych ustawień suwaka na listwie ($L=1/3, 1/2, 2/3$), a jako wynik końcowy przyjęto wartość średnią.
+W ramach ćwiczenia wyznaczono wartości rezystancji pięciu nieznanych rezystorów oraz ich połączeń (szeregowego i równoległego) metodą mostka Wheatstone’a. Pomiary wykonano dla trzech różnych ustawień suwaka na listwie ($L=1/3, 1/2, 2/3$), a jako wynik końcowy przyjęto wartość średnią.
 
 Ostateczne wyniki pomiarów wraz z niepewnościami maksymalnymi wynoszą:
 \begin{itemize}
