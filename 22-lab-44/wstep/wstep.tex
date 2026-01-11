@@ -1,0 +1,123 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{multicol}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=orange]{hyperref}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage[round]{natbib}
+\setlist[itemize]{itemsep=0pt, topsep=0pt}
+\usepackage{siunitx}
+
+% SI setup preferences
+\sisetup{output-decimal-marker={,}}
+\sisetup{exponent-product = \cdot}
+\sisetup{per-mode = symbol}
+
+% LTeX: language=pl-PL
+
+\begin{document}
+
+% Górna część strony
+\noindent
+\begin{minipage}{0.5\textwidth}
+	\raggedright
+	\textbf{Imię Nazwisko, Nr albumu} \\ % Uzupełnij swoje dane
+	II rok, Fizyka \\
+	Wtorek, 8:00-10:15 % Sprawdź czy termin jest aktualny
+	\vspace{0.5cm}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+	\raggedleft
+	DATA \\ % Wpisz datę
+	\vspace{0.5cm}
+	Prowadząca: \\
+	dr Sylwia Owczarek
+\end{minipage}
+
+% Tytuł ćwiczenia
+\vspace{2cm}
+\begin{center}
+	\LARGE \textbf{Ćwiczenie nr 44} \\[0.5cm]
+	\Large \textbf{Prawo Ohma dla prądu przemiennego}
+\end{center}
+
+\vspace{1cm}
+\noindent
+
+% ---------- WSTĘP TEORETYCZNY ----------
+\section{Wstęp teoretyczny}
+
+\subsection{Charakterystyka prądu przemiennego}
+Prądem przemiennym nazywamy prąd elektryczny, którego wartość chwilowa i kierunek ulegają okresowym zmianom. W najprostszym przypadku zmiany te mają charakter harmoniczny (sinusoidalny) i mogą być opisane równaniami:
+\begin{equation}
+	u(t) = U_0 \sin(\omega t), \quad i(t) = I_0 \sin(\omega t + \varphi)
+\end{equation}
+gdzie $U_0, I_0$ to amplitudy napięcia i natężenia, $\omega = 2\pi f$ to częstość kołowa, a $\varphi$ oznacza przesunięcie fazowe między napięciem a natężeniem.
+
+W obwodach prądu przemiennego najczęściej posługujemy się wartościami skutecznymi napięcia i natężenia, które dla przebiegów sinusoidalnych wiążą się z amplitudami zależnością:
+\begin{equation}
+	U_{sk} = \frac{U_0}{\sqrt{2}}, \quad I_{sk} = \frac{I_0}{\sqrt{2}}
+\end{equation}
+
+\subsection{Impedancja i uogólnione prawo Ohma}
+W obwodach prądu przemiennego opór elektryczny nie zależy wyłącznie od rezystancji (oporu czynnego), ale również od obecności elementów gromadzących energię pola elektrycznego i magnetycznego (kondensatory, cewki). Całkowity opór obwodu nazywamy impedancją (zawadą) $Z$. Uogólnione prawo Ohma przyjmuje postać:
+\begin{equation}
+	Z = \frac{U_{sk}}{I_{sk}}
+\end{equation}
+Impedancja składa się z części rzeczywistej (rezystancja $R$) oraz części urojonej (reaktancja $X$):
+\begin{equation}
+	Z = \sqrt{R^2 + X^2}
+\end{equation}
+
+\subsection{Elementy R, L, C w obwodzie prądu przemiennego}
+
+\subsubsection{Rezystor idealny}
+Dla rezystora idealnego impedancja jest równa jego rezystancji ($Z=R$). Napięcie i natężenie są zgodne w fazie ($\varphi = 0$).
+
+\subsubsection{Cewka indukcyjna}
+Cewka idealna o indukcyjności $L$ stawia prądowi przemiennemu opór bierny zwany reaktancją indukcyjną (induktancją) $X_L$:
+\begin{equation}
+	X_L = \omega L = 2\pi f L
+\end{equation}
+W cewce idealnej napięcie wyprzedza natężenie prądu o kąt $\pi/2$. W rzeczywistości cewka posiada również opór czynny uzwojenia $R_L$, dlatego jej impedancja wynosi:
+\begin{equation}
+	Z_L = \sqrt{R_L^2 + (\omega L)^2}
+\end{equation}
+
+\subsubsection{Kondensator}
+Kondensator o pojemności $C$ charakteryzuje się reaktancją pojemnościową (kapacytancją) $X_C$:
+\begin{equation}
+	X_C = \frac{1}{\omega C} = \frac{1}{2\pi f C}
+\end{equation}
+Na kondensatorze idealnym natężenie prądu wyprzedza napięcie o kąt $\pi/2$. Prąd płynący przez idealny kondensator i cewkę nie wykonuje pracy (moc czynna wynosi zero).
+
+\subsection{Szeregowy obwód RLC}
+W przypadku szeregowego połączenia rezystora, cewki i kondensatora, całkowita impedancja obwodu wynosi:
+\begin{equation}
+	Z = \sqrt{R^2 + \left(X_L - X_C\right)^2} = \sqrt{R^2 + \left(\omega L - \frac{1}{\omega C}\right)^2}
+\end{equation}
+Przesunięcie fazowe $\varphi$ w takim obwodzie wyraża się wzorem:
+\begin{equation}
+	\tan \varphi = \frac{X_L - X_C}{R}
+\end{equation}
+
+% ---------- OPIS DOŚWIADCZENIA ----------
+% \section{Opis doświadczenia}
+
+% ---------- LITERATURA ----------
+\bibliographystyle{apalike}
+\bibliography{bibliography}
+
+\end{document}

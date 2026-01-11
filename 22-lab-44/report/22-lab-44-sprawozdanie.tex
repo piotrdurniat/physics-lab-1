@@ -1,0 +1,336 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{multicol}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=orange]{hyperref}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage[round]{natbib}
+\setlist[itemize]{itemsep=0pt, topsep=0pt}
+\usepackage{siunitx}
+
+% SI setup preferences
+\sisetup{output-decimal-marker={,}}
+\sisetup{exponent-product = \cdot}
+\sisetup{per-mode = symbol}
+
+% LTeX: language=pl-PL
+
+\begin{document}
+
+\noindent
+\begin{minipage}{0.5\textwidth}
+	\raggedright
+	% full name and index number
+	\textbf{Imię Nazwisko, Nr albumu} \\
+	II rok, Fizyka \\
+	Wtorek, 8:00-10:15
+	\vspace{0.5cm}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+	\raggedleft
+	% date
+	DATA \\
+	\vspace{0.5cm}
+	Prowadząca: \\
+	dr Sylwia Owczarek
+\end{minipage}
+
+% Tytuł ćwiczenia
+\vspace{2cm}
+\begin{center}
+	\LARGE \textbf{Ćwiczenie nr 44} \\[0.5cm]
+	\Large \textbf{Prawo Ohma dla prądu przemiennego}
+\end{center}
+
+\vspace{1cm}
+\noindent
+
+% ---------- WSTĘP TEORETYCZNY ----------
+\section{Wstęp teoretyczny}
+
+\subsection{Charakterystyka prądu przemiennego}
+Prądem przemiennym nazywamy prąd elektryczny, którego wartość chwilowa i kierunek ulegają okresowym zmianom. W najprostszym przypadku zmiany te mają charakter harmoniczny (sinusoidalny) i mogą być opisane równaniami:
+\begin{equation}
+	u(t) = U_0 \sin(\omega t), \quad i(t) = I_0 \sin(\omega t + \varphi)
+\end{equation}
+gdzie $U_0, I_0$ to amplitudy napięcia i natężenia, $\omega = 2\pi f$ to częstość kołowa, a $\varphi$ oznacza przesunięcie fazowe między napięciem a natężeniem.
+
+W obwodach prądu przemiennego najczęściej posługujemy się wartościami skutecznymi napięcia i natężenia, które dla przebiegów sinusoidalnych wiążą się z amplitudami zależnością:
+\begin{equation}
+	U_{sk} = \frac{U_0}{\sqrt{2}}, \quad I_{sk} = \frac{I_0}{\sqrt{2}}
+\end{equation}
+
+\subsection{Impedancja i uogólnione prawo Ohma}
+W obwodach prądu przemiennego opór elektryczny nie zależy wyłącznie od rezystancji (oporu czynnego), ale również od obecności elementów gromadzących energię pola elektrycznego i magnetycznego (kondensatory, cewki). Całkowity opór obwodu nazywamy impedancją (zawadą) $Z$. Uogólnione prawo Ohma przyjmuje postać:
+\begin{equation}
+	Z = \frac{U_{sk}}{I_{sk}}
+\end{equation}
+Impedancja składa się z części rzeczywistej (rezystancja $R$) oraz części urojonej (reaktancja $X$):
+\begin{equation}
+	Z = \sqrt{R^2 + X^2}
+\end{equation}
+
+\subsection{Elementy R, L, C w obwodzie prądu przemiennego}
+
+\subsubsection{Rezystor idealny}
+Dla rezystora idealnego impedancja jest równa jego rezystancji ($Z=R$). Napięcie i natężenie są zgodne w fazie ($\varphi = 0$).
+
+\subsubsection{Cewka indukcyjna}
+Cewka idealna o indukcyjności $L$ stawia prądowi przemiennemu opór bierny zwany reaktancją indukcyjną (induktancją) $X_L$:
+\begin{equation}
+	X_L = \omega L = 2\pi f L
+\end{equation}
+W cewce idealnej napięcie wyprzedza natężenie prądu o kąt $\pi/2$. W rzeczywistości cewka posiada również opór czynny uzwojenia $R_L$, dlatego jej impedancja wynosi:
+\begin{equation}
+	Z_L = \sqrt{R_L^2 + (\omega L)^2}
+\end{equation}
+
+\subsubsection{Kondensator}
+Kondensator o pojemności $C$ charakteryzuje się reaktancją pojemnościową (kapacytancją) $X_C$:
+\begin{equation}
+	X_C = \frac{1}{\omega C} = \frac{1}{2\pi f C}
+\end{equation}
+Na kondensatorze idealnym natężenie prądu wyprzedza napięcie o kąt $\pi/2$. Prąd płynący przez idealny kondensator i cewkę nie wykonuje pracy (moc czynna wynosi zero).
+
+\subsection{Szeregowy obwód RLC}
+W przypadku szeregowego połączenia rezystora, cewki i kondensatora, całkowita impedancja obwodu wynosi:
+\begin{equation}
+	Z = \sqrt{R^2 + \left(X_L - X_C\right)^2} = \sqrt{R^2 + \left(\omega L - \frac{1}{\omega C}\right)^2}
+\end{equation}
+Przesunięcie fazowe $\varphi$ w takim obwodzie wyraża się wzorem:
+\begin{equation}
+	\tan \varphi = \frac{X_L - X_C}{R}
+\end{equation}
+
+% ---------- OPIS DOŚWIADCZENIA ----------
+% \section{Opis doświadczenia}
+
+% ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
+\section{Opracowanie wyników pomiarów}
+
+% ---------- TABELE ----------
+\subsection{Tabele pomiarowe}
+
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+	\small % Zmniejszenie czcionki dla tabel w tej kolumnie
+	\centering
+
+	\begin{table}[H]
+		\centering
+		\caption{Uzwojenie L1}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{lp} & \textbf{I [mA]} & \textbf{U [V]} \\ \hline
+			1           & 10,0            & 0,50           \\ \hline
+			2           & 20,0            & 1,00           \\ \hline
+			3           & 29,9            & 1,50           \\ \hline
+			4           & 39,7            & 2,00           \\ \hline
+			5           & 49,7            & 2,50           \\ \hline
+			6           & 59,5            & 3,00           \\ \hline
+			7           & 69,1            & 3,50           \\ \hline
+			8           & 79,3            & 4,00           \\ \hline
+			9           & 89,3            & 4,50           \\ \hline
+			10          & 99,0            & 5,00           \\ \hline
+		\end{tabular}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\caption{Uzwojenie L1+L2}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{lp} & \textbf{I [mA]} & \textbf{U [V]} \\ \hline
+			1           & 3,7             & 0,50           \\ \hline
+			2           & 7,5             & 1,00           \\ \hline
+			3           & 11,2            & 1,50           \\ \hline
+			4           & 14,9            & 2,00           \\ \hline
+			5           & 18,8            & 2,51           \\ \hline
+			6           & 22,4            & 3,00           \\ \hline
+			7           & 26,1            & 3,50           \\ \hline
+			8           & 29,9            & 3,99           \\ \hline
+			9           & 33,7            & 4,50           \\ \hline
+			10          & 37,4            & 5,00           \\ \hline
+		\end{tabular}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\caption{Uzwojenie L1+L2+L3}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{lp} & \textbf{I [mA]} & \textbf{U [V]} \\ \hline
+			1           & 1,5             & 0,48           \\ \hline
+			2           & 3,0             & 0,96           \\ \hline
+			3           & 4,7             & 1,50           \\ \hline
+			4           & 6,3             & 1,98           \\ \hline
+			5           & 7,9             & 2,50           \\ \hline
+			6           & 9,4             & 2,97           \\ \hline
+			7           & 11,1            & 3,48           \\ \hline
+			8           & 12,7            & 3,98           \\ \hline
+			9           & 14,3            & 4,49           \\ \hline
+			10          & 16,0            & 5,02           \\ \hline
+		\end{tabular}
+	\end{table}
+\end{minipage}
+\hfill % Wypełnienie przestrzeni między kolumnami
+\begin{minipage}[t]{0.48\textwidth}
+	\small % Zmniejszenie czcionki dla tabel w tej kolumnie
+	\centering
+
+	\begin{table}[H]
+		\centering
+		\caption{Kondensator C}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{lp} & \textbf{I [mA]} & \textbf{U [V]} \\ \hline
+			1           & 0,48            & 0,48           \\ \hline
+			2           & 1,00            & 0,96           \\ \hline
+			3           & 1,60            & 1,49           \\ \hline
+			4           & 2,10            & 1,98           \\ \hline
+			5           & 2,70            & 2,49           \\ \hline
+			6           & 3,20            & 2,99           \\ \hline
+			7           & 3,80            & 3,51           \\ \hline
+			8           & 4,40            & 4,01           \\ \hline
+			9           & 5,00            & 4,53           \\ \hline
+			10          & 5,50            & 5,02           \\ \hline
+		\end{tabular}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\caption{Kondensator 2C}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{lp} & \textbf{I [mA]} & \textbf{U [V]} \\ \hline
+			1           & 1,0             & 0,50           \\ \hline
+			2           & 2,2             & 1,02           \\ \hline
+			3           & 3,3             & 1,50           \\ \hline
+			4           & 4,3             & 1,98           \\ \hline
+			5           & 5,5             & 2,47           \\ \hline
+			6           & 6,8             & 3,05           \\ \hline
+			7           & 7,8             & 3,52           \\ \hline
+			8           & 8,9             & 3,98           \\ \hline
+			9           & 10,1            & 4,52           \\ \hline
+			10          & 11,3            & 5,03           \\ \hline
+		\end{tabular}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\caption{Kondensator 4C}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{lp} & \textbf{I [mA]} & \textbf{U [V]} \\ \hline
+			1           & 2,4             & 0,48           \\ \hline
+			2           & 5,0             & 0,99           \\ \hline
+			3           & 7,7             & 1,52           \\ \hline
+			4           & 10,1            & 2,00           \\ \hline
+			5           & 12,8            & 2,53           \\ \hline
+			6           & 15,5            & 3,05           \\ \hline
+			7           & 17,7            & 3,48           \\ \hline
+			8           & 20,4            & 4,01           \\ \hline
+			9           & 22,4            & 4,51           \\ \hline
+			10          & 25,5            & 5,02           \\ \hline
+		\end{tabular}
+	\end{table}
+\end{minipage}
+
+% Tabela zbiorcza poza kolumnami (na całą szerokość)
+\begin{table}[H]
+	\centering
+	\caption{Układ L1+L2+L3+C1}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{lp} & \textbf{I [mA]} & \textbf{U [V]} \\ \hline
+		1           & 0,8             & 0,51           \\ \hline
+		2           & 1,6             & 0,98           \\ \hline
+		3           & 2,4             & 1,49           \\ \hline
+		4           & 3,3             & 2,02           \\ \hline
+		5           & 4,1             & 2,49           \\ \hline
+		6           & 4,9             & 2,98           \\ \hline
+		7           & 5,7             & 3,47           \\ \hline
+		8           & 6,6             & 4,00           \\ \hline
+		9           & 7,5             & 4,53           \\ \hline
+		10          & 8,3             & 5,02           \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsubsection*{ Dane ogólne}
+
+
+Częstotliwość prądu przemiennego: $f = 50\ \mathrm{Hz}$.
+\[
+	\omega = 2\pi f = 2\pi\cdot 50 = 100\pi = 314{,}16\ \mathrm{rad/s}
+\]
+
+Rezystancje uzwojeń cewek:
+\[
+	R_{ab}=36\ \Omega,\quad
+	R_{bc}=16\ \Omega,\quad
+	R_{cd}=33\ \Omega
+\]
+
+\[
+	\begin{aligned}
+		R_1       & = 36\ \Omega            \\
+		R_{1+2}   & = 36+16 = 52\ \Omega    \\
+		R_{1+2+3} & = 36+16+33 = 85\ \Omega
+	\end{aligned}
+\]
+
+% ---------- OBLICZENIA ----------
+\subsection{Wyznaczenie indukcyjności cewki}
+
+Na podstawie pomiarów napięcia i natężenia prądu dla cewek, narysowano ich charakterystyki prądowo napięciowe i zamieszczono na wykresie \ref{fig:charakterystyka_cewek}.
+
+
+
+% ---------- NIEPEWNOŚCI ----------
+% \section{Ocena niepewności pomiaru}
+
+% ---------- WNIOSKI ----------
+% \section{Wnioski}
+
+% ---------- WYKRESY ----------
+\section{Wykresy}
+
+\newpage
+
+% Wykres cewek na osobnej stronie
+\begin{figure}[p]
+	\centering
+	% Obrót o 90 stopni, dopasowanie do wysokości strony tekstowej
+	\includegraphics[angle=90, width=\textwidth, height=0.9\textheight, keepaspectratio]{img/charakterystyka_cewek.png}
+	\caption{Charakterystyki prądowo-napięciowe cewek $L_1$, $L_2$ oraz $L_3$.}
+	\label{fig:charakterystyka_cewek}
+\end{figure}
+
+\clearpage
+
+% Wykres kondensatorów na kolejnej osobnej stronie
+\begin{figure}[p]
+	\centering
+	\includegraphics[angle=90, width=\textwidth, height=0.9\textheight, keepaspectratio]{img/charakterystyka_kondensatorow.png}
+	\caption{Charakterystyki prądowo-napięciowe kondensatorów $C_1$, $C_2$ oraz $C_3$.}
+	\label{fig:charakterystyka_kondensatorow}
+\end{figure}
+
+% ---------- LITERATURA ----------
+\bibliographystyle{apalike}
+\bibliography{bibliography}
+
+\end{document}
