@@ -72,48 +72,49 @@ W obwodach prądu przemiennego najczęściej posługujemy się wartościami skut
 	U_{sk} = \frac{U_0}{\sqrt{2}}, \quad I_{sk} = \frac{I_0}{\sqrt{2}}
 \end{equation}
 
-\subsection{Impedancja i uogólnione prawo Ohma}
-W obwodach prądu przemiennego opór elektryczny nie zależy wyłącznie od rezystancji (oporu czynnego), ale również od obecności elementów gromadzących energię pola elektrycznego i magnetycznego (kondensatory, cewki). Całkowity opór obwodu nazywamy impedancją (zawadą) $Z$. Uogólnione prawo Ohma przyjmuje postać:
+\subsection{Impedancja i zawada}
+W obwodach prądu przemiennego opór całkowity nazywamy **impedancją**. Jest to wielkość zespolona, składająca się z części rzeczywistej (rezystancja $R$) oraz części urojonej (reaktancja $X$).
+Moduł impedancji nazywamy **zawadą** i oznaczamy symbolem $|Z|$.
 \begin{equation}
-	Z = \frac{U_{sk}}{I_{sk}}
+	|Z| = \sqrt{R^2 + X^2}
 \end{equation}
-Impedancja składa się z części rzeczywistej (rezystancja $R$) oraz części urojonej (reaktancja $X$):
+Uogólnione prawo Ohma dla wartości skutecznych przyjmuje postać:
 \begin{equation}
-	Z = \sqrt{R^2 + X^2}
+	I_{sk} = \frac{U_{sk}}{|Z|}
 \end{equation}
 
 \subsection{Elementy R, L, C w obwodzie prądu przemiennego}
 
 \subsubsection{Rezystor idealny}
-Dla rezystora idealnego impedancja jest równa jego rezystancji ($Z=R$). Napięcie i natężenie są zgodne w fazie ($\varphi = 0$).
+Dla rezystora idealnego reaktancja wynosi zero, zatem zawada jest równa jego rezystancji ($|Z|=R$). Napięcie i natężenie są zgodne w fazie ($\varphi = 0$).
 
 \subsubsection{Cewka indukcyjna}
 Cewka idealna o indukcyjności $L$ stawia prądowi przemiennemu opór bierny zwany reaktancją indukcyjną (induktancją) $X_L$:
 \begin{equation}
 	X_L = \omega L = 2\pi f L
 \end{equation}
-W cewce idealnej napięcie wyprzedza natężenie prądu o kąt $\pi/2$. W rzeczywistości cewka posiada również opór czynny uzwojenia $R_L$, dlatego jej impedancja wynosi:
+W rzeczywistości cewka posiada również opór czynny uzwojenia $R_L$. Jej zawada wynosi zatem:
 \begin{equation}
-	Z_L = \sqrt{R_L^2 + (\omega L)^2}
+	|Z_L| = \sqrt{R_L^2 + X_L^2} = \sqrt{R_L^2 + (\omega L)^2}
 \end{equation}
+W cewce idealnej napięcie wyprzedza natężenie prądu o kąt $\pi/2$.
 
 \subsubsection{Kondensator}
 Kondensator o pojemności $C$ charakteryzuje się reaktancją pojemnościową (kapacytancją) $X_C$:
 \begin{equation}
 	X_C = \frac{1}{\omega C} = \frac{1}{2\pi f C}
 \end{equation}
-Na kondensatorze idealnym natężenie prądu wyprzedza napięcie o kąt $\pi/2$. Prąd płynący przez idealny kondensator i cewkę nie wykonuje pracy (moc czynna wynosi zero).
+Dla kondensatora idealnego (gdzie $R=0$) zawada wynosi $|Z_C| = X_C$. Natężenie prądu wyprzedza napięcie o kąt $\pi/2$.
 
 \subsection{Szeregowy obwód RLC}
-W przypadku szeregowego połączenia rezystora, cewki i kondensatora, całkowita impedancja obwodu wynosi:
+W przypadku szeregowego połączenia rezystora, cewki i kondensatora, wypadkowa zawada obwodu wynosi:
 \begin{equation}
-	Z = \sqrt{R^2 + \left(X_L - X_C\right)^2} = \sqrt{R^2 + \left(\omega L - \frac{1}{\omega C}\right)^2}
+	|Z| = \sqrt{R^2 + \left(X_L - X_C\right)^2} = \sqrt{R^2 + \left(\omega L - \frac{1}{\omega C}\right)^2}
 \end{equation}
 Przesunięcie fazowe $\varphi$ w takim obwodzie wyraża się wzorem:
 \begin{equation}
 	\tan \varphi = \frac{X_L - X_C}{R}
 \end{equation}
-
 % ---------- OPIS DOŚWIADCZENIA ----------
 % \section{Opis doświadczenia}
 
@@ -297,6 +298,7 @@ Rezystancje uzwojeń cewek:
 
 Na podstawie pomiarów napięcia i natężenia prądu dla cewek, narysowano ich charakterystyki prądowo napięciowe i zamieszczono na wykresie \ref{fig:charakterystyka_cewek}.
 
+zawada (moduł impedancji).
 
 
 % ---------- NIEPEWNOŚCI ----------
