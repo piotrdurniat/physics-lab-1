@@ -1,0 +1,25 @@
+--- WYNIKI OBLICZEŃ LAB 44 ---
+
+Dane zaimportowane pomyślnie.
+Przyjęto częstość kołową omega = 314.16 rad/s (dla f=50Hz)
+Przyjęto rezystancje: Rab=36.0, Rbc=16.0, Rcd=33.0 Ohm
+
+TABELA 1: Wyniki regresji dla badanych układów (całościowych)
+Układ                | |Z| [Ohm]    | L_ukladu [H]    | R^2     
+-----------------------------------------------------------------
+L1 (a-b)             | 50.58        | 0.1131          | 1.0000  
+L1+L2 (a-c)          | 133.53       | 0.3915          | 1.0000  
+L1+L2+L3 (a-d)       | 312.39       | 0.9568          | 1.0000  
+
+TABELA 2: Obliczone współczynniki samoindukcji poszczególnych cewek
+(Obliczone jako różnice indukcyjności kolejnych układów)
+------------------------------------------------------------
+Cewka                | L [H]        | u(L) [H]    
+------------------------------------------------------------
+Cewka L1             | 0.11309      | 0.00032     
+Cewka L2             | 0.27838      | 0.00069     
+Cewka L3             | 0.56536      | 0.00223     
+------------------------------------------------------------
+Całkowita L (suma):  0.95684 H
+L zmierzona (a-d):   0.95684 H
+

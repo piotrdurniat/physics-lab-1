@@ -296,11 +296,95 @@ Rezystancje uzwojeń cewek:
 % ---------- OBLICZENIA ----------
 \subsection{Wyznaczenie indukcyjności cewki}
 
-Na podstawie pomiarów napięcia i natężenia prądu dla cewek, narysowano ich charakterystyki prądowo napięciowe i zamieszczono na wykresie \ref{fig:charakterystyka_cewek}.
+Na podstawie pomiarów napięcia i natężenia prądu dla cewek sporządzono charakterystyki prądowo-napięciowe (rys. \ref{fig:charakterystyka_cewek}).
 
-zawada (moduł impedancji).
+Do wyznaczenia parametrów tych charakterystyk wykorzystano metodę regresji liniowej. Przyjęto model liniowy $U(I) = a \cdot I + b$, gdzie współczynnik kierunkowy $a$ odpowiada wartości zawady $|Z|$ danego układu, a wyraz wolny $b$ powinien być bliski zeru.
 
+Niepewność standardową współczynnika kierunkowego $u(a)$ wyznaczono zgodnie ze wzorem (6) z instrukcji \citep{ONP}:
+$$
+	u(a) = s_y \sqrt{\frac{n}{D}}
+$$
+Wyniki dopasowania prostych do danych pomiarowych dla narastających układów uzwojeń przedstawiono w tabeli \ref{tab:regresja_cewki}.
 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\textbf{Układ}      & \textbf{$a$ ($|Z|$)} [$\Omega$] & \textbf{$u(a)$} [$\Omega$] & \textbf{$b$ [V]} & \textbf{$R^2$} \\ \hline
+		$L_1$ (a-b)         & 50,58                           & 0,07                       & -0,0091          & 1,0000         \\ \hline
+		$L_1+L_2$ (a-c)     & 133,53                          & 0,18                       & 0,0047           & 1,0000         \\ \hline
+		$L_1+L_2+L_3$ (a-d) & 312,39                          & 0,65                       & 0,0214           & 1,0000         \\ \hline
+	\end{tabular}
+	\caption{Współczynniki regresji liniowej wyznaczone dla charakterystyk cewek ($U = aI + b$).}
+	\label{tab:regresja_cewki}
+\end{table}
+
+\subsubsection{Obliczenie indukcyjności całkowitych ($L_{ukl}$)}
+
+Dla każdego badanego układu, znając rezystancję czynną $R$ (sumę rezystancji włączonych sekcji) oraz częstość kołową $\omega = 314,16\,\mathrm{rad/s}$, obliczono całkowitą indukcyjność $L_{ukl}$ przekształcając wzór na impedancję:
+\begin{equation}
+	L_{ukl} = \frac{1}{\omega}\sqrt{|Z|^2 - R^2}
+\end{equation}
+Niepewność $u(L_{ukl})$ obliczono metodą przenoszenia niepewności (wzór 15 w \citep{ONP}), traktując $|Z|$ jako zmienną pomiarową:
+
+\begin{equation}
+	u(L_{ukl}) = \left| \frac{\partial L}{\partial |Z|} \right| u(|Z|) = \left| \frac{1}{\omega} \frac{2|Z|}{2\sqrt{|Z|^2 - R^2}} \right| u(|Z|) = \frac{|Z|}{\omega (\omega L_{ukl})} u(|Z|) = \frac{|Z|}{\omega^2 L_{ukl}} u(|Z|)
+\end{equation}
+
+\vspace{0.3cm}
+\noindent \textbf{Przykładowe obliczenie} (dla układu $L_1+L_2$, czyli zaciski a-c):
+\begin{itemize}
+	\item Dane: $|Z| = 133,53\,\Omega$, $u(|Z|) = 0,18\,\Omega$, $R = R_{ab} + R_{bc} = 36,0 + 16,0 = 52,0\,\Omega$.
+	\item Obliczenie wartości $L_{(a-c)}$:
+	      $$
+		      L_{(a-c)} = \frac{1}{314,16}\sqrt{133,53^2 - 52,0^2} = \frac{\sqrt{17830,26 - 2704}}{314,16} \approx \frac{122,99}{314,16} \approx 0,3915\,\mathrm{H}
+	      $$
+	\item Obliczenie niepewności $u(L_{(a-c)})$:
+	      $$
+		      u(L_{(a-c)}) = \frac{133,53}{314,16^2 \cdot 0,3915} \cdot 0,18 \approx \frac{133,53}{38651,5} \cdot 0,18 \approx 0,0006\,\mathrm{H}
+	      $$
+\end{itemize}
+Analogicznie obliczono $L_{(a-b)} \approx 0,1131\,\mathrm{H}$ oraz $L_{(a-d)} \approx 0,9568\,\mathrm{H}$.
+
+\subsubsection{Obliczenie indukcyjności sekcji ($L_1, L_2, L_3$)}
+
+Ponieważ pomiary wykonywano w układzie narastającym (szeregowym), indukcyjności poszczególnych sekcji wyznaczono różnicowo:
+\begin{itemize}
+	\item $L_1 = L_{(a-b)}$
+	\item $L_2 = L_{(a-c)} - L_{(a-b)}$
+	\item $L_3 = L_{(a-d)} - L_{(a-c)}$
+\end{itemize}
+
+Niepewność wyznaczenia indukcyjności sekcji (dla $L_2$ i $L_3$) obliczono jako pierwiastek z sumy kwadratów niepewności składowych (prawo przenoszenia niepewności dla różnicy):
+$$
+	u(L_{sekcja}) = \sqrt{u^2(L_{obecny}) + u^2(L_{poprzedni})}
+$$
+
+\vspace{0.3cm}
+\noindent \textbf{Przykładowe obliczenie} (dla sekcji $L_2$):
+\begin{itemize}
+	\item Dane (z poprzedniego kroku): $L_{(a-c)} = 0,3915\,\mathrm{H}$, $L_{(a-b)} = 0,1131\,\mathrm{H}$.
+	\item Wynik:
+	      $$L_2 = 0,3915 - 0,1131 = 0,2784\,\mathrm{H}$$
+	\item Niepewność:
+	      $$u(L_2) = \sqrt{0,0006^2 + 0,0003^2} \approx 0,0007\,\mathrm{H}$$
+\end{itemize}
+
+Ostateczne wyniki dla poszczególnych sekcji zestawiono w tabeli \ref{tab:wyniki_sekcje}.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Sekcja}     & \textbf{Indukcyjność $L$ [H]} & \textbf{Niepewność $u(L)$ [H]} \\ \hline
+		$L_1$               & 0,1131                        & 0,0003                         \\ \hline
+		$L_2$               & 0,2784                        & 0,0007                         \\ \hline
+		$L_3$               & 0,5654                        & 0,0022                         \\ \hline \hline
+		\textbf{Suma (a-d)} & \textbf{0,9568}               & -                              \\ \hline
+	\end{tabular}
+	\caption{Wyznaczone współczynniki samoindukcji poszczególnych sekcji cewki.}
+	\label{tab:wyniki_sekcje}
+\end{table}
 % ---------- NIEPEWNOŚCI ----------
 % \section{Ocena niepewności pomiaru}
 
