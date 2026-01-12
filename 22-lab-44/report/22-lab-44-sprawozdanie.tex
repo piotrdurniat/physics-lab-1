@@ -491,11 +491,23 @@ Porównując wartość wyznaczoną z charakterystyki $I(U)$ z wartością teoret
 \[
 	|Z_{pom} - Z_{teo}| = |601,07 - 605,76| = 4,69\,\Omega
 \]
-Rozszerzona niepewność pomiarowa ($2u(Z)$) wynosi ok. $2,54\,\Omega$.
-Stwierdzono, że różnica między wartością zmierzoną a teoretyczną jest większa od podwojonej niepewności standardowej. Niewielka rozbieżność (na poziomie ok. 0,8\%) może wynikać z uproszczeń modelu (np. pominięcia rezystancji połączeń, niedokładności częstotliwości sieci) lub niepewności wyznaczenia składowych $L$ i $C$ w poprzednich krokach.
+Niepewność pomiarowa ($u(Z)$) wynosi ok. $1,27\,\Omega$.
+Różnica między wartością zmierzoną a teoretyczną jest większa od niepewności standardowej, ta rozbieżność (na poziomie ok. 0,8\%) może wynikać z uproszczeń modelu (np. pominięcia rezystancji połączeń, niedokładności częstotliwości sieci) lub niepewności wyznaczenia składowych $L$ i $C$ w poprzednich krokach.
 
 % ---------- WNIOSKI ----------
-% \section{Wnioski}
+\section{Wnioski}
+
+W ramach ćwiczenia zweryfikowano prawo Ohma dla prądu przemiennego oraz wyznaczono parametry elementów RLC. Na podstawie przeprowadzonych pomiarów i analizy danych sformułowano następujące wnioski:
+
+\begin{enumerate}
+	\item \textbf{Badanie cewki:} Charakterystyki prądowo-napięciowe sekcji cewki wykazały liniowość w badanym zakresie, co pozwoliło na wyznaczenie ich indukcyjności. Otrzymano wyniki: $L_1 = 0,1131\,\mathrm{H}$, $L_2 = 0,2784\,\mathrm{H}$ oraz $L_3 = 0,5654\,\mathrm{H}$. Sumaryczna indukcyjność całego uzwojenia wynosi $0,9568\,\mathrm{H}$.
+
+	\item \textbf{Badanie kondensatorów:} Wyznaczone pojemności badanych elementów wynoszą odpowiednio: $C_1 = 3,54\,\mu\mathrm{F}$, $C_2 = 7,21\,\mu\mathrm{F}$ oraz $C_3 = 16,08\,\mu\mathrm{F}$. Analiza stosunków pojemności potwierdziła, że kondensator $C_2$ posiada pojemność zbliżoną do $2C_1$ (stosunek 2,04), natomiast kondensator $C_3$ wykazuje pojemność nieco większą niż $4C_1$ (stosunek 4,55).
+
+	\item \textbf{Analiza obwodu RLC:} Porównanie zawady obwodu szeregowego wyznaczonej metodą regresji ($Z_{pom} = 601,07\,\Omega$) z wartością obliczoną teoretycznie na podstawie parametrów składowych ($Z_{teo} = 605,76\,\Omega$) wykazało wysoką zgodność wyników.
+
+	\item \textbf{Ocena zgodności modelu:} Różnica między wartością zmierzoną a teoretyczną impedancji obwodu RLC wynosi $4,69\,\Omega$, czyli ok. 0,8\% mierzonej wartości. Mimo że odchylenie to przekracza wyznaczoną niepewność pomiarową ($u(Z) \approx 1,27\,\Omega$), można uznać, że model teoretyczny poprawnie opisuje zjawiska zachodzące w obwodzie, a niewielka rozbieżność wynika prawdopodobnie z uproszczeń modelu (np. pominięcia rezystancji połączeń) oraz tolerancji parametrów sieci zasilającej.
+\end{enumerate}
 
 % ---------- WYKRESY ----------
 \section{Wykresy}
