@@ -26,22 +26,20 @@
 \sisetup{per-mode = symbol}
 
 % LTeX: language=pl-PL
-
 \begin{document}
 
+% --- NAGŁÓWEK ---
 \noindent
 \begin{minipage}{0.5\textwidth}
 	\raggedright
-	% full name, index number
-	\textbf{} \\
+	\textbf{Piotr Durniat, 347264} \\
 	II rok, Fizyka \\
 	Wtorek, 8:00-10:15
 	\vspace{0.5cm}
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
 	\raggedleft
-	% date of the experiments
-	29.04.2025 \\
+	2026-01-13 \\
 	\vspace{0.5cm}
 	Prowadząca: \\
 	dr Sylwia Owczarek
@@ -49,42 +47,63 @@
 
 \vspace{2cm}
 \begin{center}
-	% lab number
-	\LARGE \textbf{Ćwiczenie nr 00} \\[0.5cm]
-	% title
-	\Large \textbf{Template}
+	\LARGE \textbf{Ćwiczenie nr 46} \\[0.5cm]
+	\Large \textbf{Prawa Ohma i Kirchhoffa}
 \end{center}
 
 \vspace{1cm}
-\noindent
 
-% \tableofcontents
-% \newpage
-
-% ---------- WSTĘP TEORETYCZNY ----------
+% --- TREŚĆ ---
 \section{Wstęp teoretyczny}
 
-% ---------- OPIS DOŚWIADCZENIA ----------
-% \section{Opis doświadczenia}
+\subsection{Prawo Ohma i rezystancja}
+Natężenie prądu elektrycznego $I$ definiuje się jako ilość ładunku przepływającego przez przekrój poprzeczny przewodnika w jednostce czasu ($I = dQ/dt$).  Dla wielu materiałów (zwanych omowymi) gęstość prądu $\vec{J}$ jest wprost proporcjonalna do natężenia pola elektrycznego $\vec{E}$. W ujęciu makroskopowym zależność ta, znana jako prawo Ohma, wiąże natężenie prądu $I$ płynącego przez element z napięciem $U$ przyłożonym do jego końców \citep{fizyka_dla_szkol_wyzszych_tom_3}:
+\begin{equation}
+	I = \frac{U}{R}
+\end{equation}
+Współczynnik proporcjonalności $R$ nazywamy rezystancją (oporem elektrycznym). Jednostką rezystancji w układzie SI jest om ($\Omega$). Rezystancja elementu zależy od jego geometrii oraz rezystywności materiału $\rho$:
+\begin{equation}
+	R = \rho \frac{l}{S}
+\end{equation}
+gdzie $l$ to długość przewodnika, a $S$ to pole jego przekroju poprzecznego \citep{fizyka_dla_szkol_wyzszych_tom_3}.
 
-% ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
-% \section{Opracowanie wyników pomiarów}
+\subsection{Prawa Kirchhoffa}
+Analiza złożonych obwodów elektrycznych opiera się na dwóch fundamentalnych zasadach wynikających z praw zachowania:
 
-% ---------- TABELE ----------
-% \subsection{Tabele pomiarowe}
+\begin{enumerate}
+	\item \textbf{I Prawo Kirchhoffa (Węzłowe):} Wynika z zasady zachowania ładunku. Suma algebraiczna natężeń prądów wpływających do węzła i wypływających z niego jest równa zeru \citep{fizyka_dla_szkol_wyzszych_tom_3}:
+	      \begin{equation}
+		      \sum_{k} I_k = 0
+	      \end{equation}
 
-% ---------- OBLICZENIA ----------
-% \subsection{...}
+	\item \textbf{II Prawo Kirchhoffa (Oczkowe):} Wynika z zasady zachowania energii. W dowolnym zamkniętym obwodzie (oczku) suma algebraiczna zmian potencjałów (sił elektromotorycznych $\mathcal{E}$ oraz spadków napięć $IR$) wynosi zero \citep{fizyka_dla_szkol_wyzszych_tom_3}:
+	      \begin{equation}
+		      \sum_{k} \Delta V_k = 0 \quad \lub \quad \sum \mathcal{E} = \sum IR
+	      \end{equation}
+\end{enumerate}
 
-% ---------- NIEPEWNOŚCI ----------
-% \section{Ocena niepewności pomiaru}
+\subsection{Łączenie rezystorów}
+W obwodach prądu stałego wyróżniamy podstawowe konfiguracje łączenia rezystorów:
 
-% ---------- WNIOSKI ----------
-% \section{Wnioski}
+\begin{itemize}
+	\item \textbf{Połączenie szeregowe:} Przez wszystkie elementy płynie ten sam prąd. Rezystancja zastępcza jest sumą rezystancji składowych:
+	      \begin{equation}
+		      R_{z} = \sum_{i} R_i
+	      \end{equation}
+	\item \textbf{Połączenie równoległe:} Na wszystkich elementach występuje to samo napięcie. Odwrotność rezystancji zastępczej jest sumą odwrotności rezystancji składowych \citep{fizyka_dla_szkol_wyzszych_tom_3}:
+	      \begin{equation}
+		      \frac{1}{R_{z}} = \sum_{i} \frac{1}{R_i}
+	      \end{equation}
+\end{itemize}
 
-% ---------- WYKRESY ----------
-% \section{Wykresy}
-% \newpage
+\subsection{Transfiguracja gwiazda-trójkąt}
+W przypadku bardziej złożonych struktur, których nie można sprowadzić do połączeń szeregowych lub równoległych (np. mostki), stosuje się transformację układu połączonego w trójkąt ($\Delta$) na równoważny układ połączony w gwiazdę ($Y$) lub odwrotnie. Dla transformacji trójkąta (rezystancje $R_{12}, R_{23}, R_{31}$) w gwiazdę (rezystancje $R_1, R_2, R_3$), wzory na rezystancje zastępcze przyjmują postać \citep{fizyka_dla_szkol_wyzszych_tom_3}:
+\begin{equation}
+	R_1 = \frac{R_{12} R_{31}}{R_{12} + R_{23} + R_{31}}, \quad
+	R_2 = \frac{R_{12} R_{23}}{R_{12} + R_{23} + R_{31}}, \quad
+	R_3 = \frac{R_{31} R_{23}}{R_{12} + R_{23} + R_{31}}
+\end{equation}
+Zastosowanie tej transformacji pozwala na uproszczenie topologii obwodu i obliczenie rezystancji zastępczej metodami podstawowymi.
 
 \bibliographystyle{apalike}
 \bibliography{bibliography}
