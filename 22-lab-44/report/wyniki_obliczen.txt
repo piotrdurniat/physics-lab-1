@@ -23,3 +23,14 @@ Cewka L3             | 0.56536      | 0.00223
 Całkowita L (suma):  0.95684 H
 L zmierzona (a-d):   0.95684 H
 
+
+--- WYNIKI OBLICZEŃ ZADANIE 2: KONDENSATORY ---
+TABELA 3: Wyniki analizy kondensatorów (parametry regresji i niepewności)
+Typ   | a [A/V]      | u(a) [A/V]   | Xc [Ohm]   | C [uF]     | u(C) [uF]  | R^2     
+-----------------------------------------------------------------------------------------------
+C1    | 1.11067e-03  | 6.22125e-06  | 900.36     | 3.535      | 0.0198     | 0.9997  
+C2    | 2.26624e-03  | 7.49271e-06  | 441.26     | 7.214      | 0.0239     | 0.9999  
+C3    | 5.05021e-03  | 3.54727e-05  | 198.01     | 16.075     | 0.1129     | 0.9996  
+Analiza stosunków pojemności:
+Stosunek C2/C1 = 2.04 (oczekiwane ~2.0)
+Stosunek C3/C1 = 4.55 (oczekiwane ~4.0)

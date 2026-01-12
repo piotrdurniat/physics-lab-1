@@ -272,18 +272,19 @@ Przesunięcie fazowe $\varphi$ w takim obwodzie wyraża się wzorem:
 
 \subsubsection*{ Dane ogólne}
 
-
-Częstotliwość prądu przemiennego: $f = 50\ \mathrm{Hz}$.
+Częstotliwość prądu przemiennego wynosi: $f = 50\ \mathrm{Hz}$, stąd częstość kołowa ($\omega$), wynosi:
 \[
 	\omega = 2\pi f = 2\pi\cdot 50 = 100\pi = 314{,}16\ \mathrm{rad/s}
 \]
 
-Rezystancje uzwojeń cewek:
+Rezystancje uzwojeń cewek wynoszą:
 \[
 	R_{ab}=36\ \Omega,\quad
 	R_{bc}=16\ \Omega,\quad
 	R_{cd}=33\ \Omega
 \]
+
+Stąd rezystancje układów cewek wynoszą:
 
 \[
 	\begin{aligned}
@@ -387,8 +388,53 @@ Ostateczne wyniki dla poszczególnych sekcji zestawiono w tabeli \ref{tab:wyniki
 \end{table}
 
 
-% ---------- NIEPEWNOŚCI ----------
-% \section{Ocena niepewności pomiaru}
+\subsection{Wyznaczenie pojemności kondensatora}
+
+Podobnie jak w przypadku cewek, dla trzech kondensatorów ($C_1$, $C_2$ oraz $C_3$) sporządzono charakterystyki prądowo-napięciowe (rys. \ref{fig:charakterystyka_kondensatorow}).
+Przyjęto model liniowy $I(U) = a \cdot U$, gdzie współczynnik kierunkowy $a$ jest związany z pojemnością $C$ zależnością:
+\begin{equation}
+	a = \omega C \quad \Rightarrow \quad C = \frac{a}{\omega}
+\end{equation}
+gdzie $\omega = 314,16\,\mathrm{rad/s}$.
+
+Niepewność standardową współczynnika kierunkowego $u(a)$ wyznaczono metodą regresji liniowej (zgodnie ze wzorem 6 z instrukcji ONP). Następnie, korzystając z prawa przenoszenia niepewności (wzór 15 z instrukcji ONP), wyznaczono niepewność złożoną pojemności $u(C)$.
+Ponieważ $\omega$ przyjęto jako stałą bezbłędną, pochodna cząstkowa wynosi:
+\begin{equation}
+	u(C) = \left| \frac{\partial C}{\partial a} \right| u(a) = \left| \frac{1}{\omega} \right| u(a) = \frac{u(a)}{\omega}
+\end{equation}
+
+\vspace{0.3cm}
+\noindent \textbf{Przykładowe obliczenie} (dla kondensatora $C_1$):
+\begin{itemize}
+	\item Dane z regresji: $a = 1,1107 \cdot 10^{-3}\,\mathrm{A/V}$, $u(a) = 6,22 \cdot 10^{-6}\,\mathrm{A/V}$.
+	\item Obliczenie wartości $C_1$:
+	      $$ C_1 = \frac{1,1107 \cdot 10^{-3}}{314,16} \approx 3,535 \cdot 10^{-6}\,\mathrm{F} = 3,54\,\mu\mathrm{F} $$
+	\item Obliczenie niepewności $u(C_1)$:
+	      $$ u(C_1) = \frac{6,22 \cdot 10^{-6}}{314,16} \approx 1,98 \cdot 10^{-8}\,\mathrm{F} \approx 0,02\,\mu\mathrm{F} $$
+\end{itemize}
+
+Wyniki dla wszystkich badanych elementów zestawiono w tabeli \ref{tab:wyniki_kondensatory}.
+
+\begin{table}[H]
+	\centering
+	\caption{Wyznaczone parametry kondensatorów wraz z niepewnościami.}
+	\label{tab:wyniki_kondensatory}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\textbf{El.} & \textbf{$a$ [A/V]}     & \textbf{$u(a)$ [A/V]} & \textbf{$C$ [$\mu$F]} & \textbf{$u(C)$ [$\mu$F]} \\ \hline
+		$C_1$        & $1,1107 \cdot 10^{-3}$ & $6,22 \cdot 10^{-6}$  & 3,54                  & 0,02                     \\ \hline
+		$C_2$        & $2,2662 \cdot 10^{-3}$ & $7,49 \cdot 10^{-6}$  & 7,21                  & 0,02                     \\ \hline
+		$C_3$        & $5,0502 \cdot 10^{-3}$ & $3,55 \cdot 10^{-5}$  & 16,08                 & 0,11                     \\ \hline
+	\end{tabular}
+\end{table}
+
+\noindent
+Analizując otrzymane wartości pojemności, wyznaczono ich stosunki względem pojemności podstawowej $C_1$:
+\begin{itemize}
+	\item $C_2 / C_1 \approx 2,04$ (oczekiwano wartości bliskiej 2, układ $2C$),
+	\item $C_3 / C_1 \approx 4,55$ (oczekiwano wartości bliskiej 4, układ $4C$).
+\end{itemize}
+Wyniki potwierdzają, że badane elementy mają pojemności będące przybliżonymi wielokrotnościami pojemności $C_1$.
 
 % ---------- WNIOSKI ----------
 % \section{Wnioski}
