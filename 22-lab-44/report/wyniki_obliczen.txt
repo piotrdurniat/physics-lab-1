@@ -34,3 +34,18 @@ C3    | 5.05021e-03  | 3.54727e-05  | 198.01     | 16.075     | 0.1129     | 0.9
 Analiza stosunków pojemności:
 Stosunek C2/C1 = 2.04 (oczekiwane ~2.0)
 Stosunek C3/C1 = 4.55 (oczekiwane ~4.0)
+
+--- WYNIKI OBLICZEŃ ZADANIE 3: OBWÓD RLC ---
+Wyniki regresji RLC (I = aU + b):
+a (1/Z) = 1.66369e-03 +/- 3.52367e-06 S
+R^2 = 1.0000
+Zawada wyznaczona z wykresu: Z_meas = 601.07 +/- 1.27 Ohm
+
+Obliczenia teoretyczne:
+R_tot = 85.0 Ohm
+L_tot = 0.9568 H  =>  XL = 300.60 Ohm
+C_1   = 3.5354 uF =>  XC = 900.36 Ohm
+Zawada obliczona ze wzoru:   Z_theo = 605.76 Ohm
+
+Różnica |Z_meas - Z_theo| = 4.68 Ohm
+Wniosek: Występuje rozbieżność między modelem a pomiarem (większa niż 2*u(Z)).

@@ -436,13 +436,60 @@ Analizując otrzymane wartości pojemności, wyznaczono ich stosunki względem p
 \end{itemize}
 Wyniki potwierdzają, że badane elementy mają pojemności będące przybliżonymi wielokrotnościami pojemności $C_1$.
 
+\section{Wyznaczenie zawady obwodu RLC}
+
+W ostatniej części doświadczenia zbadano szeregowy obwód RLC składający się z połączenia wszystkich sekcji cewki ($L_{1+2+3}$), kondensatora $C_1$ oraz rezystancji wewnetrznych.
+Sporządzono charakterystykę prądowo-napięciową układu (rys. \ref{fig:charakterystyka_RLC}). Zgodnie z prawem Ohma dla prądu przemiennego ($I = U/Z$), współczynnik kierunkowy prostej regresji $a$ odpowiada odwrotności zawady (modułowi admitancji):
+\begin{equation}
+	a = \frac{1}{Z} \quad \Rightarrow \quad Z_{pom} = \frac{1}{a}
+\end{equation}
+
+Niepewność wyznaczenia zawady $u(Z)$ obliczono metodą przenoszenia niepewności, wychodząc od niepewności współczynnika kierunkowego $u(a)$:
+\begin{equation}
+	u(Z) = \left| \frac{dZ}{da} \right| u(a) = \frac{1}{a^2} u(a) = Z^2 \cdot u(a)
+\end{equation}
+
+Na podstawie dopasowania prostej do danych eksperymentalnych otrzymano:
+\[
+	a = (1,6637 \pm 0,0035) \cdot 10^{-3}\,\mathrm{S}
+\]
+Stąd wyznaczona doświadczalnie wartość zawady wynosi:
+\begin{equation}
+	Z_{pom} = 601,07 \pm 1,27\,\Omega
+\end{equation}
+
+\subsection{Weryfikacja z modelem teoretycznym}
+
+Wartość tę porównano z zawadą teoretyczną $Z_{teo}$, obliczoną na podstawie parametrów wyznaczonych w poprzednich częściach ćwiczenia:
+\begin{itemize}
+	\item Rezystancja całkowita: $R = R_{ab} + R_{bc} + R_{cd} = 85,0\,\Omega$
+	\item Indukcyjność całkowita: $L = 0,9568\,\mathrm{H} \implies X_L = \omega L \approx 300,60\,\Omega$
+	\item Pojemność: $C = C_1 = 3,5354\,\mu\mathrm{F} \implies X_C = \frac{1}{\omega C} \approx 900,36\,\Omega$
+\end{itemize}
+
+Korzystając ze wzoru na impedancję szeregowego obwodu RLC:
+\begin{equation}
+	Z_{teo} = \sqrt{R^2 + (X_L - X_C)^2} = \sqrt{85,0^2 + (300,60 - 900,36)^2}
+\end{equation}
+\begin{equation}
+	Z_{teo} = \sqrt{7225 + (-599,76)^2} \approx \sqrt{7225 + 359712} \approx 605,76\,\Omega
+\end{equation}
+
+\subsection{Wnioski}
+Porównując wartość wyznaczoną z charakterystyki $I(U)$ z wartością teoretyczną:
+\[
+	|Z_{pom} - Z_{teo}| = |601,07 - 605,76| = 4,69\,\Omega
+\]
+Rozszerzona niepewność pomiarowa ($2u(Z)$) wynosi ok. $2,54\,\Omega$.
+Stwierdzono, że różnica między wartością zmierzoną a teoretyczną jest większa od podwojonej niepewności standardowej. Niewielka rozbieżność (na poziomie ok. 0,8\%) może wynikać z uproszczeń modelu (np. pominięcia rezystancji połączeń, niedokładności częstotliwości sieci) lub niepewności wyznaczenia składowych $L$ i $C$ w poprzednich krokach.
+
 % ---------- WNIOSKI ----------
 % \section{Wnioski}
 
 % ---------- WYKRESY ----------
 \section{Wykresy}
 
-\newpage
+% \newpage
 
 \begin{figure}[H]
 	\centering
@@ -461,6 +508,14 @@ Wyniki potwierdzają, że badane elementy mają pojemności będące przybliżon
 	\label{fig:charakterystyka_kondensatorow}
 \end{figure}
 
+\newpage
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[angle=90, width=\textwidth, height=0.9\textheight, keepaspectratio]{img/charakterystyka_RLC.png}
+	\caption{Charakterystyka prądowo-napięciowa szeregowego obwodu RLC wraz z dopasowaną prostą regresji.}
+	\label{fig:charakterystyka_RLC}
+\end{figure}
 % ---------- LITERATURA ----------
 \bibliographystyle{apalike}
 \bibliography{bibliography}
