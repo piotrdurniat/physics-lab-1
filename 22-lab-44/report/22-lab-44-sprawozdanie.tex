@@ -61,24 +61,24 @@
 \section{Wstęp teoretyczny}
 
 \subsection{Charakterystyka prądu przemiennego}
-Prądem przemiennym nazywamy prąd elektryczny, którego wartość chwilowa i kierunek ulegają okresowym zmianom. W najprostszym przypadku zmiany te mają charakter harmoniczny (sinusoidalny) i mogą być opisane równaniami:
+Prądem przemiennym nazywany jest prąd elektryczny, którego wartość chwilowa i kierunek ulegają okresowym zmianom. W najprostszym przypadku zmiany te mają charakter sinusoidalny i mogą być opisane równaniami:
 \begin{equation}
 	u(t) = U_0 \sin(\omega t), \quad i(t) = I_0 \sin(\omega t + \varphi)
 \end{equation}
 gdzie $U_0, I_0$ to amplitudy napięcia i natężenia, $\omega = 2\pi f$ to częstość kołowa, a $\varphi$ oznacza przesunięcie fazowe między napięciem a natężeniem.
 
-W obwodach prądu przemiennego najczęściej posługujemy się wartościami skutecznymi napięcia i natężenia, które dla przebiegów sinusoidalnych wiążą się z amplitudami zależnością:
+W obwodach prądu przemiennego często stosuje się wartości skuteczne napięcia i natężenia, które dla przebiegów sinusoidalnych opisywane są zależnością \citep{fizyka_dla_szkół_wyższych_tom_3}:
 \begin{equation}
 	U_{sk} = \frac{U_0}{\sqrt{2}}, \quad I_{sk} = \frac{I_0}{\sqrt{2}}
 \end{equation}
 
 \subsection{Impedancja i zawada}
-W obwodach prądu przemiennego opór całkowity nazywamy **impedancją**. Jest to wielkość zespolona, składająca się z części rzeczywistej (rezystancja $R$) oraz części urojonej (reaktancja $X$).
-Moduł impedancji nazywamy **zawadą** i oznaczamy symbolem $|Z|$.
+W obwodach prądu przemiennego opór całkowity nazywany jest **impedancją**. Impedancja jest wielkością zespoloną, składającą się z części rzeczywistej (rezystancji $R$) oraz części urojonej (reaktancji $X$).
+Moduł impedancji nazywany jest **zawadą** i oznaczany symbolem $|Z|$.
 \begin{equation}
 	|Z| = \sqrt{R^2 + X^2}
 \end{equation}
-Uogólnione prawo Ohma dla wartości skutecznych przyjmuje postać:
+Uogólnione prawo Ohma dla wartości skutecznych przyjmuje postać \citep{fizyka_dla_szkół_wyższych_tom_3}:
 \begin{equation}
 	I_{sk} = \frac{U_{sk}}{|Z|}
 \end{equation}
@@ -86,7 +86,7 @@ Uogólnione prawo Ohma dla wartości skutecznych przyjmuje postać:
 \subsection{Elementy R, L, C w obwodzie prądu przemiennego}
 
 \subsubsection{Rezystor idealny}
-Dla rezystora idealnego reaktancja wynosi zero, zatem zawada jest równa jego rezystancji ($|Z|=R$). Napięcie i natężenie są zgodne w fazie ($\varphi = 0$).
+Dla rezystora idealnego reaktancja wynosi zero, zawada jest równa jego rezystancji ($|Z|=R$). Napięcie i natężenie są zgodne w fazie ($\varphi = 0$).
 
 \subsubsection{Cewka indukcyjna}
 Cewka idealna o indukcyjności $L$ stawia prądowi przemiennemu opór bierny zwany reaktancją indukcyjną (induktancją) $X_L$:
@@ -97,26 +97,38 @@ W rzeczywistości cewka posiada również opór czynny uzwojenia $R_L$. Jej zawa
 \begin{equation}
 	|Z_L| = \sqrt{R_L^2 + X_L^2} = \sqrt{R_L^2 + (\omega L)^2}
 \end{equation}
-W cewce idealnej napięcie wyprzedza natężenie prądu o kąt $\pi/2$.
+W cewce idealnej napięcie wyprzedza natężenie prądu o kąt $\pi/2$ \citep{fizyka_dla_szkół_wyższych_tom_3}.
 
 \subsubsection{Kondensator}
 Kondensator o pojemności $C$ charakteryzuje się reaktancją pojemnościową (kapacytancją) $X_C$:
 \begin{equation}
 	X_C = \frac{1}{\omega C} = \frac{1}{2\pi f C}
 \end{equation}
-Dla kondensatora idealnego (gdzie $R=0$) zawada wynosi $|Z_C| = X_C$. Natężenie prądu wyprzedza napięcie o kąt $\pi/2$.
+Dla kondensatora idealnego (gdzie $R=0$) zawada wynosi $|Z_C| = X_C$. Natężenie prądu wyprzedza napięcie o kąt $\pi/2$ \citep{fizyka_dla_szkół_wyższych_tom_3}.
 
 \subsection{Szeregowy obwód RLC}
 W przypadku szeregowego połączenia rezystora, cewki i kondensatora, wypadkowa zawada obwodu wynosi:
 \begin{equation}
 	|Z| = \sqrt{R^2 + \left(X_L - X_C\right)^2} = \sqrt{R^2 + \left(\omega L - \frac{1}{\omega C}\right)^2}
 \end{equation}
-Przesunięcie fazowe $\varphi$ w takim obwodzie wyraża się wzorem:
+Przesunięcie fazowe $\varphi$ w takim obwodzie wyraża się wzorem \citep{fizyka_dla_szkół_wyższych_tom_3}:
 \begin{equation}
 	\tan \varphi = \frac{X_L - X_C}{R}
 \end{equation}
+
 % ---------- OPIS DOŚWIADCZENIA ----------
-% \section{Opis doświadczenia}
+\section{Opis doświadczenia}
+
+\section{Opis doświadczenia}
+
+Pomiary przeprowadzono w układzie zasilanym z autotransformatora podłączonego do sieci energetycznej ($f=50\,\mathrm{Hz}$). W obwód włączono szeregowo amperomierz do pomiaru natężenia prądu oraz równolegle woltomierz do pomiaru spadku napięcia na badanym elemencie. Eksperyment składał się z trzech etapów:
+
+\begin{itemize}
+	\item \textbf{Badanie cewki rzeczywistej:} Wyznaczono charakterystyki prądowo-napięciowe $I(U)$ dla narastającej liczby zwojów cewki, mierząc parametry dla sekcji $L_1$ (zaciski a-b), układu $L_1+L_2$ (zaciski a-c) oraz pełnego uzwojenia $L_1+L_2+L_3$ (zaciski a-d).
+	\item \textbf{Badanie kondensatorów:} Zmierzono zależność natężenia prądu od przyłożonego napięcia dla trzech kondensatorów o różnych pojemnościach ($C_1, C_2, C_3$).
+	\item \textbf{Badanie szeregowego obwodu RLC:} Zestawiono obwód szeregowy składający się z pełnego uzwojenia cewki ($L_{total}$), kondensatora $C_1$ oraz rezystancji wewnętrznych elementów. Dla tak powstałego układu wykonano serię pomiarów $I(U)$ w celu wyznaczenia zawady całkowitej.
+\end{itemize}
+
 
 % ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
 \section{Opracowanie wyników pomiarów}
@@ -124,15 +136,13 @@ Przesunięcie fazowe $\varphi$ w takim obwodzie wyraża się wzorem:
 % ---------- TABELE ----------
 \subsection{Tabele pomiarowe}
 
-
 \noindent
 \begin{minipage}[t]{0.48\textwidth}
-	\small % Zmniejszenie czcionki dla tabel w tej kolumnie
+	\small
 	\centering
 
 	\begin{table}[H]
 		\centering
-		\caption{Uzwojenie L1}
 		\begin{tabular}{|c|c|c|}
 			\hline
 			\textbf{lp} & \textbf{I [mA]} & \textbf{U [V]} \\ \hline
@@ -147,11 +157,11 @@ Przesunięcie fazowe $\varphi$ w takim obwodzie wyraża się wzorem:
 			9           & 89,3            & 4,50           \\ \hline
 			10          & 99,0            & 5,00           \\ \hline
 		\end{tabular}
+		\caption{Uzwojenie L1}
 	\end{table}
 
 	\begin{table}[H]
 		\centering
-		\caption{Uzwojenie L1+L2}
 		\begin{tabular}{|c|c|c|}
 			\hline
 			\textbf{lp} & \textbf{I [mA]} & \textbf{U [V]} \\ \hline
@@ -166,11 +176,11 @@ Przesunięcie fazowe $\varphi$ w takim obwodzie wyraża się wzorem:
 			9           & 33,7            & 4,50           \\ \hline
 			10          & 37,4            & 5,00           \\ \hline
 		\end{tabular}
+		\caption{Uzwojenie L1+L2}
 	\end{table}
 
 	\begin{table}[H]
 		\centering
-		\caption{Uzwojenie L1+L2+L3}
 		\begin{tabular}{|c|c|c|}
 			\hline
 			\textbf{lp} & \textbf{I [mA]} & \textbf{U [V]} \\ \hline
@@ -185,16 +195,15 @@ Przesunięcie fazowe $\varphi$ w takim obwodzie wyraża się wzorem:
 			9           & 14,3            & 4,49           \\ \hline
 			10          & 16,0            & 5,02           \\ \hline
 		\end{tabular}
+		\caption{Uzwojenie L1+L2+L3}
 	\end{table}
 \end{minipage}
-\hfill % Wypełnienie przestrzeni między kolumnami
+\hfill
 \begin{minipage}[t]{0.48\textwidth}
-	\small % Zmniejszenie czcionki dla tabel w tej kolumnie
+	\small
 	\centering
-
 	\begin{table}[H]
 		\centering
-		\caption{Kondensator C}
 		\begin{tabular}{|c|c|c|}
 			\hline
 			\textbf{lp} & \textbf{I [mA]} & \textbf{U [V]} \\ \hline
@@ -209,11 +218,10 @@ Przesunięcie fazowe $\varphi$ w takim obwodzie wyraża się wzorem:
 			9           & 5,00            & 4,53           \\ \hline
 			10          & 5,50            & 5,02           \\ \hline
 		\end{tabular}
+		\caption{Kondensator C}
 	\end{table}
-
 	\begin{table}[H]
 		\centering
-		\caption{Kondensator 2C}
 		\begin{tabular}{|c|c|c|}
 			\hline
 			\textbf{lp} & \textbf{I [mA]} & \textbf{U [V]} \\ \hline
@@ -228,11 +236,10 @@ Przesunięcie fazowe $\varphi$ w takim obwodzie wyraża się wzorem:
 			9           & 10,1            & 4,52           \\ \hline
 			10          & 11,3            & 5,03           \\ \hline
 		\end{tabular}
+		\caption{Kondensator 2C}
 	\end{table}
-
 	\begin{table}[H]
 		\centering
-		\caption{Kondensator 4C}
 		\begin{tabular}{|c|c|c|}
 			\hline
 			\textbf{lp} & \textbf{I [mA]} & \textbf{U [V]} \\ \hline
@@ -247,10 +254,10 @@ Przesunięcie fazowe $\varphi$ w takim obwodzie wyraża się wzorem:
 			9           & 22,4            & 4,51           \\ \hline
 			10          & 25,5            & 5,02           \\ \hline
 		\end{tabular}
+		\caption{Kondensator 4C}
 	\end{table}
 \end{minipage}
 
-% Tabela zbiorcza poza kolumnami (na całą szerokość)
 \begin{table}[H]
 	\centering
 	\caption{Układ L1+L2+L3+C1}
@@ -349,7 +356,7 @@ Analogicznie obliczono $L_{(a-b)} \approx 0,1131\,\mathrm{H}$ oraz $L_{(a-d)} \a
 
 \subsubsection{Obliczenie indukcyjności sekcji ($L_1, L_2, L_3$)}
 
-Ponieważ pomiary wykonywano w układzie narastającym (szeregowym), indukcyjności poszczególnych sekcji wyznaczono różnicowo:
+Ponieważ pomiary wykonywano w układzie narastającym (szeregowym), indukcyjności poszczególnych sekcji wyznaczono odejmując wartości indukcyjności odpowiednich układów:
 \begin{itemize}
 	\item $L_1 = L_{(a-b)}$
 	\item $L_2 = L_{(a-c)} - L_{(a-b)}$
@@ -371,7 +378,7 @@ $$
 	      $$u(L_2) = \sqrt{0,0006^2 + 0,0003^2} \approx 0,0007\,\mathrm{H}$$
 \end{itemize}
 
-Ostateczne wyniki dla poszczególnych sekcji zestawiono w tabeli \ref{tab:wyniki_sekcje}.
+Ostateczne wyniki dla poszczególnych sekcji przedstawiono w tabeli \ref{tab:wyniki_sekcje}.
 
 \begin{table}[H]
 	\centering
@@ -391,13 +398,13 @@ Ostateczne wyniki dla poszczególnych sekcji zestawiono w tabeli \ref{tab:wyniki
 \subsection{Wyznaczenie pojemności kondensatora}
 
 Podobnie jak w przypadku cewek, dla trzech kondensatorów ($C_1$, $C_2$ oraz $C_3$) sporządzono charakterystyki prądowo-napięciowe (rys. \ref{fig:charakterystyka_kondensatorow}).
-Przyjęto model liniowy $I(U) = a \cdot U$, gdzie współczynnik kierunkowy $a$ jest związany z pojemnością $C$ zależnością:
+Przyjęto model liniowy $I(U) = a \cdot U$, gdzie współczynnik kierunkowy $a$ jest opisany zależnością:
 \begin{equation}
 	a = \omega C \quad \Rightarrow \quad C = \frac{a}{\omega}
 \end{equation}
 gdzie $\omega = 314,16\,\mathrm{rad/s}$.
 
-Niepewność standardową współczynnika kierunkowego $u(a)$ wyznaczono metodą regresji liniowej (zgodnie ze wzorem 6 z instrukcji ONP). Następnie, korzystając z prawa przenoszenia niepewności (wzór 15 z instrukcji ONP), wyznaczono niepewność złożoną pojemności $u(C)$.
+Niepewność standardową współczynnika kierunkowego $u(a)$ wyznaczono metodą regresji liniowej (zgodnie ze wzorem 6 z instrukcji \citep{ONP}). Następnie, korzystając z prawa przenoszenia niepewności (wzór 15 z instrukcji \citep{ONP}), wyznaczono niepewność złożoną pojemności $u(C)$.
 Ponieważ $\omega$ przyjęto jako stałą bezbłędną, pochodna cząstkowa wynosi:
 \begin{equation}
 	u(C) = \left| \frac{\partial C}{\partial a} \right| u(a) = \left| \frac{1}{\omega} \right| u(a) = \frac{u(a)}{\omega}
@@ -439,41 +446,45 @@ Wyniki potwierdzają, że badane elementy mają pojemności będące przybliżon
 \section{Wyznaczenie zawady obwodu RLC}
 
 W ostatniej części doświadczenia zbadano szeregowy obwód RLC składający się z połączenia wszystkich sekcji cewki ($L_{1+2+3}$), kondensatora $C_1$ oraz rezystancji wewnetrznych.
-Sporządzono charakterystykę prądowo-napięciową układu (rys. \ref{fig:charakterystyka_RLC}). Zgodnie z prawem Ohma dla prądu przemiennego ($I = U/Z$), współczynnik kierunkowy prostej regresji $a$ odpowiada odwrotności zawady (modułowi admitancji):
+Sporządzono charakterystykę prądowo-napięciową układu (rys. \ref{fig:charakterystyka_RLC}). Zgodnie z prawem Ohma dla prądu przemiennego ($I = U/Z$), współczynnik kierunkowy prostej regresji $a$ odpowiada odwrotności zawady:
 \begin{equation}
 	a = \frac{1}{Z} \quad \Rightarrow \quad Z_{pom} = \frac{1}{a}
 \end{equation}
 
 Niepewność wyznaczenia zawady $u(Z)$ obliczono metodą przenoszenia niepewności, wychodząc od niepewności współczynnika kierunkowego $u(a)$:
 \begin{equation}
-	u(Z) = \left| \frac{dZ}{da} \right| u(a) = \frac{1}{a^2} u(a) = Z^2 \cdot u(a)
+	u(Z) = \left| \frac{\partial Z}{\partial a} \right| u(a) = \frac{1}{a^2} u(a) = Z^2 \cdot u(a)
 \end{equation}
 
 Na podstawie dopasowania prostej do danych eksperymentalnych otrzymano:
-\[
-	a = (1,6637 \pm 0,0035) \cdot 10^{-3}\,\mathrm{S}
-\]
+$$
+	a = 1,6637 \cdot 10^{-3}\,\mathrm{S}
+$$
+$$
+	u(a) = 0,0035 \cdot 10^{-3}\,\mathrm{S}
+$$
 Stąd wyznaczona doświadczalnie wartość zawady wynosi:
-\begin{equation}
-	Z_{pom} = 601,07 \pm 1,27\,\Omega
-\end{equation}
+$$
+	Z_{pom} = \frac{1}{1,6637 \cdot 10^{-3}} \approx 601,07\,\Omega
+$$
+$$
+	u(Z_{pom}) = \frac{3,5237 \cdot 10^{-6}}{(1,6637 \cdot 10^{-3})^2} \approx 1,27\,\Omega
+$$
 
 \subsection{Weryfikacja z modelem teoretycznym}
 
-Wartość tę porównano z zawadą teoretyczną $Z_{teo}$, obliczoną na podstawie parametrów wyznaczonych w poprzednich częściach ćwiczenia:
+Wartość tę porównano z zawadą teoretyczną $Z_{teo}$, obliczoną na podstawie parametrów składowych:
 \begin{itemize}
-	\item Rezystancja całkowita: $R = R_{ab} + R_{bc} + R_{cd} = 85,0\,\Omega$
-	\item Indukcyjność całkowita: $L = 0,9568\,\mathrm{H} \implies X_L = \omega L \approx 300,60\,\Omega$
-	\item Pojemność: $C = C_1 = 3,5354\,\mu\mathrm{F} \implies X_C = \frac{1}{\omega C} \approx 900,36\,\Omega$
+	\item Rezystancja: $R = 36,0 + 16,0 + 33,0 = 85,0\,\Omega$
+	\item Induktancja: $X_L = \omega L = 314,16 \cdot 0,9568 \approx 300,60\,\Omega$
+	\item Kapacytancja: $X_C = \frac{1}{\omega C} = \frac{1}{314,16 \cdot 3,5354 \cdot 10^{-6}} \approx 900,36\,\Omega$
 \end{itemize}
 
 Korzystając ze wzoru na impedancję szeregowego obwodu RLC:
-\begin{equation}
-	Z_{teo} = \sqrt{R^2 + (X_L - X_C)^2} = \sqrt{85,0^2 + (300,60 - 900,36)^2}
-\end{equation}
-\begin{equation}
-	Z_{teo} = \sqrt{7225 + (-599,76)^2} \approx \sqrt{7225 + 359712} \approx 605,76\,\Omega
-\end{equation}
+\begin{align*}
+	Z_{teo} & = \sqrt{R^2 + (X_L - X_C)^2} = \sqrt{85,0^2 + (300,60 - 900,36)^2} =            \\
+	        & = \sqrt{7225 + (-599,76)^2} \approx \sqrt{7225 + 359712} \approx 605,76\,\Omega
+\end{align*}
 
 \subsection{Wnioski}
 Porównując wartość wyznaczoną z charakterystyki $I(U)$ z wartością teoretyczną:
