@@ -254,29 +254,28 @@ gdzie $\mathcal{E} = 10,0 V$ to napięcie zasilania układu. Stąd:
 Przekształcając wzory \eqref{eq:first_kirchhoff}, \eqref{eq:second_kirchhoff} oraz \eqref{eq:i_1} otrzymujemy następujący układ równań:
 
 \begin{equation}
-	\label{eq:zad2_cases}
-	\begin{cases}
-		I_1 = I_3 + I_2                     \\
-		I_3 = I_4                           \\
-		\mathcal{E} - R_1 I_1 - R_2 I_2 = 0 \\
-		R_2 I_2 - R_3 I_3 - R_4 I_4 = 0     \\
-		I_1 = \frac{\mathcal{E}}{R_z}
-	\end{cases}
+\begin{cases}
+I_1 = I_3 + I_2 \\
+I_3 = I_4 \\
+\mathcal{E} - R_1 I_1 - R_2 I_2 = 0 \\
+R_2 I_2 - R_3 I_3 - R_4 I_4 = 0 \\
+I_1 = \frac{\mathcal{E}}{R_z}
+\end{cases}
 \end{equation}
 
-Z prawa łączenia rezystorów szeregowo i równolegle:
+Aby rozwiązać ten układ, najpierw wyznaczamy opór zastępczy $R_z$. Z układu połączeń wynika, że $R_3$ i $R_4$ są w szeregu, a ich suma równoległa do $R_2$. Całość połączona szeregowo z $R_1$:
 
-\begin{align*}
-	 & R_z = R_1 + \frac{1}{\frac{1}{R_2} + \frac{1}{R_3 + R_4}} =  \frac{R_2 (R_3 + R_4)}{R_2 + R_3 + R_4}
-\end{align*}
+\begin{equation}
+	R_z = R_1 + \frac{R_2 (R_3 + R_4)}{R_2 + R_3 + R_4}
+\end{equation}
 
-Podstawiając $R_z$ do piątego równania z układu \eqref{eq:zad2_cases} otrzymujemy wzór na $I_1$:
+Podstawiając $R_z$ do wzoru z prawa Ohma otrzymujemy jawny wzór na $I_1$:
 
-\begin{equation*}
+\begin{equation}
 	I_1 = \frac{\mathcal{E}}{R_1 + \frac{R_2 (R_3 + R_4)}{R_2 + R_3 + R_4}}
-\end{equation*}
+\end{equation}
 
-Następnie wyznaczamy prądy w gałęziach. Do czwartego równania układu \eqref{eq:zad2_cases} podstawiamy wzór na $I_4$ z drugiego równania oraz wzór na $I_2$ z pierwszego równania:
+Następnie wyznaczamy prądy w gałęziach. Do ostatniego równania układu ($R_2 I_2 - R_3 I_3 - R_4 I_4 = 0$) podstawiamy $I_4 = I_3$ oraz wyznaczony z I prawa Kirchhoffa prąd $I_2 = I_1 - I_3$:
 
 $$ R_2 (I_1 - I_3) - I_3 (R_3 + R_4) = 0 $$
 $$ I_1 R_2 - I_3 R_2 - I_3 (R_3 + R_4) = 0 $$
@@ -288,27 +287,15 @@ Stąd otrzymujemy wzór na $I_3$ (i $I_4$):
 	I_3 = I_4 = I_1 \frac{R_2}{R_2 + R_3 + R_4}
 \end{equation}
 
-Mając $I_3$, wyznaczamy $I_2$ korzystając z pierwszego wzoru z układu równań ($I_2 = I_1 - I_3$):
+Mając $I_3$, wyznaczamy $I_2$ korzystając z zależności $I_2 = I_1 - I_3$:
 
 $$ I_2 = I_1 - I_1 \frac{R_2}{R_2 + R_3 + R_4} = I_1 \left( 1 - \frac{R_2}{R_2 + R_3 + R_4} \right) $$
 
-Co po przekszałceniu daje:
+Co po sprowadzeniu do wspólnego mianownika daje:
 
 \begin{equation}
 	I_2 = I_1 \frac{R_3 + R_4}{R_2 + R_3 + R_4}
 \end{equation}
-
-Ostatecznie:
-
-\begin{equation*}
-	\begin{cases}
-		I_1 & = \frac{\mathcal{E}}{R_1 + \frac{R_2 (R_3 + R_4)}{R_2 + R_3 + R_4}} \\
-		I_2 & = ...                                                               \\
-		I_3 & = ...                                                               \\
-		I_4 & = ...                                                               \\
-	\end{cases}
-\end{equation*}
-
 \subsubsection*{Porównanie wartości natężeń obliczonych ze zmierzonymi}
 
 % TODO: Porównanie wartości natężenia zmierzonych i obliczonych
