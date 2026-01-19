@@ -78,7 +78,7 @@ Analiza złożonych obwodów elektrycznych opiera się na dwóch fundamentalnych
 
 	\item \textbf{II Prawo Kirchhoffa (Oczkowe):} Wynika z zasady zachowania energii. W dowolnym zamkniętym obwodzie (oczku) suma algebraiczna zmian potencjałów (sił elektromotorycznych $\mathcal{E}$ oraz spadków napięć $IR$) wynosi zero \citep{fizyka_dla_szkol_wyzszych_tom_3}:
 	      \begin{equation}
-		      \sum_{k} \Delta V_k = 0 \quad \lub \quad \sum \mathcal{E} = \sum IR
+		      \sum_{k} \Delta V_k = 0 \quad \lor \quad \sum \mathcal{E} = \sum IR
 	      \end{equation}
 \end{enumerate}
 
@@ -370,13 +370,17 @@ Z prawa łączenia rezystorów szeregowo i równolegle:
 
 Podstawiając wartości zmierzone:
 \begin{align*}
-	R_{\parallel} & = \frac{2390 \cdot (557 + 558)}{2390 + 557 + 558} = \frac{2390 \cdot 1115}{2390 + 1115} = \frac{2390 \cdot 1115}{3505} = 760{,}30 \, \Omega \\
-	R_z           & = 192 + 760{,}30 = 952{,}30 \, \Omega
+	R_z & = 192 + \frac{2390 \cdot (557 + 558)}{2390 + 557 + 558} = 192 + \frac{2390 \cdot 1115}{3505} = 192 + 760{,}30 = 952{,}30 \, \Omega
 \end{align*}
 
-Wartość zmierzona $R_z = 901 \, \Omega$. Błąd bezwzględny: $952{,}30 - 901 = 51{,}30 \, \Omega$, błąd względny: $\frac{51{,}30}{901} \cdot 100\% \approx 5{,}69\%$.
+\subsubsection*{Porównanie wartości rezystancji obliczonych ze zmierzonymi}
 
-\subsubsection*{Porównanie wartości rezystancji oblizonych ze zmierzonymi}
+Wartość zmierzona oporu zastępczego wynosi $R_z = 901 \, \Omega$, porównując wartość zmierzoną z obliczoną otrzymano następujące wyniki:
+\begin{itemize}
+	\item błąd bezwzględny: $952{,}30 - 901 = 51{,}30 \, \Omega$,
+	\item błąd względny: $\frac{51{,}30}{901} \cdot 100\% \approx 5{,}69\%$.
+\end{itemize}
+
 
 % TODO: Porównanie wartości rezystancji oblizonych ze zmierzonymi
 
