@@ -171,7 +171,7 @@ Zastosowanie tej transformacji pozwala na uproszczenie topologii obwodu i oblicz
 	\label{tab:uklad2}
 \end{table}
 
-% Tabela 4: Opór zastępczy
+% Tabela 4: rezystancja zastępcza
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|}
@@ -182,46 +182,94 @@ Zastosowanie tej transformacji pozwala na uproszczenie topologii obwodu i oblicz
 		0,901       \\
 		\hline
 	\end{tabular}
-	\caption{Zmierzony opór zastępczy}
+	\caption{Zmierzona rezystancja zastępcza}
 	\label{tab:rz}
 \end{table}
 
 % ---------- OBLICZENIA ----------
-\subsection{Obliczenie oporów R1-R4}
+\subsection{Obliczenie rezystancji R1-R4}
 
-Na podstawie pomiarów napięć i natężeń prądu dla układu z schematu 1, korzystając z prawa Ohma, obliczono wartości oporów R1 ÷ R4. Prawo Ohma wyraża się wzorem:
+Na podstawie pomiarów napięć i natężeń prądu dla układu z schematu 1, korzystając z prawa Ohma, obliczono wartości rezystancji R1 ÷ R4. Prawo Ohma wyraża się wzorem:
 \begin{equation}
 	R = \frac{U}{I}
 \end{equation}
 
 
-Wyniki obliczeń przedstawiono w tabeli \ref{tab:obliczone_opory}.
+Wyniki obliczeń przedstawiono w tabeli \ref{tab:obliczone_rezystancje}.
 
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{|c|c|}
 		\hline
-		Opornik & Wartość R $[\Omega]$ \\
+		Rezystor & Wartość R $[\Omega]$ \\
 		\hline
-		$R_1$   & 189,19               \\
-		$R_2$   & 2388,55              \\
-		$R_3$   & 548,39               \\
-		$R_4$   & 512,10               \\
+		$R_1$    & 189,19               \\
+		$R_2$    & 2388,55              \\
+		$R_3$    & 548,39               \\
+		$R_4$    & 512,10               \\
 		\hline
 	\end{tabular}
-	\caption{Obliczone wartości oporów R1-R4}
-	\label{tab:obliczone_opory}
+	\caption{Obliczone wartości rezystancji R1-R4}
+	\label{tab:obliczone_rezystancje}
 \end{table}
 
-Przykładowe obliczenie dla opornika R1:
+Przykładowe obliczenie dla rezystora R1:
 \begin{equation}
 	R_1 = \frac{U_1}{I_1} = \frac{2{,}03}{0{,}01073} \approx 189{,}19 \, \Omega
 \end{equation}
 
-% \subsection{...}
+\subsubsection*{Porównanie wartości rezystancji obliczonych ze zmierzonymi}
+
+% TODO: Porównanie rezystancji obliczonych z wartościami zmierzonymi
+
+\subsubsection*{Porównanie wartości rezystancji
+
+\subsection{Obliczenie natężeń z praw Kirchhoffa}
+
+Z pierwszego prawa Kirchhoffa:
+
+\begin{align*}
+	 & I_1 - I_3 - I_2 = 0 \\
+	 & I_3 - I_4 = 0       \\
+\end{align*}
+
+Z drugiego prawa Kirchhoffa:
+
+\begin{align*}
+	 & \mathcal{E} - U_1 - U_2 = 0 \\
+	 & U_2 - U_3 - U_4 = 0
+\end{align*}
+
+Z prawa Ohma dla całego układu:
+
+\begin{equation*}
+	I_1 = \frac{\mathcal{E}}{R_z} = \frac{10,0}{901} =
+\end{equation*}
+\noindent
+gdzie $\mathcal{E} = 10,0 V$ to napięcie zasilania układu. Stąd:
+
+\subsubsection*{Porównanie wartości natężeń obliczonych ze zmierzonymi}
+
+% TODO: Porównanie wartości natężenia zmierzonych i obliczonych
+
+\subsection{Obliczenie oporu zastępczego}
+
+Z prawa łączenia rezystorów szeregowo i równolegle:
+
+\begin{align*}
+	 & R_z = R_1 + \frac{1}{\frac{1}{R_2} + \frac{1}{R_3 + R_4}}
+\end{align*}
+
+\subsubsection*{Porównanie wartości rezystancji oblizonych ze zmierzonymi}
+
+% TODO: Porównanie wartości rezystancji oblizonych ze zmierzonymi
 
 % ---------- NIEPEWNOŚCI ----------
-% \section{Ocena niepewności pomiaru}
+\section{Ocena niepewności pomiaru}
+
+% TODO: Korzystając z prawa przenoszenia niepewności maksymalnej (wzór (18) ONP) wyznaczyć niepewności maksymalne wyznaczonych wartości oporów R1 ÷ R4 i oporu zastępczego Rz. Przyjąć dla miernika cyfrowego niepewność maksymalną (punkt 3 ONP) ± 1% zakresu pomiarowego, natomiast dla zasilacza 0,1 [V].
+
+
 
 % ---------- WNIOSKI ----------
 % \section{Wnioski}
