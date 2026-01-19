@@ -117,7 +117,6 @@ Zastosowanie tej transformacji pozwala na uproszczenie topologii obwodu i oblicz
 % Tabela 1: Wartości rezystancji
 \begin{table}[h!]
 	\centering
-	\caption{Zmierzone wartości rezystancji}
 	\begin{tabular}{|c|c|c|c|c|}
 		\hline
 		$R_1$       & $R_2$       & $R_3$       & $R_4$       & $R_5$       \\
@@ -126,12 +125,13 @@ Zastosowanie tej transformacji pozwala na uproszczenie topologii obwodu i oblicz
 		0,192       & 2,39        & 0,557       & 0,558       & 0,877       \\
 		\hline
 	\end{tabular}
+	\caption{Zmierzone wartości rezystancji}
+	\label{tab:rezystancje}
 \end{table}
 
 % Tabela 2: Pomiary dla Układu 1
 \begin{table}[H]
 	\centering
-	\caption{Wyniki pomiarów dla Układu 1}
 	\begin{tabular}{|c|c|c|c|c|}
 		\hline
 		$U_1$  & $U_2$  & $U_3$  & $U_4$  & $U_5$  \\
@@ -146,12 +146,13 @@ Zastosowanie tej transformacji pozwala na uproszczenie topologii obwodu i oblicz
 		10,73  & 3,32   & 7,44   & 7,44   & ---    \\
 		\hline
 	\end{tabular}
+	\caption{Wyniki pomiarów dla Układu 1}
+	\label{tab:uklad1}
 \end{table}
 
 % Tabela 3: Pomiary dla Układu 2
 \begin{table}[H]
 	\centering
-	\caption{Wyniki pomiarów dla Układu 2}
 	\begin{tabular}{|c|c|c|c|c|}
 		\hline
 		$U_1$  & $U_2$  & $U_3$  & $U_4$  & $U_5$  \\
@@ -166,12 +167,13 @@ Zastosowanie tej transformacji pozwala na uproszczenie topologii obwodu i oblicz
 		13,85  & 3,48   & 5,23   & 10,49  & 5,28   \\
 		\hline
 	\end{tabular}
+	\caption{Wyniki pomiarów dla Układu 2}
+	\label{tab:uklad2}
 \end{table}
 
 % Tabela 4: Opór zastępczy
 \begin{table}[H]
 	\centering
-	\caption{Zmierzony opór zastępczy}
 	\begin{tabular}{|c|}
 		\hline
 		$R_z$       \\
@@ -180,9 +182,42 @@ Zastosowanie tej transformacji pozwala na uproszczenie topologii obwodu i oblicz
 		0,901       \\
 		\hline
 	\end{tabular}
+	\caption{Zmierzony opór zastępczy}
+	\label{tab:rz}
 \end{table}
 
 % ---------- OBLICZENIA ----------
+\subsection{Obliczenie oporów R1-R4}
+
+Na podstawie pomiarów napięć i natężeń prądu dla układu z schematu 1, korzystając z prawa Ohma, obliczono wartości oporów R1 ÷ R4. Prawo Ohma wyraża się wzorem:
+\begin{equation}
+	R = \frac{U}{I}
+\end{equation}
+
+
+Wyniki obliczeń przedstawiono w tabeli \ref{tab:obliczone_opory}.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		Opornik & Wartość R $[\Omega]$ \\
+		\hline
+		$R_1$   & 189,19               \\
+		$R_2$   & 2388,55              \\
+		$R_3$   & 548,39               \\
+		$R_4$   & 512,10               \\
+		\hline
+	\end{tabular}
+	\caption{Obliczone wartości oporów R1-R4}
+	\label{tab:obliczone_opory}
+\end{table}
+
+Przykładowe obliczenie dla opornika R1:
+\begin{equation}
+	R_1 = \frac{U_1}{I_1} = \frac{2{,}03}{0{,}01073} \approx 189{,}19 \, \Omega
+\end{equation}
+
 % \subsection{...}
 
 % ---------- NIEPEWNOŚCI ----------
