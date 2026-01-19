@@ -222,6 +222,21 @@ Przykładowe obliczenie dla rezystora R1:
 
 % TODO: Porównanie rezystancji obliczonych z wartościami zmierzonymi
 
+\subsection{Obliczenie prądów I1, I2, I3=I4}
+
+Na podstawie praw Kirchhoffa oraz prawa Ohma, obliczono wartości prądów w układzie z schematu 1. Wzory na prądy wynoszą:
+\begin{equation}
+	\begin{cases}
+		I_1 = \frac{\mathcal{E} (R_2 + R_3 + R_4)}{R_1 (R_2 + R_3 + R_4) + R_2 (R_3 + R_4)} \\
+		I_2 = \frac{\mathcal{E} R_2}{R_1 (R_2 + R_3 + R_4) + R_2 (R_3 + R_4)}               \\
+		I_3 = I_4 = \frac{\mathcal{E} (R_3 + R_4)}{R_1 (R_2 + R_3 + R_4) + R_2 (R_3 + R_4)}
+	\end{cases}
+\end{equation}
+
+\subsubsection*{Porównanie wartości rezystancji
+
+% TODO: Porównanie rezystancji obliczonych z wartościami zmierzonymi
+
 \subsubsection*{Porównanie wartości rezystancji
 
 \subsection{Obliczenie natężeń z praw Kirchhoffa}
@@ -299,12 +314,12 @@ i otrzymujemy wzór na $I_3$ oraz $I_4$:
 Wyznaczamy $I_2$ podstawiając do pierwszego wzoru z układu równań obliczony powyżej wzór na $I_3$:
 
 \begin{align*}
-	I_2 & = I_1 - I_3                                                                                                                          \\
+	I_2 & = I_1 - I_3 =                                                                                                                        \\
 	    & = I_1 - I_1 \frac{R_2}{R_2 + R_3 + R_4} =                                                                                            \\
 	    & = I_1 \left( 1 - \frac{R_2}{R_2 + R_3 + R_4} \right) =                                                                               \\
 	    & = I_1 \frac{R_3 + R_4}{R_2 + R_3 + R_4} =                                                                                            \\
 	    & = \frac{\mathcal{E} \left(R_{2} + R_{3} + R_{4}\right)}{R_{1} \left(R_{2} + R_{3} + R_{4}\right) + R_{2} \left(R_{3} + R_{4}\right)}
-	\cdot \frac{R_3 + R_4}{R_2 + R_3 + R_4}                                                                                                    \\
+	\cdot \frac{R_3 + R_4}{R_2 + R_3 + R_4} =                                                                                                  \\
 	    & = \frac{\mathcal{E} R_{2}}{R_{1} \left(R_{2} + R_{3} + R_{4}\right) + R_{2} \left(R_{3} + R_{4}\right)}
 \end{align*}
 
@@ -323,7 +338,27 @@ Ostatecznie:
 
 \subsubsection*{Porównanie wartości natężeń obliczonych ze zmierzonymi}
 
-% TODO: Porównanie wartości natężenia zmierzonych i obliczonych
+Wyniki obliczeń oraz porównanie z wartościami zmierzonymi przedstawiono w tabeli \ref{tab:obliczone_prady}.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		Prąd        & Obliczony [A] & Zmierzony [A] & Błąd bezwzględny [A] & Błąd względny [\%] \\
+		\hline
+		$I_1$       & 0,0105        & 0,0107        & 0,000229             & 2,14               \\
+		$I_2$       & 0,0033        & 0,0033        & 0,000000             & 0,00               \\
+		$I_3 = I_4$ & 0,0072        & 0,0074        & 0,000048             & 0,65               \\
+		\hline
+	\end{tabular}
+	\caption{Obliczone i zmierzone wartości prądów z błędami}
+	\label{tab:obliczone_prady}
+\end{table}
+
+Przykładowe obliczenie dla prądu I1:
+\begin{equation}
+	I_1 = \frac{10{,}0 \cdot (2390 + 557 + 558)}{192 \cdot (2390 + 557 + 558) + 2390 \cdot (557 + 558)} \approx 0{,}0105 \, \text{A}
+\end{equation}
 
 \subsection{Obliczenie oporu zastępczego}
 
