@@ -1,0 +1,18 @@
+{
+ "cells": [
+  {
+   "kind": 2,
+   "value": "(* Definicja symboli *)\n(* Używamy 'Emf' zamiast 'E', ponieważ w Mathematice 'E' to liczba Eulera *)\n(* R1, R2, R3, R4 - rezystancje *)\n\n(* 1. Definiujemy wyrażenie na I1 wyprowadzone wcześniej *)\n(* I1 = E / (R1 + (R2*(R3+R4))/(R2+R3+R4)) *)\nI1_expr = Emf / (R1 + (R2 * (R3 + R4)) / (R2 + R3 + R4));\n\n(* 2. Definiujemy I2, I3 oparte na dzielniku prądu i I1 *)\nI2_expr = I1_expr * (R3 + R4) / (R2 + R3 + R4);\nI3_expr = I1_expr * R2 / (R2 + R3 + R4);\nI4_expr = I3_expr; (* Prąd w gałęzi szeregowej jest ten sam *)\n\n(* 3. Upraszczanie do najprostszej formy *)\n(* Funkcja FullSimplify wykonuje pełne uproszczenie algebraiczne *)\nI1_simple = FullSimplify[I1_expr];\nI2_simple = FullSimplify[I2_expr];\nI3_simple = FullSimplify[I3_expr];\nI4_simple = FullSimplify[I4_expr];\n\n(* 4. Wyświetlanie wyników w formacie tradycyjnym (matematycznym) *)\nPrint[\"Postać uproszczona I1:\"];\nPrint[TraditionalForm[I1_simple]];\n\nPrint[\"\\nPostać uproszczona I2:\"];\nPrint[TraditionalForm[I2_simple]];\n\nPrint[\"\\nPostać uproszczona I3 (oraz I4):\"];\nPrint[TraditionalForm[I3_simple]];\n\n(* Opcjonalnie: Wyświetlenie w formacie TeX, gotowym do wklejenia do sprawozdania *)\nPrint[\"\\nKod LaTeX dla I1:\"];\nPrint[TeXForm[I1_simple]];\nPrint[\"\\nKod LaTeX dla I2:\"];\nPrint[TeXForm[I2_simple]];\nPrint[\"\\nKod LaTeX dla I3:\"];\nPrint[TeXForm[I3_simple]];",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1768857852121,
+     "endTime": 1768857852121
+    },
+    "success": false
+   }
+  }
+ ]
+}

@@ -228,19 +228,23 @@ Przykładowe obliczenie dla rezystora R1:
 
 Z pierwszego prawa Kirchhoffa:
 
-\begin{align}
+\begin{equation}
 	\label{eq:first_kirchhoff}
-	 & I_1 - I_3 - I_2 = 0 \\
-	 & I_3 - I_4 = 0       \\
-\end{align}
+	\begin{cases}
+		 & I_1 - I_3 - I_2 = 0 \\
+		 & I_3 - I_4 = 0
+	\end{cases}
+\end{equation}
 
 Z drugiego prawa Kirchhoffa:
 
-\begin{align}
-	\label{eq:second_kirchhoff}
-	 & \mathcal{E} - U_1 - U_2 = 0 \\
-	 & U_2 - U_3 - U_4 = 0
-\end{align}
+\begin{equation}
+	\begin{cases}
+		\label{eq:second_kirchhoff}
+		 & \mathcal{E} - U_1 - U_2 = 0 \\
+		 & U_2 - U_3 - U_4 = 0
+	\end{cases}
+\end{equation}
 
 Z prawa Ohma dla całego układu:
 
@@ -249,8 +253,7 @@ Z prawa Ohma dla całego układu:
 	I_1 = \frac{\mathcal{E}}{R_z}
 \end{equation}
 \noindent
-gdzie $\mathcal{E} = 10,0 V$ to napięcie zasilania układu. Stąd:
-
+, gdzie $\mathcal{E} = 10,0 V$ to napięcie zasilania układu.
 Przekształcając wzory \eqref{eq:first_kirchhoff}, \eqref{eq:second_kirchhoff} oraz \eqref{eq:i_1} otrzymujemy następujący układ równań:
 
 \begin{equation}
@@ -272,40 +275,49 @@ Z prawa łączenia rezystorów szeregowo i równolegle:
 
 Podstawiając $R_z$ do piątego równania z układu \eqref{eq:zad2_cases} otrzymujemy wzór na $I_1$:
 
-\begin{equation*}
-	I_1 = \frac{\mathcal{E}}{R_1 + \frac{R_2 (R_3 + R_4)}{R_2 + R_3 + R_4}}
-\end{equation*}
+\begin{align*}
+	I_1 & = \frac{\mathcal{E}}{R_1 + \frac{R_2 (R_3 + R_4)}{R_2 + R_3 + R_4}}
+	= \frac{\mathcal{E} \left(R_{2} + R_{3} + R_{4}\right)}{R_{1} \left(R_{2} + R_{3} + R_{4}\right) + R_{2} \left(R_{3} + R_{4}\right)}
+\end{align*}
 
-Następnie wyznaczamy prądy w gałęziach. Do czwartego równania układu \eqref{eq:zad2_cases} podstawiamy wzór na $I_4$ z drugiego równania oraz wzór na $I_2$ z pierwszego równania:
+Do czwartego równania układu \eqref{eq:zad2_cases} podstawiamy wzór na $I_4$ z drugiego równania oraz wzór na $I_2$ z pierwszego równania:
 
-$$ R_2 (I_1 - I_3) - I_3 (R_3 + R_4) = 0 $$
-$$ I_1 R_2 - I_3 R_2 - I_3 (R_3 + R_4) = 0 $$
-$$ I_1 R_2 = I_3 (R_2 + R_3 + R_4) $$
+\begin{align*}
+	 & R_2 (I_1 - I_3) - I_3 (R_3 + R_4) = 0   \\
+	 & I_1 R_2 - I_3 R_2 - I_3 (R_3 + R_4) = 0 \\
+	 & I_1 R_2 = I_3 (R_2 + R_3 + R_4)         \\
+\end{align*}
+i otrzymujemy wzór na $I_3$ oraz $I_4$:
 
-Stąd otrzymujemy wzór na $I_3$ (i $I_4$):
+\begin{align*}
+	I_3 = I_4 & = I_1 \frac{R_2}{R_2 + R_3 + R_4} =                                                                                                  \\
+	          & = \frac{\mathcal{E} \left(R_{2} + R_{3} + R_{4}\right)}{R_{1} \left(R_{2} + R_{3} + R_{4}\right) + R_{2} \left(R_{3} + R_{4}\right)}
+	\cdot \frac{R_2}{R_2 + R_3 + R_4} =                                                                                                              \\
+	          & = \frac{\mathcal{E} \left(R_{3} + R_{4}\right)}{R_{1} \left(R_{2} + R_{3} + R_{4}\right) + R_{2} \left(R_{3} + R_{4}\right)}
+\end{align*}
 
-\begin{equation}
-	I_3 = I_4 = I_1 \frac{R_2}{R_2 + R_3 + R_4}
-\end{equation}
+Wyznaczamy $I_2$ podstawiając do pierwszego wzoru z układu równań obliczony powyżej wzór na $I_3$:
 
-Mając $I_3$, wyznaczamy $I_2$ korzystając z pierwszego wzoru z układu równań ($I_2 = I_1 - I_3$):
-
-$$ I_2 = I_1 - I_1 \frac{R_2}{R_2 + R_3 + R_4} = I_1 \left( 1 - \frac{R_2}{R_2 + R_3 + R_4} \right) $$
-
-Co po przekszałceniu daje:
-
-\begin{equation}
-	I_2 = I_1 \frac{R_3 + R_4}{R_2 + R_3 + R_4}
-\end{equation}
+\begin{align*}
+	I_2 & = I_1 - I_3                                                                                                                          \\
+	    & = I_1 - I_1 \frac{R_2}{R_2 + R_3 + R_4} =                                                                                            \\
+	    & = I_1 \left( 1 - \frac{R_2}{R_2 + R_3 + R_4} \right) =                                                                               \\
+	    & = I_1 \frac{R_3 + R_4}{R_2 + R_3 + R_4} =                                                                                            \\
+	    & = \frac{\mathcal{E} \left(R_{2} + R_{3} + R_{4}\right)}{R_{1} \left(R_{2} + R_{3} + R_{4}\right) + R_{2} \left(R_{3} + R_{4}\right)}
+	\cdot \frac{R_3 + R_4}{R_2 + R_3 + R_4}                                                                                                    \\
+	    & = \frac{\mathcal{E} R_{2}}{R_{1} \left(R_{2} + R_{3} + R_{4}\right) + R_{2} \left(R_{3} + R_{4}\right)}
+\end{align*}
 
 Ostatecznie:
 
 \begin{equation*}
 	\begin{cases}
-		I_1 & = \frac{\mathcal{E}}{R_1 + \frac{R_2 (R_3 + R_4)}{R_2 + R_3 + R_4}} \\
-		I_2 & = ...                                                               \\
-		I_3 & = ...                                                               \\
-		I_4 & = ...                                                               \\
+		I_1        & =
+		\frac{\mathcal{E} \left(R_{2} + R_{3} + R_{4}\right)}{R_{1} \left(R_{2} + R_{3} + R_{4}\right) + R_{2} \left(R_{3} + R_{4}\right)} \\
+		I_2        & =
+		\frac{\mathcal{E} R_{2}}{R_{1} \left(R_{2} + R_{3} + R_{4}\right) + R_{2} \left(R_{3} + R_{4}\right)}                              \\
+		I_3  = I_4 & =
+		\frac{\mathcal{E} \left(R_{3} + R_{4}\right)}{R_{1} \left(R_{2} + R_{3} + R_{4}\right) + R_{2} \left(R_{3} + R_{4}\right)}
 	\end{cases}
 \end{equation*}
 
