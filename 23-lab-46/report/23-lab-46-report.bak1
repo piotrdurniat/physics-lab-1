@@ -228,10 +228,10 @@ Wyniki obliczeń rezystancji na podstawie pomiarów napięć i prądów oraz war
 		\hline
 		Rezystor & Obliczona $[\Omega]$ & Zmierzona $[\Omega]$ & Błąd bezwzględny $[\Omega]$ & Błąd względny $[\%]$ \\
 		\hline
-		$R_1$    & 189,19               & 192                  & 2,81                        & 1,46                 \\
-		$R_2$    & 2388,55              & 2390                 & 1,45                        & 0,06                 \\
-		$R_3$    & 548,39               & 557                  & 8,61                        & 1,55                 \\
-		$R_4$    & 512,10               & 558                  & 45,90                       & 8,23                 \\
+		$R_1$   & 189,19 & 192    & 2,81  & 1,46 \\
+		$R_2$   & 2388,55 & 2390   & 1,45  & 0,06 \\
+		$R_3$   & 548,39  & 557    & 8,61  & 1,55 \\
+		$R_4$   & 512,10  & 558    & 45,90 & 8,23 \\
 		\hline
 	\end{tabular}
 	\caption{Porównanie obliczonych i zmierzonych wartości rezystancji}
@@ -365,16 +365,8 @@ Przykładowe obliczenie dla prądu I1:
 Z prawa łączenia rezystorów szeregowo i równolegle:
 
 \begin{align*}
-	 & R_z = R_1 + \frac{1}{\frac{1}{R_2} + \frac{1}{R_3 + R_4}} = R_1 + \frac{R_2 (R_3 + R_4)}{R_2 + R_3 + R_4}
+	 & R_z = R_1 + \frac{1}{\frac{1}{R_2} + \frac{1}{R_3 + R_4}}
 \end{align*}
-
-Podstawiając wartości zmierzone:
-\begin{align*}
-	R_{\parallel} & = \frac{2390 \cdot (557 + 558)}{2390 + 557 + 558} = \frac{2390 \cdot 1115}{2390 + 1115} = \frac{2390 \cdot 1115}{3505} = 760{,}30 \, \Omega \\
-	R_z           & = 192 + 760{,}30 = 952{,}30 \, \Omega
-\end{align*}
-
-Wartość zmierzona $R_z = 901 \, \Omega$. Błąd bezwzględny: $952{,}30 - 901 = 51{,}30 \, \Omega$, błąd względny: $\frac{51{,}30}{901} \cdot 100\% \approx 5{,}69\%$.
 
 \subsubsection*{Porównanie wartości rezystancji oblizonych ze zmierzonymi}
 

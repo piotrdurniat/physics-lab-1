@@ -370,8 +370,8 @@ Z prawa łączenia rezystorów szeregowo i równolegle:
 
 Podstawiając wartości zmierzone:
 \begin{align*}
-	R_{\parallel} & = \frac{2390 \cdot (557 + 558)}{2390 + 557 + 558} = \frac{2390 \cdot 1115}{2390 + 1115} = \frac{2390 \cdot 1115}{3505} = 760{,}30 \, \Omega \\
-	R_z           & = 192 + 760{,}30 = 952{,}30 \, \Omega
+	R_{\parallel} &= \frac{2390 \cdot (557 + 558)}{2390 + 557 + 558} = \frac{2390 \cdot 1115}{2390 + 1115} = \frac{2390 \cdot 1115}{3505} = 760{,}30 \, \Omega \\
+	R_z &= 192 + 760{,}30 = 952{,}30 \, \Omega
 \end{align*}
 
 Wartość zmierzona $R_z = 901 \, \Omega$. Błąd bezwzględny: $952{,}30 - 901 = 51{,}30 \, \Omega$, błąd względny: $\frac{51{,}30}{901} \cdot 100\% \approx 5{,}69\%$.
