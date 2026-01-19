@@ -228,25 +228,37 @@ Przykładowe obliczenie dla rezystora R1:
 
 Z pierwszego prawa Kirchhoffa:
 
-\begin{align*}
+\begin{align}
+	\label{eq:first_kirchhoff}
 	 & I_1 - I_3 - I_2 = 0 \\
 	 & I_3 - I_4 = 0       \\
-\end{align*}
+\end{align}
 
 Z drugiego prawa Kirchhoffa:
 
-\begin{align*}
+\begin{align}
+	\label{eq:second_kirchhoff}
 	 & \mathcal{E} - U_1 - U_2 = 0 \\
 	 & U_2 - U_3 - U_4 = 0
-\end{align*}
+\end{align}
 
 Z prawa Ohma dla całego układu:
 
 \begin{equation*}
-	I_1 = \frac{\mathcal{E}}{R_z} = \frac{10,0}{901} =
+	I_1 = \frac{\mathcal{E}}{R_z}
 \end{equation*}
 \noindent
 gdzie $\mathcal{E} = 10,0 V$ to napięcie zasilania układu. Stąd:
+
+Przekształcając wzory \eqref{eq:first_kirchhoff} i \eqref{eq:second_kirchhoff}:
+
+\begin{align*}
+	 & I_1 = I_3 + I_2                     \\
+	 & I_3 = I_4                           \\
+	 & \mathcal{E} - R_1 I_1 - R_2 I_2 = 0 \\
+	 & R_2 I_2 - R_3 I_3 - R_4 I_4 = 0
+	I_1 = \frac{\mathcal{E}}{R_z}
+\end{align*}
 
 \subsubsection*{Porównanie wartości natężeń obliczonych ze zmierzonymi}
 
