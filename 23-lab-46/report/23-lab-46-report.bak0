@@ -387,34 +387,26 @@ Wartość zmierzona oporu zastępczego wynosi $R_z = 901 \, \Omega$, porównują
 
 Niepewności maksymalne rezystorów obliczono korzystając z prawa przenoszenia niepewności maksymalnej dla funkcji \(R = U/I\), gdzie \(u(U) = 0,1\) V dla zasilacza, a \(u(I) = 1\%\) zakresu pomiarowego miernika cyfrowego prądu.
 
-Przykładowe obliczenie dla rezystora \(R_1\) w układzie 1:
-\[
-	U_1 = 2{,}03~\text{V}, \quad I_1 = 0{,}01073~\text{A}, \quad u(I_1) = 0{,}01 \cdot 0{,}01073 = 0{,}0001073~\text{A}
-\]
-\[
-	u(R_1) = \frac{0{,}1}{0{,}01073} + \frac{2{,}03}{0{,}01073^2} \cdot 0{,}0001073 \approx 9{,}32 + 1{,}89 \approx 11{,}21~\Omega \approx 0{,}011~\text{k}\Omega
-\]
-
 \begin{table}[H]
-	\centering
-	\caption{Niepewności maksymalne wyznaczonych oporów}
-	\begin{tabular}{|c|c|c|}
-		\hline
-		Wielkość & Układ & $u(R)$ [k$\Omega$] \\
-		\hline
-		$R_1$    & 1     & 0,011              \\
-		$R_2$    & 1     & 0,054              \\
-		$R_3$    & 1     & 0,019              \\
-		$R_4$    & 1     & 0,019              \\
-		\hline
-		$R_1$    & 2     & 0,008              \\
-		$R_2$    & 2     & 0,053              \\
-		$R_3$    & 2     & 0,025              \\
-		$R_4$    & 2     & 0,015              \\
-		$R_5$    & 2     & 0,028              \\
-		$R_z$    & 2     & 0,010              \\
-		\hline
-	\end{tabular}
+\centering
+\caption{Niepewności maksymalne wyznaczonych oporów}
+\begin{tabular}{|c|c|c|}
+\hline
+Wielkość & Układ & $u(R)$ [k$\Omega$] \\
+\hline
+$R_1$ & 1 & 0,011 \\
+$R_2$ & 1 & 0,054 \\
+$R_3$ & 1 & 0,019 \\
+$R_4$ & 1 & 0,019 \\
+\hline
+$R_1$ & 2 & 0,008 \\
+$R_2$ & 2 & 0,053 \\
+$R_3$ & 2 & 0,025 \\
+$R_4$ & 2 & 0,015 \\
+$R_5$ & 2 & 0,028 \\
+$R_z$ & 2 & 0,010 \\
+\hline
+\end{tabular}
 \end{table}
 
 
