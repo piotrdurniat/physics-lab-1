@@ -385,7 +385,7 @@ Wartość zmierzona oporu zastępczego wynosi $R_z = 901 \, \Omega$, porównują
 % ---------- NIEPEWNOŚCI ----------
 \section{Ocena niepewności pomiaru}
 
-Korzystając z prawa przenoszenia niepewności maksymalnej (wzór (18) ONP) wyznaczono niepewności maksymalne wyznaczonych wartości oporów R1 ÷ R4 i oporu zastępczego Rz. Dla funkcji \(R = \frac{U}{I}\) niepewność maksymalna \(\Delta R = \left| \frac{\partial R}{\partial U} \Delta U \right| + \left| \frac{\partial R}{\partial I} \Delta I \right| = \frac{\Delta U}{I} + \frac{U}{I^2} \Delta I\). Przyjęto dla miernika cyfrowego niepewność maksymalną \(\Delta I = 1\%\) zakresu pomiarowego, natomiast dla zasilacza \(\Delta U = 0,1\) V \citep{ONP}.
+Korzystając z prawa przenoszenia niepewności maksymalnej (wzór (18) ONP) wyznaczono niepewności maksymalne wyznaczonych wartości oporów R1 ÷ R4 i oporu zastępczego Rz. Dla funkcji \(R = \frac{U}{I}\) niepewność maksymalna \(\Delta R = \left| \frac{\partial R}{\partial U} \Delta U \right| + \left| \frac{\partial R}{\partial I} \Delta I \right| = \frac{\Delta U}{I} + \frac{U}{I^2} \Delta I\). Przyjęto dla miernika cyfrowego niepewność maksymalną \(\Delta I = 1\%\) zakresu pomiarowego, natomiast dla zasilacza \(\Delta U = 0,1\) V \citep{fizyka_dla_szkol_wyzszych_tom_3}.
 
 Przykładowe obliczenie dla rezystora \(R_1\) w układzie 1:
 \[
@@ -420,30 +420,7 @@ Przykładowe obliczenie dla rezystora \(R_1\) w układzie 1:
 
 
 % ---------- WNIOSKI ----------
-\section{Wnioski}
-
-Dokonano weryfikacji praw Ohma i Kirchhoffa w obwodach prądu stałego oraz wyznaczono parametry obwodu (rezystancję i natężenia prądów) metodą pośrednią. Na podstawie analizy wyników sformułowano następujące wnioski:
-
-\begin{enumerate}
-	\item \textbf{Weryfikacja prawa Ohma (wyznaczenie rezystancji):}
-	      Wartości rezystancji $R_1, R_2$ oraz $R_3$ wyznaczone z prawa Ohma wykazały dużą zgodność z pomiarami bezpośrednimi omomierzem. Błąd względny dla tych elementów nie przekroczył $1,6\%$.
-	      Wyjątek stanowi rezystor $R_4$, dla którego błąd względny wynosi $8,23\%$ (różnica ok. $46\,\Omega$). Rozbieżność ta może wynikać z niedokładności odczytu lub nagrzewania się elementu.
-
-	\item \textbf{Weryfikacja praw Kirchhoffa (rozpływ prądów):}
-	      \begin{itemize}
-		      \item Dla prądu $I_2$ uzyskano pełną zgodność wyników (błąd $0,00\%$).
-		      \item Dla gałęzi z rezystorami $R_3$ i $R_4$ błąd wyniósł $0,65\%$.
-		      \item Największy błąd względny odnotowano dla prądu głównego $I_1$ ($2,14\%$).
-	      \end{itemize}
-	      Wyniki te potwierdzają słuszność I i II prawa Kirchhoffa dla badanego obwodu.
-
-	\item \textbf{Opór zastępczy układu:}
-	      Porównanie obliczonego teoretycznie oporu zastępczego ($R_{z, obl} \approx 952,3\,\Omega$) z wartością zmierzoną ($R_{z, pom} = 901\,\Omega$) wykazało błąd względny rzędu $5,69\%$. Różnica ta może wynikać z sumowania się błędów poszczególnych rezystancji składowych oraz wpływu rezystancji przewodów i styków, które w metodzie teoretycznej zostały pominięte.
-
-	\item \textbf{Niepewności pomiarowe:}
-	      Przeprowadzona analiza niepewności maksymalnej wykazała, że większość wyznaczonych wielkości obarczona jest niewielkimi niepewnościami (rzędu pojedynczych lub dziesiątek omów). Obserwowane w niektórych punktach odchylenia (szczególnie dla $R_4$) wykraczają poza szacowaną niepewność przyrządów.
-\end{enumerate}
-
+% \section{Wnioski}
 
 % ---------- WYKRESY ----------
 % \section{Wykresy}
