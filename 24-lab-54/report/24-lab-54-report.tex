@@ -279,6 +279,30 @@ Przykładowe obliczenie dla $C = 1,0\,\mu\text{F}$ (Seria I):
 	K = \frac{0,6315}{\num{1,4e6} \cdot \num{1,0e-6}} = 0,4511
 \end{equation}
 
+\subsection{Wyznaczenie okresów drgań relaksacyjnych $T_x$ dla kondensatora o nieznanej pojemności}
+
+Dla nieznanej pojemności $C_x$ zmierzono czasy trwania 20 cykli drgań przy dwóch wartościach rezystancji. Okresy obliczono ze wzoru $T_x = t_{20}/20$.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		$R$                & $t_{20}$     & $T_x$        \\
+		$[\text{M}\Omega]$ & $[\text{s}]$ & $[\text{s}]$ \\
+		\hline
+		1,4                & 45,65        & 2,2825       \\
+		2,6                & 89,22        & 4,4610       \\
+		\hline
+	\end{tabular}
+	\caption{Okresy drgań relaksacyjnych dla nieznanej pojemności $C_x$}
+	\label{tab:okresy_cx}
+\end{table}
+
+Przykładowe obliczenie dla $R = \num{1,4e6}\,\Omega$:
+\begin{equation}
+	T_x = \frac{45,65}{20} = 2,2825\,\text{s}
+\end{equation}
+
 % ---------- NIEPEWNOŚCI ----------
 % \section{Ocena niepewności pomiaru}
 
