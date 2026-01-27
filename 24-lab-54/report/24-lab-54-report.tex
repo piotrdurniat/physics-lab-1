@@ -50,9 +50,9 @@
 \vspace{2cm}
 \begin{center}
 	% lab number
-	\LARGE \textbf{Ćwiczenie nr 00} \\[0.5cm]
+	\LARGE \textbf{Ćwiczenie nr 54} \\[0.5cm]
 	% title
-	\Large \textbf{Template}
+	\Large \textbf{Drgania relaksacyjne}
 \end{center}
 
 \vspace{1cm}
@@ -68,10 +68,87 @@
 % \section{Opis doświadczenia}
 
 % ---------- OPRACOWANIE WYNIKÓW POMIARÓW ----------
-% \section{Opracowanie wyników pomiarów}
+\section{Opracowanie wyników pomiarów}
 
 % ---------- TABELE ----------
-% \subsection{Tabele pomiarowe}
+\subsection{Tabele pomiarowe}
+
+% Tabela 1: Pomiary czasu dla znanych pojemności (Seria I, R = 1,4 MΩ)
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		$C$             & $t_{20}$     \\
+		$[\mu\text{F}]$ & $[\text{s}]$ \\
+		\hline
+		1,0             & 12,63        \\
+		2,0             & 25,62        \\
+		3,0             & 37,75        \\
+		4,5             & 58,00        \\
+		5,0             & 64,00        \\
+		6,5             & 83,84        \\
+		7,0             & 91,84        \\
+		8,0             & 104,03       \\
+		9,0             & 117,28       \\
+		\hline
+	\end{tabular}
+	\caption{Zmierzone czasy trwania 20 cykli drgań dla znanych pojemności (Seria I, $R = \num{1,4e6}\,\Omega$)}
+	\label{tab:pomiary_seria1}
+\end{table}
+
+% Tabela 2: Pomiary czasu dla znanych pojemności (Seria II, R = 2,6 MΩ)
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		$C$             & $t_{20}$     \\
+		$[\mu\text{F}]$ & $[\text{s}]$ \\
+		\hline
+		1,0             & 23,32        \\
+		2,0             & 46,37        \\
+		3,0             & 69,15        \\
+		4,5             & 103,84       \\
+		5,0             & 110,07       \\
+		6,5             & 150,91       \\
+		7,0             & 163,43       \\
+		8,0             & 187,75       \\
+		9,0             & 210,66       \\
+		\hline
+	\end{tabular}
+	\caption{Zmierzone czasy trwania 20 cykli drgań dla znanych pojemności (Seria II, $R = \num{2,6e6}\,\Omega$)}
+	\label{tab:pomiary_seria2}
+\end{table}
+
+% Tabela 3: Pomiary czasu dla nieznanej pojemności $C_x$
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		Rezystancja        & $t_{20}$     \\
+		$[\text{M}\Omega]$ & $[\text{s}]$ \\
+		\hline
+		1,4                & 45,65        \\
+		2,6                & 89,22        \\
+		\hline
+	\end{tabular}
+	\caption{Zmierzone czasy trwania 20 cykli drgań dla nieznanej pojemności $C_x$ przy dwóch wartościach rezystancji}
+	\label{tab:pomiary_cx}
+\end{table}
+
+% Tabela 4: Parametry układu pomiarowego
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		Parametr                 & Wartość     \\
+		\hline
+		Napięcie zasilania $U_0$ & \num{140} V \\
+		Liczba cykli $N$         & 20          \\
+		\hline
+	\end{tabular}
+	\caption{Stałe parametry układu pomiarowego}
+	\label{tab:parametry}
+\end{table}
 
 % ---------- OBLICZENIA ----------
 % \subsection{...}
