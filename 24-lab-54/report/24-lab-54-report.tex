@@ -303,6 +303,42 @@ Przykładowe obliczenie dla $R = \num{1,4e6}\,\Omega$:
 	T_x = \frac{45,65}{20} = 2,2825\,\text{s}
 \end{equation}
 
+\subsection{Obliczenie nieznanej pojemności $C_x$ z równania $T = K \cdot R \cdot C$}
+
+Wykorzystując średnią wartość stałej $K_{sr} = 0,4520$ oraz obliczone okresy $T_x$, wyznaczono nieznana pojemność ze wzoru:
+\begin{equation}
+	C_x = \frac{T_x}{K_{sr} \cdot R}
+\end{equation}
+
+\subsubsection*{Obliczone wartości $C_x$}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		$R$                & $T_x$ [s] & $C_x$ $[\mu\text{F}]$ \\
+		$[\text{M}\Omega]$ &           &                       \\
+		\hline
+		1,4                & 2,2825    & 3,6069                \\
+		2,6                & 4,4610    & 3,7959                \\
+		\hline
+	\end{tabular}
+	\caption{Obliczone wartości nieznanej pojemności $C_x$}
+	\label{tab:cx_obliczone}
+\end{table}
+
+\subsubsection*{Średnia wartość $C_x$}
+
+Obliczono średnią wartość pojemności $C_x$:
+\begin{equation}
+	C_{x, sr} = \frac{3,6069 + 3,7959}{2} = 3,7014\,\mu\text{F}
+\end{equation}
+
+Przykładowe obliczenie dla $R = \num{1,4e6}\,\Omega$:
+\begin{equation}
+	C_x = \frac{2,2825}{0,4520 \cdot \num{1,4e6}} \cdot 10^6 = 3,6069\,\mu\text{F}
+\end{equation}
+
 % ---------- NIEPEWNOŚCI ----------
 % \section{Ocena niepewności pomiaru}
 
