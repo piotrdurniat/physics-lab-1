@@ -151,7 +151,64 @@
 \end{table}
 
 % ---------- OBLICZENIA ----------
-% \subsection{...}
+\subsection{Wyznaczenie okresów drgań relaksacyjnych $T$ dla pomiarów z kondensatorami o znanej pojemności}
+
+Okres drgań relaksacyjnych obliczono ze wzoru:
+\begin{equation}
+	T = \frac{t_{20}}{20}
+\end{equation}
+gdzie $t_{20}$ to zmierzony czas trwania 20 cykli drgań.
+
+Wyniki obliczeń okresów przedstawiono w tabelach \ref{tab:okresy_seria1} i \ref{tab:okresy_seria2}.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		$C$             & $t_{20}$     & $T$          \\
+		$[\mu\text{F}]$ & $[\text{s}]$ & $[\text{s}]$ \\
+		\hline
+		1,0             & 12,63        & 0,6315       \\
+		2,0             & 25,62        & 1,2810       \\
+		3,0             & 37,75        & 1,8875       \\
+		4,5             & 58,00        & 2,9000       \\
+		5,0             & 64,00        & 3,2000       \\
+		6,5             & 83,84        & 4,1920       \\
+		7,0             & 91,84        & 4,5920       \\
+		8,0             & 104,03       & 5,2015       \\
+		9,0             & 117,28       & 5,8640       \\
+		\hline
+	\end{tabular}
+	\caption{Okresy drgań relaksacyjnych dla znanych pojemności (Seria I, $R = \num{1,4e6}\,\Omega$)}
+	\label{tab:okresy_seria1}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		$C$             & $t_{20}$     & $T$          \\
+		$[\mu\text{F}]$ & $[\text{s}]$ & $[\text{s}]$ \\
+		\hline
+		1,0             & 23,32        & 1,1660       \\
+		2,0             & 46,37        & 2,3185       \\
+		3,0             & 69,15        & 3,4575       \\
+		4,5             & 103,84       & 5,1920       \\
+		5,0             & 110,07       & 5,5035       \\
+		6,5             & 150,91       & 7,5455       \\
+		7,0             & 163,43       & 8,1715       \\
+		8,0             & 187,75       & 9,3875       \\
+		9,0             & 210,66       & 10,5330      \\
+		\hline
+	\end{tabular}
+	\caption{Okresy drgań relaksacyjnych dla znanych pojemności (Seria II, $R = \num{2,6e6}\,\Omega$)}
+	\label{tab:okresy_seria2}
+\end{table}
+
+Przykładowe obliczenie dla $C = 1,0\,\mu\text{F}$ (Seria I):
+\begin{equation}
+	T = \frac{12,63}{20} = 0,6315\,\text{s}
+\end{equation}
 
 % ---------- NIEPEWNOŚCI ----------
 % \section{Ocena niepewności pomiaru}
