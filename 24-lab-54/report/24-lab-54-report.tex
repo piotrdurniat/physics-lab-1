@@ -339,6 +339,36 @@ Przykładowe obliczenie dla $R = \num{1,4e6}\,\Omega$:
 	C_x = \frac{2,2825}{0,4520 \cdot \num{1,4e6}} \cdot 10^6 = 3,6069\,\mu\text{F}
 \end{equation}
 
+\subsection{Odczytanie wartości $C_x$ z wykresu zależności $T = f(C)$}
+
+Sporządzono wykresy zależności okresu drgań od pojemności dla obu wartości rezystancji. Z wykresów odczytano wartości nieznanej pojemności $C_x$ na podstawie zmierzonych okresów $T_x$.
+
+\subsubsection*{Wartości $C_x$ odczytane z wykresów}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		$R$                & $T_x$ [s] & $C_x$ $[\mu\text{F}]$ \\
+		$[\text{M}\Omega]$ &           &                       \\
+		\hline
+		1,4                & 2,2825    & 3,5524                \\
+		2,6                & 4,4610    & 3,8690                \\
+		\hline
+	\end{tabular}
+	\caption{Wartości $C_x$ odczytane z wykresów $T = f(C)$}
+	\label{tab:cx_wykres}
+\end{table}
+
+\subsubsection*{Średnia wartość $C_x$ z wykresów}
+
+Obliczono średnią wartość pojemności $C_x$ odczytaną z wykresów:
+\begin{equation}
+	C_{x, sr}^{wykres} = \frac{3,5524 + 3,8690}{2} = 3,7107\,\mu\text{F}
+\end{equation}
+
+Wykresy zależności $T = f(C)$ wykazały liniową charakterystykę, co pozwoliło na precyzyjny odczyt wartości $C_x$ metodą interpolacji.
+
 % ---------- NIEPEWNOŚCI ----------
 % \section{Ocena niepewności pomiaru}
 
