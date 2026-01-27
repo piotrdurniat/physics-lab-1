@@ -369,6 +369,40 @@ Obliczono średnią wartość pojemności $C_x$ odczytaną z wykresów:
 
 Wykresy zależności $T = f(C)$ (rysunek \ref{fig:wykres_TC}) wykazały liniową charakterystykę, co pozwoliło na precyzyjny odczyt wartości $C_x$ metodą interpolacji.
 
+\subsection{Porównanie wartości $C_x$ obliczonych ze wzoru oraz odczytanych z wykresu}
+
+Porównano wartości nieznanej pojemności $C_x$ obliczone metodą analityczną oraz odczytane z wykresów.
+
+\subsubsection*{Porównanie wartości $C_x$}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|c|}
+		\hline
+		Metoda                        & $C_x$ $[\mu\text{F}]$ \\
+		\hline
+		Obliczenia ze wzoru (średnia) & 3,7014                \\
+		Wykresy (średnia)             & 3,7107                \\
+		\hline
+	\end{tabular}
+	\caption{Porównanie wartości $C_x$ uzyskanych różnymi metodami}
+	\label{tab:porownanie_cx}
+\end{table}
+
+\subsubsection*{Różnica między metodami}
+
+Różnica między wartością $C_x$ obliczoną ze wzoru a odczytaną z wykresu wynosi:
+\begin{equation}
+	\Delta C_x = |3,7107 - 3,7014| = 0,0093\,\mu\text{F}
+\end{equation}
+
+Różnica względna:
+\begin{equation}
+	\frac{\Delta C_x}{C_{x, sr}} \cdot 100\% = \frac{0,0093}{3,7014} \cdot 100\% \approx 0,25\%
+\end{equation}
+
+Tak mała różnica ($0,25\%$) świadczy o bardzo dobrej zgodności obu metod wyznaczania nieznanej pojemności $C_x$.
+
 % ---------- NIEPEWNOŚCI ----------
 % \section{Ocena niepewności pomiaru}
 
