@@ -64,6 +64,45 @@
 % ---------- WSTĘP TEORETYCZNY ----------
 \section{Wstęp teoretyczny}
 
+Kondensator o pojemności $C$ gromadzi ładunek elektryczny zgodnie ze wzorem:
+\begin{equation}
+	Q = C \cdot U
+\end{equation}
+
+Przy łączeniu kondensatorów:
+\begin{itemize}
+	\item szeregowo:
+	      \begin{equation}
+		      \frac{1}{C_{z}} = \sum_{i} \frac{1}{C_i}
+	      \end{equation}
+	\item równolegle:
+	      \begin{equation}
+		      C_{z} = \sum_{i} C_i
+	      \end{equation}
+\end{itemize}
+
+Wyładowania elektryczne w gazach rozrzedzonych zachodzą przy określonym napięciu jonizacji. Lampa neonowa działa jako przełącznik z dwoma napięciami progowymi:
+\begin{itemize}
+	\item napięcie zapłonu $U_z$ - przy którym gaz jonizuje się i następuje wyładowanie
+	\item napięcie gaśnięcia $U_g$ - przy którym wyładowanie gaśnie ($U_g < U_z$)
+\end{itemize}
+
+W obwodzie drgań relaksacyjnych kondensator ładuje się przez rezystor do napięcia $U_z$, następnie wyładowuje się przez lampę neonową do napięcia $U_g$, a cykl powtarza się.
+
+Okres drgań składa się z czasu ładowania $t_{ład}$ i wyładowywania $t_{wył}$:
+\begin{equation}
+	T = t_{ład} + t_{wył} = RC \ln\frac{U_0 - U_g}{U_0 - U_z} + \tau_{wył}
+\end{equation}
+
+Zakładając $\tau_{wył} \ll t_{ład}$, otrzymuje się uproszczony wzór:
+\begin{equation}
+	T = K \cdot R \cdot C
+\end{equation}
+gdzie stała $K$ zależy od napięcia zasilania $U_0$ oraz progów lampy neonowej:
+\begin{equation}
+	K = \ln\frac{U_0 - U_g}{U_0 - U_z}
+\end{equation}
+
 % ---------- OPIS DOŚWIADCZENIA ----------
 % \section{Opis doświadczenia}
 
