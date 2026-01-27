@@ -403,6 +403,55 @@ Różnica względna:
 
 Tak mała różnica ($0,25\%$) świadczy o bardzo dobrej zgodności obu metod wyznaczania nieznanej pojemności $C_x$.
 
+\subsection{Ocena niepewności pomiaru stałej $K$ oraz niepewności nieznanej pojemności $C_x$}
+
+Oszacowano niepewności pomiarowe przy użyciu złożonej niepewności standardowej (wzór (17) ONP).
+
+\subsubsection*{Niepewność stałej $K$}
+
+Dla funkcji $K = \frac{T}{R \cdot C} = \frac{t_{20}}{20 \cdot R \cdot C}$ niepewność standardowa wynika z niepewności pomiaru czasu $t_{20}$. Przyjęto niepewność pomiaru czasu $u(t_{20}) = 0,01$ s.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		Parametr                 & Wartość \\
+		\hline
+		$u(K)$ średnia (R=1,4M)  & 0,0074  \\
+		$u(K)$ średnia (R=2,6M)  & 0,0070  \\
+		$u(K)$ średnia całkowita & 0,0068  \\
+		\hline
+	\end{tabular}
+	\caption{Niepewności standardowe stałej $K$}
+	\label{tab:niepewnosci_K}
+\end{table}
+
+\subsubsection*{Niepewność pojemności $C_x$}
+
+Niepewność pojemności $C_x$ obliczono z prawa przenoszenia niepewności dla funkcji $C_x = \frac{T_x}{K \cdot R}$.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		Parametr          & Wartość       \\
+		\hline
+		$u(C_x)$ (R=1,4M) & 0,0562 $\mu$F \\
+		$u(C_x)$ (R=2,6M) & 0,0573 $\mu$F \\
+		$u(C_x)$ końcowa  & 0,0401 $\mu$F \\
+		\hline
+	\end{tabular}
+	\caption{Niepewności standardowe pojemności $C_x$}
+	\label{tab:niepewnosci_Cx}
+\end{table}
+
+\subsubsection*{Wynik końcowy z niepewnością}
+
+Wartość nieznanej pojemności $C_x$ z końcową niepewnością standardową:
+\begin{equation}
+	C_x = (3,70 \pm 0,04)\,\mu\text{F}
+\end{equation}
+
 % ---------- NIEPEWNOŚCI ----------
 % \section{Ocena niepewności pomiaru}
 
