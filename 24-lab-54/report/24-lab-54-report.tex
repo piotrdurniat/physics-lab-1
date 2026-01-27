@@ -210,6 +210,75 @@ Przykładowe obliczenie dla $C = 1,0\,\mu\text{F}$ (Seria I):
 	T = \frac{12,63}{20} = 0,6315\,\text{s}
 \end{equation}
 
+\subsection{Wyznaczenie stałej $K$ z równania $T = K \cdot R \cdot C$}
+
+Ze wzoru $T = K \cdot R \cdot C$ wyznaczono wartości stałej $K$ dla każdego pomiaru:
+\begin{equation}
+	K = \frac{T}{R \cdot C}
+\end{equation}
+
+\subsubsection*{Wartości stałej $K$ dla poszczególnych pomiarów}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		$C$             & $T$ [s] & $K$    \\
+		$[\mu\text{F}]$ &         &        \\
+		\hline
+		1,0             & 0,6315  & 0,4511 \\
+		2,0             & 1,2810  & 0,4575 \\
+		3,0             & 1,8875  & 0,4494 \\
+		4,5             & 2,9000  & 0,4603 \\
+		5,0             & 3,2000  & 0,4571 \\
+		6,5             & 4,1920  & 0,4607 \\
+		7,0             & 4,5920  & 0,4686 \\
+		8,0             & 5,2015  & 0,4644 \\
+		9,0             & 5,8640  & 0,4654 \\
+		\hline
+	\end{tabular}
+	\caption{Wartości stałej $K$ dla Serii I ($R = \num{1,4e6}\,\Omega$)}
+	\label{tab:K_seria1}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		$C$             & $T$ [s] & $K$    \\
+		$[\mu\text{F}]$ &         &        \\
+		\hline
+		1,0             & 1,1660  & 0,4485 \\
+		2,0             & 2,3185  & 0,4459 \\
+		3,0             & 3,4575  & 0,4433 \\
+		4,5             & 5,1920  & 0,4438 \\
+		5,0             & 5,5035  & 0,4233 \\
+		6,5             & 7,5455  & 0,4465 \\
+		7,0             & 8,1715  & 0,4490 \\
+		8,0             & 9,3875  & 0,4513 \\
+		9,0             & 10,5330 & 0,4501 \\
+		\hline
+	\end{tabular}
+	\caption{Wartości stałej $K$ dla Serii II ($R = \num{2,6e6}\,\Omega$)}
+	\label{tab:K_seria2}
+\end{table}
+
+\subsubsection*{Średnie wartości stałej $K$}
+
+Obliczono średnie wartości stałej $K$ dla każdej serii oraz wartość łączną:
+\begin{itemize}
+	\item $K_{sr}$ (Seria I): 0,4594
+	\item $K_{sr}$ (Seria II): 0,4446
+	\item $K_{sr}$ (Całość): 0,4520
+\end{itemize}
+
+Wartość łączna $K_{sr} = 0,4520$ została wykorzystana do dalszych obliczeń pojemności $C_x$.
+
+Przykładowe obliczenie dla $C = 1,0\,\mu\text{F}$ (Seria I):
+\begin{equation}
+	K = \frac{0,6315}{\num{1,4e6} \cdot \num{1,0e-6}} = 0,4511
+\end{equation}
+
 % ---------- NIEPEWNOŚCI ----------
 % \section{Ocena niepewności pomiaru}
 
