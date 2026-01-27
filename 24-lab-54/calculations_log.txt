@@ -1,0 +1,63 @@
+/home/piotr/projects/physics/1 pracownia fizyczna/24-lab-54/24-lab-54-calculations.py:199: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+============================================================
+     WYNIKI DO SPRAWOZDANIA (Exercise 54)
+============================================================
+
+--- WYZNACZANIE STAŁEJ K ---
+K_sr (Seria I):  0.4594
+K_sr (Seria II): 0.4446
+K_sr (Całość):   0.4520  <-- Do użycia w obliczeniach Cx
+
+--- WYZNACZANIE Cx ---
+Cx (z R=1.4M): 3.6069 uF
+Cx (z R=2.6M): 3.7959 uF
+Cx (Średnia):  3.7014 uF
+
+--- NIEPEWNOŚCI ---
+u(K) średnia (R=1.4M):        0.0074
+u(K) średnia (R=2.6M):        0.0070
+u(K) średnia całkowita:       0.0068
+u(Cx) (R=1.4M):               0.0562 uF
+u(Cx) (R=2.6M):               0.0573 uF
+u(Cx_mean) końcowe:            0.0401 uF
+
+============================================================
+     DANE DO TABEL (Kopiuj do LaTeX)
+============================================================
+
+--- TABELA WYNIKÓW: Seria I (R=1.4 M) ---
+C [uF]   | t20 [s]    | T [s]      | K         
+----------------------------------------------
+1.0      | 12.63      | 0.6315     | 0.4511    
+2.0      | 25.62      | 1.2810     | 0.4575    
+3.0      | 37.75      | 1.8875     | 0.4494    
+4.5      | 58.00      | 2.9000     | 0.4603    
+5.0      | 64.00      | 3.2000     | 0.4571    
+6.5      | 83.84      | 4.1920     | 0.4607    
+7.0      | 91.84      | 4.5920     | 0.4686    
+8.0      | 104.03     | 5.2015     | 0.4644    
+9.0      | 117.28     | 5.8640     | 0.4654    
+
+--- TABELA WYNIKÓW: Seria II (R=2.6 M) ---
+C [uF]   | t20 [s]    | T [s]      | K         
+----------------------------------------------
+1.0      | 23.32      | 1.1660     | 0.4485    
+2.0      | 46.37      | 2.3185     | 0.4459    
+3.0      | 69.15      | 3.4575     | 0.4433    
+4.5      | 103.84     | 5.1920     | 0.4438    
+5.0      | 110.07     | 5.5035     | 0.4233    
+6.5      | 150.91     | 7.5455     | 0.4465    
+7.0      | 163.43     | 8.1715     | 0.4490    
+8.0      | 187.75     | 9.3875     | 0.4513    
+9.0      | 210.66     | 10.5330    | 0.4501    
+
+[INFO] Wykres zapisano jako 'report/img/wykres_TC_poprawiony.png'
+
+--- PORÓWNANIE: OBLICZENIA VS WYKRES ---
+Cx z wykresu (R=1.4M): 3.5524 uF
+Cx z wykresu (R=2.6M): 3.8690 uF
+Cx z wykresu (Średnia): 3.7107 uF
+Różnica |obl-wykres|: 3.7107 uF
+
+[WYNIK KOŃCOWY]: Cx = (3.70 +/- 0.04) uF
